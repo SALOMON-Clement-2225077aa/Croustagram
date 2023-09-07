@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang='fr'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="titre" content="Page d'accueil">
+    <meta name="description" content="Page principale sur laquelle l'utilisateur est censé tomber en premier">
+    <title>Croustagram - Accueil</title>
+</head>
+
+<body>
+    <h1>Hello World !</h1>
+    <h1>Ceci est la première version de Croustagram !</h1>
+</body>
