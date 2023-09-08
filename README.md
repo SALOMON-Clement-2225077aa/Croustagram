@@ -1,3 +1,3 @@
-# Croustigram
+# Croustagram
 
 ### Mastercrous
