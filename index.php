@@ -8,4 +8,3 @@ require 'creationCompte/utils.createaccount.php';
 <?php
     account_page();
 ?>
-
