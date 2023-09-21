@@ -1,5 +1,7 @@
 <?php
 
-start_page();
+require 'utils.inc.php';
+
+start_page('Thèmes');
 
 ?>
