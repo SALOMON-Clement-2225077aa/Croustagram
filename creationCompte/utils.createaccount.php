@@ -9,12 +9,12 @@ function account_page($errorType = NULL, $def_username = NULL): void
     <meta charset="UTF-8">
     <meta name="titre" content="Créer un compte">
     <meta name="description" content="Page pour créer un compte">
-    <title>Create my account</title>
+    <title>Devenir croustagrameur</title>
 </head>
 
 <body>
     <h1>Ceci est la page de création d'un compte</h1>
-    <form action="PHPGestion/createAccount.php" method="post">
+    <form action="/creationCompte/createAccount.php" method="post">
         <label>Username :</label>
         <input type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?><br><br>
         <?php

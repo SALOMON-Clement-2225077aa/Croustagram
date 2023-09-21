@@ -1,5 +1,5 @@
 <?php
-    require '../utils.createaccount.php';
+    require 'utils.createaccount.php';
     $action = $_POST['action'];
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -13,5 +13,7 @@
     }
     else
     {
+        //Ici on mettra la vérification du username déjà pris ou non, puis on créera le compte dans la base de donnée
+
         echo '<br><strong>Username : ' . $username . '</strong><br><strong>Password : ' . $password . '</strong>';
     }
