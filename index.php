@@ -6,8 +6,7 @@
 <?php
     start_page('Croustagram - Accueil');
 
-    ?>
-<a href="MobileView/index.php">Mobile</a>
-    <?php
+    echo '<br><br>';
+
     end_page();
 ?>
