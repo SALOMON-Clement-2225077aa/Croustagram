@@ -19,26 +19,53 @@ header {
 #DivBarreRecherche {
     display: flex;
     align-items: center;
-    padding: 100px;
+    margin-right: 75px;
+    background-size: contain;
+    background-color: white;
+    border-style: solid;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 #Recherche {
     height: 51.2px;
     width: 51.2px;
     background-image: url("../ressources/loupe.png");
-    background-size: 51.2px;
+    background-size: 100%;
     background-position: center;
+    background-color: white;
+    border: none;
 }
 
 #BarreRecherche {
     height: 51.2px;
     width: 400px;
+    border: none;
+    font-size: 20px;
 }
 
 #EffacerRecherche {
     background-image: url("../ressources/croix.png");
     height: 51.2px;
     width: 51.2px;
-    background-size: 51.2px;
+    background-size: 100%;
     background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#FiltrerRecherche {
+    background-image: url("../ressources/filtre.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
 }

@@ -23,6 +23,7 @@ function start_page($title) :void
                 <button id="Recherche" onclick=""></button>
                 <input id="BarreRecherche" type="text">
                 <button id="EffacerRecherche" onclick=""></button>
+                <button id="FiltrerRecherche" onclick=""></button>
             </div>
         </header>
     </body>
