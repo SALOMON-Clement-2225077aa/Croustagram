@@ -1,6 +1,6 @@
 <!-- Import des fonctions -->
 <?php require 'utils.inc.php'; ?>
-<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <script src="script.js"></script>
 
 <!-- Contenu de la page -->
