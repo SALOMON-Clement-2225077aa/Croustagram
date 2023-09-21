@@ -13,8 +13,28 @@
     </head>
 
     <body>
-        <h1>Hello World !</h1>
-        <h1>Ceci est la première version de Croustagram !</h1>
+    <header>
+        <h1>Croustagram</h1>
+    </header>
+
+    <nav id="leaderboard">
+        <h2>Leaderboard :</h2>
+    </nav>
+
+    <section id="posts">
+        <article class="post">
+            <h2>aucun post</h2>
+        </article>
+    </section>
+
+    <section id="pointCpt">
+        <h2>Mes points crous : 0</h2>
+    </section>
+
+    <section id="ad">
+        <h3>your ad here</h3>
+    </section>
+
     </body>
 <?php
     }
