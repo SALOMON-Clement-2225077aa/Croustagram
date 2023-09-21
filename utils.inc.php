@@ -31,6 +31,13 @@
         <h2>Mes points crous : 0</h2>
     </section>
 
+    <section id="liens">
+        <form action="creationCompte/pageCreationCompte.php">
+            <button>Créer un compte !</button>
+        </form>
+    </section>
+
+
     <section id="ad">
         <h3>your ad here</h3>
     </section>
