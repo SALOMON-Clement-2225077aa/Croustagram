@@ -19,7 +19,7 @@ function start_page($title) :void
     <body>
         <header>
             <div id="DivLogoBarre">
-                <img id="Logo" src="../ressources/logo.png">
+                <img id="Logo" src="../../ressources/logo.png">
                 <div id="DivBarreRecherche">
                     <button id="Recherche" onclick=""></button>
                     <input id="BarreRecherche" type="text">
@@ -38,9 +38,9 @@ function end_page($title): void
     <!DOCTYPE html>
     <html lang="fr">
         <footer>
-            <button id="BoutonHome"></button>
-            <button id="BoutonLeaderboard"></button>
-            <button id="BoutonProfil"></button>
+            <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
+            <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
         </footer>
     </body>
     <?php
