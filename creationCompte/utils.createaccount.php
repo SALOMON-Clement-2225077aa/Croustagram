@@ -21,7 +21,11 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
         <?php
             if (in_array("mail", $erreurTab))
         {
-            echo '<label style=\'color:red;\'>Adresse e-mail invalide ou déjà utilisée par un autre compte</label>';
+            echo '<label style=\'color:red;\'>Format d\'adresse e-mail invalide</label>';
+        }
+            elseif (in_array("mailPris", $erreurTab))
+        {
+            echo '<label style=\'color:red;\'>Adresse e-mail déjà utilisée par un autre compte</label>';
         }
         ?>
 
@@ -31,6 +35,10 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
             if (in_array("username", $erreurTab))
             {
                 echo '<label style=\'color:red;\'>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques</label>';
+            }
+            elseif (in_array("usernamePris", $erreurTab))
+            {
+                echo '<label style=\'color:red;\'>Ce nom d\'utilisateur est déjà utilisé</label>';
             }
         ?>
 
