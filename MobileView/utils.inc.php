@@ -19,9 +19,9 @@ function start_page($title) :void
     <body>
         <header>
             <img id="Logo" src="../ressources/logo.png">
-            <div class="DivBarreRecherche">
+            <div id="DivBarreRecherche">
                 <button id="Recherche" onclick=""></button>
-                <input type="text">
+                <input id="BarreRecherche" type="text">
                 <button id="EffacerRecherche" onclick=""></button>
             </div>
         </header>

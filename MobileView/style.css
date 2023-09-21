@@ -1,25 +1,44 @@
-header {
-    background-color: #d9d9d9;
-    display: flex;
-}
-
 body {
     margin: 0px;
     padding: 0px;
 }
 
-#Logo {
+header {
+    background-color: #d9d9d9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
-    width: 50px;
-    height: 50px;
+#Logo {
+    padding: 50px;
+    width: 150px;
+    height: 150px;
+}
+
+#DivBarreRecherche {
+    display: flex;
+    align-items: center;
+    padding: 100px;
+}
+
+#Recherche {
+    height: 51.2px;
+    width: 51.2px;
+    background-image: url("../ressources/loupe.png");
+    background-size: 51.2px;
+    background-position: center;
+}
+
+#BarreRecherche {
+    height: 51.2px;
+    width: 400px;
 }
 
 #EffacerRecherche {
     background-image: url("../ressources/croix.png");
     height: 51.2px;
     width: 51.2px;
-    max-width: 51.2px;
-    max-height: 51.2px;
     background-size: 51.2px;
     background-position: center;
 }
