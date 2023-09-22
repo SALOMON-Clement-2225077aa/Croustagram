@@ -12,22 +12,38 @@ function start_page($title) :void
     <head>
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
+        <link rel="icon" href="../../ressources/logo.png" />
         <meta name="description" content="Page principale sur laquelle l'utilisateur est censé tomber en premier">
         <link rel="stylesheet" href="style.css">
-        <title><?php echo 'Croustagram'; ?></title>
+        <title>Croustagram</title>
     </head>
     <body>
         <header>
-            <img id="Logo" src="../ressources/logo.png">
-            <div id="DivBarreRecherche">
-                <button id="Recherche" onclick=""></button>
-                <input id="BarreRecherche" type="text">
-                <button id="EffacerRecherche" onclick=""></button>
-                <button id="FiltrerRecherche" onclick=""></button>
+            <div id="DivLogoBarre">
+                <img id="Logo" src="../../ressources/logo.png">
+                <div id="DivBarreRecherche">
+                    <button id="Recherche" onclick=""></button>
+                    <input id="BarreRecherche" type="text">
+                    <button id="EffacerRecherche" onclick=""></button>
+                    <button id="FiltrerRecherche" onclick=""></button>
+                </div>
             </div>
+            <h1><?php echo $title ?></h1>
         </header>
-    </body>
     <?php
 }
 
+function end_page($title): void
+{
+    ?>
+    <!DOCTYPE html>
+    <html lang="fr">
+        <footer>
+            <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
+            <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
+        </footer>
+    </body>
+    <?php
+}
 ?>
