@@ -11,6 +11,7 @@ header {
     display: block;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 #DivLogoBarre {
@@ -89,7 +90,8 @@ h1 {
 }
 
 #ContenuPage {
-    position: relative;
+    overflow-block: hidden;
+    position: absolute;
     top: 330px;
 }
 

@@ -8,7 +8,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
-        <link rel="icon" href="../../ressources/logo.png" />
+        <link rel="icon" href="/ressources/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Dekstop">
         <link rel="stylesheet" href="style.css">
         <title><?php echo $title; ?></title>

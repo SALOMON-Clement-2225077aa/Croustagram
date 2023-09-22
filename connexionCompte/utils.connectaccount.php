@@ -8,6 +8,7 @@
             <meta charset="UTF-8">
             <meta name="titre" content="Se connecter à un compte">
             <meta name="description" content="Page pour se connecter à un compte">
+            <link rel="icon" href="/ressources/logo.png" />
             <title>Crousnexion</title>
         </head>
     <body>

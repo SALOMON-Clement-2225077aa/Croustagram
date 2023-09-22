@@ -9,6 +9,7 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
     <meta charset="UTF-8">
     <meta name="titre" content="Créer un compte">
     <meta name="description" content="Page pour créer un compte">
+    <link rel="icon" href="/ressources/logo.png" />
     <title>Devenir croustagrameur</title>
 </head>
 
