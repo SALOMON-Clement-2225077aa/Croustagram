@@ -17,7 +17,9 @@
     <header>
         <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
         <h1 class="header">Croustagram</h1>
-        <button> créer un post </button>
+        <button> Créer un croustapost </button>
+        <button onclick="window.location.href = 'creationCompte/pageCreationCompte.php';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>
+        <button onclick="window.location.href = 'connexionCompte/pageConnexionCompte.php';" style="margin-left: 10px"> Se connecter à un compte </button>
     </header>
 
     <section id="leaderboard">
@@ -35,16 +37,6 @@
         <h2>Mes points crous : 0</h2>
     </section>
 
-    <section id="liens">
-        <form action="creationCompte/pageCreationCompte.php">
-            <button>Rejoindre la croustagrammance</button>
-        </form>
-        <form action="connexionCompte/pageConnexionCompte.php">
-            <button>Se connecter à un compte</button>
-        </form>
-    </section>
-
-
     <section id="ad">
         <h3>your ad here</h3>
     </section>
@@ -60,10 +52,10 @@
     function end_page(): void
     {
 ?>
-<!DOCTYPE html>
-    <html lang="fr">
-
-        </body>
+    <!DOCTYPE html>
+    <html lang='fr'>
+    <body>
+    </body>
 <?php 
     }
 ?>
