@@ -1,6 +1,6 @@
 <!-- Import des fonctions -->
 <?php require 'utils.inc.php'; ?>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
 <script src="script.js"></script>
 
 <!-- Contenu de la page -->
@@ -13,7 +13,7 @@
 
 <!-- Ajout du popup -->
 <div id="popup">
-    <button id="fermerPopup" onclick="fermerPost()">X</button>
+    <button id="fermerPopup" onclick="fermerPopup()">X</button>
     <form action="index.php" method="post">
         <!-- Ajoutez les champs du formulaire pour créer un post ici -->
         <input type="text" name="titre" placeholder="Titre du post (facultatif)"><br>
@@ -24,35 +24,17 @@
 
 <?php
 if (strlen($_POST['contenu']) > 0) {
-
-    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-
-    mysqli_select_db($dbLink , "croustagramadd_bdd")
-    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink)
-    );
-
-    //Code d'insertion dans la BD
-    $today = date('Y-m-d');
-    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("Gabriel", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", ' . $today . ', "categories")';
-
-    if(!($dbResult = mysqli_query($dbLink, $query)))
-    {
-        echo 'Erreur de requête<br>';
-        echo 'Erreur : ' . mysqli_error($dbLink) . '<br>';
-        echo 'Requête : ' . $query . '<br>';
-        exit();
-    }
-
-    echo '<div id="post">';
+?>
+<br><br><br><br>
+<div id="post">
+<?php
     echo '<h2>' . $_POST['titre'] . '</h2>';
     echo '<h2>' . $_POST['contenu'] . '</h2>';
-    echo '</div>';
-
+?>
+</div>
+<?php
 }
 ?>
-
-
 <?php
     end_page();
 ?>

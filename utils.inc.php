@@ -9,23 +9,32 @@
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
         <meta name="description" content="Page principale sur laquelle l'utilisateur est censé tomber en premier">
+        <link rel="stylesheet" href="style.css">
         <title><?php echo $title; ?></title>
     </head>
 
     <body>
     <header>
-        <h1>Croustagram</h1>
+        <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+        <h1 class="header">Croustagram</h1>
+        <section id="liens">
+            <form action="creationCompte/pageCreationCompte.php">
+                <button>Créer un compte !</button>
+            </form>
+        </section>
+        <button> créer un post </button>
     </header>
 
-    <nav id="leaderboard">
+    <section id="leaderboard">
         <h2>Leaderboard :</h2>
-    </nav>
-
-    <section id="posts">
-        <article class="post">
-            <h2>aucun post</h2>
-        </article>
     </section>
+
+    <div id="body">
+        <section id="posts">
+            <article class="post">
+                <h2>aucun post</h2>
+            </article>
+        </section>
 
     <section id="pointCpt">
         <h2>Mes points crous : 0</h2>
@@ -58,10 +67,7 @@
 ?>
 <!DOCTYPE html>
     <html lang="fr">
-            <?php
-                echo '<br><br>';
-                echo '<h2>Merci de votre visite !<br>Revenez bientôt</h2>';
-            ?>
+
         </body>
 <?php 
     }

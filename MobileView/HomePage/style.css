@@ -88,6 +88,11 @@ h1 {
     margin-bottom: 0;
 }
 
+#ContenuPage {
+    position: relative;
+    top: 330px;
+}
+
 footer {
     margin-top: 20px;
     bottom: 0;
