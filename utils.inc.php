@@ -33,7 +33,10 @@
 
     <section id="liens">
         <form action="creationCompte/pageCreationCompte.php">
-            <button>Créer un compte !</button>
+            <button>Rejoindre la croustagrammance</button>
+        </form>
+        <form action="connexionCompte/pageConnexionCompte.php">
+            <button>Se connecter à un compte</button>
         </form>
     </section>
 
