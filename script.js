@@ -1,13 +1,9 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var button = document.querySelector('button');
-    var popup = document.getElementById('popup');
-
-    button.addEventListener('click', function() {
-        popup.style.display = 'block';
-    });
-});
-
-// Fonction pour fermer le popup
-function fermerPopup() {
+function ouvrirPost() {
+    popup.style.display = 'block';
+}
+function fermerPost() {
     document.getElementById('popup').style.display = 'none';
+}
+function creerCompte() {
+    document.location.href="creationCompte/createAccount.php";
 }
