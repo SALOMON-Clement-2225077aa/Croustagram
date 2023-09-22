@@ -136,5 +136,5 @@ footer {
 #ContenuPage {
     position: relative;
     top: 330px;
-    overflow:auto;
+    padding-bottom: 150px;
 }

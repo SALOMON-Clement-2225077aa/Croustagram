@@ -12,6 +12,7 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 2;
+    top:0px;
 }
 
 #DivLogoBarre {
@@ -135,5 +136,6 @@ footer {
 
 #ContenuPage {
     position: relative;
-    top: 330px;
+    top: 300px;
+    padding-bottom: 150px;
 }

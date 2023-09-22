@@ -10,7 +10,7 @@ start_page('Profil');
         <?php
             account_page();
         ?>
-</div>
+    </div>
 
 <?php
 
