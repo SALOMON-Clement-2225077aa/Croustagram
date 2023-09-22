@@ -5,12 +5,13 @@
     $password = $_POST['password'];
     $name = $_POST['name'];
     $mail = $_POST['mail'];
+    $passwordMatch = $_POST['passwordMatch'];
 
     $tabErreur = array();
 
     function page_erreur(){
-        global $mail, $username, $tabErreur;
-        account_page($tabErreur, $username, $mail);
+        global $mail, $username, $tabErreur, $name;
+        account_page($tabErreur, $username, $mail, $name);
     }
 
     $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
@@ -22,6 +23,10 @@
     if (strlen($password)<8)
     {
         $tabErreur[] = "password";
+    }
+    elseif ($password !== $passwordMatch)
+    {
+        $tabErreur[] = "passwordMatch";
     }
     if (!ctype_alnum($username))
     {
