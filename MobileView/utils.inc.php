@@ -41,7 +41,7 @@ function end_page($title): void
         <footer>
             <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
             <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
-            <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../../creationCompte/pageCreationCompte.php';"></button>
         </footer>
     </body>
     <?php
