@@ -9,7 +9,7 @@
 ?>
 
 
-<button> créer un post </button>
+
 
 <!-- Ajout du popup -->
 <div id="popup">
