@@ -36,13 +36,23 @@
             </article>
         </section>
 
-        <section id="droite">
-            <h2>Mes points crous : 0</h2>
-            <section id="ad">
-                <h3>your ad here</h3>
-            </section>
-        </section>
-    </div>
+    <section id="pointCpt">
+        <h2>Mes points crous : 0</h2>
+    </section>
+
+    <section id="liens">
+        <form action="creationCompte/pageCreationCompte.php">
+            <button>Rejoindre la croustagrammance</button>
+        </form>
+        <form action="connexionCompte/pageConnexionCompte.php">
+            <button>Se connecter à un compte</button>
+        </form>
+    </section>
+
+
+    <section id="ad">
+        <h3>your ad here</h3>
+    </section>
 
     </body>
 <?php
