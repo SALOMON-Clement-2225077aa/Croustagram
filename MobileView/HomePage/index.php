@@ -1,7 +1,7 @@
 <?php
 
 
-require './MobileView/utils.inc.php';
+require '../utils.inc.php';
 
 start_page('Fil d\'actualité');
 
