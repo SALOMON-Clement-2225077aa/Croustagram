@@ -64,9 +64,7 @@
 
 
         //Code d'insertion dans la BD
-
         $today = date('Y-m-d');
-
         $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "img2", "' . $today . '", "' . $today . '", 0)';
 
         if (!($dbResult = mysqli_query($dbLink, $query))) {
