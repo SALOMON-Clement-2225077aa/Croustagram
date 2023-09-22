@@ -17,11 +17,6 @@
     <header>
         <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
         <h1 class="header">Croustagram</h1>
-        <section id="liens">
-            <form action="creationCompte/pageCreationCompte.php">
-                <button>Créer un compte !</button>
-            </form>
-        </section>
         <button> créer un post </button>
     </header>
 
