@@ -65,6 +65,9 @@
 
         //Code d'insertion dans la BD
 
+        //Encodage du mdp
+        $password = password_hash($password, PASSWORD_DEFAULT);
+
         $today = date('Y-m-d');
 
         $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "img2", "' . $today . '", "' . $today . '", 0)';
