@@ -8,7 +8,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
-        <meta name="description" content="Page principale sur laquelle l'utilisateur est censé tomber en premier">
+        <link rel="icon" href="../../ressources/logo.png" />
+        <meta name="description" content="Page d'accueil de Croustagram - Dekstop">
         <link rel="stylesheet" href="style.css">
         <title><?php echo $title; ?></title>
     </head>
@@ -20,6 +21,7 @@
         <button> Créer un croustapost </button>
         <button onclick="window.location.href = 'creationCompte/pageCreationCompte.php';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>
         <button onclick="window.location.href = 'connexionCompte/pageConnexionCompte.php';" style="margin-left: 10px"> Se connecter à un compte </button>
+        <button onclick="window.location.href = 'MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
     </header>
 
     <section id="leaderboard">
