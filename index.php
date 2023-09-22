@@ -8,7 +8,7 @@
     start_page('Croustagram - Accueil');
 ?>
 
-<button onclick="ouvrirPost()"> créer un post </button>
+<button onclick="ouvrirPost()"> Créer un croustapost </button>
 
 <!-- Ajout du popup -->
 <div id="popup">
