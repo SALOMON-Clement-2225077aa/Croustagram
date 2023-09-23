@@ -9,8 +9,6 @@
     echo '<script>fermerPopup();</script>';
 ?>;
 
-<button onclick="ouvrirPost()"> Créer un croustapost </button>
-
 <!-- Ajout du popup -->
 <div id="popup">
     <button id="fermerPopup" onclick="fermerPopup()">X</button>
@@ -78,6 +76,17 @@ if (strlen($_POST['contenu']) > 0) {
 <?php
 }
 ?>
+
+
+<?php // Lecture des posts de la BD
+
+    echo '<br><br><br>';
+    echo '<h1> Ceci n' . "'" . 'est pas un post de la BdD </h1>';
+
+?>
+
+
+
 
 <?php
     echo '<script>fermerPopup();</script>';

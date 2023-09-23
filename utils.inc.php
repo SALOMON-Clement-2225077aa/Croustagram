@@ -18,7 +18,7 @@
     <header>
         <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
         <h1 class="header">Croustagram</h1>
-        <button> Créer un croustapost </button>
+        <button onclick="ouvrirPost()"> Créer un croustapost </button>
         <button onclick="window.location.href = 'creationCompte/pageCreationCompte.php';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>
         <button onclick="window.location.href = 'connexionCompte/pageConnexionCompte.php';" style="margin-left: 10px"> Se connecter à un compte </button>
         <button onclick="window.location.href = 'MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
