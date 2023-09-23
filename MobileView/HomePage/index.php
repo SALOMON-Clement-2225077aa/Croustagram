@@ -1,19 +1,40 @@
 <?php
 
-require '../utils.inc.php';
-
-start_page('Fil d\'actualité');
+    require '../utils.inc.php';
+    start_page('Fil d\'actualité');
 
 ?>
+
     <div id="ContenuPage">
-        <?php
-        echo 'a<br>b<br>c<br>d<br>e<br>f<br>g<br>h<br>i<br>j<br>k<br>l<br>m<br>n<br>o<br>p<br>q<br>r<br>s<br>t<br>u<br>v<br>w<br>x<br>y<br>z<br>
-    a<br>b<br>c<br>d<br>e<br>f<br>g<br>h<br>i<br>j<br>k<br>l<br>m<br>n<br>o<br>p<br>q<br>r<br>s<br>t<br>u<br>v<br>w<br>x<br>y<br>z';
+
+        <?php // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
+
+        // Connexion à la base de donnée
+        $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+        or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+        mysqli_select_db($dbLink , "croustagramadd_bdd")
+        or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+        // Requête
+        $result = mysqli_query($dbLink, 'SELECT * FROM croustapost');
+
+        // Si la requête a marché on affiche les posts
+        if ($result) {
+            // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+            while ($row = mysqli_fetch_assoc($result)) {
+                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
+            }
+            // Libère la variable
+            mysqli_free_result($result);
+        }
+        else {
+            echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+        }
         ?>
+
     </div>
 
+
 <?php
-
-end_page('Fil d\'actualité');
-
+    end_page('Fil d\'actualité');
 ?>
