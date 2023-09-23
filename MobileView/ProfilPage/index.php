@@ -6,7 +6,9 @@ start_page('Profil');
 
 ?>
     <div id="ContenuPage">
-        //  Vide
+        <?php
+            //    Vide
+        ?>
     </div>
 
 <?php
