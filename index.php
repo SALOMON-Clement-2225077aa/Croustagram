@@ -6,7 +6,8 @@
 <!-- Contenu de la page -->
 <?php
     start_page('Croustagram - Accueil');
-?>
+    echo '<script>fermerPopup();</script>';
+?>;
 
 <button onclick="ouvrirPost()"> Créer un croustapost </button>
 
@@ -14,7 +15,6 @@
 <div id="popup">
     <button id="fermerPopup" onclick="fermerPopup()">X</button>
     <form action="index.php" method="post">
-        <!-- Ajoutez les champs du formulaire pour créer un post ici -->
         <input type="text" name="titre" placeholder="Titre du post (facultatif)"><br>
         <textarea name="contenu" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
         <input type="submit" value="Créer">
@@ -44,6 +44,7 @@ if (strlen($_POST['contenu']) > 0) {
         echo 'Requête : ' . $query . '<br>';
         exit();
     }
+    echo '<script>fermerPopup();</script>';
 ?>
 
     <!-- Afficher le post --> 
@@ -78,9 +79,7 @@ if (strlen($_POST['contenu']) > 0) {
 }
 ?>
 
-
-
-
 <?php
+    echo '<script>fermerPopup();</script>';
     end_page();
 ?>
