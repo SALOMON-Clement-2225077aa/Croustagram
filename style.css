@@ -1,143 +1,75 @@
-body {
+body{
     margin: 0px;
-    padding: 0px;
-    font-size: 40px;
+    font-family: "Source Sans Pro";
+
+}
+
+#logo{
+    max-width : 60px;
+    max-height: 60px;
+
+}
+
+textarea {
+    resize: none;
+}
+
+h1 {
+    color: black;
+}
+h2 {
+    color: black;
+    font-size: 18px;
+}
+
+#fermerPopup {
+    float: right;
+    background-color: red;
+}
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 header {
     position: fixed;
     width: 100%;
+    margin: 0px;
+    top: 0;
     background-color: #d9d9d9;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-#DivLogoBarre {
+    border-bottom: solid;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-#Logo {
-    margin: 20px;
-    width: 150px;
-    height: 150px;
+.header{
+    padding: 10px;
 }
 
-#DivBarreRecherche {
+#body{
+    position: relative;
+    top: 110px;
+    margin-left: 150px;
     display: flex;
-    align-items: center;
-    margin-right: 75px;
-    background-size: contain;
-    background-color: white;
-    border-style: solid;
     justify-content: space-around;
-    padding: 15px;
-    border-radius: 15px;
+    align-items: center;
 }
 
-button {
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#Recherche {
-    height: 51.2px;
-    width: 51.2px;
-    background-image: url("../../ressources/loupe.png");
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#BarreRecherche {
-    height: 51.2px;
-    width: 400px;
-    border: none;
-    font-size: 35px;
-}
-
-#EffacerRecherche {
-    background-image: url("../../ressources/croix.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#FiltrerRecherche {
-    background-image: url("../../ressources/filtre.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-h1 {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    text-align: center;
-    font-size: 40px;
-    padding: 30px;
-    margin-bottom: 0;
-}
-
-#ContenuPage {
-    position: absolute;
-    top: 330px;
-    padding-bottom: 150px;
-}
-
-footer {
-    margin-top: 20px;
-    bottom: 0;
-    width: 100%;
+#leaderboard{
+    background-color: #d9d9d9;
     position: fixed;
-    border-top-style: solid;
-    background-color: #d9d9d9;
-    display: flex;
-    justify-content: space-around;
+    left: 0;
+    top: 103.5px;
+    border-right: solid;
+    height: 100%;
 }
 
-#BoutonHome {
-    background-image: url("../../ressources/home_red.png");
-    background-size: 100%;
-    background-position: center;
-    height: 102.4px;
-    width: 102.4px;
-    border: none;
-    background-color: #d9d9d9;
-    margin: 20px;
-}
-
-#BoutonLeaderboard {
-    background-image: url("../../ressources/leaderboard.png");
-    background-size: 100%;
-    background-position: center;
-    height: 102.4px;
-    width: 102.4px;
-    border: none;
-    background-color: #d9d9d9;
-    margin: 20px;
-}
-
-#BoutonProfil {
-    background-image: url("../../ressources/profil.png");
-    background-size: 100%;
-    background-position: center;
-    height: 102.4px;
-    width: 102.4px;
-    border: none;
-    background-color: #d9d9d9;
-    margin: 20px;
-}
 
 #post {
     background: #fce9d8;
@@ -146,8 +78,9 @@ footer {
     z-index: 1000;
 }
 
-
 #imgProfil{
     border-radius: 50%;
     width: 50px;
 }
+
+#tabPost th:nth-child()
