@@ -24,8 +24,29 @@
 <!-- Ajout du post -->
 <?php
 if (strlen($_POST['contenu']) > 0) {
-    $date = date("d/m/y H:i")
-    ?>
+    $date = date("d/m/y H:i");
+
+    // Connexion à la base de donnée
+    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink , "croustagramadd_bdd")
+    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+    //Code d'insertion dans la BD
+    $today = date('Y/m/d');
+    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("ClementRKG", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", "' . $today . '", "aucune")';
+
+    // Gestion d'erreur BD
+    if(!($dbResult = mysqli_query($dbLink, $query)))
+    {
+        echo 'Erreur de requête<br>';
+        echo 'Erreur : ' . mysqli_error($dbLink) . '<br>';
+        echo 'Requête : ' . $query . '<br>';
+        exit();
+    }
+?>
+
+    <!-- Afficher le post --> 
     <br><br><br><br>
     <div id="post">
         <table id="tabPost">
@@ -53,9 +74,12 @@ if (strlen($_POST['contenu']) > 0) {
             </tr>
         </table>
     </div>
-    <?php
+<?php
 }
 ?>
+
+
+
 
 <?php
     end_page();
