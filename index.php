@@ -19,7 +19,7 @@
     </form>
 </div>
 
-<!-- Ajout du post -->
+<!-- Ajout du post dans la BdD -->
 <?php
 if (strlen($_POST['contenu']) > 0) {
     $date = date("d/m/y H:i");
@@ -43,50 +43,34 @@ if (strlen($_POST['contenu']) > 0) {
         exit();
     }
     echo '<script>fermerPopup();</script>';
-?>
-
-    <!-- Afficher le post --> 
-    <br><br><br><br>
-    <div id="post">
-        <table id="tabPost">
-            <tr>
-                <th><img src="ressources/profil.png" id="imgProfil">monNomDeProfil</th>
-                <th id="titrePost"><?php
-					echo '<h1>' . $_POST['titre'] . '</h1>';
-					?></th>
-                <th><?php
-                    echo $date;
-                ?></th>
-            </tr>
-            <tr>
-                <th colspan="3"><?php
-                    echo '<h2>' . $_POST['contenu'] . '</h2>';
-                    ?></th>
-            </tr>
-            <tr>
-                <th>508
-                    <img src="ressources/fleche-vers-le-haut.png" id="imgProfil">
-                    <img src="ressources/fleche-vers-le-bas.png" id="imgProfil">
-                </th>
-                <th> #test #fantome #silver </th>
-                <th><img src="ressources/commentaire.png" id="imgProfil"></th>
-            </tr>
-        </table>
-    </div>
-<?php
 }
 ?>
 
 
-<?php // Lecture des posts de la BD
+<?php // Lecture des posts de la BD (SELECT * FROM `croustapost`)
 
-    echo '<br><br><br>';
-    echo '<h1> Ceci n' . "'" . 'est pas un post de la BdD </h1>';
+    // Connexion à la base de donnée
+    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+    mysqli_select_db($dbLink , "croustagramadd_bdd")
+    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+
+    // Requête
+    $result = mysqli_query($dbLink, 'SELECT * FROM croustapost');
+
+    // Si la requête a marché on affiche les posts
+    if ($result) {
+        // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+        while ($row = mysqli_fetch_assoc($result)) {
+            afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
+        }
+        // Libère la variable
+        mysqli_free_result($result);
+    }
+    else {echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+    }
 
 ?>
-
-
-
 
 <?php
     echo '<script>fermerPopup();</script>';
