@@ -47,3 +47,40 @@ function end_page($title): void
     <?php
 }
 ?>
+
+<!-- Afficher un post --> 
+<?php
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
+    {
+?>
+<br><br><br><br>
+<div id="post">
+    <table id="tabPost">
+        <tr>
+            <th><img src="../../ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
+            <th id="titrePost"><?php
+                echo '<h1>' . $titre . '</h1>';
+                ?></th>
+            <th><?php
+                echo $date;
+            ?></th>
+        </tr>
+        <tr>
+            <th colspan="3"><?php
+                echo '<h2>' . $message . '</h2>';
+                ?></th>
+        </tr>
+        <tr>
+            <th> <?php echo $ptsCrous ?>
+                <img src="../../ressources/fleche-vers-le-haut.png" id="imgProfil">
+                <img src="../../ressources/fleche-vers-le-bas.png" id="imgProfil">
+            </th>
+            <th> <?php echo $categorie ?> </th>
+            <th><img src="../../ressources/commentaire.png" id="imgProfil"></th>
+        </tr>
+    </table>
+</div>
+<?php
+}
+?>
+<!---------------------->
