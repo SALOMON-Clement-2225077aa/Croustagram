@@ -48,7 +48,7 @@ if (strlen($_POST['contenu']) > 0) {
                     <img src="ressources/fleche-vers-le-haut.png" id="imgProfil">
                     <img src="ressources/fleche-vers-le-bas.png" id="imgProfil">
                 </th>
-                <th></th>
+                <th> #test #fantome #silver </th>
                 <th><img src="ressources/commentaire.png" id="imgProfil"></th>
             </tr>
         </table>
