@@ -16,7 +16,7 @@
         or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
         // Requête
-        $result = mysqli_query($dbLink, 'SELECT * FROM croustapost');
+        $result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
 
         // Si la requête a marché on affiche les posts
         if ($result) {
