@@ -47,7 +47,7 @@
             {
                 $dbPassword = $dbRow;
             }
-            if ($dbPassword['mdp'] == '' or $dbPassword == NULL or !(password_verify($password, $dbPassword['mdp'])))
+            if ($dbPassword == NULL or $dbPassword['mdp'] == '' or !(password_verify($password, $dbPassword['mdp'])))
             {
                 $tabErreurs[] = 'noMatchFoundUsername';
             }
