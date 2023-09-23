@@ -1,6 +1,6 @@
 function ouvrirPost() {
     popup.style.display = 'block';
 }
-function fermerPost() {
+function fermerPopup() {
     document.getElementById('popup').style.display = 'none';
 }

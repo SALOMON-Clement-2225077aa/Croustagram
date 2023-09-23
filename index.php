@@ -21,19 +21,42 @@
     </form>
 </div>
 
+<!-- Ajout du post -->
 <?php
 if (strlen($_POST['contenu']) > 0) {
-?>
-<br><br><br><br>
-<div id="post">
-<?php
-    echo '<h2>' . $_POST['titre'] . '</h2>';
-    echo '<h2>' . $_POST['contenu'] . '</h2>';
-?>
-</div>
-<?php
+    $date = date("d/m/y H:i")
+    ?>
+    <br><br><br><br>
+    <div id="post">
+        <table id="tabPost">
+            <tr>
+                <th><img src="ressources/profil.png" id="imgProfil">monNomDeProfil</th>
+                <th id="titrePost"><?php
+					echo '<h1>' . $_POST['titre'] . '</h1>';
+					?></th>
+                <th><?php
+                    echo $date;
+                ?></th>
+            </tr>
+            <tr>
+                <th colspan="3"><?php
+                    echo '<h2>' . $_POST['contenu'] . '</h2>';
+                    ?></th>
+            </tr>
+            <tr>
+                <th>508
+                    <img src="ressources/fleche-vers-le-haut.png" id="imgProfil">
+                    <img src="ressources/fleche-vers-le-bas.png" id="imgProfil">
+                </th>
+                <th></th>
+                <th><img src="ressources/commentaire.png" id="imgProfil"></th>
+            </tr>
+        </table>
+    </div>
+    <?php
 }
 ?>
+
 <?php
     end_page();
 ?>
