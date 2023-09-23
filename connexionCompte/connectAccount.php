@@ -3,6 +3,7 @@
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $dbPassword = NULL;
 
     $tabErreurs = array();
 
@@ -46,7 +47,7 @@
             {
                 $dbPassword = $dbRow;
             }
-            if (!(password_verify($password, $dbPassword['mdp'])))
+            if ($dbPassword['mdp'] == '' or $dbPassword == NULL or !(password_verify($password, $dbPassword['mdp'])))
             {
                 $tabErreurs[] = 'noMatchFoundUsername';
             }
