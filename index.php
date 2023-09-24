@@ -21,7 +21,7 @@
 
 <!-- Ajout du post dans la BdD -->
 <?php
-if ( !(is_null($_POST[$contenue])) ) {
+if ( strlen($_POST["contenu"]) > 0 ) {
     $date = date("d/m/y H:i");
 
     // Connexion à la base de donnée
@@ -32,7 +32,7 @@ if ( !(is_null($_POST[$contenue])) ) {
 
     //Code d'insertion dans la BD
     $today = date('Y/m/d');
-    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("ClementRKG", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", "' . $today . '", "aucune")';
+    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("UtilisateurAnonyme", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", "' . $today . '", "aucune")';
 
     // Gestion d'erreur BD
     if(!($dbResult = mysqli_query($dbLink, $query)))
@@ -43,6 +43,7 @@ if ( !(is_null($_POST[$contenue])) ) {
         exit();
     }
     echo '<script>fermerPopup();</script>';
+
 }
 ?>
 
