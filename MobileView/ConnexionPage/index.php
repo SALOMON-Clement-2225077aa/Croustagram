@@ -1,6 +1,6 @@
 <?php
 
-require '../../creationCompte/utils.createaccount.php';
+require 'creationCompte/utils.createaccount.php';
 
 ?>
     <!DOCTYPE html>
