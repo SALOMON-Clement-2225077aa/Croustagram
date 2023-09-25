@@ -32,8 +32,16 @@
     {
         $tabErreur[] = "username";
     }
+    elseif (strlen($username) > 20)
+    {
+        $tabErreur[] "usernameLong"
+    }
     if (!(preg_match('/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/', $mail))){
         $tabErreur[] = "mail";
+    }
+    if (strlen($name) > 25)
+    {
+        $tabErreur[] = "nameLong";
     }
 
     $query = 'SELECT id  FROM croustagrameur WHERE id=\'' . $username . '\'';
@@ -46,15 +54,24 @@
         }
     }
 
-    $query = 'SELECT id  FROM croustagrameur WHERE email=\'' . $mail . '\'';
-    $dbResult = mysqli_query($dbLink, $query);
-
-    while($dbRow = mysqli_fetch_assoc($dbResult))
+    if (strlen($mail) > 50)
     {
-        if ($dbRow['id'] != ''){
-            $tabErreur[] = "mailPris";
+        $tabErreur[] = "mailLong";
+    }
+    else
+    {
+        $query = 'SELECT id  FROM croustagrameur WHERE email=\'' . $mail . '\'';
+        $dbResult = mysqli_query($dbLink, $query);
+
+        while($dbRow = mysqli_fetch_assoc($dbResult))
+        {
+            if ($dbRow['id'] != ''){
+                $tabErreur[] = "mailPris";
+            }
         }
     }
+
+
 
     if(count($tabErreur) === 0)
     {

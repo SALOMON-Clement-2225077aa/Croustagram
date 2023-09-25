@@ -21,13 +21,17 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
         <input type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?><br><br>
         <?php
             if (in_array("mail", $erreurTab))
-        {
-            echo '<strong style=\'color:red;\'>Format d\'adresse e-mail invalide</strong>';
-        }
+            {
+                echo '<strong style=\'color:red;\'>Format d\'adresse e-mail invalide</strong>';
+            }
             elseif (in_array("mailPris", $erreurTab))
-        {
-            echo '<strong style=\'color:red;\'>Adresse e-mail déjà utilisée par un autre compte</strong>';
-        }
+            {
+                echo '<strong style=\'color:red;\'>Adresse e-mail déjà utilisée par un autre compte</strong>';
+            }
+            elseif (in_array("mailLong", $erreurTab))
+            {
+                echo '<strong style=\'color:red;\'>L\'adresse mail est trop longue (50 caractères maximum)</strong>';
+            }
         ?>
 
         <br><label>Nom d'utilisateur :</label><br><br>
@@ -40,6 +44,10 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
             elseif (in_array("usernamePris", $erreurTab))
             {
                 echo '<strong style=\'color:red;\'>Ce nom d\'utilisateur est déjà utilisé</strong>';
+            }
+            elseif (in_array("usernameLong", $erreurTab))
+            {
+                echo '<strong style=\'color:red;\'>Le nom d\'utilisateur est trop long (20 caractères maximum)</strong>';
             }
         ?>
 
@@ -62,7 +70,12 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
         <br><label>Nom d'affichage </label><label style="color: red">(optionnel)</label><label> :</label><br><br>
         <input type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>><br>
         <br><button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
-
+        <?php
+        if (in_array("nameLong", $erreurTab))
+        {
+            echo '<strong style=\'color:red;\'>Le pseudo choisi est trop long (25 caractères maximum)</strong>';
+        }
+        ?>
     </form>
 </body>
 <?php
