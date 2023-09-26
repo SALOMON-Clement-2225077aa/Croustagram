@@ -16,10 +16,10 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
 <body>
     <h1>Prêt à vivre l'expérience Croustagram ?</h1>
     <form action="/creationCompte/createAccount.php" method="post">
-
-        <label>E-Mail :</label>
-        <input type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
-        <?php
+        <div class="FormDiv">
+            <label>E-Mail :</label>
+            <input type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
+            <?php
             if (in_array("mail", $erreurTab))
             {
                 echo '<strong style=\'color:red;\'>Format d\'adresse e-mail invalide</strong>';
@@ -32,11 +32,13 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
             {
                 echo '<strong style=\'color:red;\'>L\'adresse mail est trop longue (50 caractères maximum)</strong>';
             }
-        ?>
+            ?>
+        </div>
 
-        <label>Nom d'utilisateur :</label>
-        <input type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?>>
-        <?php
+        <div class="FormDiv">
+            <label>Nom d'utilisateur :</label>
+            <input type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?>>
+            <?php
             if (in_array("username", $erreurTab))
             {
                 echo '<strong style=\'color:red;\'>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques</strong>';
@@ -49,33 +51,45 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
             {
                 echo '<strong style=\'color:red;\'>Le nom d\'utilisateur est trop long (20 caractères maximum)</strong>';
             }
-        ?>
+            ?>
+        </div>
 
-        <label>Mot de passe :</label>
-        <input type='password' name='password' required>
-        <?php
+        <div class="FormDiv">
+            <label>Mot de passe :</label>
+            <input type='password' name='password' required>
+            <?php
             if (in_array("password", $erreurTab)){
                 echo '<strong style=\'color:red;\'>Le mot de passe doit faire minimum 8 caractères</strong>';
             }
-        ?>
-        <label>Vérification du mot de passe :</label>
-        <input type='password' name='passwordMatch' required>
-        <?php
-        if (in_array("passwordMatch", $erreurTab)){
-            echo '<strong style=\'color:red;\'>Les mots de passe ne correspondent pas !</strong>';
-        }
-        ?>
+            ?>
+        </div>
 
+        <div class="FormDiv">
+            <label>Vérification du mot de passe :</label>
+            <input type='password' name='passwordMatch' required>
+            <?php
+            if (in_array("passwordMatch", $erreurTab)){
+                echo '<strong style=\'color:red;\'>Les mots de passe ne correspondent pas !</strong>';
+            }
+            ?>
+        </div>
 
-        <label>Nom d'affichage :</label><label style="color: red">(optionnel)</label>
-        <input type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
-        <button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
-        <?php
-        if (in_array("nameLong", $erreurTab))
-        {
-            echo '<strong style=\'color:red;\'>Le pseudo choisi est trop long (25 caractères maximum)</strong>';
-        }
-        ?>
+        <div class="FormDiv">
+            <label>Nom d'affichage :</label><label style="color: red">(optionnel)</label>
+            <input type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
+            <?php
+            if (in_array("nameLong", $erreurTab))
+            {
+                echo '<strong style=\'color:red;\'>Le pseudo choisi est trop long (25 caractères maximum)</strong>';
+            }
+            ?>
+        </div>
+
+        <div id="DivBas">
+            <img src="../../ressources/logo.png">
+            <button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
+        </div>
+
     </form>
 </body>
 <?php
