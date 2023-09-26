@@ -33,7 +33,17 @@
             }
             else
             {
-                echo '<label>C\'est bon</label>';
+                $query = 'SELECT id  FROM croustagrameur WHERE email=\'' . $username . '\'';
+                $dbResult = mysqli_query($dbLink, $query);
+
+                while($dbRow = mysqli_fetch_assoc($dbResult))
+                {
+                    $dbId = $dbRow;
+                }
+                session_start();
+                $_SESSION['username'] = $dbId['id'];
+                $_SESSION['suid'] = session_id();
+                header('Location: ../index.php');
             }
         }
         else
@@ -53,7 +63,10 @@
             }
             else
             {
-                echo '<label>C\'est bon</label>';
+                session_start();
+                $_SESSION['username'] = $username;
+                $_SESSION['suid'] = session_id();
+                header('Location: ../index.php');
             }
         }
         if (count($tabErreurs) !== 0)
