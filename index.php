@@ -6,6 +6,11 @@
 <!-- Contenu de la page -->
 <?php
     start_page('Croustagram - Accueil');
+    session_start();
+    if(isset($_SESSION['suid']))
+    {
+        echo '<label>Connecté en tant que :' . $_SESSION['username'] . '</label>';
+    }
     echo '<script>fermerPopup();</script>';
 ?>;
 
@@ -32,7 +37,7 @@ if ( strlen($_POST["contenu"]) > 0 ) {
 
     //Code d'insertion dans la BD
     $today = date('Y/m/d');
-    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("UtilisateurAnonyme", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", "' . $today . '", "aucune")';
+    $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categories) VALUES ("' . $_SESSION['username'] . '", "' . $_POST["titre"] . '", "' . $_POST["contenu"] . '", "' . $today . '", "aucune")';
 
     // Gestion d'erreur BD
     if(!($dbResult = mysqli_query($dbLink, $query)))

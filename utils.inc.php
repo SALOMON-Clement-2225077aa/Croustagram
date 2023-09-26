@@ -70,7 +70,6 @@
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
     {
 ?>
-<br><br><br><br>
 <div id="post">
     <table id="tabPost">
         <tr>

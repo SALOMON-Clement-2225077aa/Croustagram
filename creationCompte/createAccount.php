@@ -102,6 +102,8 @@
             echo '<strong>Requête : ' . $query . '</strong><br>';
             exit();
         }
+
+        header('Location: ../connexionCompte/pageConnexionCompte.php');
     }
     else {
         page_erreur();

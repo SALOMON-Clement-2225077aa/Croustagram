@@ -69,13 +69,13 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
 
         <label>Nom d'affichage :</label><label style="color: red">(optionnel)</label>
         <input type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
-        <button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
         <?php
         if (in_array("nameLong", $erreurTab))
         {
             echo '<strong style=\'color:red;\'>Le pseudo choisi est trop long (25 caractères maximum)</strong>';
         }
         ?>
+        <button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
     </form>
 </body>
 <?php
