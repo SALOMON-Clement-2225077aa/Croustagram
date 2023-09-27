@@ -23,7 +23,7 @@
         if(isset($_SESSION['suid']))
         {
             echo '<button onclick="ouvrirPost()"> Créer un croustapost </button>';
-            echo '<label style="right: 20; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
+            echo '<label style="right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
             echo '<button onclick="window.location.href = \'logout.php\';" style="margin-left: 10px"> Se déconnecter </button>';
         }
         else
