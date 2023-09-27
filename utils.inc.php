@@ -1,5 +1,6 @@
 <!-- Fonction start_page('titre') -->
 <?php
+    session_start();
     function start_page($title): void
     {
 
@@ -18,32 +19,25 @@
     <header>
         <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
         <h1 class="header">Croustagram</h1>
-        <button onclick="ouvrirPost()"> Créer un croustapost </button>
-        <button onclick="window.location.href = 'creationCompte/pageCreationCompte.php';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>
-        <button onclick="window.location.href = 'connexionCompte/pageConnexionCompte.php';" style="margin-left: 10px"> Se connecter à un compte </button>
+        <?php
+        if(isset($_SESSION['suid']))
+        {
+            echo '<button onclick="ouvrirPost()"> Créer un croustapost </button>';
+            echo '<label style="right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
+            echo '<button onclick="window.location.href = \'logout.php\';" style="margin-left: 10px"> Se déconnecter </button>';
+        }
+        else
+        {
+            echo '<button onclick="window.location.href = \'creationCompte/pageCreationCompte.php\';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>';
+            echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; position: fixed"> Se connecter à un compte </button>';
+        }
+        ?>
         <button onclick="window.location.href = 'MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
     </header>
 
     <section id="leaderboard">
         <h2>Leaderboard :</h2>
     </section>
-
-    <div id="body">
-        <section id="posts">
-            <article class="post">
-                <h2>aucun post</h2>
-            </article>
-        </section>
-
-    <section id="pointCpt">
-        <h2>Mes points crous : 0</h2>
-    </section>
-
-    <section id="ad">
-        <h3>your ad here</h3>
-    </section>
-
-    </body>
 <?php
     }
 ?>
@@ -70,7 +64,7 @@
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
     {
 ?>
-<div id="post">
+<div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
             <th><img src="ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>

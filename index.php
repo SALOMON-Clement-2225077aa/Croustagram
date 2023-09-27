@@ -6,11 +6,6 @@
 <!-- Contenu de la page -->
 <?php
     start_page('Croustagram - Accueil');
-    session_start();
-    if(isset($_SESSION['suid']))
-    {
-        echo '<label>Connecté en tant que :' . $_SESSION['username'] . '</label>';
-    }
     echo '<script>fermerPopup();</script>';
 ?>;
 
@@ -51,35 +46,49 @@ if(isset($_POST['contenu']) and strlen($_POST['contenu']) > 0){
     echo '<script>fermerPopup();</script>';
 
 }
-?>
 
+// Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
 
-<?php // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
+// Connexion à la base de donnée
+$dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+mysqli_select_db($dbLink , "croustagramadd_bdd")
+or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
-    // Connexion à la base de donnée
-    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-    mysqli_select_db($dbLink , "croustagramadd_bdd")
-    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+// Requête
+$result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
 
-    // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
+// Si la requête a marché on affiche les posts
+if ($result) {
+    ?>
+        <div style="display: inline-list-item; padding-left: 150px; padding-top: 80px;">
+            <section id="posts">
+                <article class="post">
+                    <h2>aucun post</h2>
+                </article>
+            </section>
 
-    // Si la requête a marché on affiche les posts
-    if ($result) {
-        // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-        while ($row = mysqli_fetch_assoc($result)) {
-            afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
-        }
-        // Libère la variable
-        mysqli_free_result($result);
+            <section id="pointCpt">
+                <h2>Mes points crous : 0</h2>
+            </section>
+
+            <section id="ad">
+                <h3>your ad here</h3>
+            </section>
+            <?php
+    // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+    while ($row = mysqli_fetch_assoc($result)) {
+        afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
     }
-    else {echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
-    }
-
-?>
-
+    // Libère la variable
+    mysqli_free_result($result);
+    ?>
+        </div>
 <?php
-    echo '<script>fermerPopup();</script>';
-    end_page();
+}
+else {echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+}
+
+echo '<script>fermerPopup();</script>';
+end_page();
 ?>
