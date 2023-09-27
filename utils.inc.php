@@ -38,23 +38,6 @@
     <section id="leaderboard">
         <h2>Leaderboard :</h2>
     </section>
-
-    <div id="body">
-        <section id="posts">
-            <article class="post">
-                <h2>aucun post</h2>
-            </article>
-        </section>
-
-    <section id="pointCpt">
-        <h2>Mes points crous : 0</h2>
-    </section>
-
-    <section id="ad">
-        <h3>your ad here</h3>
-    </section>
-
-    </body>
 <?php
     }
 ?>
@@ -81,7 +64,7 @@
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
     {
 ?>
-<div id="post">
+<div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
             <th><img src="ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
