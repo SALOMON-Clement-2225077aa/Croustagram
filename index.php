@@ -5,6 +5,7 @@
 
 <!-- Contenu de la page -->
 <?php
+    session_start();
     start_page('Croustagram - Accueil');
     echo '<script>fermerPopup();</script>';
 ?>;
