@@ -1,6 +1,7 @@
 <?php
 
 require 'creationCompte/utils.createaccount.php';
+require 'MobileView/utils.inc.php';
 
 ?>
     <!DOCTYPE html>
@@ -13,13 +14,11 @@ require 'creationCompte/utils.createaccount.php';
         <link rel="stylesheet" href="style.css">
         <title>Croustagram</title>
     </head>
-    <body>
-        <div id="BoxMilieu">
+    <?php start_page('Nouveau compte'); ?>
             <?php
             account_page();
             ?>
-        </div>
-    </body>
+    <?php end_page('Nouveau compte'); ?>
 <?php
 
 ?>

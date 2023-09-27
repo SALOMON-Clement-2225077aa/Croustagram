@@ -1,6 +1,6 @@
 <?php
 
-    require '../utils.inc.php';
+    require 'MobileView/utils.inc.php';
     start_page('Fil d\'actualité');
 
 ?>

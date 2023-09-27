@@ -1,0 +1,210 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #d9d9d9;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#DivLogoBarre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Logo {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+#DivBarreRecherche {
+    display: flex;
+    align-items: center;
+    margin-right: 75px;
+    background-size: contain;
+    background-color: white;
+    border-style: solid;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#Recherche {
+    height: 51.2px;
+    width: 51.2px;
+    background-image: url("../../ressources/loupe.png");
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#BarreRecherche {
+    height: 51.2px;
+    width: 400px;
+    border: none;
+    font-size: 35px;
+}
+
+#EffacerRecherche {
+    background-image: url("../../ressources/croix.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#FiltrerRecherche {
+    background-image: url("../../ressources/filtre.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#PageTitre {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+    margin-bottom: 0;
+}
+
+#ContenuPage {
+    position: fixed;
+    top: 330px;
+    padding-bottom: 150px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#BoxMilieu {
+    padding: 50px;
+    position: fixed;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid;
+    border-radius: 100px;
+}
+
+#FormTitre {
+    font-size: 40px;
+
+    margin-bottom: 100px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+}
+
+
+
+.FormDiv {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    margin: 10px;
+}
+
+label {
+    font-size: 30px;
+}
+
+input {
+    height: 51.2px;
+    width: 400px;
+    border: solid;
+    font-size: 35px;
+}
+
+#DivBas {
+    width: 100%;
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+}
+
+button {
+    border-radius: 40%;
+    border: solid;
+    height: 100px;
+    width: 300px;
+    font-size: 30px;
+}
+
+footer {
+    margin-top: 20px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    border-top-style: solid;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: space-around;
+}
+
+#BoutonHome {
+    background-image: url("../../ressources/home.png");
+    background-size: 100%;
+    background-position: center;
+    height: 102.4px;
+    width: 102.4px;
+    border: none;
+    background-color: #d9d9d9;
+    margin: 20px;
+}
+
+#BoutonLeaderboard {
+    background-image: url("../../ressources/leaderboard.png");
+    background-size: 100%;
+    background-position: center;
+    height: 102.4px;
+    width: 102.4px;
+    border: none;
+    background-color: #d9d9d9;
+    margin: 20px;
+}
+
+#BoutonProfil {
+    background-image: url("../../ressources/profil_red.png");
+    background-size: 100%;
+    background-position: center;
+    height: 102.4px;
+    width: 102.4px;
+    border: none;
+    background-color: #d9d9d9;
+    margin: 20px;
+}

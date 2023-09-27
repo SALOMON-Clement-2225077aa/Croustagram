@@ -28,7 +28,7 @@ function start_page($title) :void
                     <button id="FiltrerRecherche" onclick=""></button>
                 </div>
             </div>
-            <h1><?php echo $title ?></h1>
+            <h1 id="PageTitre"><?php echo $title ?></h1>
         </header>
     <?php
 }
@@ -41,7 +41,7 @@ function end_page($title): void
         <footer>
             <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
             <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
-            <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../CreationComptePage/index.php';"></button>
         </footer>
     </body>
     <?php
