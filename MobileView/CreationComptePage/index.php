@@ -1,6 +1,6 @@
 <?php
 
-require 'creationCompte/utils.createaccount.php';
+require '../utils.createaccount.php';
 require 'MobileView/utils.inc.php';
 
 ?>
