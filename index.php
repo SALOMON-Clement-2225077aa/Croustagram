@@ -26,7 +26,8 @@
 
 <!-- Ajout du post dans la BdD -->
 <?php
-if ( strlen($_POST["contenu"]) > 0 ) {
+if(isset($_POST['contenu']) and strlen($_POST['contenu']) > 0){
+
     $date = date("d/m/y H:i");
 
     // Connexion à la base de donnée
