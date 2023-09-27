@@ -102,8 +102,10 @@
             echo '<strong>Requête : ' . $query . '</strong><br>';
             exit();
         }
-
-        header('Location: ../connexionCompte/pageConnexionCompte.php');
+        session_start();
+        $_SESSION['username'] = $username;
+        $_SESSION['suid'] = session_id();
+        header('Location: ../index.php');
     }
     else {
         page_erreur();

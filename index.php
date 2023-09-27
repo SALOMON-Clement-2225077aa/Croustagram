@@ -6,11 +6,6 @@
 <!-- Contenu de la page -->
 <?php
     start_page('Croustagram - Accueil');
-    session_start();
-    if(isset($_SESSION['suid']))
-    {
-        echo '<label>Connecté en tant que :' . $_SESSION['username'] . '</label>';
-    }
     echo '<script>fermerPopup();</script>';
 ?>;
 
