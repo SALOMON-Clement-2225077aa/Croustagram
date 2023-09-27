@@ -91,11 +91,11 @@ button {
 #ContenuPage {
     position: fixed;
     top: 330px;
-    padding-bottom: 150px;
-    display: block;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
+    height: 75%;
 }
 
 #BoxMilieu {
