@@ -1,7 +1,7 @@
 <?php
 
 require '../../creationCompte/utils.createaccount.php';
-require 'MobileView/utils.inc.php';
+require '../utils.inc.php';
 
 ?>
     <!DOCTYPE html>
