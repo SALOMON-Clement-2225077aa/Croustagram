@@ -15,7 +15,7 @@ function start_page($title) :void
         <link rel="icon" href="/ressources/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Mobile">
         <link rel="stylesheet" href="style.css">
-        <title>Croustagram</title>
+        <title><?php echo 'Croustagram - '.$title?></title>
     </head>
     <body>
         <header>
@@ -41,7 +41,7 @@ function end_page($title): void
         <footer>
             <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
             <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
-            <button id="BoutonProfil" onclick="window.location.href='../CreationComptePage/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../ConnexionPage/index.php';"></button>
         </footer>
     </body>
     <?php
