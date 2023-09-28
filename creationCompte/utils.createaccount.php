@@ -89,7 +89,7 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
 
                 <div id="DivBas">
                     <img src="../../ressources/logo.png">
-                    <button type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
+                    <button id="FormBouton" type="submit" value="mailer" name="action">Rejoindre Croustagram !</button>
                 </div>
 
             </form>
