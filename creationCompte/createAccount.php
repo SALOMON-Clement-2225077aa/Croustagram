@@ -1,11 +1,10 @@
 <?php
     require 'utils.createaccount.php';
-    $action = $_POST['action'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $name = $_POST['name'];
-    $mail = $_POST['mail'];
-    $passwordMatch = $_POST['passwordMatch'];
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    $name = htmlspecialchars($_POST['name']);
+    $mail = htmlspecialchars($_POST['mail']);
+    $passwordMatch = htmlspecialchars($_POST['passwordMatch']);
 
     $tabErreur = array();
 

@@ -1,8 +1,8 @@
 <?php
     require 'utils.connectaccount.php';
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
     $dbPassword = NULL;
 
     $tabErreurs = array();
