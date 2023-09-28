@@ -1,6 +1,6 @@
 <?php
 
-require "../../utils.connectaccount.php";
+require "../../connexionCompte/utils.connectaccount.php";
 require "../utils.inc.php";
 
 start_page('Connexion');
