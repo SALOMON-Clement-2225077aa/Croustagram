@@ -96,7 +96,7 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous, $idPost): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
     {
 ?>
 <form action="../managePost/pagePost.php" >
@@ -121,7 +121,7 @@
                 <button onclick="upVote()"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
                 <button onclick="downVote()"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
-            <th> <?php echo $categorie ?> </th>
+            <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
                     <img src="../ressources/commentaire.png" id="imgProfil">
