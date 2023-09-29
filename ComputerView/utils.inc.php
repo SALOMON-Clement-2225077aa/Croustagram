@@ -69,13 +69,14 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous, $idPost): void
     {
 ?>
+<form action="../managePost/pagePost.php" >
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
+            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -94,10 +95,15 @@
                 <button onclick="downVote" id="Vote"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <th> <?php echo $categorie ?> </th>
-            <th><img src="../ressources/commentaire.png" id="imgProfil"></th>
+            <th>
+                <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
+                    <img src="../ressources/commentaire.png" id="imgProfil">
+                </a>
+            </th>
         </tr>
     </table>
 </div>
+</form>
 <?php
 }
 }
