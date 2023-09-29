@@ -69,8 +69,14 @@ function end_page($title): void
         </tr>
         <tr>
             <th colspan="3"><?php
-                echo '<h2>' . $message . '</h2>';
-                ?></th>
+
+                for ($i=0; $i<strlen($message); $i=$i+30) {
+                    ?>
+                    <h2> <?php echo substr($message, $i, $i+30); ?> </h2><br> <?php
+                }
+                ?>
+
+                </th>
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
@@ -82,6 +88,22 @@ function end_page($title): void
         </tr>
     </table>
 </div>
+<?php
+}
+?>
+<!---------------------->
+
+
+<!-- Afficher un user -->
+<?php
+function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
+    <div id="User">
+        <img src="../../ressources/profil.png" id="imgProfil">
+        <div>
+            <th><?php echo $pseudo ?></th>
+            <th><br><?php echo $ptsCrous ?></th>
+        </div>
+    </div>
 <?php
 }
 ?>
