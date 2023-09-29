@@ -38,11 +38,10 @@
         }
         else
         {
-            echo '<button onclick="window.location.href = \'creationCompte/pageCreationCompte.php\';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>';
-            echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; position: fixed"> Se connecter à un compte </button>';
+            echo '<button onclick="window.location.href = \'creationCompte/pageCreationCompte.php\';" style="right: 10px; top: 20px; position: fixed"> Rejoindre la croustagrammance </button>';
+            echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte </button>';
         }
         ?>
-        <button onclick="window.location.href = '../MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
     </header>
 
     <section id="leaderboard">
