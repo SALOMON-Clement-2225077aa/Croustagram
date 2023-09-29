@@ -7,6 +7,8 @@
 
     <div id="ContenuPage">
 
+        <button id="BoutonCreerPost"></button>
+
         <?php // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
 
         // Connexion à la base de donnée

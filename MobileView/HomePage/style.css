@@ -95,6 +95,20 @@ h1 {
     padding-bottom: 150px;
 }
 
+#BoutonCreerPost {
+    position: fixed;
+    background-image: url("../../ressources/plus.png");
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    height: 102.4px;
+    width: 102.4px;
+    border: solid;
+    background-color: #d9d9d9;
+    margin: 20px;
+    border-radius: 50px;
+}
+
 footer {
     margin-top: 20px;
     bottom: 0;
@@ -150,4 +164,37 @@ footer {
 #imgProfil {
     border-radius: 50%;
     width: 50px;
+}
+
+#UpVoteBouton {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../ressources/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#DownVoteBouton {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../ressources/fleche-vers-le-bas.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#CommentaireBouton {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../ressources/commentaire.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
 }

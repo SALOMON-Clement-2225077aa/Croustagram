@@ -72,11 +72,11 @@ function end_page($title): void
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <img src="../../ressources/fleche-vers-le-haut.png" id="imgProfil">
-                <img src="../../ressources/fleche-vers-le-bas.png" id="imgProfil">
+                <button id="UpVoteBouton">
+                <button id="DownVoteBouton">
             </th>
             <th> <?php echo $categorie ?> </th>
-            <th><img src="../../ressources/commentaire.png" id="imgProfil"></th>
+            <th><button id="CommentaireBouton"></th>
         </tr>
     </table>
 </div>
