@@ -105,6 +105,7 @@
         $_SESSION['username'] = $username;
         $_SESSION['suid'] = session_id();
         header('Location: ../index.php');
+        exit();
     }
     else {
         page_erreur();

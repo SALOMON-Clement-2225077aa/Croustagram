@@ -67,6 +67,7 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['suid'] = session_id();
                 header('Location: ../index.php');
+                exit();
             }
         }
         if (count($tabErreurs) !== 0)
