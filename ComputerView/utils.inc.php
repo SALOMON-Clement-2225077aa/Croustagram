@@ -13,7 +13,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
-        <link rel="icon" href="/ressources/logo.png" />
+        <link rel="icon" href="../ressources/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Dekstop">
         <link rel="stylesheet" href="style.css">
         <title><?php echo $title; ?></title>
@@ -22,7 +22,7 @@
     <body>
     <header>
         <div id="divLogo">
-            <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+            <img class="header" id="logo" src="../ressources/logo.png">
             <h1 class="header">Croustagram</h1>
         </div>
         <div class="header" id="DivLogoBarre">
@@ -141,7 +141,7 @@
 <?php
 function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
     <div id="User">
-        <img src="../../ressources/profil.png" id="imgProfil">
+        <img src="../ressources/profil.png" id="imgProfil">
         <div>
             <th><?php echo $pseudo ?></th>
             <th><br><?php echo $ptsCrous ?></th>
