@@ -52,7 +52,7 @@ function end_page($title): void
 
 <!-- Afficher un post --> 
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
     {
 ?>
 <br><br><br><br>
@@ -83,7 +83,7 @@ function end_page($title): void
                 <button onclick="upVote()" id="UpVoteBouton">
                 <button onclick="downVote()" id="DownVoteBouton">
             </th>
-            <th> <?php echo $categorie ?> </th>
+            <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th><button id="CommentaireBouton"></th>
         </tr>
     </table>
