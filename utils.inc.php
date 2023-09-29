@@ -18,7 +18,13 @@
     <body>
     <header>
         <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
-        <h1 class="header">Croustagram</h1>
+        <div class="header" id="DivLogoBarre">
+            <div id="DivBarreRecherche">
+                <button id="Recherche" onclick=""></button>
+                <input id="BarreRecherche" type="text">
+                <button id="EffacerRecherche" onclick=""></button>
+                <button id="FiltrerRecherche" onclick=""></button>
+            </div>
         <?php
         if(isset($_SESSION['suid']))
         {

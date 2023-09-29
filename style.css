@@ -88,3 +88,57 @@ header {
     position: absolute;
     display: grid;
 }
+
+#DivBarreRecherche {
+    display: flex;
+    align-items: center;
+    margin-right: 75px;
+    background-size: contain;
+    background-color: white;
+    border-style: solid;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#Recherche {
+    height: 30px;
+    width: 30px;
+    background-image: url("/ressources/loupe.png");
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#BarreRecherche {
+    height: 30px;
+    width: 400px;
+    border: none;
+    font-size: 35px;
+}
+
+#EffacerRecherche {
+    background-image: url("/ressources/croix.png");
+    height: 30px;
+    width: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+
+#FiltrerRecherche {
+    background-image: url("/ressources/filtre.png");
+    height: 30px;
+    width: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
