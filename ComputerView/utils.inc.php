@@ -1,7 +1,7 @@
 <!-- Fonction start_page('titre') -->
 <?php
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    if($isMob){header("Location: MobileView/HomePage/index.php");}
+    if($isMob){header("Location: ../MobileView/HomePage/index.php");}
     else
     {
     session_start();
