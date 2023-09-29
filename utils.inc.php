@@ -1,5 +1,9 @@
 <!-- Fonction start_page('titre') -->
 <?php
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+    if($isMob){header("Location: MobileView/HomePage/index.php");}
+    else
+    {
     session_start();
     function start_page($title): void
     {
@@ -58,14 +62,14 @@
     <html lang='fr'>
     <body>
     </body>
-<?php 
+<?php
     }
 ?>
 <!---------------------->
 
 
 
-<!-- Afficher un post --> 
+<!-- Afficher un post -->
 <?php
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
     {
@@ -97,6 +101,7 @@
     </table>
 </div>
 <?php
+}
 }
 ?>
 <!---------------------->
