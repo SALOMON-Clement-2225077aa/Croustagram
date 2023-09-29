@@ -24,7 +24,7 @@
         if ($result) {
             // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
             while ($row = mysqli_fetch_assoc($result)) {
-                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
+                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id']);
             }
             // Libère la variable
             mysqli_free_result($result);
