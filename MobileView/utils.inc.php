@@ -7,7 +7,7 @@
 function start_page($title) :void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    if(!$isMob){header("Location: ../index.php");}
+    if(!$isMob){header("Location: ../../ComputerView/index.php");}
     ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -74,8 +74,8 @@ function end_page($title): void
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <button id="UpVoteBouton">
-                <button id="DownVoteBouton">
+                <button onclick="upVote()" id="UpVoteBouton">
+                <button onclick="downVote()" id="DownVoteBouton">
             </th>
             <th> <?php echo $categorie ?> </th>
             <th><button id="CommentaireBouton"></th>

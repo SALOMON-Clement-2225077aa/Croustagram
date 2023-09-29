@@ -1,7 +1,7 @@
 <!-- Fonction start_page('titre') -->
 <?php
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    if($isMob){header("Location: MobileView/HomePage/index.php");}
+    if($isMob){header("Location: ../MobileView/HomePage/index.php");}
     else
     {
     session_start();
@@ -21,7 +21,10 @@
 
     <body>
     <header>
-        <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+        <div id="divLogo">
+            <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+            <h1 class="header">Croustagram</h1>
+        </div>
         <div class="header" id="DivLogoBarre">
             <div id="DivBarreRecherche">
                 <button id="Recherche" onclick=""></button>
@@ -32,7 +35,7 @@
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()" style="left:650px; top:50px; position:fixed"> Créer un croustapost </button>';
+            echo '<button onclick="ouvrirPost()" style="left:850px; top:50px; position:fixed"> Créer un croustapost </button>';
             echo '<label style="top: 40px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
             echo '<button onclick="window.location.href = \'logout.php\';" style="right: 10px; top: 60px; position: fixed"> Se déconnecter </button>';
         }
