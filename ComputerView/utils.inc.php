@@ -21,7 +21,10 @@
 
     <body>
     <header>
-        <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+        <div id="divLogo">
+            <img class="header" id="logo" src="/recources/1349px-Logo_Crous_vectorisé.svg.png">
+            <h1 class="header">Croustagram</h1>
+        </div>
         <div class="header" id="DivLogoBarre">
             <div id="DivBarreRecherche">
                 <button id="Recherche" onclick=""></button>
@@ -32,7 +35,7 @@
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()" style="left:650px; top:50px; position:fixed"> Créer un croustapost </button>';
+            echo '<button onclick="ouvrirPost()" style="left:850px; top:50px; position:fixed"> Créer un croustapost </button>';
             echo '<label style="top: 40px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
             echo '<button onclick="window.location.href = \'logout.php\';" style="right: 10px; top: 60px; position: fixed"> Se déconnecter </button>';
         }
@@ -69,13 +72,14 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous, $idPost): void
     {
 ?>
+<form action="../managePost/pagePost.php" >
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
+            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -94,10 +98,15 @@
                 <button onclick="downVote()"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <th> <?php echo $categorie ?> </th>
-            <th><img src="../ressources/commentaire.png" id="imgProfil"></th>
+            <th>
+                <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
+                    <img src="../ressources/commentaire.png" id="imgProfil">
+                </a>
+            </th>
         </tr>
     </table>
 </div>
+</form>
 <?php
 }
 }

@@ -7,7 +7,11 @@ body{
 #logo{
     max-width : 60px;
     max-height: 60px;
-
+}
+#divLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 textarea {
@@ -16,6 +20,7 @@ textarea {
 
 h1 {
     color: black;
+    font-family: Arial;
 }
 h2 {
     color: black;
@@ -65,7 +70,7 @@ header {
     background-color: #d9d9d9;
     position: fixed;
     left: 0;
-    top: 85.5px;
+    top: 101px;
     border-right: solid;
     height: 100%;
 }
@@ -97,7 +102,9 @@ header {
     background-color: white;
     border-style: solid;
     justify-content: space-around;
-    padding: 15px;
+    padding: 3px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     border-radius: 15px;
 }
 
