@@ -158,7 +158,7 @@ img {
 }
 
 #FormBouton {
-    border-radius: 40%;
+    border-radius: 50px / 50px;
     border: solid;
     height: 100px;
     width: 300px;
