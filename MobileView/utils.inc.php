@@ -69,8 +69,14 @@ function end_page($title): void
         </tr>
         <tr>
             <th colspan="3"><?php
-                echo '<h2>' . $message . '</h2>';
-                ?></th>
+
+                for ($i=0; $i<strlen($message); $i=$i+30) {
+                    ?>
+                    <h2> <?php echo substr($message, $i, $i+30); ?> </h2><br> <?php
+                }
+                ?>
+
+                </th>
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
