@@ -36,7 +36,7 @@
                         ?>
                     </form>
                     <h1 id="PasDeCompte">Pas de compte ?</h1>
-                    <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
+                    <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
                 </div>
             </div>
         </body>

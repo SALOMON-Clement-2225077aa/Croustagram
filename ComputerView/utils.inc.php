@@ -32,17 +32,15 @@
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()"> Créer un croustapost </button>';
-            echo '<label style="right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
-            echo '<button onclick="window.location.href = \'logout.php\';" style="margin-left: 10px"> Se déconnecter </button>';
+            echo '<button onclick="ouvrirPost()" style="left:650px; top:50px; position:fixed"> Créer un croustapost </button>';
+            echo '<label style="top: 40px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
+            echo '<button onclick="window.location.href = \'logout.php\';" style="right: 10px; top: 60px; position: fixed"> Se déconnecter </button>';
         }
         else
         {
-            echo '<button onclick="window.location.href = \'creationCompte/pageCreationCompte.php\';" style="margin-left: 10px"> Rejoindre la croustagrammance </button>';
-            echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; position: fixed"> Se connecter à un compte </button>';
+            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
         }
         ?>
-        <button onclick="window.location.href = '../MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
     </header>
 
     <section id="leaderboard">
@@ -92,8 +90,8 @@
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil">
-                <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil">
+                <button onclick="upVote" id="Vote"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
+                <button onclick="downVote" id="Vote"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <th> <?php echo $categorie ?> </th>
             <th><img src="../ressources/commentaire.png" id="imgProfil"></th>
