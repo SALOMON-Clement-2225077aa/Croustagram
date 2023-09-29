@@ -16,10 +16,17 @@
     if($result)
     {
         $row = mysqli_fetch_array($result);
-        afficher_unique_post($row['titre'], $row['message'], $row['croustagrameur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
+        if(isset($row['categories']))
+        {
+            afficher_unique_post($row['titre'], $row['message'], $row['croustagrameur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
+        }
+        else
+        {
+            afficher_unique_post($row['titre'], $row['message'], $row['croustagrameur_id'], $row['date'], $row['ptsCrous'], NULL);
+        }
     }
 
-    ?>
+?>
     <h2>Commentaires :</h2>
 <?php
 
@@ -34,12 +41,11 @@
     // Requête
     $result = mysqli_query($dbLink, 'SELECT * FROM croustacomm WHERE croustapost_id = \'' . $_GET['id'] . '\'');
 
-    if($result)
-    {
-        $row = mysqli_fetch_array($result);
-        afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous']);
-    }   //afficher_unique_comm($contenu, $auteur, $date, $ptsCrous)
-
+    if($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous']);
+        }
+    }
     ?>
 
 <?php
@@ -53,4 +59,3 @@
     </form>
 <?php
     }
-
