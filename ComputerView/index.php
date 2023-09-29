@@ -80,14 +80,14 @@ if(isset($_POST['contenu']) and strlen($_POST['contenu']) > 0){
             <section id="ad">
                 <h3>your ad here</h3>
             </section>
-            <?php
+        <?php
             // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
             while ($row = mysqli_fetch_assoc($result)) {
                 afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
             }
             // Libère la variable
             mysqli_free_result($result);
-            ?>
+        ?>
         </div>
 
 <?php

@@ -6,8 +6,8 @@ function fermerPopup() {
 }
 
 function upVote() {
-
+    popup.style.display = 'block';
 }
 function downVote() {
-
+    popup.style.display = 'block';
 }

@@ -33,7 +33,6 @@
             echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
         }
         ?>
-
     </div>
 
 
