@@ -1,5 +1,6 @@
 <?php
     require 'post.php';
+    session_start();
 
     // Affichage du poste
 
@@ -15,8 +16,12 @@
     if($result)
     {
         $row = mysqli_fetch_array($result);
-        afficher_unique_post($row['titre'], $row['message'], $row['croustagrammeur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
+        afficher_unique_post($row['titre'], $row['message'], $row['croustagrameur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
     }
+
+    ?>
+    <h2>Commentaires :</h2>
+<?php
 
     // Affichage des commentaires
 
@@ -32,5 +37,20 @@
     if($result)
     {
         $row = mysqli_fetch_array($result);
-        afficher_unique_post($row['titre'], $row['message'], $row['croustagrammeur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
+        afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous']);
+    }   //afficher_unique_comm($contenu, $auteur, $date, $ptsCrous)
+
+    ?>
+
+<?php
+    if(isset($_SESSION['suid']))
+    {
+?>
+    <form method="post" action="addComment.php">
+        <label>Ajouter un commentaire :</label><br>
+        <textarea name="commentContent" placeholder="Contenu du commentaire" rows="6" cols="50" required style="resize: none"></textarea>
+        <br><button type="submit">Commenter</button>
+    </form>
+<?php
     }
+
