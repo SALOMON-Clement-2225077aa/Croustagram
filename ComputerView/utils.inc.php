@@ -38,8 +38,8 @@
         }
         else
         {
-            echo '<button onclick="window.location.href = \'creationCompte/pageCreationCompte.php\';" style="right: 10px; top: 20px; position: fixed"> Rejoindre la croustagrammance </button>';
-            echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte </button>';
+            echo '<button onclick="window.location.href = \'../creationCompte/pageCreationCompte.php\';" style="right: 10px; top: 20px; position: fixed"> Rejoindre la croustagrammance </button>';
+            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte </button>';
         }
         ?>
     </header>
