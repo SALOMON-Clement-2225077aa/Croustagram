@@ -90,8 +90,8 @@
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil">
-                <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil">
+                <button onclick="upVote"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
+                <button onclick="downVote"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <th> <?php echo $categorie ?> </th>
             <th><img src="../ressources/commentaire.png" id="imgProfil"></th>
