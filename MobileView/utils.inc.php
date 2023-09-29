@@ -68,14 +68,8 @@ function end_page($title): void
             ?></th>
         </tr>
         <tr>
-            <th colspan="3"><?php
-
-                for ($i=0; $i<strlen($message); $i=$i+30) {
-                    ?>
-                    <h2> <?php echo substr($message, $i, $i+30); ?> </h2><br> <?php
-                }
-                ?>
-
+            <th colspan="3">
+                    <h2> <?php echo $message ?> </h2>
                 </th>
         </tr>
         <tr>
