@@ -66,19 +66,36 @@ if ( strlen($_POST["contenu"]) > 0) {
 
     // Si la requête a marché on affiche les posts
     if ($result) {
-        // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-        while ($row = mysqli_fetch_assoc($result)) {
-            afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
-        }
-        // Libère la variable
-        mysqli_free_result($result);
-    }
-    else {echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
-    }
+        ?>
+        <div style="display: inline-list-item; padding-left: 150px; padding-top: 80px;">
+            <section id="posts">
+                <article class="post">
+                    <h2>aucun post</h2>
+                </article>
+            </section>
+            <section id="pointCpt">
+                <h2>Mes points crous : 0</h2>
+            </section>
 
-?>
+            <section id="ad">
+                <h3>your ad here</h3>
+            </section>
+            <?php
+            // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+            while ($row = mysqli_fetch_assoc($result)) {
+                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categories'], $row['ptsCrous']);
+            }
+            // Libère la variable
+            mysqli_free_result($result);
+            ?>
+        </div>
 
 <?php
+    }
+    else
+    {
+        echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+    }
     echo '<script>fermerPopup();</script>';
     end_page();
 ?>
