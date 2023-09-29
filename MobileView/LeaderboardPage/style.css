@@ -138,3 +138,15 @@ footer {
     top: 330px;
     padding-bottom: 150px;
 }
+
+#imgProfil {
+    border-radius: 50%;
+    width: 75px;
+}
+
+#User {
+    display: flex;
+    position: relative;
+    top: 330px;
+    padding-bottom: 150px;
+}

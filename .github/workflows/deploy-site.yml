@@ -15,6 +15,6 @@ jobs:
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp-croustagramadd.alwaysdata.net
-          username: croustagramadd_deploy
+          server: ftp-thecroustagram.alwaysdata.net
+          username: thecroustagram_deploy
           password: ${{ secrets.ftp_password }}

@@ -92,3 +92,19 @@ function end_page($title): void
 }
 ?>
 <!---------------------->
+
+
+<!-- Afficher un user -->
+<?php
+function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
+    <div id="User">
+        <img src="../../ressources/profil.png" id="imgProfil">
+        <div>
+            <th><?php echo $pseudo ?></th>
+            <th><br><?php echo $ptsCrous ?></th>
+        </div>
+    </div>
+<?php
+}
+?>
+<!---------------------->
