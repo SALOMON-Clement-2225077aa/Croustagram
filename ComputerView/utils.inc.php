@@ -42,7 +42,7 @@
             echo '<button onclick="window.location.href = \'connexionCompte/pageConnexionCompte.php\';" style="right: 20px; position: fixed"> Se connecter à un compte </button>';
         }
         ?>
-        <button onclick="window.location.href = 'MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
+        <button onclick="window.location.href = '../MobileView/HomePage/index.php';" style="margin-left: 10px"> Accéder à la version mobile </button>
     </header>
 
     <section id="leaderboard">
@@ -77,7 +77,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
+            <th><img src="../ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -92,11 +92,11 @@
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <img src="ressources/fleche-vers-le-haut.png" id="imgProfil">
-                <img src="ressources/fleche-vers-le-bas.png" id="imgProfil">
+                <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil">
+                <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil">
             </th>
             <th> <?php echo $categorie ?> </th>
-            <th><img src="ressources/commentaire.png" id="imgProfil"></th>
+            <th><img src="../ressources/commentaire.png" id="imgProfil"></th>
         </tr>
     </table>
 </div>

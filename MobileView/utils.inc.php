@@ -39,9 +39,9 @@ function end_page($title): void
     <!DOCTYPE html>
     <html lang="fr">
         <footer>
-            <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
-            <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
-            <button id="BoutonProfil" onclick="window.location.href='../ConnexionPage/index.php';"></button>
+            <button id="BoutonHome" onclick="window.location.href='../ComputerView/index.php';"></button>
+            <button id="BoutonLeaderboard" onclick="window.location.href='../ComputerView/index.php';"></button>
+            <button id="BoutonProfil" onclick="window.location.href='../ComputerView/index.php';"></button>
         </footer>
     </body>
     <?php
