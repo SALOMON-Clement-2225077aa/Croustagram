@@ -1,3 +1,5 @@
+<script src="script.js"></script>
+
 <?php
 
     require '../utils.inc.php';
@@ -5,9 +7,22 @@
 
 ?>
 
+
     <div id="ContenuPage">
 
-        <button id="BoutonCreerPost"></button>
+        <button id="BoutonCreerPost" onclick="ouvrirPopup()"></button>
+
+        <!-- Ajout du popup -->
+        <div id="popup">
+            <button id="fermerPopup" onclick="fermerPopup()">X</button>
+            <form action="index.php" method="post">
+                <input type="text" name="titre" placeholder="Titre du post" required><br>
+                <textarea name="contenu" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
+                <input type="submit" value="Créer">
+            </form>
+        </div>
+        <script>fermerPopup();</script>
+        
 
         <?php // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
 
