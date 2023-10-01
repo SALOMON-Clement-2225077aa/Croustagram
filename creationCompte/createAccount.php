@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="../ComputerView/style.css">
 <?php
     require 'utils.createaccount.php';
     $username = htmlspecialchars($_POST['username']);
