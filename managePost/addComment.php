@@ -19,5 +19,9 @@
         // Affiche la requête envoyée.
         echo '<strong>Requête : ' . $query . '</strong><br>';
         exit();
-    };
+    }
+    else
+    {
+        header("Location: pagePost.php?id=" . $_GET['id']);
+    }
 
