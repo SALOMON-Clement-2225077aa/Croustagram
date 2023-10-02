@@ -98,7 +98,7 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
     {
 ?>
 <form action="../managePost/pagePost.php" >
@@ -126,7 +126,7 @@
             <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
-                    <img src="../ressources/commentaire.png" id="imgProfil">
+                    <img src="../ressources/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                 </a>
             </th>
         </tr>
