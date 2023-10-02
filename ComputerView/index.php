@@ -57,7 +57,7 @@
             </article>
             <div>
                 <section id="pointCpt">
-                    <h2>Mes points crous : 0</h2>
+                    <h2 style="font-size: 40px;">Mes points crous<br>0</h2>
                 </section>
 
                 <section id="ad">

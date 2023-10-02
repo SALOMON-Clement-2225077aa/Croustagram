@@ -1,7 +1,5 @@
 body{
     margin: 0px;
-    font-family: "Source Sans Pro";
-
 }
 
 #logo{
@@ -18,7 +16,7 @@ textarea {
     resize: none;
 }
 
-h1 {
+h1, h2, h3 {
     color: black;
     font-family: Arial;
 }
@@ -92,20 +90,31 @@ header {
     display: flex;
     justify-content: space-between;
     padding-right: 20px;
-    padding-left: 200px;
-    padding-top: 100px;
+    padding-left: 250px;
+    padding-top: 125px;
 }
 
 #pointCpt{
     background-color: lightcoral;
-    height: 300px;
+    position: fixed;
+    left: 1100px;
+    top: 150px;
+    height: 150px;
     width: 500px;
+
+    text-align: center;
+    font-size: 50px;
 }
 
 #ad{
     background-color: aquamarine;
-    height: 300px;
+    position: fixed;
+    left: 1100px;
+    top: 350px;
+    height: 500px;
     width: 500px;
+
+    text-align: center;
 }
 
 #imgProfil{
