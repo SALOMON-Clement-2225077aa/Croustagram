@@ -1,18 +1,4 @@
-<!-- filtrer les post selon la recherche actuelle -->
-<?php
-function recherche_post($text): string{
-	if (empty($text)){
-		return "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
-	}
-	else{
-		return "SELECT * 
-                FROM croustapost 
-                WHERE message like '%$text%'
-                ORDER BY ptsCrous DESC ";
-	}
-}
-?>
-<!--------------------------------->
+
 
 <!-- Fonction start_page('titre') -->
 <?php
@@ -112,14 +98,14 @@ function recherche_post($text): string{
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
     {
 ?>
 <form action="../managePost/pagePost.php" >
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil" ><?php echo '<h2>' . $croustagrameur . '</h2>'?></th>
+            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -134,17 +120,13 @@ function recherche_post($text): string{
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <form action="../managePost/Vote.php" method="post">
-                    <button type="submit" name="upVote"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
-                </form>
-                <form>
-                    <button type="submit" name="downVote">  <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
-                </form>
+                <button onclick="upVote()"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
+                <button onclick="downVote()"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
-                    <img src="../ressources/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
+                    <img src="../ressources/commentaire.png" id="imgProfil">
                 </a>
             </th>
         </tr>
@@ -171,3 +153,24 @@ function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous
 }
 ?>
 <!---------------------->
+
+<!-- filtrer les post selon la recherche actuelle -->
+<?php
+function recherche_post($text): string{
+	if (empty($text)){
+		return "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
+	}
+	else{
+		return "SELECT DISTINCT cp.id, cp.croustagrameur_id, cp.titre, cp.message, cp.date, cp.categorie1, cp.categorie2, cp.categorie3, cp.ptsCrous
+                FROM croustapost cp, croustacomm cm, croustegorie cg
+                WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%')
+                    OR (cp.message LIKE '%$text%' 
+                        OR cp.titre LIKE '%$text%')
+                    OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3)
+                        AND (cg.libelle LIKE '%$text%' OR cg.description LIKE '%$text%'))
+                ORDER BY cp.ptsCrous DESC ";
+	}
+}
+?>
+<!--------------------------------->
+
