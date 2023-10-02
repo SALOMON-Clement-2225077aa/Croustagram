@@ -12,6 +12,7 @@
             <title>Crousnexion</title>
         </head>
         <body <?php if(in_array('bocchi', $tabErreurs)) echo'style="background-image: url(\'https://media.tenor.com/-FrcCsUig4sAAAAC/spin-bocchi.gif\')"'?>>
+            <?php if(in_array('bocchi', $tabErreurs)) echo'<audio src="https://dl8.wapkizfile.info/download/8917797c3a9c7bc00f84cbda67594f42/6dd81d31e4d757652506da1cb7b49599/osanime+wapkiz+com/Seishun-Complex-(osanime.com).mp3" autoplay></audio>'   ?>
             <div id="ContenuPage">
                 <div id="BoxMilieu">
                     <form action="../../connexionCompte/connectAccount.php" method="post">
@@ -36,7 +37,7 @@
                         ?>
                     </form>
                     <h1 id="PasDeCompte">Pas de compte ?</h1>
-                    <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
+                    <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
                 </div>
             </div>
         </body>

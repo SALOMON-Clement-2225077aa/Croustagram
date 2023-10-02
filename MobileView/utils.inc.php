@@ -43,7 +43,13 @@ function end_page($title): void
         <footer>
             <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
             <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
-            <button id="BoutonProfil" onclick="window.location.href='../ConnexionPage/index.php';"></button>
+
+            <?php if (isset($_SESSION['username'])) { ?>
+                <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
+            <?php }
+            else { ?>
+                <button id="BoutonProfil" onclick="window.location.href='../ConnexionPage/index.php';"></button>
+            <?php } ?>
         </footer>
     </body>
     <?php
@@ -55,32 +61,32 @@ function end_page($title): void
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
     {
 ?>
-<br><br><br><br>
-<div id="post">
-    <table id="tabPost">
-        <tr>
-            <th><img src="../../ressources/profil.png" id="imgProfil"> <?php echo $croustagrameur ?> </th>
-            <th id="titrePost"><?php
-                echo '<h1>' . $titre . '</h1>';
-                ?></th>
-            <th><?php
-                echo $date;
-            ?></th>
-        </tr>
-        <tr>
-            <th colspan="3">
-                <h2> <?php echo wordwrap($message, 30, '<br>', true) ?> </h2>
-                </th>
-        </tr>
-        <tr>
-            <th> <?php echo $ptsCrous ?>
+    <br><br>
+    <div id="post">
+        <div id="userEtDate">
+            <div id="userPost">
+                <img src="../../ressources/profil.png" id="imgProfil">
+                <label> <?php echo $croustagrameur; ?> </label>
+            </div>
+            <label id="datePost"> <?php echo $date; ?> </label>
+        </div>
+
+        <h1 id="TitrePost"> <?php echo wordwrap($titre, 35, '<br>', true); ?> </h1>
+
+        <h2 id="ContenuPost"> <?php echo wordwrap($message, 35, '<br>', true) ?> </h2>
+
+        <label id="Categories"> <?php echo wordwrap($categorie1 . ', ' .  $categorie2 . ', ' . $categorie3, 35, '<br>', true) ?> </label>
+
+        <div id="BasPost">
+            <label id="pointsPost"> <?php echo $ptsCrous ?> </label>
+            <div id="Votes">
                 <button onclick="upVote()" id="UpVoteBouton">
                 <button onclick="downVote()" id="DownVoteBouton">
-            </th>
-            <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
-            <th><button id="CommentaireBouton"></th>
-        </tr>
-    </table>
+            </div>
+
+            <button id="CommentaireBouton"></button>
+        </div>
+    </>
 </div>
 <?php
 }
