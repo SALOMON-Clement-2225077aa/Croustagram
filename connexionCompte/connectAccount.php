@@ -66,6 +66,14 @@
                 session_start();
                 $_SESSION['username'] = $username;
                 $_SESSION['suid'] = session_id();
+
+                // Actualisation de la dernière connexion
+                $today = date('Y-m-d');
+                $query = 'UPDATE croustagrameur SET derniere_connexion =  "' . $today . '" WHERE id=\'' . $username . '\'';
+                mysqli_query($dbLink, $query);
+
+                //UPDATE `croustagrameur` SET `derniere_connexion` = '2023-09-29' WHERE `croustagrameur`.`id` = 'bob2sud';
+
                 header('Location: ../index.php');
                 exit();
             }
