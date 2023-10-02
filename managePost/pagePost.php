@@ -52,7 +52,7 @@
     if(isset($_SESSION['suid']))
     {
 ?>
-    <form method="post" action="addComment.php">
+    <form method="post" action="addComment.php?id=<?php echo $_GET['id'] ?>">
         <label>Ajouter un commentaire :</label><br>
         <textarea name="commentContent" placeholder="Contenu du commentaire" rows="6" cols="50" required style="resize: none"></textarea>
         <br><button type="submit">Commenter</button>
