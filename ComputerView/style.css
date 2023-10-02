@@ -98,10 +98,14 @@ header {
 
 #pointCpt{
     background-color: lightcoral;
+    height: 300px;
+    width: 500px;
 }
 
 #ad{
     background-color: aquamarine;
+    height: 300px;
+    width: 500px;
 }
 
 #imgProfil{
