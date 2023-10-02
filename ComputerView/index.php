@@ -1,4 +1,4 @@
-!-- Import des fonctions -->
+<!-- Import des fonctions -->
 <?php require 'utils.inc.php'; ?>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="script.js"></script>
@@ -32,33 +32,39 @@
     or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
     // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
+    $recherche = 'SELECT * FROM croustapost ORDER BY ptsCrous DESC';
+    $result = mysqli_query($dbLink, $recherche);
 
     // Si la requête a marché on affiche les posts
     if ($result) {
         ?>
-        <div style="display: inline-list-item; padding-left: 150px; padding-top: 80px;">
-            <section id="posts">
-                <article class="post">
-                    <h2>aucun post</h2>
-                </article>
-            </section>
-            <section id="pointCpt">
-                <h2>Mes points crous : 0</h2>
-            </section>
+        <section id="posts">
+            <article class="post">
+                <?php
+                // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+                while ($row = mysqli_fetch_assoc($result)) {
+    
+                    // Requête COMMENTAIRES
+                    $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id'];
+                    $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
+                    $nb_comm = (int)$nb_comm_result['COUNT(*)']; // Convert to integer
+    
+                    afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+                }
+                // Libère la variable
+                mysqli_free_result($result);
+                ?>
+            </article>
+            <div>
+                <section id="pointCpt">
+                    <h2 style="font-size: 40px;">Mes points crous<br>0</h2>
+                </section>
 
-            <section id="ad">
-                <h3>your ad here</h3>
-            </section>
-        <?php
-            // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-            while ($row = mysqli_fetch_assoc($result)) {
-                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id']);
-            }
-            // Libère la variable
-            mysqli_free_result($result);
-        ?>
-        </div>
+                <section id="ad">
+                    <h3>your ad here</h3>
+                </section>
+            </div>
+        </section>
 
 <?php
     }

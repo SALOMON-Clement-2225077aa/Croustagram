@@ -1,3 +1,19 @@
+<!-- filtrer les post selon la recherche actuelle -->
+<?php
+function recherche_post($text): string{
+	if (empty($text)){
+		return "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
+	}
+	else{
+		return "SELECT * 
+                FROM croustapost 
+                WHERE message like '%$text%'
+                ORDER BY ptsCrous DESC ";
+	}
+}
+?>
+<!--------------------------------->
+
 <!-- Fonction start_page('titre') -->
 <?php
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -96,14 +112,14 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
     {
 ?>
 <form action="../managePost/pagePost.php" >
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
+            <th><img src="../ressources/profil.png" id="imgProfil" ><?php echo '<h2>' . $croustagrameur . '</h2>'?></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -124,7 +140,7 @@
             <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
-                    <img src="../ressources/commentaire.png" id="imgProfil">
+                    <img src="../ressources/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                 </a>
             </th>
         </tr>
@@ -151,3 +167,28 @@ function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous
 }
 ?>
 <!---------------------->
+
+<script>
+    function upVote() {
+        // UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = 1;
+        <?php
+            // Connexion à la base de donnée
+            $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+            or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+            mysqli_select_db($dbLink , "croustagramadd_bdd")
+            or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+            $result = mysqli_query($dbLink, 'UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = 1');
+        ?>
+    }
+    function downVote() {
+        // UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = 1;
+        <?php
+        // Connexion à la base de donnée
+        $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
+        or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
+        mysqli_select_db($dbLink , "croustagramadd_bdd")
+        or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+        $result = mysqli_query($dbLink, 'UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = 1');
+        ?>
+    }
+</script>

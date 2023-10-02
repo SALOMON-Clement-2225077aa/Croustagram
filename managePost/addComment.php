@@ -23,5 +23,6 @@
     else
     {
         header("Location: pagePost.php?id=" . $_GET['id']);
+        exit();
     }
 
