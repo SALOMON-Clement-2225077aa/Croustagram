@@ -4,6 +4,8 @@
 
     // Affichage du poste
 
+    echo '<button onclick="window.location.href = \'../index.php\'" style="position: fixed; left: 1700px;">Revenir au menu principal</button>';
+
     // Connexion à la base de donnée
     $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
     or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
