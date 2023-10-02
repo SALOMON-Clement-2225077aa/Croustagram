@@ -134,8 +134,12 @@ function recherche_post($text): string{
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <button onclick="upVote()"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
-                <button onclick="downVote()"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
+                <form action="../managePost/Vote.php" method="post">
+                    <button type="submit" name="upVote"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
+                </form>
+                <form>
+                    <button type="submit" name="downVote">  <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
+                </form>
             </th>
             <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
@@ -167,28 +171,3 @@ function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous
 }
 ?>
 <!---------------------->
-
-<script>
-    function upVote() {
-        // UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = 1;
-        <?php
-            // Connexion à la base de donnée
-            $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-            or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-            mysqli_select_db($dbLink , "croustagramadd_bdd")
-            or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-            $result = mysqli_query($dbLink, 'UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = 1');
-        ?>
-    }
-    function downVote() {
-        // UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = 1;
-        <?php
-        // Connexion à la base de donnée
-        $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-        or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-        mysqli_select_db($dbLink , "croustagramadd_bdd")
-        or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
-        $result = mysqli_query($dbLink, 'UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = 1');
-        ?>
-    }
-</script>
