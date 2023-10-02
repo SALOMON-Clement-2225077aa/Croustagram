@@ -32,7 +32,7 @@
     or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
     // Requête
-    $recherche = recherche_post("");
+    $recherche = recherche_post("Coucou");
     $result = mysqli_query($dbLink, $recherche);
 
     // Si la requête a marché on affiche les posts
