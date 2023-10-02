@@ -43,7 +43,7 @@ function recherche_post($text): string{
         </div>
         <div class="header" id="DivLogoBarre">
             <div id="DivBarreRecherche">
-                <button id="Recherche" onclick="<?php recherche_post($_GET('BarreRecherche'))?>"></button>
+                <button id="Recherche" onclick=""></button>
                 <input id="BarreRecherche" type="text">
                 <button id="EffacerRecherche" onclick=""></button>
                 <button id="FiltrerRecherche" onclick=""></button>
