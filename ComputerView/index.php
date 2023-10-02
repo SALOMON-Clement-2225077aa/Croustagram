@@ -38,28 +38,27 @@
     // Si la requête a marché on affiche les posts
     if ($result) {
         ?>
-        <div style="display: inline-list-item; padding-left: 150px; padding-top: 80px;">
-            <section id="posts">
-                <article class="post">
-                    <h2>aucun post</h2>
-                </article>
-            </section>
-            <section id="pointCpt">
-                <h2>Mes points crous : 0</h2>
-            </section>
+        <section id="posts">
+            <article class="post">
+                <?php
+                // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
+                while ($row = mysqli_fetch_assoc($result)) {
+                    afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id']);
+                }
+                // Libère la variable
+                mysqli_free_result($result);
+                ?>
+            </article>
+            <div>
+                <section id="pointCpt">
+                    <h2>Mes points crous : 0</h2>
+                </section>
 
-            <section id="ad">
-                <h3>your ad here</h3>
-            </section>
-        <?php
-            // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-            while ($row = mysqli_fetch_assoc($result)) {
-                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id']);
-            }
-            // Libère la variable
-            mysqli_free_result($result);
-        ?>
-        </div>
+                <section id="ad">
+                    <h3>your ad here</h3>
+                </section>
+            </div>
+        </section>
 
 <?php
     }
