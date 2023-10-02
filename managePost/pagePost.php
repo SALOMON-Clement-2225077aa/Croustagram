@@ -26,7 +26,13 @@
         }
     }
 
+    if ($row['croustagrameur_id'] === $_SESSION['username']){
 ?>
+    <button onclick="window.location.href = 'deletePost.php?id=<?php echo $_GET['id'] ?>';">Supprimer le post</button>
+<?php
+}
+?>
+
     <h2>Commentaires :</h2>
 <?php
 
