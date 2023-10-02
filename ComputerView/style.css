@@ -84,7 +84,7 @@ header {
     background: #fce9d8;
     z-index: 1000;
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
     border: 2px solid;
     border-radius: 7px;
     display: flex;
