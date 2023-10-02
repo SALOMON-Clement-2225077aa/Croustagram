@@ -105,7 +105,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
+            <th> <?php echo $croustagrameur ?> <img src="../ressources/profil.png" id="imgProfil" ></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
