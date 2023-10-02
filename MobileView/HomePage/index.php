@@ -5,6 +5,7 @@
 
     require '../utils.inc.php';
     start_page('Fil d\'actualité');
+    session_start();
 
 ?>
 
