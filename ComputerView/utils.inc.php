@@ -1,3 +1,19 @@
+<!-- filtrer les post selon la recherche actuelle -->
+<?php
+function recherche_post($text): string{
+	if (empty($text)){
+		return "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
+	}
+	else{
+		return "SELECT * 
+                FROM croustapost 
+                WHERE message like '%$text%'
+                ORDER BY ptsCrous DESC ";
+	}
+}
+?>
+<!--------------------------------->
+
 <!-- Fonction start_page('titre') -->
 <?php
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -27,7 +43,7 @@
         </div>
         <div class="header" id="DivLogoBarre">
             <div id="DivBarreRecherche">
-                <button id="Recherche" onclick=""></button>
+                <button id="Recherche" onclick="<?php recherche_post($_GET('BarreRecherche'))?>"></button>
                 <input id="BarreRecherche" type="text">
                 <button id="EffacerRecherche" onclick=""></button>
                 <button id="FiltrerRecherche" onclick=""></button>
@@ -151,3 +167,4 @@ function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous
 }
 ?>
 <!---------------------->
+
