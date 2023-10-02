@@ -3,7 +3,15 @@
     {
         echo $titre . '<br>' . $contenu . '<br>' . $auteur . '<br>' . $date . '<br>' . $ptsCrous . '<br>' . $categories . '<br>';
     }
-    function afficher_unique_comm($contenu, $auteur, $date, $ptsCrous)
+    function afficher_unique_comm($contenu, $auteur, $date, $ptsCrous, $commId, $postId)
     {
-        echo $contenu . '<br>' . $auteur . '<br>' . $date . '<br>' . $ptsCrous . '<br><br>';
+        echo $contenu . '<br>' . $auteur . '<br>' . $date . '<br>' . $ptsCrous;
+        if ($_SESSION['username'] === $auteur){
+        ?>
+        <br>
+        <button onclick="window.location.href = 'deleteComm.php?commId=<?php echo $commId ?>&postId=<?php echo $postId ?>'">Supprimer le commentaire</button>
+
+    <?php
+        }
+        echo '<br><br>';
     }

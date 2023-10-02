@@ -28,7 +28,7 @@
 
 if ($row['croustagrameur_id'] === $_SESSION['username']){
     ?>
-    <button onclick="window.location.href = 'deletePost.php?id=<?php echo $_GET['id'] ?>';">Supprimer le post</button>
+    <button onclick="window.location.href = 'deletePost.php?id=<?php echo $_GET['id'] ?>'">Supprimer le post</button>
     <?php
 }
 ?>
@@ -48,7 +48,7 @@ if ($row['croustagrameur_id'] === $_SESSION['username']){
 
     if($result) {
         while ($row = mysqli_fetch_assoc($result)) {
-            afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous']);
+            afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous'], $row['id'], $_GET['id']);
         }
     }
     ?>
