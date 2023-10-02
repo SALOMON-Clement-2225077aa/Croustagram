@@ -112,9 +112,9 @@
             ?></th>
         </tr>
         <tr>
-            <th colspan="3"><?php
-                echo '<h2>' . $message . '</h2>';
-                ?></th>
+            <th colspan="3">
+                <h2> <?php echo wordwrap($message, 30, '<br>', true) ?> </h2>
+            </th>
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>

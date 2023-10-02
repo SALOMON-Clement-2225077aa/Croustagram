@@ -69,7 +69,7 @@ function end_page($title): void
         </tr>
         <tr>
             <th colspan="3">
-                    <h2> <?php echo $message ?> </h2>
+                <h2> <?php echo wordwrap($message, 30, '<br>', true) ?> </h2>
                 </th>
         </tr>
         <tr>
