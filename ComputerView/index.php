@@ -1,4 +1,4 @@
-!-- Import des fonctions -->
+<!-- Import des fonctions -->
 <?php require 'utils.inc.php'; ?>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="script.js"></script>
@@ -32,7 +32,8 @@
     or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
     // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
+    $recherche = recherche_post("");
+    $result = mysqli_query($dbLink, $recherche);
 
     // Si la requête a marché on affiche les posts
     if ($result) {
