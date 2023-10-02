@@ -54,6 +54,8 @@
             echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
         }
         ?>
+        <br>
+        <br>
     </div>
 
 
