@@ -10,8 +10,13 @@
 
     <div id="ContenuPage">
 
-        <button id="BoutonCreerPost" onclick="ouvrirPopup()"></button>
-
+        <?php
+            if (isset($_SESSION['username'])) {
+        ?>
+            <button id="BoutonCreerPost" onclick="ouvrirPopup()"></button>
+        <?php
+            }
+        ?>
         <!-- Ajout du popup -->
         <div id="popup">
             <button id="fermerPopup" onclick="fermerPopup()">X</button>
