@@ -1,5 +1,3 @@
-
-
 <!-- Fonction start_page('titre') -->
 <?php
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -105,7 +103,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th> <img src="../ressources/profil.png" id="imgProfil" > <?php echo $croustagrameur ?> </th>
+            <th><img <?php echo 'onclick="window.location.href = \'compte.php?id=' . $croustagrameur . '\';"' ?> src="../ressources/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>

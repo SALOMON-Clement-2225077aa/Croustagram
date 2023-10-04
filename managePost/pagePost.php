@@ -1,6 +1,9 @@
 <?php
     require 'post.php';
     session_start();
+    if (isset($_SESSION['username'])) {
+        echo '<label>Connecté en tant que :' . $_SESSION['username'] . '</label>';
+    }
 
     // Affichage du poste
 
@@ -28,7 +31,7 @@
         }
     }
 
-if ($row['croustagrameur_id'] === $_SESSION['username']){
+if (isset($_SESSION['username']) and $row['croustagrameur_id'] === $_SESSION['username']){
     ?>
     <button onclick="window.location.href = 'deletePost.php?id=<?php echo $_GET['id'] ?>'">Supprimer le post</button>
     <?php
