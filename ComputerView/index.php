@@ -32,7 +32,7 @@
     or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
     // Requête
-    $recherche = 'SELECT * FROM croustapost ORDER BY ptsCrous DESC';
+    $recherche = recherche_post("");
     $result = mysqli_query($dbLink, $recherche);
 
     // Si la requête a marché on affiche les posts
