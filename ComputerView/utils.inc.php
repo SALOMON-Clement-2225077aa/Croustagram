@@ -16,7 +16,8 @@
         <meta name="titre" content="Page d'accueil">
         <link rel="icon" href="../MVC/public/assets/images/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Dekstop">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../MVC/public/assets/styles/computer/barre_de_recherche.css">
+        <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
         <title><?php echo $title; ?></title>
     </head>
 
