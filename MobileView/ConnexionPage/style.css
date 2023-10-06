@@ -146,6 +146,11 @@ input {
 
 #erreurLabel {
     font-size: 30px;
+    color: red;
+    text-align: center;
+    width: 500px;
+    padding: 0px;
+    margin: 0px;
 }
 
 #PasDeCompte {

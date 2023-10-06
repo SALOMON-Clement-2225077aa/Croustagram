@@ -22,7 +22,7 @@ function start_page($title) :void
     <body>
         <header>
             <div id="DivLogoBarre">
-                <img id="Logo" src="../../ressources/logo.png">
+                <img id="Logo" src="../../MVC/public/assets/images/logo.png">
                 <div id="DivBarreRecherche">
                     <button id="Recherche" onclick=""></button>
                     <input id="BarreRecherche" type="text">
@@ -56,6 +56,7 @@ function end_page($title): void
 
     <!-- Afficher un post -->
     <?php
+        require '../../managePost/recupCategorie.php';
         function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
         {
     ?>
@@ -73,7 +74,9 @@ function end_page($title): void
 
             <h2 id="ContenuPost"> <?php echo wordwrap($message, 35, '<br>', true) ?> </h2>
 
-            <label id="Categories"> <?php echo wordwrap($categorie1 . ', ' .  $categorie2 . ', ' . $categorie3, 35, '<br>', true) ?> </label>
+            <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
+
+            <label id="Categories"> <?php echo wordwrap($les_categories, 35, '<br>', true) ?> </label>
 
             <div id="BasPost">
                 <label id="pointsPost"> <?php echo $ptsCrous ?> </label>
