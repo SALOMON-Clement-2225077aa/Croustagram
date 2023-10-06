@@ -97,14 +97,14 @@
 
 <!-- Afficher un post -->
 <?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
+    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
     {
 ?>
 <form action="../managePost/pagePost.php" >
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img src="../ressources/profil.png" id="imgProfil" ></th>
+            <th><img <?php echo 'onclick="window.location.href = \'compte.php?id=' . $croustagrameur . '\';"' ?> src="../ressources/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -125,7 +125,7 @@
             <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
-                    <img src="../ressources/commentaire.png" id="imgProfil">
+                    <img src="../ressources/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                 </a>
             </th>
         </tr>
