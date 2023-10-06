@@ -14,16 +14,17 @@
     <head>
         <meta charset="UTF-8">
         <meta name="titre" content="Page d'accueil">
-        <link rel="icon" href="../ressources/logo.png" />
+        <link rel="icon" href="../MVC/public/assets/images/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Dekstop">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../MVC/public/assets/styles/computer/barre_de_recherche.css">
+        <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
         <title><?php echo $title; ?></title>
     </head>
 
     <body>
     <header>
         <div id="divLogo">
-            <img class="header" id="logo" src="../ressources/logo.png">
+            <img class="header" id="logo" src="../MVC/public/assets/images/logo.png">
             <h1 class="header">Croustagram</h1>
         </div>
         <div class="header" id="DivLogoBarre">
@@ -42,7 +43,7 @@
         }
         else
         {
-            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
+            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/views\'inscrire</button>';
         }
         ?>
     </header>
@@ -105,7 +106,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img <?php echo 'onclick="window.location.href = \'compte.php?id=' . $croustagrameur . '\';"' ?> src="../ressources/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+            <th><img <?php echo 'onclick="window.location.href = \'../manageCompte/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -120,14 +121,14 @@
         </tr>
         <tr>
             <th> <?php echo $ptsCrous ?>
-                <button onclick="upVote()"> <img src="../ressources/fleche-vers-le-haut.png" id="imgProfil"> </button>
-                <button onclick="downVote()"> <img src="../ressources/fleche-vers-le-bas.png" id="imgProfil"> </button>
+                <button onclick="upVote()"> <img src="../MVC/public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
+                <button onclick="downVote()"> <img src="../MVC/public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
             <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
             <th> <?php echo $les_categories ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
-                    <img src="../ressources/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
+                    <img src="../MVC/public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                 </a>
             </th>
         </tr>
@@ -144,7 +145,7 @@
 <?php
 function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
     <div id="User">
-        <img src="../ressources/profil.png" id="imgProfil">
+        <img src="../MVC/public/assets/images/profil.png" id="imgProfil">
         <div>
             <th><?php echo $pseudo ?></th>
             <th><br><?php echo $ptsCrous ?></th>
