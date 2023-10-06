@@ -26,71 +26,74 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                 <div class="FormDiv">
                     <label>E-Mail :</label>
                     <input type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
+                </div>
                     <?php
                     if (in_array("mail", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Format d\'adresse e-mail invalide</strong>';
+                        echo '<label class="erreurLabel"><strong>Format d\'adresse e-mail invalide</strong></label>';
                     }
                     elseif (in_array("mailPris", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Adresse e-mail déjà utilisée par un autre compte</strong>';
+                        echo '<label class="erreurLabel"><strong>Adresse e-mail déjà utilisée par un autre compte</strong></label>';
                     }
                     elseif (in_array("mailLong", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>L\'adresse mail est trop longue (50 caractères maximum)</strong>';
+                        echo '<label class="erreurLabel"><strong>L\'adresse mail est trop longue (50 caractères maximum)</strong></label>';
                     }
                     ?>
-                </div>
-
                 <div class="FormDiv">
                     <label>Nom d'utilisateur :</label>
                     <input type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?>>
+
+                </div>
                     <?php
                     if (in_array("username", $erreurTab))
                     {
-                        echo '<label><strong>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques !</strong></label>';
+                        echo '<label class="erreurLabel"><strong>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques !</strong></label>';
                     }
                     elseif (in_array("usernamePris", $erreurTab))
                     {
-                        echo '<label><strong>Ce nom d\'utilisateur est déjà utilisé !</strong></label>';
+                        echo '<label class="erreurLabel"><strong>Ce nom d\'utilisateur est déjà utilisé !</strong></label>';
                     }
                     elseif (in_array("usernameLong", $erreurTab))
                     {
-                        echo '<label><strong>Le nom d\'utilisateur est trop long (20 caractères maximum) !</strong></label>';
+                        echo '<label class="erreurLabel"><strong>Le nom d\'utilisateur est trop long (20 caractères maximum) !</strong></label>';
                     }
                     ?>
-                </div>
 
                 <div class="FormDiv">
                     <label>Mot de passe :</label>
                     <input type='password' name='password' required>
-                    <?php
-                    if (in_array("password", $erreurTab)){
-                        echo '<label><strong>Le mot de passe doit faire minimum 8 caractères !</strong></label>';
-                    }
-                    ?>
+
                 </div>
 
+                    <?php
+                    if (in_array("password", $erreurTab)){
+                        echo '<label class="erreurLabel"><strong>Le mot de passe doit faire minimum 8 caractères !</strong></label>';
+                    }
+                    ?>
                 <div class="FormDiv">
                     <label>Vérification du mot de passe :</label>
                     <input type='password' name='passwordMatch' required>
+
+                </div>
                     <?php
                     if (in_array("passwordMatch", $erreurTab)){
-                        echo '<label><strong>Les mots de passe ne correspondent pas !</strong></label>';
+                        echo '<label class="erreurLabel"><strong>Les mots de passe ne correspondent pas !</strong></label>';
                     }
                     ?>
-                </div>
 
                 <div class="FormDiv">
                     <label>Nom d'affichage :</label><label style="color: red">(optionnel)</label>
                     <input type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
+
+                </div>
                     <?php
                     if (in_array("nameLong", $erreurTab))
                     {
-                        echo '<label><strong>Le pseudo choisi est trop long (25 caractères maximum) !</strong></label>';
+                        echo '<label class="erreurLabel"><strong>Le pseudo choisi est trop long (25 caractères maximum) !</strong></label>';
                     }
                     ?>
-                </div>
 
                 <div id="DivBas">
                     <?php if ($isMob) { ?>

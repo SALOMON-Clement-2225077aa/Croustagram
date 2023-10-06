@@ -137,6 +137,15 @@ label {
     font-size: 30px;
 }
 
+.erreurLabel {
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    width: 500px;
+    padding: 0px;
+    margin: 0px;
+}
+
 input {
     height: 51.2px;
     width: 400px;
