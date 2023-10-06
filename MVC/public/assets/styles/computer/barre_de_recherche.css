@@ -1,3 +1,15 @@
+#DivBarreRecherche {
+    display: flex;
+    align-items: center;
+    margin-right: 75px;
+    background-size: contain;
+    background-color: white;
+    border-style: solid;
+    justify-content: space-around;
+    padding: 10px 3px;
+    border-radius: 15px;
+}
+
 #Recherche {
     height: 30px;
     width: 30px;

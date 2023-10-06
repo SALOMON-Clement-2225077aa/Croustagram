@@ -43,7 +43,7 @@
         }
         else
         {
-            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
+            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/views\'inscrire</button>';
         }
         ?>
     </header>
@@ -98,6 +98,7 @@
 
 <!-- Afficher un post -->
 <?php
+    require '../managePost/recupCategorie.php';
     function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
     {
 ?>
@@ -105,7 +106,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img <?php echo 'onclick="window.location.href = \'compte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+            <th><img <?php echo 'onclick="window.location.href = \'../manageCompte/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -123,7 +124,8 @@
                 <button onclick="upVote()"> <img src="../MVC/public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
                 <button onclick="downVote()"> <img src="../MVC/public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
             </th>
-            <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
+            <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
+            <th> <?php echo $les_categories ?> </th>
             <th>
                 <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
                     <img src="../MVC/public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
