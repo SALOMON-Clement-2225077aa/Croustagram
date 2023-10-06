@@ -88,7 +88,7 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                 </div>
 
                 <div id="DivBas">
-                    <img src="../../ressources/logo.png">
+                    <img src="../../MVC/public/assets/images/logo.png">
                     <button id="FormBouton" type="submit" value="mailer" name="action">S'inscrire</button>
                 </div>
 
