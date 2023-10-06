@@ -45,7 +45,13 @@
         if ($result) {
             // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
             while ($row = mysqli_fetch_assoc($result)) {
-                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id']);
+
+                // Requête COMMENTAIRES
+                $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id'];
+                $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
+                $nb_comm = (int)$nb_comm_result['COUNT(*)']; // Convert to integer
+
+                afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
             }
             // Libère la variable
             mysqli_free_result($result);
