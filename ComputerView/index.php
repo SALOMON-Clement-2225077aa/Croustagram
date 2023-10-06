@@ -1,5 +1,6 @@
 <!-- Import des fonctions -->
-<?php require 'utils.inc.php'; ?>
+<?php require 'utils.inc.php';
+require  '../MVC/config/connectDatabase.php'?>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="script.js"></script>
 
@@ -29,39 +30,35 @@
 
             // Connexion à la base de donnée
 
-
-            $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-            or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-            mysqli_select_db($dbLink, "croustagramadd_bdd")
-            or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+            $connexion = connexion();
             // Requête
                 $recherche = recherche_post("");
-                $result = mysqli_query($dbLink, $recherche);
+                $stmt = $connexion->query($recherche);
 
                 // Si la requête a marché on affiche les posts
-                if ($result) {
+                if ($stmt) {
                 ?>
                     <article class="post">
                         <?php
                         // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
                             // Requête COMMENTAIRES
-                            $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id'];
-                            $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
+                            $req = $connexion->query('SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id']);
+                            $nb_comm_result = $req->fetch(PDO::FETCH_ASSOC);
                             $nb_comm = (int)$nb_comm_result['COUNT(*)']; // Convert to integer
 
                             afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
                         }
                         // Libère la variable
-                        mysqli_free_result($result);
+                        $stmt->closeCursor();
                         ?>
                     </article>
                 <?php
                 }
                 else
                 {
-                    echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+                    echo 'Erreur dans la requête';
                 }
             ?>
 
