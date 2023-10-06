@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="../MVC/public/assets/styles/style.css">
+<link rel="stylesheet" type="text/css" href="../MVC/public/assets/styles/computer/style.css">
 <?php
     require 'utils.createaccount.php';
     $username = htmlspecialchars($_POST['username']);

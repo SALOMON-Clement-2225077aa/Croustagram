@@ -157,7 +157,7 @@ button {
 #Recherche {
     height: 30px;
     width: 30px;
-    background-image: url("/ressources/loupe.png");
+    background-image: url("../../images/loupe.png");
     background-size: 100%;
     background-position: center;
     background-color: white;
@@ -172,7 +172,7 @@ button {
 }
 
 #EffacerRecherche {
-    background-image: url("/ressources/croix.png");
+    background-image: url("../../images/croix.png");
     height: 30px;
     width: 30px;
     background-size: 100%;
@@ -182,7 +182,7 @@ button {
 }
 
 #FiltrerRecherche {
-    background-image: url("/ressources/filtre.png");
+    background-image: url("../../images/filtre.png");
     height: 30px;
     width: 30px;
     background-size: 100%;
