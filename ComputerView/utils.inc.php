@@ -1,5 +1,6 @@
 <!-- Fonction start_page('titre') -->
 <?php
+
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     if($isMob){header("Location: ../MobileView/HomePage/index.php");}
     else
@@ -172,3 +173,4 @@ function recherche_post($text): string{
 ?>
 <!--------------------------------->
 
+<!-- filtrer les post selon la recherche actuelle -->
