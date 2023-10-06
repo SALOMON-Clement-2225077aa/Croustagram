@@ -1,6 +1,7 @@
 <?php
     function connexion_page($tabErreurs = array())
     {
+        $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
         ?>
         <!DOCTYPE html>
         <html lang='fr'>
@@ -15,7 +16,12 @@
             <?php if(in_array('bocchi', $tabErreurs)) echo'<audio src="https://dl8.wapkizfile.info/download/8917797c3a9c7bc00f84cbda67594f42/6dd81d31e4d757652506da1cb7b49599/osanime+wapkiz+com/Seishun-Complex-(osanime.com).mp3" autoplay></audio>'   ?>
             <div id="ContenuPage">
                 <div id="BoxMilieu">
-                    <form action="../../connexionCompte/connectAccount.php" method="post">
+                    <?php if ($isMob) { ?>
+                        <form action="request.php" method="post">
+                    <?php }
+                    else { ?>
+                        <form action="connectAccount.php" method="post">
+                    <?php } ?>
                         <div class="FormDiv">
                             <label>Identifiant :</label>
                             <input type="text" name="username" required>
@@ -27,14 +33,13 @@
                         <button id="FormBouton" type="submit">Se connecter</button>
                         <?php
                         if (in_array('noMatchFoundUsername', $tabErreurs))
-                        {
-                            echo '<strong style=\'color:red;\'>Le couple nom d\'utilisateur et mdp ne correspond à aucun compte</strong>';
-                        }
+                        { ?>
+                           <label id="erreurLabel"><strong>Le couple adresse e-mail / mot de passe ne correspond à aucun compte !</strong></label>
+                        <?php }
                         elseif (in_array('noMatchFoundMail', $tabErreurs))
-                        {
-                            echo '<strong style=\'color:red;\'>Le couple adresse email et mdp ne correspond à aucun compte</strong>';
-                        }
-                        ?>
+                        { ?>
+                            <label id="erreurLabel"><strong>Le couple adresse e-mail / mot de passe ne correspond à aucun compte !</strong></label>
+                        <?php } ?>
                     </form>
                     <h1 id="PasDeCompte">Pas de compte ?</h1>
                     <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>

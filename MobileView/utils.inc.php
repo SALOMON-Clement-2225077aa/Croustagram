@@ -38,8 +38,6 @@ function start_page($title) :void
 function end_page($title): void
 {
     ?>
-    <!DOCTYPE html>
-    <html lang="fr">
         <footer>
             <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
             <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
@@ -56,55 +54,55 @@ function end_page($title): void
 }
 ?>
 
-<!-- Afficher un post --> 
-<?php
-    function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost): void
-    {
-?>
-    <br><br>
-    <div id="post">
-        <div id="userEtDate">
-            <div id="userPost">
-                <img src="../../ressources/profil.png" id="imgProfil">
-                <label> <?php echo $croustagrameur; ?> </label>
-            </div>
-            <label id="datePost"> <?php echo $date; ?> </label>
-        </div>
-
-        <h1 id="TitrePost"> <?php echo wordwrap($titre, 35, '<br>', true); ?> </h1>
-
-        <h2 id="ContenuPost"> <?php echo wordwrap($message, 35, '<br>', true) ?> </h2>
-
-        <label id="Categories"> <?php echo wordwrap($categorie1 . ', ' .  $categorie2 . ', ' . $categorie3, 35, '<br>', true) ?> </label>
-
-        <div id="BasPost">
-            <label id="pointsPost"> <?php echo $ptsCrous ?> </label>
-            <div id="Votes">
-                <button onclick="upVote()" id="UpVoteBouton">
-                <button onclick="downVote()" id="DownVoteBouton">
+    <!-- Afficher un post -->
+    <?php
+        function afficher_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+        {
+    ?>
+        <br><br>
+        <div id="post">
+            <div id="userEtDate">
+                <div id="userPost">
+                    <img src="../../ressources/profil.png" id="imgProfil">
+                    <label> <?php echo $croustagrameur; ?> </label>
+                </div>
+                <label id="datePost"> <?php echo $date; ?> </label>
             </div>
 
-            <button id="CommentaireBouton"></button>
-        </div>
-    </>
-</div>
-<?php
-}
-?>
-<!---------------------->
+            <h1 id="TitrePost"> <?php echo wordwrap($titre, 35, '<br>', true); ?> </h1>
 
+            <h2 id="ContenuPost"> <?php echo wordwrap($message, 35, '<br>', true) ?> </h2>
 
-<!-- Afficher un user -->
-<?php
-function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
-    <div id="User">
-        <img src="../../ressources/profil.png" id="imgProfil">
-        <div>
-            <th><?php echo $pseudo ?></th>
-            <th><br><?php echo $ptsCrous ?></th>
-        </div>
+            <label id="Categories"> <?php echo wordwrap($categorie1 . ', ' .  $categorie2 . ', ' . $categorie3, 35, '<br>', true) ?> </label>
+
+            <div id="BasPost">
+                <label id="pointsPost"> <?php echo $ptsCrous ?> </label>
+                <div id="Votes">
+                    <button onclick="upVote()" id="UpVoteBouton">
+                    <button onclick="downVote()" id="DownVoteBouton">
+                </div>
+                <th> <?php echo $nb_comm; ?></th> <button id="CommentaireBouton"></button>
+            </div>
+        </>
     </div>
-<?php
-}
-?>
-<!---------------------->
+    <?php
+    }
+    ?>
+    <!---------------------->
+
+
+    <!-- Afficher un user -->
+    <?php
+    function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
+        <div id="User">
+            <img src="../../ressources/profil.png" id="imgProfil">
+            <div>
+                <th><?php echo $pseudo ?></th>
+                <th><br><?php echo $ptsCrous ?></th>
+            </div>
+        </div>
+    <?php
+    }
+    ?>
+    <!---------------------->
+</html>
