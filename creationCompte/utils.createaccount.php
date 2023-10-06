@@ -2,7 +2,7 @@
 <?php
 function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
-
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 ?><!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -17,7 +17,12 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
     <div id="ContenuPage">
         <div id="BoxMilieu">
             <h1 id="FormTitre">Prêt à vivre l'expérience Croustagram ?</h1>
-            <form action="/creationCompte/createAccount.php" method="post">
+            <?php if ($isMob) { ?>
+                <form action="request.php" method="post">
+            <?php }
+            else { ?>
+                <form action="createAccount.php" method="post">
+            <?php } ?>
                 <div class="FormDiv">
                     <label>E-Mail :</label>
                     <input type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
@@ -43,15 +48,15 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                     <?php
                     if (in_array("username", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques</strong>';
+                        echo '<label><strong>Le nom d\'utilisateur ne peut contenir que des caractères alphanumériques !</strong></label>';
                     }
                     elseif (in_array("usernamePris", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Ce nom d\'utilisateur est déjà utilisé</strong>';
+                        echo '<label><strong>Ce nom d\'utilisateur est déjà utilisé !</strong></label>';
                     }
                     elseif (in_array("usernameLong", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Le nom d\'utilisateur est trop long (20 caractères maximum)</strong>';
+                        echo '<label><strong>Le nom d\'utilisateur est trop long (20 caractères maximum) !</strong></label>';
                     }
                     ?>
                 </div>
@@ -61,7 +66,7 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                     <input type='password' name='password' required>
                     <?php
                     if (in_array("password", $erreurTab)){
-                        echo '<strong style=\'color:red;\'>Le mot de passe doit faire minimum 8 caractères</strong>';
+                        echo '<label><strong>Le mot de passe doit faire minimum 8 caractères !</strong></label>';
                     }
                     ?>
                 </div>
@@ -71,7 +76,7 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                     <input type='password' name='passwordMatch' required>
                     <?php
                     if (in_array("passwordMatch", $erreurTab)){
-                        echo '<strong style=\'color:red;\'>Les mots de passe ne correspondent pas !</strong>';
+                        echo '<label><strong>Les mots de passe ne correspondent pas !</strong></label>';
                     }
                     ?>
                 </div>
@@ -82,13 +87,18 @@ function account_page($erreurTab = array(), $def_username = NULL, $def_mail = NU
                     <?php
                     if (in_array("nameLong", $erreurTab))
                     {
-                        echo '<strong style=\'color:red;\'>Le pseudo choisi est trop long (25 caractères maximum)</strong>';
+                        echo '<label><strong>Le pseudo choisi est trop long (25 caractères maximum) !</strong></label>';
                     }
                     ?>
                 </div>
 
                 <div id="DivBas">
-                    <img src="../../MVC/public/assets/images/logo.png">
+                    <?php if ($isMob) { ?>
+                        <button id="RetourBouton" onclick="window.location.href='../ConnexionPage/index.php'">
+                    <?php }
+                    else { ?>
+                        <button id="RetourBouton" onclick="window.location.href='../connexionCompte/pageConnexionCompte.php'">
+                    <?php } ?>
                     <button id="FormBouton" type="submit" value="mailer" name="action">S'inscrire</button>
                 </div>
 

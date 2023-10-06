@@ -152,9 +152,14 @@ input {
     align-items: center;
 }
 
-img {
+#RetourBouton {
     height: 150px;
     width: 150px;
+    background-image: url("../../MVC/public/assets/images/fleche-retour.png");
+    background-size: 100%;
+    border: none;
+    background-color: white;
+    background-repeat: no-repeat;
 }
 
 #FormBouton {
