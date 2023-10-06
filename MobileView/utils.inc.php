@@ -16,7 +16,7 @@ function start_page($title) :void
         <meta name="titre" content="Page d'accueil">
         <link rel="icon" href="/ressources/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Mobile">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../MVC/public/assets/styles/mobile/styleMobile.css">
         <title><?php echo 'Croustagram - '.$title?></title>
     </head>
     <body>
