@@ -15,4 +15,3 @@ function connexion(){
 
     return $connection;
 }
-?>
