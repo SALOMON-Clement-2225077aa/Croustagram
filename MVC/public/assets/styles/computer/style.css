@@ -135,18 +135,6 @@ header {
     display: grid;
 }
 
-#DivBarreRecherche {
-    display: flex;
-    align-items: center;
-    margin-right: 75px;
-    background-size: contain;
-    background-color: white;
-    border-style: solid;
-    justify-content: space-around;
-    padding: 10px 3px;
-    border-radius: 15px;
-}
-
 button {
     margin-right: 5px;
     margin-left: 5px;
