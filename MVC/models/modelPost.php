@@ -6,7 +6,7 @@ or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
 mysqli_select_db($dbLink , "croustagramadd_bdd")
 or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
 
-function getPostData($accountName){
+function getAllPostsData($accountName){
     global $dbLink;
     // Lecture des posts de la BD (SELECT * FROM `croustapost`)
 

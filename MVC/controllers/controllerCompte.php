@@ -1,6 +1,6 @@
 <?php
 require '../ComputerView/utils.inc.php';
-require 'modelCompte.php';
+require 'modelPost.php';
 
 function getNbCommentaires($id){
     $nb_comm_result = getNbCommentaireData($id);
@@ -10,7 +10,7 @@ function getNbCommentaires($id){
 
 function showPosts($id){
 
-    $result = getPostData($id);
+    $result = getAllPostsData($id);
     $posts = ' ';
 
     // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):

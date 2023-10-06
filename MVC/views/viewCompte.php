@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="../ComputerView/style.css">
+    <link rel="stylesheet" href="../../ComputerView/style.css">
 </head>
 <section id="posts">
     <article class="post">
