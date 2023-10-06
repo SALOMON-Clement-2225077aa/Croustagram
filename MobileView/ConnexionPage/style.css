@@ -144,6 +144,10 @@ input {
     font-size: 30px;
 }
 
+#erreurLabel {
+    font-size: 30px;
+}
+
 #PasDeCompte {
     font-size: 40px;
 }
