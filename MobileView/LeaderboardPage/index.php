@@ -4,6 +4,8 @@ require '../utils.inc.php';
 
 start_page('Leaderboard');
 
+session_start();
+
 ?>
 
     <div id="ContenuPage">
