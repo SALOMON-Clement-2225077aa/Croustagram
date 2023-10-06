@@ -1,4 +1,4 @@
-<?php
+l:<?php
     function connexion_page($tabErreurs = array())
     {
         $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -42,7 +42,12 @@
                         <?php } ?>
                     </form>
                     <h1 id="PasDeCompte">Pas de compte ?</h1>
+                    <?php if ($isMob) { ?>
+                        <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
+                    <?php }
+                    else { ?>
                     <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
+                    <?php } ?>
                 </div>
             </div>
         </body>

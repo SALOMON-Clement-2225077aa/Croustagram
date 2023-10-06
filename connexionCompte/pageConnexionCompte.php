@@ -1,3 +1,5 @@
 <?php
     require 'utils.connectaccount.php';
-    connexion_page();
+    //require '../ComputerView/utils.inc.php';?>
+    <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
+<?php connexion_page();?>

@@ -44,7 +44,7 @@ else
             session_start();
             $_SESSION['username'] = $dbId['id'];
             $_SESSION['suid'] = session_id();
-            header('Location: ../index.php');
+            header('Location: ../HomePage/index.php');
         }
     }
     else
@@ -80,7 +80,7 @@ else
 
             //UPDATE `croustagrameur` SET `derniere_connexion` = '2023-09-29' WHERE `croustagrameur`.`id` = 'bob2sud';
 
-            header('Location: ../index.php');
+            header('Location: ../HomePage/index.php');
             exit();
         }
     }
@@ -88,7 +88,7 @@ else
     {
         start_page('Connexion');
 
-        connexion_page();
+        connexion_page($tabErreurs);
 
         end_page('Connexion');
     }
