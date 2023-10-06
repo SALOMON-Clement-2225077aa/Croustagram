@@ -1,6 +1,6 @@
 <!-- Import des fonctions -->
 <?php require 'utils.inc.php';
-require  '../MVC/config/connectDatabase.php'?>
+require_once  '../MVC/config/connectDatabase.php'?>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="script.js"></script>
 
@@ -11,7 +11,6 @@ require  '../MVC/config/connectDatabase.php'?>
     {
         echo '<label>Connecté en tant que :' . $_SESSION['username'] . '</label>';
     }
-    echo '<script>fermerPopup();</script>';
 ?>;
 
 <!-- Ajout du popup -->
@@ -26,6 +25,7 @@ require  '../MVC/config/connectDatabase.php'?>
 
         <section id="posts">
             <?php
+            echo '<script>fermerPopup();</script>';
             // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
 
             // Connexion à la base de donnée
@@ -83,6 +83,5 @@ require  '../MVC/config/connectDatabase.php'?>
         </section>
 
 <?php
-    echo '<script>fermerPopup();</script>';
     end_page();
 ?>

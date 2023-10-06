@@ -1,4 +1,4 @@
-<?php
+<?php require_once '../MVC/config/connectDatabase.php';
     require 'post.php';
     session_start();
     if (isset($_SESSION['username'])) {
@@ -10,17 +10,14 @@
     echo '<button onclick="window.location.href = \'../index.php\'" style="position: fixed; left: 1700px;">Revenir au menu principal</button>';
 
     // Connexion à la base de donnée
-    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-    mysqli_select_db($dbLink , "croustagramadd_bdd")
-    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    $connexion = connexion();
 
     // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustapost WHERE id = \'' . $_GET['id'] . '\'');
+    $result = $connexion->query('SELECT * FROM croustapost WHERE id = \'' . $_GET['id'] . '\'');
 
     if($result)
     {
-        $row = mysqli_fetch_array($result);
+        $row = $result->fetch(PDO::FETCH_ASSOC);
         if(isset($row['categories']))
         {
             afficher_unique_post($row['titre'], $row['message'], $row['croustagrameur_id'], $row['date'], $row['ptsCrous'], $row['categories']);
@@ -43,16 +40,13 @@ if (isset($_SESSION['username']) and $row['croustagrameur_id'] === $_SESSION['us
     // Affichage des commentaires
 
     // Connexion à la base de donnée
-    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-    mysqli_select_db($dbLink , "croustagramadd_bdd")
-    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    $connexion = connexion();
 
     // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustacomm WHERE croustapost_id = \'' . $_GET['id'] . '\'');
+    $result = $connexion->query('SELECT * FROM croustacomm WHERE croustapost_id = \'' . $_GET['id'] . '\'');
 
     if($result) {
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             afficher_unique_comm($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous'], $row['id'], $_GET['id']);
         }
     }

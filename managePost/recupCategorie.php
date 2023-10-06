@@ -1,20 +1,17 @@
-<?php
+<?php require_once '../MVC/config/connectDatabase.php';
     function convert_cat($cat1, $cat2, $cat3) : string
     {
         // Connexion à la base de donnée
-        $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-        or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-        mysqli_select_db($dbLink , "croustagramadd_bdd")
-        or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+        $connexion = connexion();
 
         $nom_cat1 = null;
         $nom_cat2 = null;
         $nom_cat3 = null;
 
         // Requête
-        $result = mysqli_query($dbLink, 'SELECT * FROM croustegorie ORDER BY id ASC ');
+        $result = $connexion->query('SELECT * FROM croustegorie ORDER BY id ASC ');
 
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
             if ($row['id'] != 0) {
                 if ($row['id'] == $cat1) {
                     $nom_cat1 = $row['libelle'];
@@ -28,7 +25,7 @@
             }
         }
         // Libère la variable
-        mysqli_free_result($result);
+        $result->closeCursor();
 
         # Gestion de l'affichage ;
 
