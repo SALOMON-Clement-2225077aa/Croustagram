@@ -1,9 +1,18 @@
 <head>
-    <link rel="stylesheet" href="../../ComputerView/style.css">
+    <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
 </head>
 <section id="posts">
     <article class="post">
 
 <?php
-require 'controllerCompte.php';
-echo showPosts($_GET['id']);
+
+require '../controllers/controllerCompte.php';
+require '../controllers/CroustagramGUI.php';
+
+Croustagram('Postes');
+
+$id = $_GET['id'];
+
+echo showCompte($id);
+
+echo showPosts($id);

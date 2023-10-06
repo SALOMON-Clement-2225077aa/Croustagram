@@ -49,6 +49,7 @@ header {
     border-bottom: solid;
     display: flex;
     align-items: center;
+    left:0;
 }
 
 .header{
@@ -68,7 +69,7 @@ header {
     background-color: #d9d9d9;
     position: fixed;
     left: 0;
-    top: 103px;
+    top: 83px;
     border-right: solid;
     height: 100%;
     padding-left: 10px;
@@ -140,4 +141,14 @@ button {
     margin-left: 5px;
 }
 
-
+#commentaire{
+    background: #fce9d8;
+    z-index: 1000;
+    margin: 0;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 7px;
+    display: flex;
+    max-width: 700px;
+    flex-direction: column;
+}

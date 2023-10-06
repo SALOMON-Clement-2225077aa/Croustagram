@@ -78,7 +78,7 @@
 
                             // Requête
                             $req = 'SELECT ptsCrous FROM croustagrameur where id =' . $_SESSION['username'];
-                            echo req;
+                            echo $req;
                             $result = mysqli_query($dbLink, $req);
                         ?>
                     </h2>
