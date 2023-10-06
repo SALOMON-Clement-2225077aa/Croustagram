@@ -22,7 +22,7 @@ function start_page($title) :void
     <body>
         <header>
             <div id="DivLogoBarre">
-                <img id="Logo" src="../../ressources/logo.png">
+                <img id="Logo" src="../../MVC/public/assets/images/logo.png">
                 <div id="DivBarreRecherche">
                     <button id="Recherche" onclick=""></button>
                     <input id="BarreRecherche" type="text">
