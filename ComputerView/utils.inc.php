@@ -104,7 +104,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img <?php echo 'onclick="window.location.href = \'compte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+            <th><img <?php echo 'onclick="window.location.href = \'../manageCompte/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
