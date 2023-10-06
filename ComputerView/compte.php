@@ -2,7 +2,7 @@
 require 'utils.inc.php';
 ?>
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
 </head>
 <?php
 $accountName = $_GET['id'];

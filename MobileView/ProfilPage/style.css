@@ -47,7 +47,7 @@ button {
 #Recherche {
     height: 51.2px;
     width: 51.2px;
-    background-image: url("../../ressources/loupe.png");
+    background-image: url("../../MVC/public/assets/images/loupe.png");
     background-size: 100%;
     background-position: center;
     background-color: white;
@@ -62,7 +62,7 @@ button {
 }
 
 #EffacerRecherche {
-    background-image: url("../../ressources/croix.png");
+    background-image: url("../../MVC/public/assets/images/croix.png");
     height: 51.2px;
     width: 51.2px;
     background-size: 100%;
@@ -72,7 +72,7 @@ button {
 }
 
 #FiltrerRecherche {
-    background-image: url("../../ressources/filtre.png");
+    background-image: url("../../MVC/public/assets/images/filtre.png");
     height: 51.2px;
     width: 51.2px;
     background-size: 100%;
@@ -102,7 +102,7 @@ footer {
 }
 
 #BoutonHome {
-    background-image: url("../../ressources/home.png");
+    background-image: url("../../MVC/public/assets/images/home.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -113,7 +113,7 @@ footer {
 }
 
 #BoutonLeaderboard {
-    background-image: url("../../ressources/leaderboard.png");
+    background-image: url("../../MVC/public/assets/images/leaderboard.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -124,7 +124,7 @@ footer {
 }
 
 #BoutonProfil {
-    background-image: url("../../ressources/profil_red.png");
+    background-image: url("../../MVC/public/assets/images/profil_red.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
