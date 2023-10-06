@@ -1,5 +1,5 @@
 <script src="script.js"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">
 
 <?php
 

@@ -1,7 +1,7 @@
-
 body {
-    padding: 0px;
     margin: 0px;
+    padding: 0px;
+    font-size: 40px;
 }
 
 header {
@@ -12,6 +12,7 @@ header {
     align-items: center;
     justify-content: center;
     z-index: 2;
+    top:0px;
 }
 
 #DivLogoBarre {
@@ -46,7 +47,7 @@ button {
 #Recherche {
     height: 51.2px;
     width: 51.2px;
-    background-image: url("../../MVC/public/assets/images/loupe.png");
+    background-image: url("../../images/loupe.png");
     background-size: 100%;
     background-position: center;
     background-color: white;
@@ -61,7 +62,7 @@ button {
 }
 
 #EffacerRecherche {
-    background-image: url("../../MVC/public/assets/images/croix.png");
+    background-image: url("../../images/croix.png");
     height: 51.2px;
     width: 51.2px;
     background-size: 100%;
@@ -71,7 +72,7 @@ button {
 }
 
 #FiltrerRecherche {
-    background-image: url("../../MVC/public/assets/images/filtre.png");
+    background-image: url("../../images/filtre.png");
     height: 51.2px;
     width: 51.2px;
     background-size: 100%;
@@ -80,90 +81,13 @@ button {
     border: none;
 }
 
-#PageTitre {
+h1 {
     border-top-style: solid;
     border-bottom-style: solid;
     text-align: center;
     font-size: 40px;
     padding: 30px;
     margin-bottom: 0;
-}
-
-#ContenuPage {
-    position: fixed;
-    top: 330px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 75%;
-}
-
-#BoxMilieu {
-    padding: 50px;
-    position: fixed;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: solid;
-    border-radius: 100px;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 40px;
-}
-
-.FormDiv {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border: none;
-    margin: 10px;
-}
-
-input {
-    height: 51.2px;
-    width: 400px;
-    border: solid;
-    font-size: 35px;
-}
-
-
-
-#FormBouton {
-    margin: 50px;
-    border-radius: 50px / 50px;
-    border: solid;
-    height: 100px;
-    width: 300px;
-    font-size: 30px;
-}
-
-#erreurLabel {
-    font-size: 30px;
-    color: red;
-    text-align: center;
-    width: 500px;
-    padding: 0px;
-    margin: 0px;
-}
-
-#PasDeCompte {
-    font-size: 40px;
-}
-
-#InscriptionBouton {
-    margin-bottom: 30px;
-    border-radius: 50px / 50px;
-    border: solid;
-    height: 80px;
-    width: 200px;
-    font-size: 30px;
 }
 
 footer {
@@ -178,7 +102,7 @@ footer {
 }
 
 #BoutonHome {
-    background-image: url("../../MVC/public/assets/images/home.png");
+    background-image: url("../../images/home.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -189,7 +113,7 @@ footer {
 }
 
 #BoutonLeaderboard {
-    background-image: url("../../MVC/public/assets/images/leaderboard.png");
+    background-image: url("../../images/leaderboard.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -200,7 +124,7 @@ footer {
 }
 
 #BoutonProfil {
-    background-image: url("../../MVC/public/assets/images/profil_red.png");
+    background-image: url("../../images/profil_red.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -208,4 +132,10 @@ footer {
     border: none;
     background-color: #d9d9d9;
     margin: 20px;
+}
+
+#ContenuPage {
+    position: relative;
+    top: 300px;
+    padding-bottom: 150px;
 }
