@@ -1,6 +1,8 @@
 <?php
 require '../../creationCompte/utils.createaccount.php';
 require '../utils.inc.php';
+require_once "../../MVC/config/connectDatabase.php";
+
 $username = htmlspecialchars($_POST['username']);
 $password = htmlspecialchars($_POST['password']);
 $name = htmlspecialchars($_POST['name']);
@@ -14,11 +16,7 @@ function page_erreur(){
     account_page($tabErreur, $username, $mail, $name);
 }
 
-$dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-
-mysqli_select_db($dbLink , "croustagramadd_bdd")
-or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+$connexion = connexion();
 
 if (strlen($password)<8)
 {
@@ -44,10 +42,9 @@ if (strlen($name) > 25)
     $tabErreur[] = "nameLong";
 }
 
-$query = 'SELECT id  FROM croustagrameur WHERE id=\'' . $username . '\'';
-$dbResult = mysqli_query($dbLink, $query);
+$query = $connexion->query('SELECT id  FROM croustagrameur WHERE id=\'' . $username . '\'');
 
-while($dbRow = mysqli_fetch_assoc($dbResult))
+while($dbRow = $query->fetch(PDO::FETCH_ASSOC))
 {
     if ($dbRow['id'] != ''){
         $tabErreur[] = "usernamePris";
@@ -60,10 +57,9 @@ if (strlen($mail) > 50)
 }
 else
 {
-    $query = 'SELECT id  FROM croustagrameur WHERE email=\'' . $mail . '\'';
-    $dbResult = mysqli_query($dbLink, $query);
+    $query = $connexion->query('SELECT id  FROM croustagrameur WHERE email=\'' . $mail . '\'');
 
-    while($dbRow = mysqli_fetch_assoc($dbResult))
+    while($dbRow = $query->fetch(PDO::FETCH_ASSOC))
     {
         if ($dbRow['id'] != ''){
             $tabErreur[] = "mailPris";
@@ -92,12 +88,12 @@ if(count($tabErreur) === 0)
 
     $today = date('Y-m-d');
 
-    $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "img2", "' . $today . '", "' . $today . '", 0)';
+    $query = $connexion->exec('INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "img2", "' . $today . '", "' . $today . '", 0)');
 
-    if (!($dbResult = mysqli_query($dbLink, $query))) {
+    if (!($dbResult = $query)) {
         echo '<strong>Erreur dans requête</strong><br>';
         // Affiche le type d'erreur.
-        echo '<strong>Erreur : ' . mysqli_error($dbLink) . '</strong><br>';
+        echo '<strong>Erreur : ' . $connexion->errorInfo() . '</strong><br>';
         // Affiche la requête envoyée.
         echo '<strong>Requête : ' . $query . '</strong><br>';
         exit();
