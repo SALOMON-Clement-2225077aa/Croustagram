@@ -4,6 +4,7 @@
 <?php
 
     require '../utils.inc.php';
+    require_once "../../MVC/config/connectDatabase.php";
     start_page('Fil d\'actualité');
     session_start();
 
@@ -33,37 +34,31 @@
         <?php // Lecture + Affichage des posts de la BD (SELECT * FROM `croustapost`)
 
         // Connexion à la base de donnée
-        $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-        or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-        mysqli_select_db($dbLink , "croustagramadd_bdd")
-        or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+        $connexion = connexion();
 
         // Requête
-        $result = mysqli_query($dbLink, 'SELECT * FROM croustapost ORDER BY ptsCrous DESC');
+        $result = $connexion->query('SELECT * FROM croustapost ORDER BY ptsCrous DESC');
 
         // Si la requête a marché on affiche les posts
         if ($result) {
             // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-            while ($row = mysqli_fetch_assoc($result)) {
+            while ($row =  $result->fetch(PDO::FETCH_ASSOC)) {
 
                 // Requête COMMENTAIRES
-                $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id'];
-                $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
-                $nb_comm = (int)$nb_comm_result['COUNT(*)']; // Convert to integer
+                $nb_comm = (int)$connexion->query('SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $row['id'])->fetch(PDO::FETCH_ASSOC)['COUNT(*)']; // Convert to integer
 
                 afficher_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
             }
             // Libère la variable
-            mysqli_free_result($result);
+            $result->closeCursor();
         }
         else {
-            echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
+            echo 'Erreur dans la requête : ' . $connexion->errorInfo();
         }
         ?>
         <br>
         <br>
     </div>
-
 
 <?php
     end_page('Fil d\'actualité');
