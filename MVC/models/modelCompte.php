@@ -19,13 +19,15 @@ function getAllPostsData($accountName){
     }
 }
 
-function getNbCommentaireData($id){
+function getAllCompteData($accountName){
     global $dbLink;
-    // Requête COMMENTAIRES
-    $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $id;
-    $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
+    // Lecture des infos du compte de la BD
 
-    if ($nb_comm_result){
-        return $nb_comm_result;
+    // Requête
+    $recherche = 'SELECT * FROM croustagrameur WHERE id="' . $accountName . '"';
+    $result = mysqli_query($dbLink, $recherche);
+
+    if ($result) {
+        return $result;
     }
 }

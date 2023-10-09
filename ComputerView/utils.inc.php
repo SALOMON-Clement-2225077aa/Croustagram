@@ -103,7 +103,7 @@
 <div id="post" style="margin-bottom: 25px">
     <table id="tabPost">
         <tr>
-            <th><img <?php echo 'onclick="window.location.href = \'../manageCompte/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+            <th><img <?php echo 'onclick="window.location.href = \'../MVC/views/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../MVC/public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
             <th id="titrePost"><?php
                 echo '<h1>' . $titre . '</h1>';
                 ?></th>
@@ -124,7 +124,7 @@
             <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
             <th> <?php echo $les_categories ?> </th>
             <th>
-                <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
+                <a href="../MVC/views/viewPoste.php?id=<?php echo $idPost?>">
                     <img src="../MVC/public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                 </a>
             </th>
