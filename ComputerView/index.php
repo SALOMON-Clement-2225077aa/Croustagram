@@ -67,11 +67,15 @@ require_once  '../MVC/config/connectDatabase.php'?>
                     <h2 style="font-size: 40px;">Mes points crous<br>
                         <!-- SELECT ptsCrous FROM croustagrameur where id = 'ClementRKG'; -->
                         <?php
+                        if (isset($_SESSION['username'])) {
                             // Connexion à la base de donnée
                             $connexion = connexion();
 
                             // Requête
                             $result = $connexion->query('SELECT ptsCrous FROM croustagrameur where id =' . $_SESSION['username']);
+                        }
+                        else {
+                            $result = 0;                        }
                         ?>
                     </h2>
                 </section>
