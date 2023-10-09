@@ -33,9 +33,9 @@ function Croustagram($titre): void
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()" style="left:850px; top:50px; position:fixed"> Créer un croustapost </button>';
-            echo '<label style="top: 40px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
-            echo '<button onclick="window.location.href = \'logout.php\';" style="right: 10px; top: 60px; position: fixed"> Se déconnecter </button>';
+            echo '<button onclick="ouvrirPost()" style="left:800px; top:35px; position:fixed"> Créer un croustapost </button>';
+            echo '<label style="top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
+            echo '<button onclick="window.location.href = \'../models/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
         }
         else
         {

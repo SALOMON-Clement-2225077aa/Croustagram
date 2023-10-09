@@ -16,9 +16,10 @@ function showLeaderboard(){
 
     $data = getLeaderboardData();
 
-    while ($row = mysqli_fetch_assoc($data)) {
+    //$result->fetch(PDO::FETCH_ASSOC)
+    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         afficher_user($row['pseudo'], $row['ptsCrous']);
     }
 
-    mysqli_free_result($data);
+    $data->closeCursor();
 }

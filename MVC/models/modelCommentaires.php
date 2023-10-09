@@ -1,13 +1,18 @@
 <?php
+require_once '../config/connectDatabase.php';
+
+// Connexion à la base de donnée
+$connexion = connexion();
+
 function getAllCommentaires($id){
-    // Connexion à la base de donnée
-    $dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-    or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-    mysqli_select_db($dbLink , "croustagramadd_bdd")
-    or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+    global $connexion;
 
     // Requête
-    $result = mysqli_query($dbLink, 'SELECT * FROM croustacomm WHERE croustapost_id = \'' . $id . '\'');
+    $requete = 'SELECT * FROM croustacomm WHERE croustapost_id = \'' . $id . '\'';
+    $result = $connexion->query($requete);
 
-    return $result;
+    if ($result){
+        return $result;
+    }
+    return null;
 }

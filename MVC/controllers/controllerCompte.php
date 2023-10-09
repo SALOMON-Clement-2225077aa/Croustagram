@@ -4,32 +4,32 @@ require_once '../models/modelPoste.php';
 require_once  '../models/modelCompte.php';
 
 function getNbCommentaires($id){
-    $nb_comm_result = getNbCommentaireData($id);
-    $nb_comm = (int)$nb_comm_result['COUNT(*)']; // Convert to integer
+
+    $data = getNbCommentaireData($id);
+    $row = $data->fetch(PDO::FETCH_ASSOC);
+    $nb_comm = (int)$row['COUNT(*)']; // Convert to integer
     return $nb_comm;
 }
 
 function showPosts($id){
 
-    $result = getAllPostsData($id);
+    $data = getAllPostsOfUserData($id);
     $posts = ' ';
 
     // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         $nb_comm = getNbCommentaires($row['id']);
         $posts = $posts . affiche_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
     }
     // Libère la variable
-    mysqli_free_result($result);
-
-    var_dump($posts);
+    $data->closeCursor();
 
     return $posts;
 }
 
 function showCompte($id){
     $result = getAllCompteData($id);
-    $data = mysqli_fetch_assoc($result);
+    $data = $result->fetch(PDO::FETCH_ASSOC);
     ?>
     <img id="imgProfil" src="../public/assets/images/profil.png">
     <h1><?php echo $data['pseudo'] ?></h1>

@@ -69,7 +69,7 @@ header {
     background-color: #d9d9d9;
     position: fixed;
     left: 0;
-    top: 103px;
+    top: 83px;
     border-right: solid;
     height: 100%;
     padding-left: 10px;
@@ -149,6 +149,19 @@ button {
     border: 2px solid;
     border-radius: 7px;
     display: flex;
+    max-width: 700px;
+    flex-direction: column;
+}
+
+#commentaire{
+    background: #fce9d8;
+    z-index: 1000;
+    margin: 0;
+    padding: 10px;
+    border: 2px solid;
+    border-radius: 7px;
+    display: inline-grid;
+    width: 400px;
     max-width: 700px;
     flex-direction: column;
 }

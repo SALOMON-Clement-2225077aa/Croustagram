@@ -9,7 +9,7 @@ function affiche_post($croustagrameur, $titre, $message, $date, $categorie1, $ca
         <div id="post" style="margin-bottom: 25px">
             <table id="tabPost">
                 <tr>
-                    <th><img <?php echo 'onclick="window.location.href = \'/viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+                    <th><img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
                     <th id="titrePost"><?php
                         echo '<h1>' . $titre . '</h1>';
                         ?></th>
@@ -29,7 +29,7 @@ function affiche_post($croustagrameur, $titre, $message, $date, $categorie1, $ca
                     </th>
                     <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
                     <th>
-                        <a href="../managePost/pagePost.php?id=<?php echo $idPost?>">
+                        <a href="viewPoste.php?id=<?php echo $idPost?>">
                             <img src="../public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
                         </a>
                     </th>
@@ -47,7 +47,7 @@ function showOnePost($id){
 
     $post = ' ';
 
-    $row = mysqli_fetch_assoc($result);
+    $row = $result->fetch(PDO::FETCH_ASSOC);
     $nb_comm = getNbCommentaires($row['id']);
     $post = $post . affiche_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
 

@@ -1,4 +1,4 @@
-l:<?php
+<?php
     function connexion_page($tabErreurs = array())
     {
         $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));

@@ -5,7 +5,6 @@
     <article class="post">
 
 <?php
-
 require '../controllers/controllerPoste.php';
 require '../controllers/CroustagramGUI.php';
 require '../controllers/controllerCommentaires.php';
@@ -17,5 +16,10 @@ echo Croustagram("Commentaires");
 echo showOnePost($id);
 
 echo '<h2>Commentaires :</h2>';
+
+if (isset($_SESSION['username'])){
+    echo showinterfaceAjoutCommentaire();
+}
+
 
 echo showCommentaires($id);

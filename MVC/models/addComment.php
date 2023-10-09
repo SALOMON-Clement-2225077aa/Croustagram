@@ -1,4 +1,5 @@
-<?php require_once '../MVC/config/connectDatabase.php';
+<?php
+require_once '../config/connectDatabase.php';
     session_start();
     $commentContent = htmlspecialchars($_POST['commentContent']);
 
@@ -18,6 +19,6 @@
     }
     else
     {
-        header("Location: pagePost.php?id=" . $_GET['id']);
+        header("Location: ../views/viewPoste.php?id=" . $_GET['id']);
         exit();
     }

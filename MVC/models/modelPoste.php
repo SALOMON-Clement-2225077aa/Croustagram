@@ -1,38 +1,39 @@
 <?php
+require_once '../config/connectDatabase.php';
 
 // Connexion à la base de donnée
-$dbLink = mysqli_connect("mysql-croustagramadd.alwaysdata.net", 328031, "b1Gz0000")
-or die('Erreur de connexion au serveur : ' . mysqli_connect_error());
-mysqli_select_db($dbLink , "croustagramadd_bdd")
-or die('Erreur dans la sélection de la base : ' . mysqli_error($dbLink));
+$connexion = connexion();
 
 function getOnePostData($id){
-    global $dbLink;
+    global $connexion;
 
-
-    $recherche = 'SELECT * FROM croustapost ORDER BY ptsCrous DESC';
-    $result = mysqli_query($dbLink, $recherche);
-
+    // Requête
+    $requete = 'SELECT * FROM croustapost ORDER BY ptsCrous DESC';
+    $result = $connexion->query($requete);
 
     if ($result) {
         return $result;
     }
-    else
-    {
-        echo 'Erreur dans la requête : ' . mysqli_error($dbLink);
-    }
+    return null;
 
 }
 
 
 
 function getNbCommentaireData($id){
-    global $dbLink;
-    // Requête COMMENTAIRES
-    $req = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $id;
-    $nb_comm_result = mysqli_fetch_assoc(mysqli_query($dbLink, $req));
+    global $connexion;
 
-    if ($nb_comm_result){
-        return $nb_comm_result;
+    // Requête COMMENTAIRES
+    $requete = 'SELECT COUNT(*) FROM croustacomm WHERE croustapost_id = ' . $id;
+    $result = $connexion->query($requete);
+
+    if ($result){
+        return $result;
     }
+    return null;
+}
+
+function getAllPostsDataaa(){
+    global $dbLink;
+
 }
