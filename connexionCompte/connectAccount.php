@@ -9,6 +9,7 @@
     $dbPassword = NULL;
 
     $tabErreurs = array();
+    $connexion = connexion();
 
     if ($username === 'hitori' and $password === 'gotou') connexion_page(array("bocchi"));
     else

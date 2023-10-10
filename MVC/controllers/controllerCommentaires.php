@@ -41,7 +41,7 @@ function showOneCommentaire($texte, $croustagrameur_id, $date, $pts_crous){
 
 function showinterfaceAjoutCommentaire(){
     ?>
-    <form action="../models/addComment.php?id=<?php echo $_GET['id'] ?>" method="post">
+    <form action="../controllers/addComment.php?id=<?php echo $_GET['id'] ?>" method="post">
         <div id="addComment">
             <input type="text" name="commentContent" placeholder="Contenu du commentaire">
         </div>

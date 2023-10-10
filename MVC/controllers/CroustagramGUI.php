@@ -19,10 +19,12 @@ function Croustagram($titre): void
 
 <body>
 <header>
-    <div id="divLogo">
-        <img class="header" id="logo" src="../public/assets/images/logo.png">
-        <h1 class="header">Croustagram</h1>
-    </div>
+    <a href="../views/viewMainPage.php" style="text-decoration: none">
+        <div id="divLogo">
+            <img class="header" id="logo" src="../public/assets/images/logo.png">
+            <h1 class="header" id="titre"><?php echo $titre ?></h1>
+        </div>
+    </a>
     <div class="header" id="DivLogoBarre">
         <div id="DivBarreRecherche">
             <button id="Recherche" onclick=""></button>
@@ -33,9 +35,9 @@ function Croustagram($titre): void
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()" style="left:800px; top:35px; position:fixed"> Créer un croustapost </button>';
+            echo '<button onclick="ouvrirPost()" style="left:925px; top:35px; position:absolute"> Créer un croustapost </button>';
             echo '<label style="top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
-            echo '<button onclick="window.location.href = \'../models/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
+            echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
         }
         else
         {
@@ -50,5 +52,31 @@ function Croustagram($titre): void
         showLeaderboard();
     ?>
 </section>
+
+<div>
+    <section id="pointCpt">
+    <?php
+    if (isset($_SESSION['username'])) {
+        ?>
+        <h2 style="font-size: 40px;">Mes points crous :<br>
+            <?php
+                echo showPtsCrous();
+            ?>
+        </h2>
+    <?php
+    }
+    else{
+        ?>
+        <h2 style="font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
+        </h2>
+        <?php
+    }
+    ?>
+    </section>
+
+    <section id="ad">
+        <h3>your ad here</h3>
+    </section>
+</div>
 <?php
 }

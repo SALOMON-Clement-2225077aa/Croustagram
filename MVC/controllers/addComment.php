@@ -17,8 +17,6 @@ require_once '../config/connectDatabase.php';
         echo '<strong>Requête : ' . $query . '</strong><br>';
         exit();
     }
-    else
-    {
-        header("Location: ../views/viewPoste.php?id=" . $_GET['id']);
-        exit();
-    }
+
+    header("Location: ../views/viewPoste.php?id=" . $_GET['id']);
+    exit();
