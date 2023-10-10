@@ -52,5 +52,31 @@ function Croustagram($titre): void
         showLeaderboard();
     ?>
 </section>
+
+<div>
+    <section id="pointCpt">
+    <?php
+    if (isset($_SESSION['username'])) {
+        ?>
+        <h2 style="font-size: 40px;">Mes points crous :<br>
+            <?php
+                echo showPtsCrous();
+            ?>
+        </h2>
+    <?php
+    }
+    else{
+        ?>
+        <h2 style="font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
+        </h2>
+        <?php
+    }
+    ?>
+    </section>
+
+    <section id="ad">
+        <h3>your ad here</h3>
+    </section>
+</div>
 <?php
 }
