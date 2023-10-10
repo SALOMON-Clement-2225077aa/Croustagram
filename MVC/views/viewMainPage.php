@@ -7,8 +7,6 @@ Croustagram('Accueil');
 echo '<section id="posts">';
 echo '<article class="post">';
 
-
-
 echo showAllPosts();
 
 echo '</article>';

@@ -20,7 +20,7 @@ function showLeaderboard(){
 
     //$result->fetch(PDO::FETCH_ASSOC)
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-        afficher_user($row['pseudo'], $row['ptsCrous']);
+        afficher_user($row['id'], $row['ptsCrous']);
     }
 
     $data->closeCursor();
