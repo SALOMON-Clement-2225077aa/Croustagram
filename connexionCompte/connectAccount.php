@@ -1,6 +1,8 @@
 <?php
     require 'utils.connectaccount.php';
-    require_once  '../MVC/config/connectDatabase.php';
+    require_once  '../MVC/config/connectDatabase.php';?>
+    <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
+<?php
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);

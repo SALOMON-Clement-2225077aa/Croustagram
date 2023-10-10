@@ -34,11 +34,11 @@
                         <?php
                         if (in_array('noMatchFoundUsername', $tabErreurs))
                         { ?>
-                           <label id="erreurLabel"><strong>Le couple adresse e-mail / mot de passe ne correspond à aucun compte !</strong></label>
+                           <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
                         <?php }
                         elseif (in_array('noMatchFoundMail', $tabErreurs))
                         { ?>
-                            <label id="erreurLabel"><strong>Le couple adresse e-mail / mot de passe ne correspond à aucun compte !</strong></label>
+                            <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
                         <?php } ?>
                     </form>
                     <h1 id="PasDeCompte">Pas de compte ?</h1>
