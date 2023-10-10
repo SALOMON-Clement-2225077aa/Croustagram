@@ -2,6 +2,10 @@ body{
     margin: 0;
 }
 
+form{
+    all: unset;
+}
+
 #logo{
     max-width : 60px;
     max-height: 60px;
@@ -166,10 +170,40 @@ button {
     background-color: #d9d9d9;
     border: solid 3px;
     border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#BoxMilieu button{
+    border-radius: 50px;
+    border: solid;
+    height: 50px;
+    width: 200px;
+    font-size: 25px;
+}
+
+#FormConnect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FormDiv label{
+    font-size: 25px;
+}
+.FormDiv{
+    padding: 10px;
 }
 #erreurLabel{
     font-size: 12px;
     color: red;
+}
+
+#PasDeCompte{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #commentaire{
