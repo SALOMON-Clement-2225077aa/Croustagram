@@ -93,6 +93,7 @@ header {
     flex-direction: column;
     margin-bottom: 25px;
 }
+
 #posts{
     display: flex;
     justify-content: space-between;
@@ -188,4 +189,6 @@ button {
 
 #titre{
     font-size: 22px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
