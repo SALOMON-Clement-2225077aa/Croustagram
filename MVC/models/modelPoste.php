@@ -8,7 +8,7 @@ function getOnePostData($id){
     global $connexion;
 
     // Requête
-    $requete = 'SELECT * FROM croustapost ORDER BY ptsCrous DESC';
+    $requete = 'SELECT * FROM croustapost WHERE id=' . $id . " ORDER BY ptsCrous DESC";
     $result = $connexion->query($requete);
 
     if ($result) {
@@ -33,7 +33,15 @@ function getNbCommentaireData($id){
     return null;
 }
 
-function getAllPostsDataaa(){
-    global $dbLink;
+function getAllPostsId(){
+    global $connexion;
 
+    // Requête
+    $requete = 'SELECT id FROM croustapost ORDER BY ptsCrous DESC';
+    $result = $connexion->query($requete);
+
+    if ($result) {
+        return $result;
+    }
+    return null;
 }

@@ -19,7 +19,7 @@ function showPosts($id){
     // afficher_post($croustagrameur, $titre, $message, $date, $categorie, $ptsCrous):
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         $nb_comm = getNbCommentaires($row['id']);
-        $posts = $posts . affiche_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+        $posts = $posts . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
     }
     // Libère la variable
     $data->closeCursor();

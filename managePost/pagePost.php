@@ -56,7 +56,7 @@ if (isset($_SESSION['username']) and $row['croustagrameur_id'] === $_SESSION['us
     if(isset($_SESSION['suid']))
     {
 ?>
-    <form method="post" action="../MVC/models/addComment.php?id=<?php echo $_GET['id'] ?>">
+    <form method="post" action="../MVC/controllers/addComment.php?id=<?php echo $_GET['id'] ?>">
         <label>Ajouter un commentaire :</label><br>
         <textarea name="commentContent" placeholder="Contenu du commentaire" rows="6" cols="50" required style="resize: none"></textarea>
         <br><button type="submit">Commenter</button>

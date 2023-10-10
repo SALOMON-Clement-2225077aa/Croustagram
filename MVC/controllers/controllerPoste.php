@@ -2,7 +2,7 @@
 
 require_once 'controllerCompte.php';
 
-function affiche_post($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+function showPost($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
     <form action="../managePost/pagePost.php" >
@@ -41,17 +41,27 @@ function affiche_post($croustagrameur, $titre, $message, $date, $categorie1, $ca
 }
 
 function showOnePost($id){
-    echo '<article class="post">';
 
-    $result = getOnePostData($id);
+    $data = getOnePostData($id);
 
     $post = ' ';
 
-    $row = $result->fetch(PDO::FETCH_ASSOC);
+    $row = $data->fetch(PDO::FETCH_ASSOC);
     $nb_comm = getNbCommentaires($row['id']);
-    $post = $post . affiche_post($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+    $post = $post . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
 
-    echo '</article>';
 
     return $post;
+}
+
+function showAllPosts(){
+    $posts = ' ';
+
+    $data = getAllPostsId();
+
+    while($row = $data->fetch(PDO::FETCH_ASSOC)){
+        $posts = $posts . showOnePost($row['id']);
+    }
+
+    return $posts;
 }
