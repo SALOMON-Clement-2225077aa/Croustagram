@@ -1,4 +1,5 @@
 <?php
+
 function connexion_page($tabErreurs = array())
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -11,7 +12,7 @@ function connexion_page($tabErreurs = array())
             <form action="request.php" method="post">
                 <?php }
                 else { ?>
-                <form action="../controllers/connectAccount.php" method="post">
+                <form action="../controllers/connectAccount.php" method="post" id="FormConnect">
                     <?php } ?>
                     <div class="FormDiv">
                         <label>Identifiant :</label>

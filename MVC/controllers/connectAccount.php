@@ -1,7 +1,7 @@
 <?php
     require 'controllerPageConnexion.php';
     require_once  '../config/connectDatabase.php';?>
-    <link rel="stylesheet" href="../MVC/public/assets/styles/computer/style.css">
+    <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
 <?php
 
     $username = htmlspecialchars($_POST['username']);

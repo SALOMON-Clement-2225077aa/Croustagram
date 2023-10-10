@@ -1,4 +1,5 @@
 <?php
-require '../controllers/controllerPageConnexion.php';
+require '../controllers/controllerPageConnexion.php'; ?>
+<link rel="stylesheet" href="../public/assets/styles/computer/style.css">
 
-connexion_page(array());
+<?php connexion_page();?>
