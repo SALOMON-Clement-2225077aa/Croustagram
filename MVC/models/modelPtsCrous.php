@@ -4,5 +4,7 @@ function getPtsCrousData($id){
     $connexion = connexion();
 
     // Requête
-    $data = $connexion->query('SELECT ptsCrous FROM croustagrameur where id =' . $id);
+    $data = $connexion->query('SELECT ptsCrous FROM croustagrameur WHERE id="' . $id . '"');
+
+    return $data;
 }

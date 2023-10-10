@@ -18,5 +18,5 @@ require_once '../config/connectDatabase.php';
         exit();
     }
 
-    header("Location: ../views/viewPoste.php?id=" . $_GET['id']);
+    header("Location: ../../views/viewPoste.php?id=" . $_GET['id']);
     exit();

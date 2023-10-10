@@ -1,6 +1,6 @@
 <?php
-
     require 'controllerLeaderboard.php';
+    require 'controllerPointsCrous.php';
 function Croustagram($titre): void
 {
     $titre = 'Croustagram - ' . $titre;
@@ -41,7 +41,7 @@ function Croustagram($titre): void
         }
         else
         {
-            echo '<button onclick="window.location.href = \'../connexionCompte/pageConnexionCompte.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
+            echo '<button onclick="window.location.href = \'../views/viewConnexionPage.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
         }
         ?>
 </header>

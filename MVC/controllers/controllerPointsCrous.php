@@ -1,7 +1,9 @@
 <?php
+
+require '../models/modelPtsCrous.php';
 function showPtsCrous(){
 
-    getPtsCrousData($_SESSION['username']);
+    $data = getPtsCrousData($_SESSION['username']);
 
     $row = $data->fetch(PDO::FETCH_ASSOC);
 
