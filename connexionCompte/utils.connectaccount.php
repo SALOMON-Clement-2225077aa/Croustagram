@@ -20,7 +20,7 @@
                         <form action="request.php" method="post">
                     <?php }
                     else { ?>
-                        <form action="connectAccount.php" method="post">
+                        <form action="connectAccount.php" method="post" id="FormConnect">
                     <?php } ?>
                         <div class="FormDiv">
                             <label>Identifiant :</label>
@@ -41,13 +41,15 @@
                             <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
                         <?php } ?>
                     </form>
-                    <h1 id="PasDeCompte">Pas de compte ?</h1>
-                    <?php if ($isMob) { ?>
-                        <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
-                    <?php }
-                    else { ?>
-                    <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
-                    <?php } ?>
+                    <div id="PasDeCompte">
+                        <h1>Pas de compte ?</h1>
+                        <?php if ($isMob) { ?>
+                            <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
+                        <?php }
+                        else { ?>
+                            <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
+                        <?php } ?>
+                    </div>
                 </div>
             </div>
         </body>
