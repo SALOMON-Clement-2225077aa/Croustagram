@@ -1,7 +1,7 @@
 <?php
     require 'controllerLeaderboard.php';
     require 'controllerPointsCrous.php';
-function Croustagram($titre): void
+function Croustagram($titre, $showCompteStats = true): void
 {
     $titre = 'Croustagram - ' . $titre;
     session_start();
@@ -32,10 +32,11 @@ function Croustagram($titre): void
             <button id="EffacerRecherche" onclick=""></button>
             <button id="FiltrerRecherche" onclick=""></button>
         </div>
+
         <?php
         if(isset($_SESSION['suid']))
         {
-            echo '<button onclick="ouvrirPost()" style="left:925px; top:35px; position:absolute"> Créer un croustapost </button>';
+            echo '<button onclick="ouvrirPost()" id="créerPost"> Créer un croustapost </button>';
             echo '<label style="top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
             echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
         }
@@ -53,6 +54,11 @@ function Croustagram($titre): void
     ?>
 </section>
 
+<?php
+
+if($showCompteStats){
+
+?>
 <div>
     <section id="pointCpt">
     <?php
@@ -79,4 +85,5 @@ function Croustagram($titre): void
     </section>
 </div>
 <?php
+    }
 }

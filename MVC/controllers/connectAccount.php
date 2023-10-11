@@ -1,8 +1,11 @@
 <?php
     require 'controllerPageConnexion.php';
-    require_once  '../config/connectDatabase.php';?>
+    require_once  '../config/connectDatabase.php';
+    require '../controllers/CroustagramGUI.php';
+    ?>
     <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
 <?php
+    Croustagram('Crousnection', false);
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);

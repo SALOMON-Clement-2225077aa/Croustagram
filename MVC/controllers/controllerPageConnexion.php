@@ -22,10 +22,12 @@ function connexion_page($tabErreurs = array())
                         <label>Mot de passe :</label>
                         <input type="password" name="password" required>
                     </div>
+                    <br>
                     <button id="FormBouton" type="submit">Se connecter</button>
                     <?php
                     if (in_array('noMatchFoundUsername', $tabErreurs))
                     { ?>
+                            <br>
                         <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
                     <?php }
                     elseif (in_array('noMatchFoundMail', $tabErreurs))

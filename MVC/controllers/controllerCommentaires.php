@@ -11,8 +11,9 @@ function showCommentaires($id){
     return $commentaires;
 }
 
-function showOneCommentaire($texte, $croustagrameur_id, $date, $pts_crous){
+function showOneCommentaire($texte, $croustagrameur_id, $date){
     ?>
+    <br>
     <form action="../managePost/pagePost.php" >
         <div id="commentaire" style="margin-bottom: 25px">
             <table id="tabPost">
@@ -28,7 +29,7 @@ function showOneCommentaire($texte, $croustagrameur_id, $date, $pts_crous){
                     </th>
                 </tr>
                 <tr>
-                    <th> <?php echo $pts_crous ?>
+                    <th>
                         <button onclick="upVote()"> <img src="../public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
                         <button onclick="downVote()"> <img src="../public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
                     </th>
@@ -43,7 +44,9 @@ function showinterfaceAjoutCommentaire(){
     ?>
     <form action="../controllers/addComment.php?id=<?php echo $_GET['id'] ?>" method="post">
         <div id="addComment">
-            <input type="text" name="commentContent" placeholder="Contenu du commentaire">
+            <textarea name="commentContent" placeholder="Contenu du commentaire" class="commentBox" rows="6" cols="50"></textarea>
+            <br><br>
+            <button type="submit">Ajouter un commentaire</button>
         </div>
     </form>
     <?php

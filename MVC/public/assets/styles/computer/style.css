@@ -226,3 +226,17 @@ button {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+#DivLogoBarre{
+    display: inline-flex;
+}
+
+#créerPost{
+    margin-top: 5px;
+    width: 200px;
+    height: 50px;
+    border-radius: 7px;
+    border: 2px solid;
+    background: #F79F14;
+    font-size: 15px;
+}
