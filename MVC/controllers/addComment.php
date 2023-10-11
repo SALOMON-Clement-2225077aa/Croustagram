@@ -7,7 +7,7 @@ require_once '../config/connectDatabase.php';
 
     $connexion = connexion();
 
-    $query = 'INSERT INTO croustacomm (texte, date, croustagrameur_id, croustapost_id, pts_crous) VALUES ("' .  $commentContent . '", "' . $today . '", "' . $_SESSION['username'] . '", "' . $_GET['id'] . '", 0)';
+    $query = 'INSERT INTO croustacomm (texte, date, croustagrameur_id, croustapost_id, pts_crous) VALUES ("' .  $commentContent . '", "' . $today . '", "' . $_SESSION['username'] . '", "' . $_GET['id'] . '")';
 
     if (!($dbResult = $connexion->exec($query))) {
         echo '<strong>Erreur dans requête</strong><br>';

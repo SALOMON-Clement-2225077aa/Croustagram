@@ -1,14 +1,16 @@
 <?php
-
 require_once 'controllerCompte.php';
+require_once '../models/modelCompte.php';
 
-function showPost($croustagrameur, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
     <div id="post" style="margin-bottom: 25px">
         <table id="tabPost">
             <tr>
-                <th><img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur ?></a></th>
+                <th style="left: -10px">
+                    <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameurId ?></a>
+                </th>
                 <th id="titrePost"><?php
                     echo '<h1>' . $titre . '</h1>';
                     ?></th>
@@ -46,6 +48,7 @@ function showOnePost($id){
 
     $row = $data->fetch(PDO::FETCH_ASSOC);
     $nb_comm = getNbCommentaires($row['id']);
+
     $post = $post . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
 
 

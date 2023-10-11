@@ -18,8 +18,6 @@ function getOnePostData($id){
 
 }
 
-
-
 function getNbCommentaireData($id){
     global $connexion;
 

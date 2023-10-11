@@ -1,7 +1,6 @@
 <?php
 require_once '../controllers/controllerPoste.php';
 require_once '../models/modelPoste.php';
-require_once  '../models/modelCompte.php';
 
 function getNbCommentaires($id){
 

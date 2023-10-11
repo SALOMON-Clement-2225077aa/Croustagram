@@ -28,12 +28,6 @@ function showOneCommentaire($texte, $croustagrameur_id, $date){
                         <h2> <?php echo wordwrap($texte, 30, '<br>', true) ?> </h2>
                     </th>
                 </tr>
-                <tr>
-                    <th>
-                        <button onclick="upVote()"> <img src="../public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
-                        <button onclick="downVote()"> <img src="../public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
-                    </th>
-                </tr>
             </table>
         </div>
     </form>
