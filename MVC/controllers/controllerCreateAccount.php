@@ -7,7 +7,8 @@ if(isset($_SESSION['createTabErreur'])) $erreurTab = $_SESSION['createTabErreur'
 if(isset($_SESSION['createUsername'])) $def_username = $_SESSION['createUsername'];
 if(isset($_SESSION['createMail'])) $def_mail = $_SESSION['createMail'];
 if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang='fr'>
 <head>
     <meta charset="UTF-8">
