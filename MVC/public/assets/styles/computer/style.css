@@ -93,7 +93,7 @@ header {
     border: 2px solid;
     border-radius: 7px;
     display: flex;
-    max-width: 700px;
+    width: 700px;
     flex-direction: column;
     margin-bottom: 25px;
     padding-left: 10px;
@@ -241,4 +241,8 @@ button {
     border: 2px solid;
     background: #F79F14;
     font-size: 15px;
+}
+
+#FormBouton{
+    margin-left: 190px;
 }

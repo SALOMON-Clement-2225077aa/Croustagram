@@ -28,12 +28,12 @@ function showOneCommentaire($texte, $croustagrameur_id, $date, $id, $idPost){
                     </th>
                 </tr>
             </table>
+            <?php
+            if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
+                echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le poste</button><br>';
+            }
+            ?>
         </div>
-        <?php
-        if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
-            echo '<br><button onclick="window.location.href = ' . '\'../models/deleteComm.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le poste</button>';
-        }
-        ?>
 <?php
 }
 
