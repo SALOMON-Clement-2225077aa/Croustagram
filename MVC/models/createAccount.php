@@ -103,9 +103,10 @@
             echo '<strong>Requête : ' . $query . '</strong><br>';
             exit();
         }
+        session_unset();
         $_SESSION['username'] = $username;
         $_SESSION['suid'] = session_id();
-        header('Location: ' . $_SESSION['currentUrl']);
+        header('Location: ../views/viewMainPage.php');
         exit();
     }
     else {
