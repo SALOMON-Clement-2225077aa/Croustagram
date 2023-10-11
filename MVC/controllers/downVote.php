@@ -1,4 +1,5 @@
 <?php
 require '../models/modelVote.php';
-
-downVote($_GET['id']);
+session_start();
+if(isset($_SESSION['suid'])) downVote($_GET['id']);
+else header('Location:' . $_SESSION['currentUrl']);

@@ -1,4 +1,6 @@
 <?php
 require '../models/modelVote.php';
 
-upVote($_GET['id']);
+session_start();
+if(isset($_SESSION['suid'])) upVote($_GET['id']);
+else header('Location:' . $_SESSION['currentUrl']);
