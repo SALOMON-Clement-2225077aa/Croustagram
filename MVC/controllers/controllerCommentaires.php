@@ -5,16 +5,15 @@ function showCommentaires($id){
     $commentaires = ' ';
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $commentaires . '<section id="commentaire">';
-        $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $row['date']);
+        $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $row['date'], $row['id'], $row['croustapost_id']);
         $commentaires . '</section>';
     }
     return $commentaires;
 }
 
-function showOneCommentaire($texte, $croustagrameur_id, $date){
+function showOneCommentaire($texte, $croustagrameur_id, $date, $id, $idPost){
     ?>
     <br>
-    <form action="../managePost/pagePost.php" >
         <div id="commentaire" style="margin-bottom: 25px">
             <table id="tabPost">
                 <tr>
@@ -30,7 +29,11 @@ function showOneCommentaire($texte, $croustagrameur_id, $date){
                 </tr>
             </table>
         </div>
-    </form>
+        <?php
+        if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
+            echo '<br><button onclick="window.location.href = ' . '\'../models/deleteComm.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le poste</button>';
+        }
+        ?>
 <?php
 }
 

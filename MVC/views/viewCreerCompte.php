@@ -3,6 +3,8 @@
 require '../controllers/CroustagramGUI.php';
 require '../controllers/controllerCreateAccount.php';
 
-Croustagram('Inscription', false);
+if (isset($_SESSION['suid'])) header('Location :' . $_SESSION['currentUrl']);
 
 showAccountPage();
+
+Croustagram('Inscription', false);
