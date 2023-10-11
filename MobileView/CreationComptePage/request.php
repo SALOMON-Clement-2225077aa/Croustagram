@@ -13,7 +13,7 @@ $tabErreur = array();
 
 function page_erreur(){
     global $mail, $username, $tabErreur, $name;
-    account_page($tabErreur, $username, $mail, $name);
+    showAccountPage($tabErreur, $username, $mail, $name);
 }
 
 $connexion = connexion();

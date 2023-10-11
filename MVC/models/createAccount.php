@@ -1,7 +1,8 @@
-<link rel="stylesheet" type="text/css" href="../MVC/public/assets/styles/computer/style.css">
 <?php
-    require 'utils.createaccount.php';
-    require_once '../MVC/config/connectDatabase.php';
+    require_once '../config/connectDatabase.php';
+
+    session_start();
+
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
     $name = htmlspecialchars($_POST['name']);
@@ -12,7 +13,12 @@
 
     function page_erreur(){
         global $mail, $username, $tabErreur, $name;
-        account_page($tabErreur, $username, $mail, $name);
+        $_SESSION['createMail'] = $mail;
+        $_SESSION['createUsername'] = $username;
+        $_SESSION['createTabErreur'] = $tabErreur;
+        $_SESSION['createName'] = $name;
+        header('Location: ../views/viewCreerCompte.php');
+        exit();
     }
 
     $connexion = connexion();
@@ -97,13 +103,11 @@
             echo '<strong>Requête : ' . $query . '</strong><br>';
             exit();
         }
-        session_start();
         $_SESSION['username'] = $username;
         $_SESSION['suid'] = session_id();
-        header('Location: ../index.php');
+        header('Location: ' . $_SESSION['currentUrl']);
         exit();
     }
     else {
         page_erreur();
     }
-

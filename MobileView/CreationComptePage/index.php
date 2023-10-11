@@ -6,7 +6,7 @@ require '../utils.inc.php';
 ?>
     <?php start_page('Nouveau compte');?>
             <?php
-            account_page();
+            showAccountPage();
             ?>
     <?php end_page('Nouveau compte'); ?>
 <?php

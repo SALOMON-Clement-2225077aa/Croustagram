@@ -1,2 +1,7 @@
 <?php
-$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+
+require '../controllers/CroustagramGUI.php';
+require '../controllers/controllerCreateAccount.php';
+
+Croustagram('Inscription', false);
+showAccountPage();
