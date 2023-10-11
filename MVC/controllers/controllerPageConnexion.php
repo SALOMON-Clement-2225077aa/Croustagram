@@ -1,7 +1,7 @@
 <?php
-
 function connexion_page($tabErreurs = array())
 {
+    if($tabErreurs === null) $tabErreurs = array();
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     ?>
     <body <?php if(in_array('bocchi', $tabErreurs)) echo'style="background-image: url(\'https://media.tenor.com/-FrcCsUig4sAAAAC/spin-bocchi.gif\')"'?>>
@@ -40,7 +40,7 @@ function connexion_page($tabErreurs = array())
                     <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
                 <?php }
                 else { ?>
-                    <button id="InscriptionBouton" onclick="window.location.href='../creationCompte/pageCreationCompte.php'">S'inscrire</button>
+                    <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte.php'">S'inscrire</button>
                 <?php } ?>
         </div>
     </div>

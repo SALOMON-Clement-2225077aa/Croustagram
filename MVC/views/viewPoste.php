@@ -13,6 +13,8 @@ $id = $_GET['id'];
 
 echo Croustagram("Commentaires");
 
+$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+
 echo showOnePost($id);
 
 echo '<h2>Commentaires :</h2>';

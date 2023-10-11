@@ -4,6 +4,8 @@ require '../controllers/controllerPoste.php';
 
 Croustagram('Accueil');
 
+$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+
 echo '<section id="posts">';
 echo '<article class="post">';
 

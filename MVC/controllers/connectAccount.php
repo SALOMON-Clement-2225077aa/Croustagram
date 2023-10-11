@@ -1,11 +1,9 @@
 <?php
     require 'controllerPageConnexion.php';
     require_once  '../config/connectDatabase.php';
-    require '../controllers/CroustagramGUI.php';
     ?>
     <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
 <?php
-    Croustagram('Crousnection', false);
 
     $username = htmlspecialchars($_POST['username']);
     $password = htmlspecialchars($_POST['password']);
@@ -44,7 +42,8 @@
                 session_start();
                 $_SESSION['username'] = $dbId['id'];
                 $_SESSION['suid'] = session_id();
-                header('Location: ../index.php');
+                header('Location: ' . $_SESSION['currentUrl']);
+                die();
             }
         }
         else
@@ -70,15 +69,15 @@
                 // Actualisation de la dernière connexion
                 $today = date('Y-m-d');
                 $connexion->exec('UPDATE croustagrameur SET derniere_connexion =  "' . $today . '" WHERE id=\'' . $username . '\'');
-
-                //UPDATE `croustagrameur` SET `derniere_connexion` = '2023-09-29' WHERE `croustagrameur`.`id` = 'bob2sud';
-
-                header('Location: ../views/viewMainPage.php');
-                exit();
+                header('Location: ' . $_SESSION['currentUrl']);
+                die();
             }
         }
         if (count($tabErreurs) !== 0)
         {
-            connexion_page($tabErreurs);
+            session_start();
+            $_SESSION['tabErreurs'] = $tabErreurs;
+            header('Location:../views/viewConnexionPage.php');
+            die();
         }
     }

@@ -11,7 +11,8 @@ function upVote($post_ID) : void
     $requete = 'UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = ' . $post_ID;
     $connexion->exec($requete);
 
-    header('Location: ../views/viewMainPage.php');
+    session_start();
+    header('Location: ' . $_SESSION['currentUrl']);
 }
 function downVote($post_ID) : void
 {
@@ -21,5 +22,6 @@ function downVote($post_ID) : void
     $requete = 'UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = ' . $post_ID;
     $connexion->exec($requete);
 
-    header('Location: ../views/viewMainPage.php');
+    session_start();
+    header('Location: ' . $_SESSION['currentUrl']);
 }

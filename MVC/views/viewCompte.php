@@ -11,6 +11,8 @@ require '../controllers/CroustagramGUI.php';
 
 Croustagram('Postes');
 
+$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+
 $id = $_GET['id'];
 
 echo showCompte($id);
