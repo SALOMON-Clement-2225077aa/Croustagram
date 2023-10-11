@@ -5,7 +5,7 @@ function showCommentaires($id){
     $commentaires = ' ';
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $commentaires . '<section id="commentaire">';
-        $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $row['date'], $row['pts_crous']);
+        $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $row['date']);
         $commentaires . '</section>';
     }
     return $commentaires;
