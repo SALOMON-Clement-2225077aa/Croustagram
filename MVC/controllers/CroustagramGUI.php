@@ -1,6 +1,7 @@
 <?php
-    require 'controllerLeaderboard.php';
-    require 'controllerPointsCrous.php';
+    require_once 'controllerLeaderboard.php';
+    require_once 'controllerPointsCrous.php';
+    require_once 'controllerMenuCategorie.php';
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
     $titre = 'Croustagram - ' . $titre;
@@ -30,7 +31,10 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             <button id="Recherche" onclick=""></button>
             <input id="BarreRecherche" type="text">
             <button id="EffacerRecherche" onclick=""></button>
-            <button id="FiltrerRecherche" onclick=""></button>
+            <select id="FiltrerRecherche" hidden="until-found">
+                <option value="0">-- Sélectionner la catégorie --</option>
+                <?php selectCategorie(); ?>
+            </select>
         </div>
 
         <?php
