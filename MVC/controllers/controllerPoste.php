@@ -6,36 +6,33 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
 {
     ?>
     <div id="post" style="margin-bottom: 25px">
-        <table id="tabPost">
-            <tr>
-                <th style="left: -10px">
-                    <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameurId ?></a>
-                </th>
-                <th id="titrePost"><?php
-                    echo '<h1>' . $titre . '</h1>';
-                    ?></th>
-                <th><?php
-                    echo $date;
-                    ?></th>
-            </tr>
-            <tr>
-                <th colspan="3">
-                    <h2> <?php echo wordwrap($message, 30, '<br>', true) ?> </h2>
-                </th>
-            </tr>
-            <tr>
-                <th> <?php echo $ptsCrous ?>
-                    <button onclick="window.location.href = '../controllers/upVote.php?id=<?php echo $idPost?>'"> <img src="../public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
-                    <button onclick="window.location.href = '../controllers/downVote.php?id=<?php echo $idPost ?>'"> <img src="../public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
-                </th>
-                <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
-                <th>
-                    <a href="viewPoste.php?id=<?php echo $idPost?>">
-                        <img src="../public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
-                    </a>
-                </th>
-            </tr>
-        </table>
+
+            <div id="hautPostDiv">
+                <div id="postUserDiv">
+                    <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" >
+                    <label id="nomUserPost"> <?php echo $croustagrameurId ?> </label>
+                </div>
+                <label id="datePost"> <?php echo $date ?> </label>
+            </div>
+
+            <h1 id="titrePost"> <?php echo $titre ?> </h1>
+
+            <h2 id="messagePost"> <?php echo wordwrap($message, 50, '<br>', true) ?> </h2>
+
+            <label id="categoriesPost"> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </label>
+
+            <div id="basPostDiv">
+                <div id="votesPostDiv">
+                    <label id="pointCrousLabelPost"> <?php echo $ptsCrous ?> </label>
+                    <button id="UpVoteBouton" onclick="window.location.href = '../controllers/upVote.php?id=<?php echo $idPost?>'"></button>
+                    <button id="DownVoteBouton" onclick="window.location.href = '../controllers/downVote.php?id=<?php echo $idPost ?>'"></button>
+                </div>
+                <div id="commentairesPostDiv">
+                    <button id="CommentaireBouton" onclick="window.location.href = 'viewPoste.php?id=<?php echo $idPost?>'"></button>
+                    <label> <?php echo $nb_comm; ?> </label>
+                </div>
+            </div>
+
     </div>
     <?php
     if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){

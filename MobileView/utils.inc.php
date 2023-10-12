@@ -84,10 +84,12 @@ function end_page($title): void
                     <button onclick="upVote()" id="UpVoteBouton">
                     <button onclick="downVote()" id="DownVoteBouton">
                 </div>
-                <th> <?php echo $nb_comm; ?></th> <button id="CommentaireBouton"></button>
+                <div>
+                    <label> <?php echo $nb_comm; ?> </label>
+                    <button id="CommentaireBouton"></button>
+                </div>
             </div>
-        </>
-    </div>
+        </div>
     <?php
     }
     ?>
