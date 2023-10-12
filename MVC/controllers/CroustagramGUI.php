@@ -77,7 +77,7 @@ if($showCompteStats){
     <?php
     if (isset($_SESSION['username'])) {
         ?>
-        <h2 style="font-size: 40px;">Mes points Crous :<br>
+        <h2 style=" color: white; font-size: 40px;">Mes points Crous :<br>
             <?php
                 echo showPtsCrous();
             ?>
@@ -86,7 +86,7 @@ if($showCompteStats){
     }
     else{
         ?>
-        <h2 style="font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
+        <h2 style="color: white; font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
         </h2>
         <?php
     }
