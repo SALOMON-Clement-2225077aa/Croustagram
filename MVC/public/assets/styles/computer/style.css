@@ -89,14 +89,14 @@ header {
     background: #fce9d8;
     z-index: 1000;
     margin: 0;
-    padding: 10px;
+    padding: 0px;
     border: 2px solid;
     border-radius: 7px;
     display: flex;
     width: 700px;
     flex-direction: column;
     margin-bottom: 25px;
-    padding-left: 10px;
+    padding-left: 0px;
 }
 
 #hautPostDiv {
@@ -154,7 +154,7 @@ header {
     align-items: center;
     font-size: 30px;
     margin: 0px;
-    padding: 10px;
+    padding: 0px;
 }
 
 #votesPostDiv {
@@ -163,9 +163,8 @@ header {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     margin: 0px;
-    padding: 0px;
 }
 
 #pointCrousLabelPost {
@@ -268,13 +267,37 @@ button {
 #commentaire{
     background: #fce9d8;
     z-index: 1000;
-    margin: 0;
-    padding: 10px;
+    margin: 0px;
+    padding: 0px;
     border: 2px solid;
     border-radius: 7px;
     display: flex;
     max-width: 700px;
     flex-direction: column;
+    width: 400px;
+}
+
+#hautCommentaireDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+    padding: 5px;
+    font-size: 15px;
+    border-bottom: solid;
+}
+
+#imgProfilCommentaire{
+    border-radius: 50%;
+    width: 30px;
+}
+
+#messageCommentaire {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 15px;
+    font-size: 20px;
 }
 
 #ContenuPage{
@@ -327,18 +350,7 @@ button {
     align-items: center;
 }
 
-#commentaire{
-    background: #fce9d8;
-    z-index: 1000;
-    margin: 0;
-    padding: 10px;
-    border: 2px solid;
-    border-radius: 7px;
-    display: inline-grid;
-    width: 400px;
-    max-width: 700px;
-    flex-direction: column;
-}
+
 
 #titre{
     font-size: 22px;
