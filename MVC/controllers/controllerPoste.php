@@ -33,14 +33,15 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
                     <button id="CommentaireBouton" onclick="window.location.href = 'viewPoste.php?id=<?php echo $idPost?>'"></button>
                     <label> <?php echo $nb_comm; ?> </label>
                 </div>
+                <?php
+                if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
+                    echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
+                }
+                ?>
             </div>
 
     </div>
-    <?php
-    if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
-        echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
-    }
-    ?>
+
     <?php
 }
 
