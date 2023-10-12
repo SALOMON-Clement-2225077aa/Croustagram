@@ -20,7 +20,8 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
 
             <h2 id="messagePost"> <?php echo wordwrap($message, 50, '<br>', true) ?> </h2>
 
-            <label id="categoriesPost"> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </label>
+            <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
+            <label id="categoriesPost"> <?php echo $les_categories ?> </label>
 
             <div id="basPostDiv">
                 <div id="votesPostDiv">
