@@ -115,6 +115,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor:pointer;
 }
 
 #nomUserPost {
@@ -290,6 +291,7 @@ button {
 #imgProfilCommentaire{
     border-radius: 50%;
     width: 30px;
+    cursor:pointer;
 }
 
 #messageCommentaire {
@@ -374,4 +376,12 @@ button {
 
 #FormBouton{
     margin-left: 190px;
+}
+
+a{
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
 }
