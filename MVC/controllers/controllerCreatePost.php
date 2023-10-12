@@ -25,8 +25,8 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
                 <form action="../models/createPost.php" method="post">
             <?php } ?>
 
-                    <input type="text" name="titre" placeholder="Titre du post" required><br>
-                    <textarea name="contenu" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
+                    <input type="text" name="titleContent" placeholder="Titre du post" required><br>
+                    <textarea name="postContent" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
 
                     <p> Sélectionner des catégories (facultatif) : </p>
                     <select name="Catégorie 1" id="cat1-select">
