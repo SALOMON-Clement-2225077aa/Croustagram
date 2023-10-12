@@ -32,7 +32,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             <input id="BarreRecherche" type="text">
             <button id="EffacerRecherche" onclick=""></button>
             <select id="FiltrerRecherche" hidden="until-found">
-                <option value="0">-- Sélectionner la catégorie --</option>
+                <option value="0">-- Filtrer la catégorie --</option>
                 <?php selectCategorie(); ?>
             </select>
         </div>

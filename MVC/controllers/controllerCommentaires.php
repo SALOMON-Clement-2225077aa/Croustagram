@@ -15,19 +15,16 @@ function showOneCommentaire($texte, $croustagrameur_id, $date, $id, $idPost){
     ?>
     <br>
         <div id="commentaire" style="margin-bottom: 25px">
-            <table id="tabPost">
-                <tr>
-                    <th><img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" > <?php echo $croustagrameur_id ?></a></th>
-                    <th><?php
-                        echo $date;
-                        ?></th>
-                </tr>
-                <tr>
-                    <th colspan="3">
-                        <h2> <?php echo wordwrap($texte, 30, '<br>', true) ?> </h2>
-                    </th>
-                </tr>
-            </table>
+            <div id="hautCommentaireDiv">
+                <div id="postUserDiv">
+                    <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfilCommentaire">
+                    <label id="nomUserPost"> <?php echo $croustagrameur_id ?> </label>
+                </div>
+                <label> <?php echo $date ?> </label>
+            </div>
+
+            <label id="messageCommentaire"> <?php echo wordwrap($texte, 30, '<br>', true) ?> </label>
+
             <?php
             if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
                 echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le commentaire</button><br>';
