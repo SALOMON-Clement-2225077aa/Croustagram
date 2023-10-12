@@ -1,8 +1,11 @@
 <?php
+require_once '../config/connectDatabase.php';
+
 function showCreatePostPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 ?>
+
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -28,15 +31,28 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
                     <input type="text" name="titleContent" placeholder="Titre du post" required><br>
                     <textarea name="postContent" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
 
+                    <?php // Récupération des catégorie pour menu déroulant de selection
+
+                        // Connexion à la base de donnée
+                        $connexion = connexion();
+
+                        // Requête
+                        $requete = 'SELECT libelle FROM croustegorie ORDER BY id ASC';
+                        $result = $connexion->query($requete);
+                        ?>
+
                     <p> Sélectionner des catégories (facultatif) : </p>
                     <select name="Catégorie 1" id="cat1-select">
                         <option value="">Aucune</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                        <?php
+                        $numCat = 0;
+                        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                            if ($row['libelle'] != 'None') {
+                                $numCat += 1;
+                                echo '<option value="' . $numCat .'">' . $row['libelle'] . '</option>';
+                            }
+                        }
+                        ?>
                     </select>
                     <select name="Catégorie 2" id="cat1-select">
                         <option value="">Aucune</option>
