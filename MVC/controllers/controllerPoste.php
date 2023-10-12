@@ -71,3 +71,22 @@ function showAllPosts(){
 
     return $posts;
 }
+
+function afficherPostSelonCategorie($catFiltre) {
+    // Connexion à la base de donnée
+    $connexion = connexion();
+
+    // Requête
+    if($catFiltre == 0){
+        $requete = 'SELECT id FROM croustapost WHERE categorie1 = 0 AND categorie2 = 0 AND categorie3 = 0';
+    }
+    else {
+        $requete = 'SELECT id FROM croustapost WHERE categorie1 = ' . $catFiltre .' OR categorie2 = ' . $catFiltre . ' OR categorie3 = ' . $catFiltre;
+    }
+
+    $result = $connexion->query($requete);
+
+    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        showOnePost($row['id']);
+    }
+}

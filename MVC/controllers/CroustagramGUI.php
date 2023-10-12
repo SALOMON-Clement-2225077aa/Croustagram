@@ -28,14 +28,21 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     </a>
     <div class="header" id="DivLogoBarre">
         <div id="DivBarreRecherche">
-            <button id="Recherche" onclick=""></button>
-            <input id="BarreRecherche" type="text">
-            <button id="EffacerRecherche" onclick=""></button>
-            <select id="FiltrerRecherche" hidden="until-found">
-                <option value="0">-- Filtrer la catégorie --</option>
-                <?php selectCategorie(); ?>
-            </select>
+            <form action="" method="post" >
+                <button id="Recherche" type="submit"></button>
+                <input id="BarreRecherche" type="text">
+                <button id="EffacerRecherche"></button>
+            </form>
+            <!-- filtre par catégorie : -->
+            <form action="../views/viewMainPage.php" method="post">
+                <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
+                    <option value="">-- Filtrer la catégorie --</option>
+                    <option value="0">Aucune</option>
+                    <?php selectCategorie(); ?>
+                </select>
+            </form>
         </div>
+    </div>
 
         <?php
         if(isset($_SESSION['suid']))
