@@ -1,6 +1,7 @@
 <?php
 require_once 'controllerCompte.php';
 require_once '../models/modelCompte.php';
+require_once 'controllerCategorie.php';
 
 function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
@@ -28,7 +29,8 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
                     <button onclick="window.location.href = '../controllers/upVote.php?id=<?php echo $idPost?>'"> <img src="../public/assets/images/fleche-vers-le-haut.png" id="imgProfil"> </button>
                     <button onclick="window.location.href = '../controllers/downVote.php?id=<?php echo $idPost ?>'"> <img src="../public/assets/images/fleche-vers-le-bas.png" id="imgProfil"> </button>
                 </th>
-                <th> <?php echo $categorie1 . ', ' ; echo $categorie2 . ', ' ; echo $categorie3 ?> </th>
+                <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
+                <th> <?php echo $les_categories ?> </th>
                 <th>
                     <a href="viewPoste.php?id=<?php echo $idPost?>">
                         <img src="../public/assets/images/commentaire.png" id="imgProfil"> <th> <?php echo $nb_comm; ?></th>
