@@ -32,15 +32,15 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
                     <textarea name="postContent" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
 
                     <p> Sélectionner des catégories (facultatif) : </p>
-                    <select name="Catégorie 1" id="cat1-select">
+                    <select name="Cat1" id="cat1-select">
                         <option value="0">Aucune</option>
                         <?php selectCategorie(); ?>
                     </select>
-                    <select name="Catégorie 2" id="cat1-select">
+                    <select name="Cat2" id="cat2-select">
                         <option value="0">Aucune</option>
                         <?php selectCategorie(); ?>
                     </select>
-                    <select name="Catégorie 3" id="cat1-select">
+                    <select name="Cat3" id="cat3-select">
                         <option value="0">Aucune</option>
                         <?php selectCategorie(); ?>
                     </select>
