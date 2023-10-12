@@ -77,7 +77,7 @@ if($showCompteStats){
     <?php
     if (isset($_SESSION['username'])) {
         ?>
-        <h2 style="font-size: 40px;">Mes points crous :<br>
+        <h2 style="font-size: 40px;">Mes points Crous :<br>
             <?php
                 echo showPtsCrous();
             ?>
