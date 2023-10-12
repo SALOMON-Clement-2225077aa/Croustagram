@@ -1,8 +1,11 @@
 <?php
+require_once 'controllerMenuCategorie.php';
+
 function showCreatePostPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 ?>
+
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -29,32 +32,17 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
                     <textarea name="postContent" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>
 
                     <p> Sélectionner des catégories (facultatif) : </p>
-                    <select name="Catégorie 1" id="cat1-select">
-                        <option value="">Aucune</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <select name="Cat1" id="cat1-select">
+                        <option value="0">Aucune</option>
+                        <?php selectCategorie(); ?>
                     </select>
-                    <select name="Catégorie 2" id="cat1-select">
-                        <option value="">Aucune</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <select name="Cat2" id="cat2-select">
+                        <option value="0">Aucune</option>
+                        <?php selectCategorie(); ?>
                     </select>
-                    <select name="Catégorie 3" id="cat1-select">
-                        <option value="">Aucune</option>
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <select name="Cat3" id="cat3-select">
+                        <option value="0">Aucune</option>
+                        <?php selectCategorie(); ?>
                     </select>
                     <br><br><br>
 
