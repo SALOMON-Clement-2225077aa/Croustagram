@@ -18,7 +18,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
 </head>
 
 <body>
-<header>
+<header style="z-index: 1000">
     <a href="../views/viewMainPage.php" style="text-decoration: none">
         <div id="divLogo">
             <img class="header" id="logo" src="../public/assets/images/logo.png">
@@ -49,7 +49,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
         ?>
 </header>
 
-<section id="leaderboard">
+<section style="z-index: 1000" id="leaderboard">
     <h2>Leaderboard :</h2>
     <?php
         showLeaderboard();
