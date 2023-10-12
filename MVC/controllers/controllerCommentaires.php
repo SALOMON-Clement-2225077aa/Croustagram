@@ -30,7 +30,7 @@ function showOneCommentaire($texte, $croustagrameur_id, $date, $id, $idPost){
             </table>
             <?php
             if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
-                echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le poste</button><br>';
+                echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le commentaire</button><br>';
             }
             ?>
         </div>

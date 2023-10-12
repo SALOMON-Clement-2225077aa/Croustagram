@@ -106,7 +106,7 @@
         session_unset();
         $_SESSION['username'] = $username;
         $_SESSION['suid'] = session_id();
-        header('Location: ../views/viewMainPage.php');
+        header('Location: ../views/viewCompte.php?id=' . $_SESSION['username']);
         exit();
     }
     else {

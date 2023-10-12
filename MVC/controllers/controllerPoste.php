@@ -1,6 +1,7 @@
 <?php
 require_once 'controllerCompte.php';
 require_once '../models/modelCompte.php';
+require_once 'controllerCategorie.php';
 
 function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
