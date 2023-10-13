@@ -79,12 +79,18 @@ function afficherPostSelonCategorie($catFiltre) {
     // Requête
     if($catFiltre == 0){
         $requete = 'SELECT id FROM croustapost WHERE categorie1 = 0 AND categorie2 = 0 AND categorie3 = 0';
+        $nb = "SELECT COUNT(*) FROM croustapost WHERE categorie1 = 0 AND categorie2 = 0 AND categorie3 = 0";
     }
     else {
         $requete = 'SELECT id FROM croustapost WHERE categorie1 = ' . $catFiltre .' OR categorie2 = ' . $catFiltre . ' OR categorie3 = ' . $catFiltre;
+        $nb = 'SELECT COUNT(DISTINCT id) FROM croustapost WHERE categorie1 = ' . $catFiltre .' OR categorie2 = ' . $catFiltre . ' OR categorie3 = ' . $catFiltre;
     }
     // Envoie de la requête
     $result = $connexion->query($requete);
+
+    // Affichage du résultat de la requête
+    afficherNbResult($nb);
+
     // Affichage des posts
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         showOnePost($row['id']);
@@ -94,6 +100,7 @@ function afficherPostSelonCategorie($catFiltre) {
 function afficherPostSelonMot($text) {
     if (empty($text)){
         $requete = "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
+        $nb = "SELECT COUNT(*) FROM croustapost";
     }
     else{
         $requete = "SELECT DISTINCT cp.id, cp.croustagrameur_id, cp.titre, cp.message, cp.date, cp.categorie1, cp.categorie2, cp.categorie3, cp.ptsCrous
@@ -104,14 +111,38 @@ function afficherPostSelonMot($text) {
                     OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3)
                         AND (cg.libelle LIKE '%$text%'))
                 ORDER BY cp.ptsCrous DESC ";
+        $nb = "SELECT COUNT(DISTINCT cp.id) FROM croustapost cp, croustacomm cm, croustegorie cg WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%') OR (cp.message LIKE '%$text%' OR cp.titre LIKE '%$text%') OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3) AND (cg.libelle LIKE '%$text%'))";
     }
 
     // Connexion à la base de donnée
     $connexion = connexion();
     $result = $connexion->query($requete);
+
+    // Affichage du résultat de la requête
+    afficherNbResult($nb);
+
     // Affichage des posts
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         showOnePost($row['id']);
     }
-
 }
+
+function afficherNbResult($nb) {
+// Permet l'affichage du résultat de la requête
+
+    $connexion = connexion();
+    $nbFound = $connexion->query($nb);
+    $nbFound = $nbFound->fetch();
+    $nbFound = $nbFound[0];
+    if($nbFound == 0) {
+        $message = 'Aucun post ne correspond à votre recherche...' ;
+    }
+    else if ($nbFound == 1) {
+        $message = '1 post correspond à votre recherche !' ;
+    }
+    else {
+        $message = $nbFound . ' posts correspondent à votre recherche !' ;
+    }
+    echo '<h3>' . $message . '</h3><br><br>';
+}
+
