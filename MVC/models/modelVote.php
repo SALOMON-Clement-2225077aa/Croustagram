@@ -15,7 +15,6 @@ function upVote($post_ID) : void
     $connexion->exec('UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = ' . $post_ID);
 
     session_start();
-    header('Location: ' . $_SESSION['currentUrl']);
 }
 function downVote($post_ID) : void
 {
@@ -29,7 +28,15 @@ function downVote($post_ID) : void
     $connexion->exec('UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = ' . $post_ID);
 
     session_start();
-    header('Location: ' . $_SESSION['currentUrl']);
+}
+
+function supprVote($croustagrameur_id, $croustapost_id) {
+
+    global $connexion;
+
+    $requete = 'DELETE FROM croustavote WHERE croustagrameur_id = \'' . $croustagrameur_id . '\' AND croustapost_id = ' . $croustapost_id ;
+    $connexion->exec($requete);
+
 }
 
 function dejaVote($croustagrameur_id, $croustapost_id, $up, $down) {
@@ -52,16 +59,21 @@ function upVotePressed($post_ID) {
     $boolUp = dejaVote($croustagrameur_id,$post_ID,1,0);
     $boolDown = dejaVote($croustagrameur_id,$post_ID,0,1);
 
+    echo $boolDown;
+    echo $boolUp;
+
     if($boolUp == 1) {
-        // delete up vote
+        supprVote($croustagrameur_id,$post_ID);
     }
     else if ($boolDown == 1) {
-        // delete down vote
-        // up vote
+        supprVote($croustagrameur_id,$post_ID);
+        upVote($post_ID);
     }
     else {
-        // up vote
+        upVote($post_ID);
     }
+
+    header('Location: ' . $_SESSION['currentUrl']);
 }
 
 function downVotePressed($post_ID) {
@@ -72,13 +84,15 @@ function downVotePressed($post_ID) {
     $boolDown = dejaVote($croustagrameur_id,$post_ID,0,1);
 
     if($boolUp == 1) {
-        // delete up vote
-        // down vote
+        supprVote($croustagrameur_id,$post_ID);
+        downVote($post_ID);
     }
     else if ($boolDown == 1) {
-        // delete down vote
+        supprVote($croustagrameur_id,$post_ID);
     }
     else {
-        // down vote
+        downVote($post_ID);
     }
+
+    header('Location: ' . $_SESSION['currentUrl']);
 }
