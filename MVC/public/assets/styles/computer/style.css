@@ -364,6 +364,9 @@ button {
 }
 .FormDiv{
     padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #erreurLabel{
@@ -401,7 +404,15 @@ button {
 }
 
 #FormBouton{
-    margin-left: 190px;
+
+}
+
+#DivBas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
 a{

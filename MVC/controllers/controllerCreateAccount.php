@@ -16,7 +16,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
     <meta name="description" content="Page pour créer un compte">
     <link rel="icon" href="../public/assets/images/logo.png" />
     <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
-    <title>Devenir croustagrameur</title>
+    <title>Croustagram - Inscription</title>
 </head>
 
 <body>
@@ -31,7 +31,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 <?php } ?>
                 <div class="FormDiv">
                     <label>E-Mail :</label>
-                    <input placeholder="Adresse e-mail" style="margin-left: 320px" type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
+                    <input placeholder="Adresse e-mail"  type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
                 </div>
                 <?php
                 if (in_array("mail", $erreurTab))
@@ -49,7 +49,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 ?>
                 <div class="FormDiv">
                     <label>Nom d'utilisateur :</label>
-                    <input placeholder="Nom d'utilisateur unique" style="margin-left: 218px" type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?>>
+                    <input placeholder="Nom d'utilisateur unique"  type='text' name='username' required value=<?php echo '\'' . $def_username . '\''; ?>>
 
                 </div>
                 <?php
@@ -69,7 +69,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 
                 <div class="FormDiv">
                     <label>Mot de passe :</label>
-                    <input placeholder="Mot de passe" style="margin-left: 260px" type='password' name='password' required>
+                    <input placeholder="Mot de passe" type='password' name='password' required>
 
                 </div>
 
@@ -80,7 +80,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 ?>
                 <div class="FormDiv">
                     <label>Vérification du mot de passe :</label>
-                    <input placeholder="2ème entrée mot de passe" style="margin-left: 104px" type='password' name='passwordMatch' required>
+                    <input placeholder="2ème entrée mot de passe" type='password' name='passwordMatch' required>
 
                 </div>
                 <?php
@@ -91,7 +91,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 
                 <div class="FormDiv">
                     <label>Nom d'affichage :</label><label style="color: red"> (optionnel)</label>
-                    <input placeholder="Pseudo affiché" style="margin-left: 108px" type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
+                    <input placeholder="Pseudo affiché" type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
 
                 </div>
                 <?php
@@ -106,7 +106,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                     <button id="RetourBouton" onclick="window.location.href='../ConnexionPage/index.php'">
                         <?php }
                         else { ?>
-                            <br><button id="RetourBouton" onclick="window.location.href='../views/viewConnexionPage.php'">Se connecter</button>
+                            <button id="RetourBouton" onclick="window.location.href='../views/viewConnexionPage.php'">Se connecter</button>
                             <?php } ?>
                             <button id="FormBouton" type="submit" value="mailer" name="action">S'inscrire</button>
                 </div>
