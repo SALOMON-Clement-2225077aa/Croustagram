@@ -39,6 +39,21 @@ function supprVote($croustagrameur_id, $croustapost_id) {
 
 }
 
+// Permet d'augmenter ou diminuer le score d'un post
+// Je l'utilise quand par exemple j'enlève un UpVote :
+// Je supprime le vote de la table et je baisse le score du post de 1
+function updateScorePost($post_ID, $plus,$moins) {
+
+    global $connexion;
+
+    if($plus == 1) {
+        $connexion->exec('UPDATE croustapost SET ptsCrous = ptsCrous + 1 WHERE id = ' . $post_ID);
+    }
+    if($moins == 1) {
+        $connexion->exec('UPDATE croustapost SET ptsCrous = ptsCrous - 1 WHERE id = ' . $post_ID);
+    }
+}
+
 function dejaVote($croustagrameur_id, $croustapost_id, $up, $down) {
 // Test si un utilisateur a déja intéragie avec un post
 
@@ -64,7 +79,7 @@ function upVotePressed($post_ID) {
 
     if($boolUp == 1) {
         supprVote($croustagrameur_id,$post_ID);
-        // pts - 1
+        updateScorePost($post_ID,0,1);
     }
     else if ($boolDown == 1) {
         supprVote($croustagrameur_id,$post_ID);
@@ -90,7 +105,7 @@ function downVotePressed($post_ID) {
     }
     else if ($boolDown == 1) {
         supprVote($croustagrameur_id,$post_ID);
-        // pts + 1
+        updateScorePost($post_ID,1,0);
     }
     else {
         downVote($post_ID);
