@@ -26,11 +26,13 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             <h1 class="header" id="titre"><?php echo $titre ?></h1>
         </div>
     </a>
+
+    <!-- Barre de recherche -->
     <div class="header" id="DivLogoBarre">
         <div id="DivBarreRecherche">
             <form action="" method="post" >
                 <button id="Recherche" type="submit"></button>
-                <input id="BarreRecherche" type="text">
+                <input id="BarreRecherche" type="text" name="recherche">
                 <button id="EffacerRecherche"></button>
             </form>
             <!-- filtre par catégorie : -->
