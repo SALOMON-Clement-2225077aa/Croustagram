@@ -34,6 +34,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
                 <button id="Recherche" type="submit"></button>
                 <input id="BarreRecherche" type="text" name="recherche">
                 <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage.php';"></button>
+                <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage.php'"></button>
             </form>
             <!-- filtre par catégorie : -->
             <form action="../views/viewMainPage.php" method="post">

@@ -16,7 +16,12 @@ else if(isset($_POST['recherche'])) {
     afficherPostSelonMot(htmlspecialchars($_POST['recherche']));
 }
 else {
-    echo showAllPosts();
+    if(isset($_POST['tri'])) {
+        echo showAllPosts($_POST['tri']);
+    }
+    else {
+        showAllPosts();
+    }
 }
 
 echo '</article>';

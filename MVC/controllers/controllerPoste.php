@@ -82,10 +82,10 @@ function showOnePost($id){
     return $post;
 }
 
-function showAllPosts(){
+function showAllPosts($ordre = 'id'){
     $posts = ' ';
 
-    $data = getAllPostsId();
+    $data = getAllPostsId($ordre);
 
     while($row = $data->fetch(PDO::FETCH_ASSOC)){
         $posts = $posts . showOnePost($row['id']);

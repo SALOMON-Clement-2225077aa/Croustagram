@@ -46,3 +46,13 @@
     background-color: white;
     border: none;
 }
+
+#TrierRecherche {
+    background-image: url("../../images/fleche-trier.png");
+    height: 30px;
+    width: 30px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
