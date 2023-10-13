@@ -64,6 +64,7 @@ function upVotePressed($post_ID) {
 
     if($boolUp == 1) {
         supprVote($croustagrameur_id,$post_ID);
+        // pts - 1
     }
     else if ($boolDown == 1) {
         supprVote($croustagrameur_id,$post_ID);
@@ -89,6 +90,7 @@ function downVotePressed($post_ID) {
     }
     else if ($boolDown == 1) {
         supprVote($croustagrameur_id,$post_ID);
+        // pts + 1
     }
     else {
         downVote($post_ID);
