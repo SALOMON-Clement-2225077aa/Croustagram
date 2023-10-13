@@ -188,12 +188,32 @@ header {
     background-repeat: no-repeat;
     border: none;
 }
-
 #DownVoteBouton {
     width: 50px;
     height: 50px;
     background-color: #fce9d8;
     background-image: url("../../images/fleche-vers-le-bas.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#UpVoteBoutonPressed {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+#DownVoteBoutonPressed {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-bas-remplie.png");
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
