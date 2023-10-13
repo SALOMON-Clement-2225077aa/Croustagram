@@ -83,6 +83,7 @@ function upVotePressed($post_ID) {
     }
     else if ($boolDown == 1) {
         supprVote($croustagrameur_id,$post_ID);
+        updateScorePost($post_ID,1,0);
         upVote($post_ID);
     }
     else {
@@ -101,6 +102,7 @@ function downVotePressed($post_ID) {
 
     if($boolUp == 1) {
         supprVote($croustagrameur_id,$post_ID);
+        updateScorePost($post_ID,0,1);
         downVote($post_ID);
     }
     else if ($boolDown == 1) {
