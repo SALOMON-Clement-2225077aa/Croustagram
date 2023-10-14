@@ -1,7 +1,6 @@
 <?php
 require '../models/addCommentData.php';
 
-
     session_start();
     $commentContent = htmlspecialchars($_POST['commentContent']);
 
