@@ -32,7 +32,7 @@ function connexion_page($tabErreurs = array())
             </form>
             <h1 id="PasDeCompte">Pas de compte ?</h1>
             <?php if ($isMob) { ?>
-                <button id="InscriptionBouton" onclick="window.location.href='../CreationComptePage/index.php'">S'inscrire</button>
+                <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte_Mobile.php'">S'inscrire</button>
             <?php }
             else { ?>
                 <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte.php'">S'inscrire</button>
