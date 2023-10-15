@@ -3,7 +3,7 @@
 function start_page($title) :void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    if(!$isMob){header("Location: /MVC/views/viewMainPage.php");}
+    if(!$isMob){header("Location: ../views/viewMainPage.php");}
     ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -12,7 +12,21 @@ function start_page($title) :void
         <meta name="titre" content="Page d'accueil">
         <link rel="icon" href="../../MVC/public/assets/images/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Mobile">
-        <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">
+        <?php
+        // Choix de la fiche de style
+        if($title == 'Accueil') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">';
+        }
+        else if ($title == 'Leaderboard') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/leaderBoard.css">';
+        }
+        else if ($title == 'Profil') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
+        }
+        else if ($title == 'connexion') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
+        }
+        ?>
         <title><?php echo 'Croustagram - '.$title?></title>
     </head>
     <body>
@@ -35,8 +49,8 @@ function end_page(): void
 {
     ?>
         <footer>
-            <button id="BoutonHome" onclick="window.location.href='../HomePage/index.php';"></button>
-            <button id="BoutonLeaderboard" onclick="window.location.href='../LeaderboardPage/index.php';"></button>
+            <button id="BoutonHome" onclick="window.location.href='../views/viewMainPage_Mobile.php';"></button>
+            <button id="BoutonLeaderboard" onclick="window.location.href='../views/viewLeaderboard_Mobile.php';"></button>
 
             <?php if (isset($_SESSION['username'])) { ?>
                 <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>

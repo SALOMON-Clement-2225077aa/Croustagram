@@ -5,11 +5,11 @@
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    if($isMob){header("Location: /MVC/views/viewMainPage_Mobile.php");}
-    ?>
+    if($isMob){header("Location: ../views/viewMainPage_Mobile.php");}
     $titre = 'Croustagram - ' . $titre;
     session_start();
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang='fr'>
 <head>
     <meta charset="UTF-8">

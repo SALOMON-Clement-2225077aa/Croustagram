@@ -1,9 +1,10 @@
 <?php
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerPoste.php';
+require_once '../controllers/controllerLeaderboard.php';
 
-start_page('Accueil');
+start_page('Leaderboard');
 
-showAllPosts();
+showLeaderboard();
 
 end_page();
