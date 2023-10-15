@@ -5,6 +5,7 @@ require_once '../controllers/controllerPageConnexion.php';
 
 start_page('Connexion');
 
-connexion_page();
+if (isset($_SESSION['tabErreurs'])) connexion_page($_SESSION['tabErreurs']);
+else connexion_page();
 
 end_page();
