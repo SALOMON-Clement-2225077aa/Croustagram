@@ -4,6 +4,9 @@
     require_once 'controllerMenuCategorie.php';
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+    if($isMob){header("Location: /Croustagram/MVC/views/viewMainPage_Mobile.php");}
+    ?>
     $titre = 'Croustagram - ' . $titre;
     session_start();
 ?><!DOCTYPE html>

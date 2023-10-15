@@ -1,6 +1,6 @@
 <?php
 require_once '../controllers/CroustagramGUI.php';
-require '../controllers/controllerPoste.php';
+require_once '../controllers/controllerPoste.php';
 
 Croustagram('Accueil');
 
