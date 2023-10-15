@@ -23,7 +23,7 @@ function start_page($title) :void
         else if ($title == 'Profil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
-        else if ($title == 'connexion') {
+        else if ($title == 'Connexion') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
         }
         ?>
@@ -53,10 +53,10 @@ function end_page(): void
             <button id="BoutonLeaderboard" onclick="window.location.href='../views/viewLeaderboard_Mobile.php';"></button>
 
             <?php if (isset($_SESSION['username'])) { ?>
-                <button id="BoutonProfil" onclick="window.location.href='../ProfilPage/index.php';"></button>
+                <button id="BoutonProfil" onclick="window.location.href='../views/viewProfil_Mobile.php';"></button>
             <?php }
             else { ?>
-                <button id="BoutonProfil" onclick="window.location.href='../ConnexionPage/index.php';"></button>
+                <button id="BoutonProfil" onclick="window.location.href='../views/viewConnexion_Mobile.php';"></button>
             <?php } ?>
         </footer>
     </body>
