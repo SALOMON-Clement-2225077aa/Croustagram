@@ -12,6 +12,7 @@ function start_page($title) :void
         <meta name="titre" content="Page d'accueil">
         <link rel="icon" href="../../MVC/public/assets/images/logo.png" />
         <meta name="description" content="Page d'accueil de Croustagram - Mobile">
+        <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/styleMobile.css">
         <?php
         // Choix de la fiche de style
         if($title == 'Accueil') {
@@ -56,7 +57,7 @@ function end_page(): void
                 <button id="BoutonProfil" onclick="window.location.href='../views/viewProfil_Mobile.php';"></button>
             <?php }
             else { ?>
-                <button id="BoutonProfil" onclick="window.location.href='../views/viewConnexion_Mobile.php';"></button>
+                <button id="BoutonProfil" onclick="window.location.href='../views/viewConnexionPage_Mobile.php';"></button>
             <?php } ?>
         </footer>
     </body>
