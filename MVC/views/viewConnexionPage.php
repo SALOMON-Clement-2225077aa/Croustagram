@@ -2,7 +2,7 @@
 require '../controllers/controllerPageConnexion.php';
 require '../controllers/CroustagramGUI.php';
 
-Croustagram('Crousnection', false);
+Croustagram('Connexion', false);
 
 session_start();
 if (isset($_SESSION['tabErreurs'])) connexion_page($_SESSION['tabErreurs']);

@@ -1,4 +1,5 @@
 body{
+    font-family: 'Helvetica', 'Arial', sans-serif;
     margin: 0;
 }
 
@@ -22,11 +23,15 @@ textarea {
 
 h1, h2, h3 {
     color: black;
-    font-family: Arial, serif;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 h2 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
     color: black;
     font-size: 18px;
+}
+p {
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 #fermerPopup {
@@ -70,6 +75,7 @@ header {
 }
 
 #leaderboard{
+    font-family: 'Helvetica', 'Arial', sans-serif;
     background-color: #d9d9d9;
     position: fixed;
     left: 0;
@@ -182,12 +188,32 @@ header {
     background-repeat: no-repeat;
     border: none;
 }
-
 #DownVoteBouton {
     width: 50px;
     height: 50px;
     background-color: #fce9d8;
     background-image: url("../../images/fleche-vers-le-bas.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#UpVoteBoutonPressed {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+#DownVoteBoutonPressed {
+    width: 50px;
+    height: 50px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-bas-remplie.png");
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
@@ -338,6 +364,9 @@ button {
 }
 .FormDiv{
     padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 #erreurLabel{
@@ -375,7 +404,15 @@ button {
 }
 
 #FormBouton{
-    margin-left: 190px;
+
+}
+
+#DivBas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
 a{

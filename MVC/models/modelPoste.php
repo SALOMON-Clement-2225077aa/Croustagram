@@ -31,11 +31,11 @@ function getNbCommentaireData($id){
     return null;
 }
 
-function getAllPostsId(){
+function getAllPostsId($ordre = 'id'){
     global $connexion;
 
     // Requête
-    $requete = 'SELECT id FROM croustapost ORDER BY ptsCrous DESC';
+    $requete = 'SELECT id FROM croustapost ORDER BY ' . $ordre . ' DESC';
     $result = $connexion->query($requete);
 
     if ($result) {

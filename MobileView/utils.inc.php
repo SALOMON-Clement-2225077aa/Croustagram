@@ -35,7 +35,7 @@ function start_page($title) :void
     <?php
 }
 
-function end_page($title): void
+function end_page(): void
 {
     ?>
         <footer>

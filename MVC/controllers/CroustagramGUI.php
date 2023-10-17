@@ -4,9 +4,12 @@
     require_once 'controllerMenuCategorie.php';
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+    if($isMob){header("Location: ../views/viewMainPage_Mobile.php");}
     $titre = 'Croustagram - ' . $titre;
     session_start();
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html lang='fr'>
 <head>
     <meta charset="UTF-8">
@@ -26,16 +29,26 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             <h1 class="header" id="titre"><?php echo $titre ?></h1>
         </div>
     </a>
+
+    <!-- Barre de recherche -->
     <div class="header" id="DivLogoBarre">
         <div id="DivBarreRecherche">
-            <button id="Recherche" onclick=""></button>
-            <input id="BarreRecherche" type="text">
-            <button id="EffacerRecherche" onclick=""></button>
-            <select id="FiltrerRecherche" hidden="until-found">
-                <option value="0">-- Filtrer la catégorie --</option>
-                <?php selectCategorie(); ?>
-            </select>
+            <form action="" method="post" >
+                <button id="Recherche" type="submit"></button>
+                <input id="BarreRecherche" type="text" name="recherche">
+                <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage.php';"></button>
+                <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage.php'"></button>
+            </form>
+            <!-- filtre par catégorie : -->
+            <form action="../views/viewMainPage.php" method="post">
+                <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
+                    <option value="">-- Filtrer la catégorie --</option>
+                    <option value="0">Aucune</option>
+                    <?php selectCategorie(); ?>
+                </select>
+            </form>
         </div>
+    </div>
 
         <?php
         if(isset($_SESSION['suid']))
@@ -70,7 +83,7 @@ if($showCompteStats){
     <?php
     if (isset($_SESSION['username'])) {
         ?>
-        <h2 style="font-size: 40px;">Mes points crous :<br>
+        <h2 style=" color: white; font-size: 40px;">Mes points Crous :<br>
             <?php
                 echo showPtsCrous();
             ?>
@@ -79,7 +92,7 @@ if($showCompteStats){
     }
     else{
         ?>
-        <h2 style="font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
+        <h2 style="color: white; font-size: 30px;">Vous devez vous connecter à un compte pour accéder aux fonctionalités du site !<br>
         </h2>
         <?php
     }
