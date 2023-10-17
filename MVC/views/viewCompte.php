@@ -3,7 +3,7 @@
 require '../controllers/controllerCompte.php';
 require '../controllers/CroustagramGUI.php';
 
-Croustagram('Postes');
+Croustagram('Utilisateur');
 ?>
     <section id="posts">
         <article class="post">
