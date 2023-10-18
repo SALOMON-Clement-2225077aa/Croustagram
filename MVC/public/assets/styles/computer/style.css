@@ -369,8 +369,8 @@ button {
     justify-content: space-between;
 }
 
-#erreurLabel{
-    font-size: 12px;
+.erreurLabel{
+    font-size: 15px;
     color: red;
 }
 

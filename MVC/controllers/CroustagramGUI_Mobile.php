@@ -27,6 +27,9 @@ function start_page($title) :void
         else if ($title == 'Connexion') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
         }
+        else if ($title == 'Inscription') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/inscription.css">';
+        }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
     </head>

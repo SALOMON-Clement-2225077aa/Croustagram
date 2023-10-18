@@ -57,7 +57,7 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
                 </div>
                 <?php
                 if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
-                    echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
+                    echo '<button id="boutonSupprimerPost" onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
                 }
                 ?>
             </div>
@@ -85,8 +85,14 @@ function showOnePost($id){
 function showAllPosts($ordre = 'id'){
     $posts = ' ';
 
+    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     $data = getAllPostsId($ordre);
     echo '<div id="allPosts">';
+    if ($isMob) {
+        if (isset($_SESSION['username'])) { ?>
+            <button id="BoutonCreerPost"></button>
+        <?php }
+    }
     while($row = $data->fetch(PDO::FETCH_ASSOC)){
         $posts = $posts . showOnePost($row['id']);
     }

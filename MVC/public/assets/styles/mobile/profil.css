@@ -4,91 +4,21 @@ body {
     font-size: 40px;
 }
 
-header {
-    position: fixed;
+/* CONTENU MILIEU */
+
+#contenuPage {
+    padding-top: 350px;
+    padding-bottom: 150px;
     width: 100%;
-    background-color: #d9d9d9;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    top:0px;
+    height: 100%;
 }
 
-#DivLogoBarre {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+#boutonDeconnexion {
+    font-size: 100px
 }
+/*FIN CONTENU MILIEU */
 
-#Logo {
-    margin: 20px;
-    width: 150px;
-    height: 150px;
-}
-
-#DivBarreRecherche {
-    display: flex;
-    align-items: center;
-    margin-right: 75px;
-    background-size: contain;
-    background-color: white;
-    border-style: solid;
-    justify-content: space-around;
-    padding: 15px;
-    border-radius: 15px;
-}
-
-button {
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#Recherche {
-    height: 51.2px;
-    width: 51.2px;
-    background-image: url("../../images/loupe.png");
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#BarreRecherche {
-    height: 51.2px;
-    width: 400px;
-    border: none;
-    font-size: 35px;
-}
-
-#EffacerRecherche {
-    background-image: url("../../images/croix.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#FiltrerRecherche {
-    background-image: url("../../images/filtre.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-h1 {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    text-align: center;
-    font-size: 40px;
-    padding: 30px;
-    margin-bottom: 0;
-}
+/* BAS DE PAGE */
 
 footer {
     margin-top: 20px;
@@ -134,8 +64,4 @@ footer {
     margin: 20px;
 }
 
-#ContenuPage {
-    position: relative;
-    top: 300px;
-    padding-bottom: 150px;
-}
+/* FIN DE BAS DE PAGE */

@@ -6,97 +6,12 @@ body {
     height: 100%
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    background-color: #d9d9d9;
-    display: block;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-}
-
-#DivLogoBarre {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#Logo {
-    margin: 20px;
-    width: 150px;
-    height: 150px;
-}
-
-#DivBarreRecherche {
-    display: flex;
-    align-items: center;
-    margin-right: 75px;
-    background-size: contain;
-    background-color: white;
-    border-style: solid;
-    justify-content: space-around;
-    padding: 15px;
-    border-radius: 15px;
-}
-
 button {
     margin-right: 5px;
     margin-left: 5px;
 }
 
-#Recherche {
-    height: 51.2px;
-    width: 51.2px;
-    background-image: url("../../images/loupe.png");
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#BarreRecherche {
-    height: 51.2px;
-    width: 400px;
-    border: none;
-    font-size: 35px;
-}
-
-#EffacerRecherche {
-    background-image: url("../../images/croix.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#FiltrerRecherche {
-    background-image: url("../../images/filtre.png");
-    height: 51.2px;
-    width: 51.2px;
-    background-size: 100%;
-    background-position: center;
-    background-color: white;
-    border: none;
-}
-
-#PageTitre {
-    border-top-style: solid;
-    border-bottom-style: solid;
-    text-align: center;
-    font-size: 40px;
-    padding: 30px;
-    margin-bottom: 0;
-}
-
-#ContenuPage {
-    position: absolute;
-    top: 330px;
-    padding-bottom: 150px;
-    width: 100%;
-}
+/* BAS DE PAGE */
 
 footer {
     margin-top: 20px;
@@ -142,6 +57,10 @@ footer {
     margin: 20px;
 }
 
+/*FIN BAS DE PAGE*/
+
+/* POSTS */
+
 #userEtDate {
     display: flex;
     justify-content: space-between;
@@ -166,14 +85,6 @@ footer {
     padding-bottom: 20px;
 }
 
-#Votes {
-    border-right: solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 20px;
-}
 
 
 #UpVoteBouton {
@@ -187,11 +98,33 @@ footer {
     border: none;
 }
 
+#UpVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
 #DownVoteBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
     background-image: url("../../images/fleche-vers-le-bas.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+#DownVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-bas-remplie.png");
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
@@ -210,18 +143,133 @@ footer {
     padding: 20px;
 }
 
-#popup {
-    size: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+#boutonSupprimerPost {
+    font-size: 30px;
+    border: solid;
+    background-color: #d9d9d9;
+}
+
+#post {
+    background: #fce9d8;
     z-index: 1000;
+    border: 2px solid;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+    padding-left: 0px;
 }
-#fermerPopup {
-    float: right;
-    background-color: red;
+
+#hautPostDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 40px;
+    margin: 0px;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-bottom: solid;
+    font-size: 30px;
 }
+
+#postUserDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+#nomUserPost {
+    margin-left: 10px;
+}
+
+#datePost {
+    text-align: center;
+}
+
+#titrePost {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 15px;
+    border-bottom: solid;
+    font-size: 30px;
+    text-align: center;
+}
+
+#messagePost {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 100px;
+    border-bottom: solid;
+    font-size: 20px;
+    text-align: center;
+}
+
+#categoriesPost {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    padding: 15px;
+    border-bottom: solid;
+    font-size: 40px;
+    text-align: center;
+}
+
+#basPostDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#votesPostDiv {
+    border-right: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0px;
+    width: 100%;
+}
+
+#pointCrousLabelPost {
+    padding-right: 30px;
+}
+
+#commentairesPostDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#allPosts {
+    padding-top: 350px;
+    padding-bottom: 150px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+/* FIN POSTS */
+
+/* BOUTON CREATION POST */
+#BoutonCreerPost {
+    background-color: #F79F14;
+    background-image: url("../../images/plus.png");
+    width: 150px;
+    height: 150px;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: solid;
+    border-radius: 50%;
+    position: fixed;
+}
+/*FIN BOUTON CREATION POST*/
