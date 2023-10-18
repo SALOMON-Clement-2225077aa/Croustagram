@@ -34,6 +34,10 @@
     margin-left: 10px;
 }
 
+#datePost {
+    text-align: center;
+}
+
 #titrePost {
     display: flex;
     justify-content: center;
@@ -41,6 +45,7 @@
     padding: 15px;
     border-bottom: solid;
     font-size: 30px;
+    text-align: center;
 }
 
 #messagePost {
@@ -50,6 +55,7 @@
     padding: 100px;
     border-bottom: solid;
     font-size: 20px;
+    text-align: center;
 }
 
 #categoriesPost {
@@ -58,7 +64,8 @@
     margin: 0px;
     padding: 15px;
     border-bottom: solid;
-    font-size: 20px;
+    font-size: 40px;
+    text-align: center;
 }
 
 #basPostDiv {
@@ -77,10 +84,21 @@
     justify-content: center;
     padding: 10px;
     margin: 0px;
+    width: 100%;
 }
 
 #pointCrousLabelPost {
     padding-right: 30px;
+}
+
+#commentairesPostDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+    margin: 0px;
+    padding: 0px;
 }
 
 #allPosts {
