@@ -74,12 +74,12 @@ function showOnePost($id){
     $post = ' ';
 
     $row = $data->fetch(PDO::FETCH_ASSOC);
-    $nb_comm = getNbCommentaires($row['id']);
+    if (!empty($row)){
+        $nb_comm = getNbCommentaires($row['id']);
 
-    $post = $post . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
-
-
-    return $post;
+        return $post . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+    }
+    else return 0;
 }
 
 function showAllPosts($ordre = 'id'){

@@ -5,6 +5,7 @@ require_once '../models/modelPoste.php';
 function getNbCommentaires($id){
 
     $data = getNbCommentaireData($id);
+
     $row = $data->fetch(PDO::FETCH_ASSOC);
     $nb_comm = (int)$row['COUNT(*)']; // Convert to integer
     return $nb_comm;
@@ -39,6 +40,6 @@ function showCompte($id){
 <?php
     }
     else{
-        echo '<strong>Utiisateur non trouvé !</strong>';
+        echo '<strong>Cet utilisateur n\'existe pas</strong>';
     }
 }
