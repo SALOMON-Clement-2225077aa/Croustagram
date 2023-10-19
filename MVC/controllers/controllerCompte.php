@@ -29,6 +29,7 @@ function showPosts($id){
 function showCompte($id){
     $result = getAllCompteData($id);
     $data = $result->fetch(PDO::FETCH_ASSOC);
+    if (!empty($data)){
     ?>
     <img id="imgProfil" src="../public/assets/images/profil.png">
     <h1><?php echo $data['pseudo'] . ' (@' . $data['id'] . ')'?></h1>
@@ -36,4 +37,8 @@ function showCompte($id){
     <h5>Dernière connexion le <?php echo $data['derniere_connexion']?></h5>
     <h5>Création du compte le <?php echo $data['creation_compte']?></h5>
 <?php
+    }
+    else{
+        echo '<strong>Utiisateur non trouvé !</strong>';
+    }
 }
