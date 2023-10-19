@@ -4,7 +4,7 @@ require '../controllers/controllerCompte.php';
 require '../controllers/CroustagramGUI.php';
 require '../controllers/newProfilePicture.php';
 
-Croustagram('Utilisateur');
+Croustagram('Croustagrammeur');
 ?>
     <section id="posts">
         <article class="post">

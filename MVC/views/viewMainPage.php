@@ -2,7 +2,7 @@
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerPoste.php';
 
-Croustagram('Accueil');
+Croustagram('Croustaccueil');
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 

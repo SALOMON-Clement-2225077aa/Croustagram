@@ -5,7 +5,7 @@ require '../controllers/controllerCreateAccount.php';
 
 if (isset($_SESSION['suid'])) header('Location :' . $_SESSION['currentUrl']);
 
-start_page('Inscription');
+start_page('Crouscription');
 
 showAccountPage();
 
