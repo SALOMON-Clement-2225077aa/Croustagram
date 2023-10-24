@@ -7,7 +7,7 @@ Croustagram('Croustaccueil');
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
 echo '<section id="posts">';
-echo '<article class="post">';
+echo '<article id="post">';
 
 if(isset($_POST['categorie'])) {
     afficherPostSelonCategorie($_POST['categorie']);

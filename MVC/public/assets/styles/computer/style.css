@@ -91,7 +91,7 @@ header {
     margin-bottom: 15px;
 }
 
-.post {
+#post {
     background: #fce9d8;
     z-index: 1000;
     margin: 0;
@@ -281,7 +281,12 @@ header {
     width: 50px;
 }
 
-#ContenuPage {
+#ContenuPage{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     display: grid;
 }
@@ -326,14 +331,6 @@ button {
     margin: 0px;
     padding: 15px;
     font-size: 20px;
-}
-
-#ContenuPage{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #BoxMilieu{

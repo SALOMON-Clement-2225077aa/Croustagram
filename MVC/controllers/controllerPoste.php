@@ -7,8 +7,7 @@ require_once '../models/modelVote.php';
 function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
-    <div class="post" style="margin-bottom: 25px">
-
+    <div class="post">
             <div class="hautPostDiv">
                 <div class="postUserDiv">
                     <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfil" >
@@ -61,7 +60,6 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                 }
                 ?>
             </div>
-
     </div>
 
     <?php
