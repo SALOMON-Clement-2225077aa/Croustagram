@@ -4,7 +4,7 @@ require_once '../models/modelCompte.php';
 require_once 'controllerCategorie.php';
 require_once '../models/modelVote.php';
 
-function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
     <div id="post" style="margin-bottom: 25px">
@@ -12,7 +12,7 @@ function showPost($croustagrameurId, $titre, $message, $date, $categorie1, $cate
             <div id="hautPostDiv">
                 <div id="postUserDiv">
                     <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" >
-                    <label id="nomUserPost"> <?php echo $croustagrameurId ?> </label>
+                    <label id="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label id="datePost"> <?php echo $date ?> </label>
             </div>
@@ -74,10 +74,15 @@ function showOnePost($id){
     $post = ' ';
 
     $row = $data->fetch(PDO::FETCH_ASSOC);
+
+    $accountData = getAllCompteData($row['croustagrameur_id']);
+    $account = $accountData->fetch(PDO::FETCH_ASSOC);
+    $accountName = $account['pseudo'];
+
     if (!empty($row)){
         $nb_comm = getNbCommentaires($row['id']);
 
-        return $post . showPost($row['croustagrameur_id'], $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+        return $post . showPost($row['croustagrameur_id'], $accountName, $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
     }
     else return 0;
 }
