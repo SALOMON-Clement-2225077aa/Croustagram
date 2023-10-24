@@ -103,6 +103,7 @@ if($showCompteStats){
         <h3>your ad here</h3>
     </section>
 </div>
+    </body>
 <?php
     }
 }
