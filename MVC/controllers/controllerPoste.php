@@ -41,13 +41,13 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                                 echo '<button class="DownVoteBoutonPressed" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
                             }
                             else {
-                                echo '<button id="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
-                                echo '<button id="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
                             }
                         }
                         else {
-                            echo '<button id="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
-                            echo '<button id="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
+                            echo '<button class="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
+                            echo '<button class="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
                         }
                     ?>
                 </div>
@@ -57,7 +57,7 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                 </div>
                 <?php
                 if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
-                    echo '<button id="boutonSupprimerPost" onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
+                    echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
                 }
                 ?>
             </div>
