@@ -7,26 +7,26 @@ require_once '../models/modelVote.php';
 function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
-    <div id="post" style="margin-bottom: 25px">
+    <div class="post" style="margin-bottom: 25px">
 
-            <div id="hautPostDiv">
-                <div id="postUserDiv">
+            <div class="hautPostDiv">
+                <div class="postUserDiv">
                     <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfil" >
                     <label id="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
-                <label id="datePost"> <?php echo $date ?> </label>
+                <label> <?php echo $date ?> </label>
             </div>
 
-            <h1 id="titrePost"> <?php echo $titre ?> </h1>
+            <h1 class="titrePost"> <?php echo $titre ?> </h1>
 
-            <h2 id="messagePost"> <?php echo wordwrap($message, 50, '<br>', true) ?> </h2>
+            <h2 class="messagePost"> <?php echo wordwrap($message, 50, '<br>', true) ?> </h2>
 
             <?php $les_categories = convert_cat($categorie1, $categorie2, $categorie3) ?>
-            <label id="categoriesPost"> <?php echo $les_categories ?> </label>
+            <label class="categoriesPost"> <?php echo $les_categories ?> </label>
 
-            <div id="basPostDiv">
-                <div id="votesPostDiv">
-                    <label id="pointCrousLabelPost"> <?php echo $ptsCrous ?> </label>
+            <div class="basPostDiv">
+                <div class="votesPostDiv">
+                    <label class="pointCrousLabelPost"> <?php echo $ptsCrous ?> </label>
                     <!-- Boutons Up et Down vote -->
                     <?php
                         if(isset($_SESSION['username'])) {
@@ -51,8 +51,8 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                         }
                     ?>
                 </div>
-                <div id="commentairesPostDiv">
-                    <button id="CommentaireBouton" onclick="window.location.href = 'viewPoste.php?id=<?php echo $idPost?>'"></button>
+                <div class="commentairesPostDiv">
+                    <button class="CommentaireBouton" onclick="window.location.href = 'viewPoste.php?id=<?php echo $idPost?>'"></button>
                     <label> <?php echo $nb_comm; ?> </label>
                 </div>
                 <?php

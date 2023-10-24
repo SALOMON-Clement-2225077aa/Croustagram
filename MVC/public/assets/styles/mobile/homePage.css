@@ -87,7 +87,7 @@ footer {
 
 
 
-#UpVoteBouton {
+.UpVoteBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -109,7 +109,7 @@ footer {
     border: none;
 }
 
-#DownVoteBouton {
+.DownVoteBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -131,7 +131,7 @@ footer {
     border: none;
 }
 
-#CommentaireBouton {
+.CommentaireBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -149,7 +149,7 @@ footer {
     background-color: #d9d9d9;
 }
 
-#post {
+.post {
     background: #fce9d8;
     z-index: 1000;
     border: 2px solid;
@@ -160,7 +160,7 @@ footer {
     padding-left: 0px;
 }
 
-#hautPostDiv {
+.hautPostDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -172,14 +172,14 @@ footer {
     font-size: 30px;
 }
 
-#postUserDiv {
+.postUserDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor:pointer;
 }
 
-#nomUserPost {
+.nomUserPost {
     margin-left: 10px;
 }
 
@@ -187,7 +187,7 @@ footer {
     text-align: center;
 }
 
-#titrePost {
+.titrePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -197,7 +197,7 @@ footer {
     text-align: center;
 }
 
-#messagePost {
+.messagePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -207,7 +207,7 @@ footer {
     text-align: center;
 }
 
-#categoriesPost {
+.categoriesPost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -217,7 +217,7 @@ footer {
     text-align: center;
 }
 
-#basPostDiv {
+.basPostDiv {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -226,7 +226,7 @@ footer {
     padding: 0px;
 }
 
-#votesPostDiv {
+.votesPostDiv {
     border-right: solid;
     display: flex;
     align-items: center;
@@ -236,11 +236,11 @@ footer {
     width: 100%;
 }
 
-#pointCrousLabelPost {
+.pointCrousLabelPost {
     padding-right: 30px;
 }
 
-#commentairesPostDiv {
+.commentairesPostDiv {
     display: flex;
     align-items: center;
     justify-content: center;

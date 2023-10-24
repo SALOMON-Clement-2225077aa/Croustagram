@@ -61,7 +61,7 @@ function end_page(): void
         {
     ?>
         <br><br>
-        <div id="post">
+        <div class="post">
             <div id="userEtDate">
                 <div id="userPost">
                     <img src="../../ressources/profil.png" class="imgProfil">
@@ -81,12 +81,12 @@ function end_page(): void
             <div id="BasPost">
                 <label id="pointsPost"> <?php echo $ptsCrous ?> </label>
                 <div id="Votes">
-                    <button onclick="upVote()" id="UpVoteBouton">
-                    <button onclick="downVote()" id="DownVoteBouton">
+                    <button onclick="upVote()" class="UpVoteBouton">
+                    <button onclick="downVote()" class="DownVoteBouton">
                 </div>
                 <div>
                     <label> <?php echo $nb_comm; ?> </label>
-                    <button id="CommentaireBouton"></button>
+                    <button class="CommentaireBouton"></button>
                 </div>
             </div>
         </div>

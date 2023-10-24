@@ -24,9 +24,9 @@ function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $id
     <br>
         <div id="commentaire" style="margin-bottom: 25px">
             <div id="hautCommentaireDiv">
-                <div id="postUserDiv">
+                <div class="postUserDiv">
                     <img <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfilCommentaire">
-                    <label id="nomUserPost"> <?php echo $pseudo ?> </label>
+                    <label class="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label> <?php echo $date ?> </label>
             </div>

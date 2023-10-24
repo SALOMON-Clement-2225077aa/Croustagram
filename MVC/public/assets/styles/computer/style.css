@@ -91,7 +91,7 @@ header {
     margin-bottom: 15px;
 }
 
-#post {
+.post {
     background: #fce9d8;
     z-index: 1000;
     margin: 0;
@@ -105,7 +105,7 @@ header {
     padding-left: 0px;
 }
 
-#hautPostDiv {
+.hautPostDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,18 +117,18 @@ header {
     font-size: 30px;
 }
 
-#postUserDiv {
+.postUserDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor:pointer;
 }
 
-#nomUserPost {
+.nomUserPost {
     margin-left: 10px;
 }
 
-#titrePost {
+.titrePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -137,7 +137,7 @@ header {
     font-size: 30px;
 }
 
-#messagePost {
+.messagePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -146,7 +146,7 @@ header {
     font-size: 20px;
 }
 
-#categoriesPost {
+.categoriesPost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -155,7 +155,7 @@ header {
     font-size: 20px;
 }
 
-#basPostDiv {
+.basPostDiv {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -164,7 +164,7 @@ header {
     padding: 0px;
 }
 
-#votesPostDiv {
+.votesPostDiv {
     border-right: solid;
     display: flex;
     align-items: center;
@@ -174,11 +174,11 @@ header {
     margin: 0px;
 }
 
-#pointCrousLabelPost {
+.pointCrousLabelPost {
     padding-right: 30px;
 }
 
-#UpVoteBouton {
+.UpVoteBouton {
     width: 50px;
     height: 50px;
     background-color: #fce9d8;
@@ -188,7 +188,7 @@ header {
     background-repeat: no-repeat;
     border: none;
 }
-#DownVoteBouton {
+.DownVoteBouton {
     width: 50px;
     height: 50px;
     background-color: #fce9d8;
@@ -220,7 +220,7 @@ header {
     border: none;
 }
 
-#commentairesPostDiv {
+.commentairesPostDiv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +230,7 @@ header {
     padding: 0px;
 }
 
-#CommentaireBouton {
+.CommentaireBouton {
     width: 50px;
     height: 50px;
     background-color: #fce9d8;
