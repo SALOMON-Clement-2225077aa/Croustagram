@@ -25,7 +25,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
 <header style="z-index: 1000">
     <a href="../views/viewMainPage.php" style="text-decoration: none">
         <div id="divLogo">
-            <img class="header" id="logo" src="../public/assets/images/logo.png">
+            <img alt="Logo du site" class="header" id="logo" src="../public/assets/images/logo.png">
             <h1 class="header" id="titre"><?php echo $titre ?></h1>
         </div>
     </a>
