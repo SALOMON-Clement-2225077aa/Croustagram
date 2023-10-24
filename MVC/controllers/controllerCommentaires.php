@@ -22,16 +22,16 @@ function showCommentaires($id){
 function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $idPost){
     ?>
     <br>
-        <div id="commentaire" style="margin-bottom: 25px">
-            <div id="hautCommentaireDiv">
+        <div class="commentaire" style="margin-bottom: 25px">
+            <div class="hautCommentaireDiv">
                 <div class="postUserDiv">
-                    <img alt="Photo de profil"<?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfilCommentaire">
+                    <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfilCommentaire">
                     <label class="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label> <?php echo $date ?> </label>
             </div>
 
-            <label id="messageCommentaire"> <?php echo wordwrap($texte, 30, '<br>', true) ?> </label>
+            <label class="messageCommentaire"> <?php echo wordwrap($texte, 30, '<br>', true) ?> </label>
 
             <?php
             if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){

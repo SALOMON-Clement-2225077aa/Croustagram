@@ -296,7 +296,7 @@ button {
     margin-left: 5px;
 }
 
-#commentaire{
+.commentaire{
     background: #fce9d8;
     z-index: 1000;
     margin: 0px;
@@ -309,7 +309,7 @@ button {
     width: 400px;
 }
 
-#hautCommentaireDiv {
+.hautCommentaireDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -319,13 +319,13 @@ button {
     border-bottom: solid;
 }
 
-#imgProfilCommentaire{
+.imgProfilCommentaire{
     border-radius: 50%;
     width: 30px;
     cursor:pointer;
 }
 
-#messageCommentaire {
+.messageCommentaire {
     display: flex;
     justify-content: center;
     margin: 0px;
