@@ -7,6 +7,7 @@ $id = $_GET['id'];
 
 echo Croustagram("Croustaposte");
 ?>
+<body>
 <section id="posts">
     <article>
         <?php
@@ -31,3 +32,4 @@ else echo '<strong>Ce poste n\'existe pas</strong>';
 ?>
     </article>
 </section>
+</body>

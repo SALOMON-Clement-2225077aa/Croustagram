@@ -21,7 +21,6 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     <title><?php echo $titre; ?></title>
 </head>
 
-<body>
 <header style="z-index: 1000">
     <a href="../views/viewMainPage.php" style="text-decoration: none">
         <div id="divLogo">
@@ -105,7 +104,6 @@ if($showCompteStats){
 </div>
 <?php
     }
-echo '</body>';
 }
 ?>
 

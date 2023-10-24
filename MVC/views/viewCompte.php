@@ -6,6 +6,7 @@ require '../controllers/newProfilePicture.php';
 
 Croustagram('Croustagrammeur');
 ?>
+<body>
     <section id="posts">
         <article>
 <?php
@@ -23,3 +24,4 @@ echo showPosts($id);
 ?>
 </article>
     </section>
+</body>
