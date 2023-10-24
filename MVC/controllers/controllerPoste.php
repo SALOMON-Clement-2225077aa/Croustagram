@@ -12,7 +12,7 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
             <div class="hautPostDiv">
                 <div class="postUserDiv">
                     <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfil" >
-                    <label id="nomUserPost"> <?php echo $pseudo ?> </label>
+                    <label class="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label> <?php echo $date ?> </label>
             </div>
@@ -33,12 +33,12 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                             $boolUp = dejaVote($_SESSION['username'],$idPost,1,0);
                             $boolDown = dejaVote($_SESSION['username'],$idPost,0,1);
                             if($boolUp == 1) {
-                                echo '<button id="UpVoteBoutonPressed" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
-                                echo '<button id="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="UpVoteBoutonPressed" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="DownVoteBouton" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
                             }
                             else if($boolDown == 1) {
-                                echo '<button id="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
-                                echo '<button id="DownVoteBoutonPressed" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
+                                echo '<button class="DownVoteBoutonPressed" onclick="window.location.href = \'../controllers/downVote.php?id=' . $idPost . '\'"></button>';
                             }
                             else {
                                 echo '<button id="UpVoteBouton" onclick="window.location.href = \'../controllers/upVote.php?id=' . $idPost . '\'"></button>';
