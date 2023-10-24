@@ -105,7 +105,7 @@ header {
     padding-left: 0px;
 }
 
-#hautPostDiv {
+.hautPostDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -117,14 +117,14 @@ header {
     font-size: 30px;
 }
 
-#postUserDiv {
+.postUserDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor:pointer;
 }
 
-#nomUserPost {
+.nomUserPost {
     margin-left: 10px;
 }
 
