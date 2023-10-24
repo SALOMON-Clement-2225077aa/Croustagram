@@ -7,7 +7,7 @@ require '../controllers/newProfilePicture.php';
 Croustagram('Croustagrammeur');
 ?>
     <section id="posts">
-        <article class="post">
+        <article>
 <?php
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];

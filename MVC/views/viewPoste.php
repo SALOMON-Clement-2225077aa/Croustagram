@@ -8,7 +8,7 @@ $id = $_GET['id'];
 echo Croustagram("Croustaposte");
 ?>
 <section id="posts">
-    <article class="post">
+    <article>
         <?php
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
