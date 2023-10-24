@@ -11,7 +11,7 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
 
             <div id="hautPostDiv">
                 <div id="postUserDiv">
-                    <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" id="imgProfil" >
+                    <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfil" >
                     <label id="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label id="datePost"> <?php echo $date ?> </label>

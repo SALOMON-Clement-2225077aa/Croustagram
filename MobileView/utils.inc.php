@@ -64,7 +64,7 @@ function end_page(): void
         <div id="post">
             <div id="userEtDate">
                 <div id="userPost">
-                    <img src="../../ressources/profil.png" id="imgProfil">
+                    <img src="../../ressources/profil.png" class="imgProfil">
                     <label> <?php echo $croustagrameur; ?> </label>
                 </div>
                 <label id="datePost"> <?php echo $date; ?> </label>
@@ -99,8 +99,8 @@ function end_page(): void
     <!-- Afficher un user -->
     <?php
     function afficher_user($pseudo, $img, $date_creation, $date_connexion, $ptsCrous) {?>
-        <div id="User">
-            <img src="../../ressources/profil.png" id="imgProfil">
+        <div class="User">
+            <img src="../../ressources/profil.png" class="imgProfil">
             <div>
                 <th><?php echo $pseudo ?></th>
                 <th><br><?php echo $ptsCrous ?></th>

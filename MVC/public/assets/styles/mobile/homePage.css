@@ -70,7 +70,7 @@ footer {
     padding: 20px;
 }
 
-#imgProfil {
+.imgProfil {
     border-radius: 50%;
     width: 100px;
 }

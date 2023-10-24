@@ -86,7 +86,7 @@ header {
     padding-right: 10px;
 }
 
-#User{
+.User{
     display: flex;
     margin-bottom: 15px;
 }
@@ -276,7 +276,7 @@ header {
     text-align: center;
 }
 
-#imgProfil{
+.imgProfil{
     border-radius: 50%;
     width: 50px;
 }

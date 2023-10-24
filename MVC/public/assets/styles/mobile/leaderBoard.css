@@ -139,12 +139,12 @@ footer {
     padding-bottom: 150px;
 }
 
-#imgProfil {
+.imgProfil {
     border-radius: 50%;
     width: 75px;
 }
 
-#User {
+.User {
     display: flex;
     position: relative;
     top: 330px;
