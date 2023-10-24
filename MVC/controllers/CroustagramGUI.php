@@ -105,7 +105,8 @@ if($showCompteStats){
 </div>
 <?php
     }
+echo '</body>';
 }
 ?>
 
-</body>
+
