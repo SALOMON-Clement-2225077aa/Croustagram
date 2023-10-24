@@ -91,7 +91,7 @@ header {
     margin-bottom: 15px;
 }
 
-#post {
+.post {
     background: #fce9d8;
     z-index: 1000;
     margin: 0;
