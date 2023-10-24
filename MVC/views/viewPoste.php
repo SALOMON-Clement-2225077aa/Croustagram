@@ -28,3 +28,6 @@ if($post!==0){
     echo showCommentaires($id);
 }
 else echo '<strong>Ce poste n\'existe pas</strong>';
+?>
+    </article>
+</section>

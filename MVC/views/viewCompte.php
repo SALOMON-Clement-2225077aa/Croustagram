@@ -20,3 +20,6 @@ echo showCompte($id);
 //echo uploadPfp();
 
 echo showPosts($id);
+?>
+</article>
+    </section>
