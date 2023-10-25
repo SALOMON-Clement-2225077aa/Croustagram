@@ -31,3 +31,16 @@ function getAllCompteData($accountName){
     }
     return null;
 }
+
+function getCompteDataByMail($mail){
+    global $connexion;
+
+    // Requête
+    $requete = 'SELECT * FROM croustagrameur WHERE email="' . $mail . '"';
+    $result = $connexion->query($requete);
+
+    if ($result) {
+        return $result;
+    }
+    return null;
+}

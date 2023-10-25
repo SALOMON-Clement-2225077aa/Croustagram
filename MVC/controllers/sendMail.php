@@ -2,20 +2,29 @@
 // Adresse du serveur :
 //   thecroustagram@alwaysdata.net
 
+require '../models/modelCompte.php';
+
+// SI VOUS VOULEZ METTRE LA BARRE DE NAVIGATION PAR DESSUS ENLEVEZ LE SESSION START !!!
 session_start();
+$_SESSION['suid'] = session_id();
 
 $destinataire = $_POST['mail'];
-$from = 'thecroustagram@alwaysdata.net';
-$sujet = 'Rénitialisation de votre mot de passe';
 
-$headers = 'From: Name <' . $from . '>' . "\n";
-$headers .= 'Content-Type: text/plain; charset=utf-8';
+$data = getCompteDataByMail($destinataire);
+$row = $data->fetch(PDO::FETCH_ASSOC);
 
-$lien = '';
+if(!empty($row)){
+    $from = 'thecroustagram@alwaysdata.net';
+    $sujet = 'Rénitialisation de votre mot de passe';
 
-$message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . $lien . '\n');
-$message .= 'Ne partagez pas ce lien, il permet de changer le mot de passe du compte lié à cette adresse E-Mail (' . $_SESSION['username'] . ')';
+    $headers = 'From: Name <' . $from . '>' . "\n";
+    $headers .= 'Content-Type: text/plain; charset=utf-8';
 
-mail($destinataire, $sujet, $message, $headers);
+    $lien = 'https://thecroustagram.alwaysdata.net/MVC/views/viewResetMdp.php?suid=' . $_SESSION['suid'] . '&accountId=' . $row['id'];
 
-echo 'On espere ca marche hein';
+    $message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : 
+    \r\n' . $lien );
+
+    mail($destinataire, $sujet, $message, $headers);
+}
+header('Location: ../views/viewMainPage.php');
