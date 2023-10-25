@@ -93,7 +93,7 @@ function showAllPosts($ordre = 'id'){
     echo '<div id="allPosts">';
     if ($isMob) {
         if (isset($_SESSION['username'])) { ?>
-            <button id="BoutonCreerPost"></button>
+            <button id="BoutonCreerPost" onclick="window.location.href = '../views/viewCreerPost_Mobile.php'"></button>
         <?php }
     }
     while($row = $data->fetch(PDO::FETCH_ASSOC)){

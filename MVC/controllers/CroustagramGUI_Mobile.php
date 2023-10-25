@@ -15,7 +15,7 @@ function start_page($title) :void
         <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/styleMobile.css">
         <?php
         // Choix de la fiche de style
-        if($title == 'Accueil') {
+        if($title == 'Croustaccueil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">';
         }
         else if ($title == 'Leaderboard') {
@@ -24,11 +24,14 @@ function start_page($title) :void
         else if ($title == 'Profil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
-        else if ($title == 'Connexion') {
+        else if ($title == 'Crousnexion') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
         }
-        else if ($title == 'Inscription') {
+        else if ($title == 'Crouscription') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/inscription.css">';
+        }
+        else if ($title == 'Créer un Croustapost') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/creerPost.css">';
         }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
