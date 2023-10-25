@@ -11,11 +11,11 @@ function connexion_page($tabErreurs = array())
             <form action="../controllers/connectAccount.php" method="post" id="FormConnect">
                 <div class="FormDiv">
                     <label>Identifiant :</label>
-                    <input type="text" name="username" required>
+                    <input type="text" name="username" required placeholder="Nom d'utilisateur">
                 </div>
                 <div class="FormDiv">
                     <label>Mot de passe :</label>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" required placeholder="Mot de passe">
                 </div>
                 <br>
                 <button id="FormBouton" type="submit">Se connecter</button>
@@ -28,8 +28,11 @@ function connexion_page($tabErreurs = array())
                 elseif (in_array('noMatchFoundMail', $tabErreurs))
                 { ?>
                     <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
-                <?php } ?>
+                <?php }
+                ?>
             </form>
+            <br>
+            <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie.php'">Mot de passe oublié</button>
             <h1 id="PasDeCompte">Pas de compte ?</h1>
             <?php if ($isMob) { ?>
                 <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte_Mobile.php'">S'inscrire</button>

@@ -1,11 +1,11 @@
 <?php
-$accountName = $_GET['accountId'];
-$suid = $_GET['suid'];
 session_start();
-if ($suid !== $_SESSION['suid']) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
+if (!isset($_GET['suid']) or !isset($_GET['accountId']) or ($_GET['suid'] !== $_SESSION['suid'])) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
 
 echo '<form action="../controllers/resetMdp.php" method="post">
-<input name="mdp" type="password">
-<input name="verifMdp" type="password">
-<button type="submit" name="accountName" value="' . $accountName . '">Changer le mot de passe</button>
+<label>Entrez votre mot de passe</label>
+<input name="mdp" type="password"  placeholder="Mot de passe">
+<label>Vérifiez votre mot de passe</label>
+<input name="verifMdp" type="password"  placeholder="Vérifier le mot de passe">
+<button type="submit" name="accountName" value="' . $_GET['accountId'] . '">Changer le mot de passe</button>
 </form>';
