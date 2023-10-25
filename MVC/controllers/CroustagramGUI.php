@@ -50,7 +50,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     </div>
 
         <?php
-        if(isset($_SESSION['suid']))
+        if(isset($_SESSION['username']))
         {
             if($showCreatePost) {
                 echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer un croustapost </button>';
