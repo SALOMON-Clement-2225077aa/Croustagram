@@ -63,7 +63,6 @@ function end_page(): void
                 <button id="BoutonProfil" onclick="window.location.href='../views/viewConnexionPage_Mobile.php';"></button>
             <?php } ?>
         </footer>
-    </body>
     <?php
 }
 ?>

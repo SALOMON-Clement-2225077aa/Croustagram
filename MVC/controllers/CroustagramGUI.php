@@ -63,8 +63,10 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             echo '<button onclick="window.location.href = \'../views/viewConnexionPage.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
         }
         ?>
+
 </header>
 
+<body>
 <section style="z-index: 1000" id="leaderboard">
     <h2>Leaderboard :</h2>
     <?php

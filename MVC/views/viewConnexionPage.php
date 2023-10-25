@@ -1,9 +1,7 @@
 <?php
 require '../controllers/controllerPageConnexion.php';
 require '../controllers/CroustagramGUI.php';
-?>
-    <body>
-<?php
+
 Croustagram('Crousnexion', false);
 
 session_start();

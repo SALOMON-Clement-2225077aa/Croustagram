@@ -7,7 +7,7 @@ $id = $_GET['id'];
 
 echo Croustagram("Croustaposte");
 ?>
-<body>
+
 <section id="posts">
     <article>
         <?php

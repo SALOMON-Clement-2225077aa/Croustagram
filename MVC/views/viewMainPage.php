@@ -3,9 +3,7 @@ require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerPoste.php';
 
 Croustagram('Croustaccueil');
-?>
-<body>
-<?php
+
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
 echo '<section id="posts">';

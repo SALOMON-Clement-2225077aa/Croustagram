@@ -6,7 +6,6 @@ require '../controllers/newProfilePicture.php';
 
 Croustagram('Croustagrammeur');
 ?>
-<body>
     <section id="posts">
         <article>
 <?php
