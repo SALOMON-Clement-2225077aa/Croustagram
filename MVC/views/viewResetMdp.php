@@ -7,5 +7,5 @@ if ($suid !== $_SESSION['suid']) header('Location: https://www.youtube.com/watch
 echo '<form action="../controllers/resetMdp.php" method="post">
 <input name="mdp" type="password">
 <input name="verifMdp" type="password">
-<button type="submit" name="accountName" value="' . $accountName . '">
+<button type="submit" name="accountName" value="' . $accountName . '">Changer le mot de passe</button>
 </form>';
