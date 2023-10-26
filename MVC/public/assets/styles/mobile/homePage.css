@@ -81,6 +81,15 @@ button {
     background-color: white;
     border: none;
 }
+#TrierRecherche {
+    background-image: url("../../images/leaderboard.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
 
 #PageTitre {
     border-top-style: solid;

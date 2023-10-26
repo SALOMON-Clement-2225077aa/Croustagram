@@ -32,15 +32,20 @@ function start_page($title) :void
     </head>
     <body>
     <header>
+
+        <!-- Barre de recherche -->
         <div id="DivLogoBarre">
-            <img id="Logo" src="../../MVC/public/assets/images/logo.png">
-            <div id="DivBarreRecherche">
-                <button id="Recherche" onclick=""></button>
-                <input id="BarreRecherche" type="text">
-                <button id="EffacerRecherche" onclick=""></button>
-                <button id="FiltrerRecherche" onclick=""></button>
-            </div>
+            <form id="DivLogoBarre" action="" method="post" >
+                <img id="Logo" src="../../MVC/public/assets/images/logo.png">
+                <div id="DivBarreRecherche">
+                    <button id="Recherche" type="submit"></button>
+                    <input id="BarreRecherche" type="text" name="recherche">
+                    <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
+                    <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
+                </div>
+            </form>
         </div>
+
         <h1 id="PageTitre"><?php echo $title ?></h1>
     </header>
     <?php
