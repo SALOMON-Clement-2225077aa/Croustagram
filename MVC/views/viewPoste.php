@@ -5,21 +5,31 @@ require '../controllers/controllerCommentaires.php';
 
 $id = $_GET['id'];
 
-echo Croustagram("Commentaires");
+echo Croustagram("Croustaposte");
 ?>
+
 <section id="posts">
-    <article class="post">
+    <article>
         <?php
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
-echo showOnePost($id);
+$post = showOnePost($id);
 
-echo '<h2>Commentaires :</h2>';
+if($post!==0){
+    echo $post;
 
-if (isset($_SESSION['username'])){
-    echo showinterfaceAjoutCommentaire();
+    echo '<h2>Commentaires :</h2>';
+
+    if (isset($_SESSION['username'])){
+        echo showinterfaceAjoutCommentaire();
+    }
+
+
+    echo showCommentaires($id);
 }
-
-
-echo showCommentaires($id);
+else echo '<strong>Ce poste n\'existe pas</strong>';
+?>
+    </article>
+</section>
+</body>

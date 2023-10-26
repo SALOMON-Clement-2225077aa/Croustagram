@@ -1,0 +1,29 @@
+<?php
+// Adresse du serveur :
+//   thecroustagram@alwaysdata.net
+
+require '../models/modelCompte.php';
+
+// SI VOUS VOULEZ METTRE LA BARRE DE NAVIGATION PAR DESSUS ENLEVEZ LE SESSION START !!!
+session_start();
+$_SESSION['suid'] = session_id();
+
+$destinataire = $_POST['mail'];
+
+$data = getCompteDataByMail($destinataire);
+$row = $data->fetch(PDO::FETCH_ASSOC);
+
+if(!empty($row)){
+    $from = 'thecroustagram@alwaysdata.net';
+    $sujet = 'Rénitialisation de votre mot de passe';
+
+    $headers = 'From: Name <' . $from . '>' . "\n";
+    $headers .= 'Content-Type: text/plain; charset=utf-8';
+
+    $lien = 'https://thecroustagram.alwaysdata.net/MVC/views/viewResetMdp.php?suid=' . $_SESSION['suid'] . '&accountId=' . $row['id'];
+
+    $message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . $lien );
+
+    mail($destinataire, $sujet, $message, $headers);
+}
+header('Location: ../views/viewMainPage.php');

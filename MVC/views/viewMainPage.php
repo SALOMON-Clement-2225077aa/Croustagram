@@ -2,12 +2,12 @@
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerPoste.php';
 
-Croustagram('Accueil');
+Croustagram('Croustaccueil');
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
 echo '<section id="posts">';
-echo '<article class="post">';
+echo '<article id="post">';
 
 if(isset($_POST['categorie'])) {
     afficherPostSelonCategorie($_POST['categorie']);
@@ -23,6 +23,7 @@ else {
         showAllPosts();
     }
 }
-
-echo '</article>';
-echo '</section>';
+?>
+</article>
+</section>
+</body>

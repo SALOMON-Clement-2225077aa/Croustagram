@@ -3,11 +3,11 @@ require '../models/modelLeaderboard.php';
 
 function afficher_user($pseudo, $ptsCrous) {?>
     <a href="../views/viewCompte.php?id=<?php echo $pseudo ?>" style="text-decoration: none; color: black">
-        <div id="User">
-            <img src="../public/assets/images/profil.png" id="imgProfil">
+        <div class="User">
+            <img alt="Photo de profil de l'utilisateur" src="../public/assets/images/profil.png" class="imgProfil">
             <div>
-                <th><?php echo $pseudo ?></th>
-                <th><br><?php echo $ptsCrous ?></th>
+                <?php echo $pseudo ?>
+                <br><?php echo $ptsCrous ?>
             </div>
         </div>
     </a>

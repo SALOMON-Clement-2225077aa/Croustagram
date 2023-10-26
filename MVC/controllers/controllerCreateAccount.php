@@ -15,7 +15,9 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
     <meta name="titre" content="Créer un compte">
     <meta name="description" content="Page pour créer un compte">
     <link rel="icon" href="../public/assets/images/logo.png" />
-    <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
+    <?php if(!$isMob) { ?>
+        <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
+    <?php } ?>
     <title>Croustagram - Inscription</title>
 </head>
 
@@ -23,12 +25,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 <div id="ContenuPage">
     <div id="BoxMilieu">
         <h1 id="FormTitre">Prêt à vivre l'expérience Croustagram ?</h1>
-        <?php if ($isMob) { ?>
-        <form action="request.php" method="post">
-            <?php }
-            else { ?>
-            <form action="../models/createAccount.php" method="post">
-                <?php } ?>
+        <form action="../models/createAccount.php" method="post">
                 <div class="FormDiv">
                     <label>E-Mail :</label>
                     <input placeholder="Adresse e-mail"  type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
@@ -103,12 +100,12 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 
                 <div id="DivBas">
                     <?php if ($isMob) { ?>
-                    <button id="RetourBouton" onclick="window.location.href='../ConnexionPage/index.php'">
-                        <?php }
-                        else { ?>
-                            <button id="RetourBouton" onclick="window.location.href='../views/viewConnexionPage.php'">Se connecter</button>
-                            <?php } ?>
-                            <button id="FormBouton" type="submit" value="mailer" name="action">S'inscrire</button>
+                        <button id="RetourBouton" onclick="window.location.href='../views/viewConnexionPage_Mobile.php'">Se connecter</button>
+                    <?php }
+                    else { ?>
+                        <button id="RetourBouton" onclick="window.location.href='../views/viewConnexionPage.php'">Se connecter</button>
+                    <?php } ?>
+                    <button id="FormBouton" type="submit" value="mailer" name="action">S'inscrire</button>
                 </div>
 
             </form>

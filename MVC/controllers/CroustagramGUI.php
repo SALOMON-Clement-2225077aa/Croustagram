@@ -21,11 +21,10 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     <title><?php echo $titre; ?></title>
 </head>
 
-<body>
 <header style="z-index: 1000">
     <a href="../views/viewMainPage.php" style="text-decoration: none">
         <div id="divLogo">
-            <img class="header" id="logo" src="../public/assets/images/logo.png">
+            <img alt="Logo du site" class="header" id="logo" src="../public/assets/images/logo.png">
             <h1 class="header" id="titre"><?php echo $titre ?></h1>
         </div>
     </a>
@@ -33,7 +32,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     <!-- Barre de recherche -->
     <div class="header" id="DivLogoBarre">
         <div id="DivBarreRecherche">
-            <form action="" method="post" >
+            <form method="post" >
                 <button id="Recherche" type="submit"></button>
                 <input id="BarreRecherche" type="text" name="recherche">
                 <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage.php';"></button>
@@ -51,12 +50,12 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     </div>
 
         <?php
-        if(isset($_SESSION['suid']))
+        if(isset($_SESSION['username']))
         {
             if($showCreatePost) {
                 echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer un croustapost </button>';
             }
-            echo '<label style="top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label>';
+            echo '<a style="color : black" href="../views/viewCompte.php?id=' . $_SESSION['username'] . '"><label style="cursor: pointer; top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label></a>';
             echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
         }
         else
@@ -64,8 +63,10 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             echo '<button onclick="window.location.href = \'../views/viewConnexionPage.php\';" style="right: 20px; top:50px; position: fixed"> Se connecter à un compte/s\'inscrire</button>';
         }
         ?>
+
 </header>
 
+<body>
 <section style="z-index: 1000" id="leaderboard">
     <h2>Leaderboard :</h2>
     <?php
@@ -106,3 +107,6 @@ if($showCompteStats){
 <?php
     }
 }
+?>
+
+

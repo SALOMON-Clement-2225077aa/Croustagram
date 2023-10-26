@@ -7,4 +7,6 @@ if (isset($_SESSION['suid'])) header('Location :' . $_SESSION['currentUrl']);
 
 showAccountPage();
 
-Croustagram('Inscription', false);
+Croustagram('Crouscription', false);
+?>
+</body>
