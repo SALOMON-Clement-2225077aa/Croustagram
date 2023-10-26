@@ -84,9 +84,6 @@
 }
 
 #allPosts {
-    padding-top: 350px;
-    padding-bottom: 150px;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 350px 2% 150px;
 }
 /* FIN DES POSTS : */

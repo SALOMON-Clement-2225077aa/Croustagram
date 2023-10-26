@@ -111,13 +111,14 @@ function afficherPostSelonCategorie($catFiltre) {
     // Envoie de la requête
     $result = $connexion->query($requete);
 
+    // Affichage des posts
+    echo '<div id="allPosts">';
     // Affichage du résultat de la requête
     afficherNbResult($nb);
-
-    // Affichage des posts
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         showOnePost($row['id']);
     }
+    echo '</div>';
 }
 
 function afficherPostSelonMot($text) {
@@ -141,13 +142,14 @@ function afficherPostSelonMot($text) {
     $connexion = connexion();
     $result = $connexion->query($requete);
 
+    // Affichage des posts
+    echo '<div id="allPosts">';
     // Affichage du résultat de la requête
     afficherNbResult($nb);
-
-    // Affichage des posts
     while($row = $result->fetch(PDO::FETCH_ASSOC)){
         showOnePost($row['id']);
     }
+    echo '</div>';
 }
 
 function afficherNbResult($nb) {

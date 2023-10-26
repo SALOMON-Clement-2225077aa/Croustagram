@@ -12,7 +12,7 @@ else if(isset($_POST['recherche'])) {
 }
 else {
     if(isset($_POST['tri'])) {
-        echo showAllPosts('ptsCrous');
+        echo showAllPosts($_POST['tri']);
     }
     else {
         showAllPosts();
