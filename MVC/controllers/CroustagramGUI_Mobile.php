@@ -1,4 +1,5 @@
 <?php
+require_once 'controllerMenuCategorie.php';
 
 function start_page($title) :void
 {
@@ -35,15 +36,23 @@ function start_page($title) :void
 
         <!-- Barre de recherche -->
         <div id="DivLogoBarre">
-            <form id="DivLogoBarre" action="" method="post" >
                 <img id="Logo" src="../../MVC/public/assets/images/logo.png">
                 <div id="DivBarreRecherche">
-                    <button id="Recherche" type="submit"></button>
-                    <input id="BarreRecherche" type="text" name="recherche">
-                    <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
-                    <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
+                    <form id="DivLogoBarre" action="" method="post" >
+                        <button id="Recherche" type="submit"></button>
+                        <input id="BarreRecherche" type="text" name="recherche">
+                        <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
+                        <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
+                    </form>
+                    <!-- filtre par catégorie : -->
+                    <form action="../views/viewMainPage_Mobile.php" method="post">
+                        <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
+                            <option value="">-- Filtrer la catégorie --</option>
+                            <option value="0">Aucune</option>
+                            <?php selectCategorie(); ?>
+                        </select>
+                    </form>
                 </div>
-            </form>
         </div>
 
         <h1 id="PageTitre"><?php echo $title ?></h1>

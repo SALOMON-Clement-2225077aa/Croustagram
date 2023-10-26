@@ -40,8 +40,8 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
                 <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage.php'"></button>
             </form>
             <!-- filtre par catégorie : -->
-            <form action="../views/viewMainPage.php" method="post">
-                <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
+            <form action="../views/viewMainPage_Mobile.php" method="post">
+                <select id="FiltrerRecherche" hidden="until-found" name='categorie'>
                     <option value="">-- Filtrer la catégorie --</option>
                     <option value="0">Aucune</option>
                     <?php selectCategorie(); ?>

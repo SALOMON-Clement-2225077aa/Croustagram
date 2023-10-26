@@ -5,6 +5,7 @@ require_once '../controllers/controllerPoste.php';
 start_page('Croustaccueil');
 
 if(isset($_POST['categorie'])) {
+    var_dump($_POST['categorie']);
     afficherPostSelonCategorie($_POST['categorie']);
 }
 else if(isset($_POST['recherche'])) {
