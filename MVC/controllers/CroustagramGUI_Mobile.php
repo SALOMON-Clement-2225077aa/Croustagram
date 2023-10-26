@@ -25,7 +25,7 @@ function start_page($title) :void
         else if ($title == 'Profil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
-        else if ($title == 'Crousnexion') {
+        else if ($title == 'Crousnexion' or $title == 'Crouscription') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
         }
         ?>
@@ -38,6 +38,7 @@ function start_page($title) :void
         <div id="DivLogoBarre">
                 <img id="Logo" src="../../MVC/public/assets/images/logo.png">
                 <div id="DivBarreRecherche">
+                    <!-- filtre par recherche (mot) ou trier par points : -->
                     <form id="DivLogoBarre" action="" method="post" >
                         <button id="Recherche" type="submit"></button>
                         <input id="BarreRecherche" type="text" name="recherche">

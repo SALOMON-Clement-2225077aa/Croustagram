@@ -45,6 +45,7 @@ button {
     margin-left: 5px;
 }
 
+/* Barre de recherche */
 #Recherche {
     height: 51.2px;
     width: 51.2px;
@@ -87,6 +88,7 @@ button {
     background-color: white;
     border: none;
 }
+/* Fin barre de recherche */
 
 #PageTitre {
     border-top-style: solid;
