@@ -54,14 +54,12 @@ button {
     background-color: white;
     border: none;
 }
-
 #BarreRecherche {
     height: 51.2px;
     width: 400px;
     border: none;
     font-size: 35px;
 }
-
 #EffacerRecherche {
     background-image: url("../../images/croix.png");
     height: 51.2px;
@@ -71,7 +69,6 @@ button {
     background-color: white;
     border: none;
 }
-
 #FiltrerRecherche {
     background-image: url("../../images/filtre.png");
     height: 51.2px;
