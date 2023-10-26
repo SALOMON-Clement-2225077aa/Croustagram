@@ -5,7 +5,7 @@ require '../controllers/controllerCreateAccount.php';
 
 if (isset($_SESSION['suid'])) header('Location :' . $_SESSION['currentUrl']);
 
-start_page('Connexion');
+start_page('Crousnexion');
 
 showAccountPage();
 
