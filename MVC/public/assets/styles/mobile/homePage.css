@@ -3,7 +3,7 @@ body {
     padding: 0px;
     font-size: 40px;
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 header {
@@ -150,7 +150,7 @@ footer {
     margin: 20px;
 }
 
-#userEtDate {
+.userEtDate {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,12 +159,12 @@ footer {
     padding: 20px;
 }
 
-#imgProfil {
+.imgProfil {
     border-radius: 50%;
     width: 100px;
 }
 
-#Categories {
+.Categories {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,7 +174,7 @@ footer {
     padding-bottom: 20px;
 }
 
-#Votes {
+.Votes {
     border-right: solid;
     display: flex;
     align-items: center;
@@ -182,9 +182,7 @@ footer {
     width: 100%;
     padding: 20px;
 }
-
-
-#UpVoteBouton {
+.UpVoteBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -194,8 +192,7 @@ footer {
     background-repeat: no-repeat;
     border: none;
 }
-
-#DownVoteBouton {
+.DownVoteBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -205,8 +202,29 @@ footer {
     background-repeat: no-repeat;
     border: none;
 }
+.UpVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+.DownVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-bas-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
 
-#CommentaireBouton {
+
+.CommentaireBouton {
     width: 80px;
     height: 80px;
     background-color: #fce9d8;
@@ -216,20 +234,4 @@ footer {
     background-repeat: no-repeat;
     border: none;
     padding: 20px;
-}
-
-#popup {
-    size: 20px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-#fermerPopup {
-    float: right;
-    background-color: red;
 }
