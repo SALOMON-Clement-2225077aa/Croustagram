@@ -5,7 +5,7 @@ body {
 }
 
 #ContenuPage {
-    padding-top: 350px;
+    padding-top: 15%;
     padding-bottom: 150px;
     width: 100%;
     height: 100%;
@@ -13,8 +13,7 @@ body {
 
 #BoxMilieu{
     padding: 25px;
-    margin: 25px;
-    margin-top: 250px;
+    margin: 0 25px 25px;
     background-color: #d9d9d9;
     border: solid 3px;
     border-radius: 25px;

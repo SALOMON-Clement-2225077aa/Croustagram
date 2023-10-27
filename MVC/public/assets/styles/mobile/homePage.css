@@ -63,3 +63,16 @@
     width: 100%;
     padding: 20px;
 }
+
+#BoutonCreerPost {
+    background-color: #F79F14;
+    background-image: url("../../images/plus.png");
+    width: 150px;
+    height: 150px;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: solid;
+    border-radius: 50%;
+    position: fixed;
+}
