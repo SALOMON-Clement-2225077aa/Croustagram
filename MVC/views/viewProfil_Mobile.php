@@ -21,5 +21,6 @@ start_page('Mon profil');
 
         end_page();
         ?>
+
     </div>
 </body>

@@ -7,27 +7,25 @@ $id = $_GET['id'];
 
 echo start_page("Croustapost");
 ?>
+<div id="contenuPage">
+    <?php
 
-<section id="posts">
-    <article>
-        <?php
+    $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
-$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+    $post = showOnePost($id);
 
-$post = showOnePost($id);
+    if($post!==0){
+        echo $post;
 
-if($post!==0){
-    echo $post;
+        echo '<h2>Commentaires :</h2>';
 
-    echo '<h2>Commentaires :</h2>';
-
-    if (isset($_SESSION['username'])){
-        showinterfaceAjoutCommentaire();
+        if (isset($_SESSION['username'])){
+            showinterfaceAjoutCommentaire();
+        }
+        echo showCommentaires($id);
     }
-    echo showCommentaires($id);
-}
-else echo '<strong>Ce poste n\'existe pas</strong>';
-?>
-    </article>
-</section>
-</body>
+    else echo '<strong>Ce poste n\'existe pas</strong>';
+
+    end_page()
+    ?>
+</div>
