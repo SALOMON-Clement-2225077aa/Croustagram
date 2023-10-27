@@ -11,7 +11,7 @@ if ($mdp!==$verifMdp){
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
 else{
-    $query = 'UPDATE croustagrameur SET mdp=' . password_hash($mdp, PASSWORD_DEFAULT) .' WHERE id=' . $accountName;
+    $query = 'UPDATE croustagrameur SET mdp="' . password_hash($mdp, PASSWORD_DEFAULT) .'" WHERE id="' . $accountName . '"';
 
     if (!($dbResult = $connexion->exec($query))) {
         echo '<strong>Erreur dans requête</strong><br>';
