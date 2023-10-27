@@ -5,6 +5,7 @@ function start_page($title) :void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     if(!$isMob){header("Location: ../views/viewMainPage.php");}
+    session_start();
     ?>
     <!DOCTYPE html>
     <html lang="fr">

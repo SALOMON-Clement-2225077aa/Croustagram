@@ -4,7 +4,6 @@ require '../controllers/controllerCompte.php';
 require '../controllers/CroustagramGUI_Mobile.php';
 require '../controllers/newProfilePicture.php';
 
-session_start();
 start_page('Mon profil');
 ?>
     <div id="contenuPage">
