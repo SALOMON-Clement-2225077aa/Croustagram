@@ -87,3 +87,129 @@
     padding: 350px 2% 150px;
 }
 /* FIN DES POSTS : */
+
+/* - - - - - - - - - - - - - - - - - - - */
+
+/* Barre de recherche */
+#Recherche {
+    height: 51.2px;
+    width: 51.2px;
+    background-image: url("../../images/loupe.png");
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+#BarreRecherche {
+    height: 51.2px;
+    width: 400px;
+    border: none;
+    font-size: 35px;
+}
+#EffacerRecherche {
+    background-image: url("../../images/croix.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+#FiltrerRecherche {
+    background-image: url("../../images/filtre.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+#TrierRecherche {
+    background-image: url("../../images/leaderboard.png");
+    height: 51.2px;
+    width: 51.2px;
+    background-size: 100%;
+    background-position: center;
+    background-color: white;
+    border: none;
+}
+/* Fin barre de recherche */
+
+
+/* - - - - - - - - - - - - - - - - - - - */
+
+/* Haut de page */
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background-color: #d9d9d9;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#DivLogoBarre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Logo {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+}
+
+#DivBarreRecherche {
+    display: flex;
+    align-items: center;
+    margin-right: 75px;
+    background-size: contain;
+    background-color: white;
+    border-style: solid;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+button {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#PageTitre {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    text-align: center;
+    font-size: 40px;
+    padding: 30px;
+    margin-bottom: 0;
+}
+
+#ContenuPage {
+    position: absolute;
+    top: 330px;
+    padding-bottom: 150px;
+    width: 100%;
+}
+
+footer {
+    margin-top: 20px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    border-top-style: solid;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: space-around;
+}
+/* fin haut de page */
