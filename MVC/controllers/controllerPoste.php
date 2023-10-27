@@ -51,7 +51,15 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                     ?>
                 </div>
                 <div class="commentairesPostDiv">
-                    <button class="CommentaireBouton" onclick="window.location.href = 'viewPoste.php?id=<?php echo $idPost?>'"></button>
+                    <?php
+                    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+                    if ($isMob) {
+                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPoste_Mobile.php?id=' . $idPost . '\'"></button>';
+                    }
+                    else {
+                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPoste.php?id=' . $idPost . '\'"></button>';
+                    }
+                    ?>
                     <label> <?php echo $nb_comm; ?> </label>
                 </div>
                 <?php

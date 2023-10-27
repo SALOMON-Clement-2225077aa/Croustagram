@@ -35,6 +35,9 @@ function start_page($title) :void
         else if ($title == 'Créer un Croustapost') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/creerPost.css">';
         }
+        else if ($title == 'Croustapost') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/commentairePage.css">';
+        }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
     </head>
