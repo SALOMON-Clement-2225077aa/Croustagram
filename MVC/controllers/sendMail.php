@@ -20,7 +20,7 @@ if(!empty($row)){
     $headers = 'From: Croustagram <thecroustagram@alwaysdata.net>' . "\r\n";
     $lien = 'https://thecroustagram.alwaysdata.net/MVC/views/viewResetMdp.php?suid=' . $_SESSION['suid'] . '&accountId=' . $row['id'];
 
-    $message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . "\n" . $lien );
+    $message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . "\r\n" . $lien );
 
     mail($destinataire, $sujet, $message, $headers);
 }

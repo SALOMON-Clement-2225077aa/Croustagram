@@ -1,6 +1,6 @@
 /* LES POSTS : */
 
-#post {
+.post {
     background: #fce9d8;
     z-index: 1000;
     border: 2px solid;
@@ -11,7 +11,7 @@
     padding-left: 0px;
 }
 
-#hautPostDiv {
+.hautPostDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,18 +23,18 @@
     font-size: 30px;
 }
 
-#postUserDiv {
+.postUserDiv {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor:pointer;
 }
 
-#nomUserPost {
+.nomUserPost {
     margin-left: 10px;
 }
 
-#titrePost {
+.titrePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -43,7 +43,7 @@
     font-size: 30px;
 }
 
-#messagePost {
+.messagePost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -52,7 +52,7 @@
     font-size: 20px;
 }
 
-#categoriesPost {
+.categoriesPost {
     display: flex;
     justify-content: center;
     margin: 0px;
@@ -61,7 +61,7 @@
     font-size: 20px;
 }
 
-#basPostDiv {
+.basPostDiv {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -70,7 +70,7 @@
     padding: 0px;
 }
 
-#votesPostDiv {
+.votesPostDiv {
     border-right: solid;
     display: flex;
     align-items: center;
@@ -79,7 +79,7 @@
     margin: 0px;
 }
 
-#pointCrousLabelPost {
+.pointCrousLabelPost {
     padding-right: 30px;
 }
 
