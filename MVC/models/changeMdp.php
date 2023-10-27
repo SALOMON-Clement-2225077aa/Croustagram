@@ -22,9 +22,6 @@ else{
         exit();
     }
     else{
-        echo '<label>Votre mot de passe a bien été changé !</label><br>
-<label>Vous serez redirigés dans 5 secondes...</label>';
-        sleep(5);
         header('Location: ../views/viewMainPage.php');
     }
 }
