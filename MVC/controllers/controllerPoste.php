@@ -93,19 +93,24 @@ function showOnePost($id){
     else return 0;
 }
 
-function showAllPosts($ordre = 'id'){
+function showAllPosts($ordre = 'id', $limit = 50){
     $posts = ' ';
+    $data = getAllPostsId($ordre);
 
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
-    $data = getAllPostsId($ordre);
     echo '<div id="allPosts">';
     if ($isMob) {
         if (isset($_SESSION['username'])) { ?>
             <button id="BoutonCreerPost" onclick="window.location.href = '../views/viewCreerPost_Mobile.php'"></button>
         <?php }
     }
+    $cpt = 0;
     while($row = $data->fetch(PDO::FETCH_ASSOC)){
         $posts = $posts . showOnePost($row['id']);
+        $cpt +=1;
+        if($cpt >= $limit) {
+            break;
+        }
     }
     echo '</div>';
 
@@ -139,6 +144,7 @@ function afficherPostSelonCategorie($catFiltre) {
 }
 
 function afficherPostSelonMot($text) {
+
     if (empty($text)){
         $requete = "SELECT * FROM croustapost ORDER BY ptsCrous DESC";
         $nb = "SELECT COUNT(*) FROM croustapost";
