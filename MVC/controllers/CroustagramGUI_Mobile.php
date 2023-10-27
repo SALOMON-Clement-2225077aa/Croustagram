@@ -25,8 +25,11 @@ function start_page($title) :void
         else if ($title == 'Profil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
-        else if ($title == 'Crousnexion' or $title == 'Crouscription') {
+        else if ($title == 'Crousnexion') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/connexionPage.css">';
+        }
+        else if ($title == 'Crouscription') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/inscription.css">';
         }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
