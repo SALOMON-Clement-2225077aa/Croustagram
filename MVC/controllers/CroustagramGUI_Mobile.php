@@ -22,7 +22,7 @@ function start_page($title) :void
         else if ($title == 'Leaderboard') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/leaderBoard.css">';
         }
-        else if ($title == 'Profil') {
+        else if ($title == 'Mon profil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
         else if ($title == 'Crousnexion') {

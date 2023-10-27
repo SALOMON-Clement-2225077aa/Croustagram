@@ -56,7 +56,7 @@ function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categori
                 </div>
                 <?php
                 if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
-                    echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
+                    echo '<button class="button-suppr" onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
                 }
                 ?>
             </div>

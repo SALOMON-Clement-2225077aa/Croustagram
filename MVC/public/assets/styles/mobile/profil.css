@@ -1,6 +1,4 @@
 
-/* CONTENU MILIEU */
-
 #contenuPage {
     padding-top: 350px;
     padding-bottom: 150px;
@@ -16,8 +14,13 @@
     flex-direction: column;
 }
 
-#photoDeProfil {
+.imgProfil {
+    border-radius: 50%;
     width: 100px;
+}
+
+h1 {
+    font-size: 1.5em;
 }
 
 #affichePseudoLabel {
@@ -27,11 +30,19 @@
 
 #boutonDeconnexion {
     font-size: 50px;
-    margin-top: 200px;
+    margin-bottom: 50px;
+    margin-left: 30%;
     background-color: #d9d9d9;
     border: solid;
     border-radius: 50px / 50px;
     padding: 40px;
+}
+
+.button-suppr {
+    padding: 15px;
+    border-radius: 50px / 50px;
+    border: solid;
+    font-size: 30px;
 }
 
 /*FIN CONTENU MILIEU */
@@ -81,5 +92,3 @@ footer {
     background-color: #d9d9d9;
     margin: 20px;
 }
-
-/* FIN DE BAS DE PAGE */
