@@ -202,6 +202,27 @@ footer {
     background-repeat: no-repeat;
     border: none;
 }
+.UpVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-haut-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+.DownVoteBoutonPressed {
+    width: 80px;
+    height: 80px;
+    background-color: #fce9d8;
+    background-image: url("../../images/fleche-vers-le-bas-remplie.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+}
+
 
 .CommentaireBouton {
     width: 80px;
