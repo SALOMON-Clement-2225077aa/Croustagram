@@ -76,3 +76,11 @@
     border-radius: 50%;
     position: fixed;
 }
+
+.button-suppr {
+    padding: 15px;
+    border-radius: 50px / 50px;
+    border: solid;
+    font-size: 30px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}

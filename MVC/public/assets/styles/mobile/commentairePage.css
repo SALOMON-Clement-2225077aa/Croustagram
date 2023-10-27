@@ -33,6 +33,7 @@
     margin: 0px;
     padding: 5px;
     font-size: 35px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
     border-bottom: solid;
 }
 
@@ -48,11 +49,13 @@
     margin: 0px;
     padding: 15px;
     font-size: 35px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .nomUserPost {
     margin-left: 10px;
     font-size: 35px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
 }
 /* FIN Commentaires */
 
