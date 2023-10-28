@@ -48,12 +48,16 @@ h1 {
 
 .imgProfil {
     border-radius: 50%;
-    width: 75px;
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
 }
 
 .User {
     display: flex;
     position: relative;
-    top: 330px;
-    padding-bottom: 150px;
+    top: 350px;
+    padding: 10px 10px 75px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 50px;
 }
