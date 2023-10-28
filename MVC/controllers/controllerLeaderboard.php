@@ -6,10 +6,10 @@ function afficher_user($pseudo, $ptsCrous, $img) {?>
         <div class="User">
             <?php
             if($img == 'no_img') {
-                echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $pseudo . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
+                echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $pseudo . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
             }
             else {
-                echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $pseudo . '\';" src="'. $img .'" class="imgProfil" >';
+                echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $pseudo . '\';" src="'. $img .'" class="imgProfil" >';
             }
             ?>
             <div>

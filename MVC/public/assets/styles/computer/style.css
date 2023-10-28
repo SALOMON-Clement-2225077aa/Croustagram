@@ -281,6 +281,11 @@ header {
     width: 50px;
     margin-right: 10px;
 }
+.imgProfilCompte{
+    border-radius: 10%;
+    width: 100px;
+    margin-right: 10px;
+}
 
 #ContenuPage{
     width: 100%;

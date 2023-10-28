@@ -12,10 +12,10 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
                 <div class="postUserDiv">
                     <?php
                     if($img == 'no_img') {
-                        echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
                     }
                     else {
-                        echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="'. $img .'" class="imgProfil" >';
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="'. $img .'" class="imgProfil" >';
                     }
                     ?>
                     <label class="nomUserPost"> <?php echo $pseudo ?> </label>

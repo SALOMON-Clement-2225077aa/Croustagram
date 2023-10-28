@@ -36,9 +36,15 @@ function showPosts($id){
 function showCompte($id){
     $result = getAllCompteData($id);
     $data = $result->fetch(PDO::FETCH_ASSOC);
+
     if (!empty($data)){
+        if($data['img'] == 'no_img') {
+            echo '<img draggable="false" alt="Photo de profil" src="../public/assets/images/profil.png" class="imgProfilCompte" >';
+        }
+        else {
+            echo '<img draggable="false" alt="Photo de profil" src="'. $data['img'] .'" class="imgProfilCompte" >';
+        }
     ?>
-    <img alt="Photo de profil" class="imgProfil" src="../public/assets/images/profil.png">
     <h1><?php echo $data['pseudo'] . ' (@' . $data['id'] . ')'?></h1>
     <h3>Points crous : <?php echo $data['ptsCrous']?></h3>
     <h5>Dernière connexion le <?php echo $data['derniere_connexion']?></h5>
