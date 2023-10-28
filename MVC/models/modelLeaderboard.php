@@ -8,7 +8,7 @@ function getLeaderboardData(){
     global $connexion;
 
     // Requête
-    $requete = 'SELECT id, ptsCrous FROM croustagrameur ORDER BY ptsCrous DESC';
+    $requete = 'SELECT id, ptsCrous ,img FROM croustagrameur ORDER BY ptsCrous DESC';
     $result = $connexion->query($requete);
 
     // Si la requête a marché on affiche les users
