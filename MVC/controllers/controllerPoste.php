@@ -4,13 +4,20 @@ require_once '../models/modelCompte.php';
 require_once 'controllerCategorie.php';
 require_once '../models/modelVote.php';
 
-function showPost($croustagrameurId, $pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
+function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
     <div class="post">
             <div class="hautPostDiv">
                 <div class="postUserDiv">
-                    <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfil" >
+                    <?php
+                    if($img == 'no_img') {
+                        echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
+                    }
+                    else {
+                        echo '<img alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="'. $img .'" class="imgProfil" >';
+                    }
+                    ?>
                     <label class="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label> <?php echo $date ?> </label>
@@ -84,11 +91,12 @@ function showOnePost($id){
     $accountData = getAllCompteData($row['croustagrameur_id']);
     $account = $accountData->fetch(PDO::FETCH_ASSOC);
     $accountName = $account['pseudo'];
+    $accountImg = $account['img'];
 
     if (!empty($row)){
         $nb_comm = getNbCommentaires($row['id']);
 
-        return $post . showPost($row['croustagrameur_id'], $accountName, $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
+        return $post . showPost($row['croustagrameur_id'], $accountImg, $accountName, $row['titre'], $row['message'], $row['date'], $row['categorie1'], $row['categorie2'], $row['categorie3'], $row['ptsCrous'], $row['id'], $nb_comm);
     }
     else return 0;
 }

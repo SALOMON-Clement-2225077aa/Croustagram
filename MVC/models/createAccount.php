@@ -93,7 +93,7 @@
 
         $today = date('Y-m-d');
 
-        $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "img2", "' . $today . '", "' . $today . '", 0)';
+        $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "no_img", "' . $today . '", "' . $today . '", 0)';
 
         if (!($dbResult = $connexion->exec($query))) {
             echo '<strong>Erreur dans requête</strong><br>';
