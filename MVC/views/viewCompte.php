@@ -4,6 +4,12 @@ require_once '../controllers/controllerCompte.php';
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/newProfilePicture.php';
 
+$id = $_GET['id'];
+$isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+if($isMob){
+    header("Location: ../views/viewCompte_Mobile.php?id=$id");
+    die();
+}
 Croustagram('Croustagrammeur');
 ?>
     <section id="posts">
@@ -11,8 +17,6 @@ Croustagram('Croustagrammeur');
 <?php
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
-
-$id = $_GET['id'];
 
 showCompte($id);
 
