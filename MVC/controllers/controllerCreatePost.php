@@ -23,7 +23,7 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 <body>
 <div id="ContenuPage">
     <div id="BoxMilieu">
-        <h1 id="FormTitre">Exprimez vous !</h1>
+        <h1 id="FormTitre">Exprimez-vous !</h1>
 
                 <form action="../models/createPost.php" method="post">
 

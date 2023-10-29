@@ -362,6 +362,43 @@ button {
     align-items: center;
 }
 
+#FormMdpOublie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9d9d9;
+    border: solid;
+    border-radius: 10px;
+}
+
+#mdpOublieEmailLabel {
+    font-size: 30px;
+    margin: 20px;
+}
+
+#mdpOublieInput {
+    font-size: 20px;
+    width: 90%;
+}
+
+.resetLabel {
+    font-size: 30px;
+    margin: 20px;
+}
+
+.resetInput {
+    font-size: 20px;
+    width: 90%;
+}
+
+#mdpOublieSendBouton {
+    font-size: 20px;
+    margin: 20px;
+    width: 50%;
+    border: solid;
+    border-radius: 30px;
+}
+
 .FormDiv label{
     font-size: 25px;
 }
