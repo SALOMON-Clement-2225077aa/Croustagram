@@ -1,5 +1,5 @@
 <?php
-require '../models/addCommentData.php';
+require_once '../models/addCommentData.php';
 
     session_start();
     $commentContent = htmlspecialchars($_POST['commentContent']);

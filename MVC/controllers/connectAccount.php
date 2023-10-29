@@ -1,5 +1,5 @@
 <?php
-    require 'controllerPageConnexion.php';
+    require_once 'controllerPageConnexion.php';
     require_once  '../config/connectDatabase.php';
     ?>
     <link rel="stylesheet" href="../public/assets/styles/computer/style.css">

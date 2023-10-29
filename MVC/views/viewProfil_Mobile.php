@@ -1,8 +1,8 @@
 <?php
 
-require '../controllers/controllerCompte.php';
-require '../controllers/CroustagramGUI_Mobile.php';
-require '../controllers/newProfilePicture.php';
+require_once '../controllers/controllerCompte.php';
+require_once '../controllers/CroustagramGUI_Mobile.php';
+require_once '../controllers/newProfilePicture.php';
 
 start_page('Mon profil');
 ?>

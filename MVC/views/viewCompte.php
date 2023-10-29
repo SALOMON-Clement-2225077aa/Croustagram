@@ -1,8 +1,8 @@
 <?php
 
-require '../controllers/controllerCompte.php';
-require '../controllers/CroustagramGUI.php';
-require '../controllers/newProfilePicture.php';
+require_once '../controllers/controllerCompte.php';
+require_once '../controllers/CroustagramGUI.php';
+require_once '../controllers/newProfilePicture.php';
 
 Croustagram('Croustagrammeur');
 ?>

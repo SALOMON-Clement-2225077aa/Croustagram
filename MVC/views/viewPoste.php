@@ -1,7 +1,7 @@
 <?php
-require '../controllers/controllerPoste.php';
+require_once '../controllers/controllerPoste.php';
 require_once '../controllers/CroustagramGUI.php';
-require '../controllers/controllerCommentaires.php';
+require_once '../controllers/controllerCommentaires.php';
 
 $id = $_GET['id'];
 

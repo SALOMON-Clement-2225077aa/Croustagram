@@ -1,6 +1,6 @@
 <?php
-require '../controllers/controllerPageConnexion.php';
-require '../controllers/CroustagramGUI.php';
+require_once '../controllers/controllerPageConnexion.php';
+require_once '../controllers/CroustagramGUI.php';
 
 Croustagram('Crousnexion', false);
 

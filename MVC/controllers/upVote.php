@@ -1,5 +1,5 @@
 <?php
-require '../models/modelVote.php';
+require_once '../models/modelVote.php';
 
 session_start();
 if(isset($_SESSION['suid'])) upVotePressed($_GET['id']);

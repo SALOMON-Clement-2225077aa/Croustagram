@@ -1,7 +1,7 @@
 <?php
 
-require '../controllers/CroustagramGUI.php';
-require '../controllers/controllerCreatePost.php';
+require_once '../controllers/CroustagramGUI.php';
+require_once '../controllers/controllerCreatePost.php';
 
 showCreatePostPage();
 
