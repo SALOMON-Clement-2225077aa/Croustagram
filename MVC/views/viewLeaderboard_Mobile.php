@@ -4,8 +4,11 @@ require_once '../controllers/controllerLeaderboard.php';
 
 start_page('Leaderboard');
 
-showLeaderboard();
+echo '<div id="contenuClassement">';
+    showLeaderboard();
+echo '</div>';
 
 end_page();
 ?>
+
 </body>

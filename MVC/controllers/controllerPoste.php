@@ -11,11 +11,18 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
             <div class="hautPostDiv">
                 <div class="postUserDiv">
                     <?php
+                    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+                    if($isMob){
+                        $MobLink = '_Mobile';
+                    }
+                    else{
+                        $MobLink = '';
+                    }
                     if($img == 'no_img') {
-                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte'. $MobLink .'.php?id=' . $croustagrameurId . '\';" src="../public/assets/images/profil.png" class="imgProfil" >';
                     }
                     else {
-                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameurId . '\';" src="'. $img .'" class="imgProfil" >';
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte'. $MobLink .'.php?id=' . $croustagrameurId . '\';" src="'. $img .'" class="imgProfil" >';
                     }
                     ?>
                     <label class="nomUserPost"> <?php echo $pseudo ?> </label>

@@ -1,6 +1,6 @@
 <?php
 
-require '../models/modelPtsCrous.php';
+require_once '../models/modelPtsCrous.php';
 function showPtsCrous(){
 
     $data = getPtsCrousData($_SESSION['username']);

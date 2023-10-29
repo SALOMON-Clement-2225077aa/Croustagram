@@ -2,7 +2,7 @@
 // Adresse du serveur :
 //   thecroustagram@alwaysdata.net
 
-require '../models/modelCompte.php';
+require_once '../models/modelCompte.php';
 
 // SI VOUS VOULEZ METTRE LA BARRE DE NAVIGATION PAR DESSUS ENLEVEZ LE SESSION START !!!
 session_start();

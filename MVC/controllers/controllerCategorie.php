@@ -1,4 +1,5 @@
-<?php require_once '../config/connectDatabase.php';
+<?php
+require_once '../config/connectDatabase.php';
 function convert_cat($cat1, $cat2, $cat3) : string
 {
     // Connexion à la base de donnée
