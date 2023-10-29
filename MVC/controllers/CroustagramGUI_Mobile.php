@@ -51,7 +51,14 @@ function start_page($title) :void
                     <!-- filtre par recherche (mot) ou trier par points : -->
                     <form id="DivLogoBarre" action="../views/viewMainPage_Mobile.php" method="post" >
                         <button id="Recherche" type="submit"></button>
-                        <input id="BarreRecherche" type="text" name="recherche">
+                        <?php
+                        if(isset($_POST['recherche'])) {
+                            echo '<input id="BarreRecherche" type="text" name="recherche" value="' .$_POST['recherche'] . '">';
+                        }
+                        else{
+                            echo '<input id="BarreRecherche" type="text" name="recherche">';
+                        }
+                        ?>
                         <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
                         <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage_Mobile.php'"></button>
                     </form>
