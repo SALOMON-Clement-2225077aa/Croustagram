@@ -2,7 +2,7 @@
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerLeaderboard.php';
 
-start_page('Classement par PointCrous !');
+start_page('Leaderboard');
 
 echo '<div id="contenuClassement">';
     showLeaderboard();
