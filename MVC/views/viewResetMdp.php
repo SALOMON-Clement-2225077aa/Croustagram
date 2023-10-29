@@ -7,10 +7,7 @@ require '../controllers/CroustagramGUI_Mobile.php';
 
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 
-if (!$isMob) {
-    session_start();
-}
-
+session_start();
 if (!isset($_GET['suid']) or !isset($_GET['accountId']) or ($_GET['suid'] !== $_SESSION['suid'])) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
 
 if ($isMob) {
