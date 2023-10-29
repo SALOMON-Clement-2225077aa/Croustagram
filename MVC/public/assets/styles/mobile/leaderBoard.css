@@ -40,10 +40,8 @@ h1 {
     margin: 20px;
 }
 
-#ContenuPage {
-    position: relative;
-    top: 330px;
-    padding-bottom: 150px;
+#contenuClassement {
+    padding-bottom: 450px;
 }
 
 .imgProfil {

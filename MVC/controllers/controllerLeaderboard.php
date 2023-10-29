@@ -24,10 +24,16 @@ function afficher_user($pseudo, $ptsCrous, $img) {?>
 function showLeaderboard(){
 
     $data = getLeaderboardData();
+    $limite = 50;
+    $cpt = 0;
 
     //$result->fetch(PDO::FETCH_ASSOC)
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         afficher_user($row['id'], $row['ptsCrous'], $row['img']);
+        $cpt += 1;
+        if($cpt>=$limite) {
+            break;
+        }
     }
 
     $data->closeCursor();
