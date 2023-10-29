@@ -4,6 +4,8 @@ require_once '../controllers/controllerPoste.php';
 
 start_page('Croustaccueil');
 
+$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+
 if(isset($_POST['categorie'])) {
     var_dump($_POST['categorie']);
     afficherPostSelonCategorie($_POST['categorie']);

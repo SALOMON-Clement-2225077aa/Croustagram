@@ -9,10 +9,18 @@ $id = $_GET['id'];
 
 $title = 'Profil de ' . $id;
 start_page($title);
-if($id ==  $_SESSION['username']) {
-    header("Location: ../views/viewProfil_Mobile.php");
+
+# Si c'est mon profil je redirige vers ma page
+if(isset($_SESSION['username'])) {
+    if($id ==  $_SESSION['username']) {
+        header("Location: ../views/viewProfil_Mobile.php");
+    }
 }
+
+# Si non j'affiche le profil de l'utilisateur
 ?>
+    <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">
+    @import "profil.css";
     <section id="contenuPage">
         <article>
             <?php
