@@ -38,9 +38,6 @@ function start_page($title) :void
         else if ($title == 'Croustapost') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/commentairePage.css">';
         }
-        else {
-            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
-        }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
     </head>
