@@ -68,7 +68,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
 
 <body>
 <section style="z-index: 1000" id="leaderboard">
-    <h2>Leaderboard :</h2>
+    <h2>Classement :</h2>
     <?php
         showLeaderboard();
     ?>

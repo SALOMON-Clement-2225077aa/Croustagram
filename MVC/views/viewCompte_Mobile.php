@@ -19,7 +19,7 @@ if(isset($_SESSION['username'])) {
 
 # Si non j'affiche le profil de l'utilisateur
 ?>
-    <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profilUser.css">
+    <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">
     @import "profil.css";
     <section id="contenuPage">
         <article>

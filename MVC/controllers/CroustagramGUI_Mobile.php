@@ -20,7 +20,7 @@ function start_page($title) :void
         if($title == 'Croustaccueil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">';
         }
-        else if ($title == 'Leaderboard') {
+        else if ($title == 'Classement par PointCrous !') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/leaderBoard.css">';
         }
         else if ($title == 'Mon profil') {
