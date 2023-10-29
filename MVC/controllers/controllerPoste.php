@@ -166,14 +166,16 @@ function afficherPostSelonMot($text) {
     }
     else{
         $requete = "SELECT DISTINCT cp.id, cp.croustagrameur_id, cp.titre, cp.message, cp.date, cp.categorie1, cp.categorie2, cp.categorie3, cp.ptsCrous
-                FROM croustapost cp, croustacomm cm, croustegorie cg
-                WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%')
+                    FROM croustapost cp, croustacomm cm, croustegorie cg
+                    WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%')
                     OR (cp.message LIKE '%$text%' 
-                        OR cp.titre LIKE '%$text%')
-                    OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3)
-                        AND (cg.libelle LIKE '%$text%'))
-                ORDER BY cp.ptsCrous DESC ";
-        $nb = "SELECT COUNT(DISTINCT cp.id) FROM croustapost cp, croustacomm cm, croustegorie cg WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%') OR (cp.message LIKE '%$text%' OR cp.titre LIKE '%$text%') OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3) AND (cg.libelle LIKE '%$text%'))";
+                        OR cp.titre LIKE '%$text%'
+                        OR cp.date LIKE '%$text%'
+                        OR cp.croustagrameur_id LIKE '%$text%')
+                        OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3)
+                            AND (cg.libelle LIKE '%$text%' OR cg.description LIKE '%$text%'))
+                            ORDER BY cp.ptsCrous DESC";
+        $nb = "SELECT COUNT(DISTINCT cp.id) FROM croustapost cp, croustacomm cm, croustegorie cg WHERE (cm.croustapost_id = cp.id and cm.texte LIKE '%$text%') OR (cp.message LIKE '%$text%' OR cp.titre LIKE '%$text%' OR cp.date LIKE '%$text%' OR cp.croustagrameur_id LIKE '%$text%') OR ((cg.id = cp.categorie1 OR cg.id = cp.categorie2 OR cg.id = cp.categorie3) AND (cg.libelle LIKE '%$text%' OR cg.description LIKE '%$text%'))";
     }
 
     // Connexion à la base de donnée
