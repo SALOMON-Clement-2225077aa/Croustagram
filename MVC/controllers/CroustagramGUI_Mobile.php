@@ -38,6 +38,9 @@ function start_page($title) :void
         else if ($title == 'Croustapost') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/commentairePage.css">';
         }
+        else if ($title == 'Mot de passe oublié') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/mdpOublie.css">';
+        }
         else {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
