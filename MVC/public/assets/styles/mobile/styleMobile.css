@@ -160,6 +160,10 @@
     height: 51.2px;
     width: 400px;
     font-size: 35px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: solid;
+    padding: 0px;
 }
 #EffacerRecherche {
     background-image: url("../../images/croix.png");
@@ -233,7 +237,6 @@ header {
     border-style: solid;
     justify-content: space-around;
     padding: 15px;
-    border-radius: 15px;
 }
 
 button {
