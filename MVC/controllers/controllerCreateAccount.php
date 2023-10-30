@@ -24,7 +24,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 <div id="ContenuPage">
     <div id="BoxMilieu">
         <h1 id="FormTitre">Prêt à vivre l'expérience Croustagram ?</h1>
-        <form action="../models/createAccount.php" method="post">
+        <form action="../models/createAccount.php" method="post" enctype="multipart/form-data">
                 <div class="FormDiv">
                     <label>E-Mail :</label>
                     <input placeholder="Adresse e-mail"  type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
@@ -100,7 +100,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 <!-- Mettre une photo de profil -->
                 <div class="FormDiv">
                     <label>Photo de profil :</label>
-                    <input type="file" name="image" id="image">
+                    <input type="file" name="myfile">
                 </div>
 
 

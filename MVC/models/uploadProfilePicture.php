@@ -1,21 +1,59 @@
 <?php
-$pfp = $_POST['fileToUpload'];
-$url = 'https://catbox.moe/user/api.php';
 
-$ch = curl_init();
+function recup_img() {
+    var_dump($_FILES);
+    echo '<br><br>';
 
-curl_setopt($ch, CURLOPT_URL, "https://catbox.moe/user/api.php");
+    $image = $_FILES["myfile"]["tmp_name"];
+    $image = base64_encode(file_get_contents($image));
+    var_dump($image);
 
-curl_setopt($ch, CURLOPT_POST, true);
+    upload_image($image);
+}
 
-$datas = array("reqtype"=>"urlupload", "userhash" => "b38e110af8d7f2e9c2e720c3b" ,"url"=>"https://cdn.discordapp.com/attachments/1049120394243739779/1162056514131992586/image.png?ex=653a8c76&is=65281776&hm=3505d98d10e61ca2f98961ff4f9d11cb123761f3bb5084108880a661989a9ed4&");
-curl_setopt($ch, CURLOPT_POSTFIELDS, $datas);
 
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+function upload_image($image) {
 
-$response = curl_exec($ch);
+    $client_id = '23ad4ae172d4530';
+    $client_secret = '098599a2cbc7c0c926d9d35a4a535deb19298bf4';
 
-$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    $image = $_FILES["myfile"]["tmp_name"];
+    $title = $_FILES["myfile"]["name"];
 
-echo $http_code;
-echo $response;
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://api.imgur.com/3/upload',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => array(
+            'image' => $image,
+            'type' => 'file',
+        ),
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: Client-ID " . $client_id
+        ),
+    ));
+
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+
+    curl_close($curl);
+
+    var_dump($response);
+    echo '<br><br>';
+
+
+    // data":{"error":"Bad Request","request":"/3/upload","method":"POST"}} "
+    var_dump($err);
+    echo '<br><br>';
+
+    if ($err) {
+        return null;
+    }
+    else {
+        $json = json_decode($response, true);
+        $link = $json['data']['link'];
+        return $link;
+    }
+}

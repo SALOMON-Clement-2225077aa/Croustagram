@@ -1,5 +1,6 @@
 <?php
     require_once '../config/connectDatabase.php';
+    require_once '../models/uploadProfilePicture.php';
 
     session_start();
 
@@ -8,6 +9,9 @@
     $name = htmlspecialchars($_POST['name']);
     $mail = htmlspecialchars($_POST['mail']);
     $passwordMatch = htmlspecialchars($_POST['passwordMatch']);
+
+    //$link = upload_image();
+    recup_img();
 
     $tabErreur = array();
 
