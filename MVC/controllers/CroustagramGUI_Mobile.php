@@ -64,8 +64,8 @@ function start_page($title) :void
                     </form>
                     <!-- filtre par catégorie : -->
                     <form action="../views/viewMainPage_Mobile.php" method="post">
-                        <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
-                            <option value="">-- Filtrer la catégorie --</option>
+                        <select id="FiltrerRecherche" name='categorie' onchange="this.form.submit()" >
+                            <option value=""> </option>
                             <option value="0">Aucune</option>
                             <?php selectCategorie(); ?>
                         </select>
