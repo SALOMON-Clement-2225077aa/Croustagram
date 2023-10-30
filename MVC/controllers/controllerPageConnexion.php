@@ -32,7 +32,12 @@ function connexion_page($tabErreurs = array())
                 ?>
             </form>
             <br>
-            <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie.php'">Mot de passe oublié</button>
+            <?php if ($isMob) { ?>
+                <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie_Mobile.php'">Mot de passe oublié</button>
+            <?php }
+            else { ?>
+                <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie.php'">Mot de passe oublié</button>
+            <?php } ?>
             <h1 id="PasDeCompte">Pas de compte ?</h1>
             <?php if ($isMob) { ?>
                 <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte_Mobile.php'">S'inscrire</button>

@@ -5,7 +5,9 @@ function start_page($title) :void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     if(!$isMob){header("Location: ../views/viewMainPage.php");}
-    session_start();
+    if (!($title == 'Mot de passe oublié')) {
+        session_start();
+    }
     ?>
     <!DOCTYPE html>
     <html lang="fr">
@@ -20,7 +22,7 @@ function start_page($title) :void
         if($title == 'Croustaccueil') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/homePage.css">';
         }
-        else if ($title == 'Classement par PointCrous !') {
+        else if ($title == 'Leaderboard') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/leaderBoard.css">';
         }
         else if ($title == 'Mon profil') {
@@ -37,6 +39,12 @@ function start_page($title) :void
         }
         else if ($title == 'Croustapost') {
             echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/commentairePage.css">';
+        }
+        else if ($title == 'Mot de passe oublié') {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/mdpOublie.css">';
+        }
+        else {
+            echo '<link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">';
         }
         ?>
         <title><?php echo 'Croustagram - '.$title?></title>
