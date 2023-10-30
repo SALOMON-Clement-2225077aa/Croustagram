@@ -88,14 +88,21 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 <div class="FormDiv">
                     <label>Nom d'affichage :</label><label style="color: red"> (optionnel)</label>
                     <input placeholder="Pseudo affiché" type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
-
                 </div>
+
                 <?php
                 if (in_array("nameLong", $erreurTab))
                 {
                     echo '<label class="erreurLabel"><strong>Le pseudo choisi est trop long (25 caractères maximum) !</strong></label>';
                 }
                 ?>
+
+                <!-- Mettre une photo de profil -->
+                <div class="FormDiv">
+                    <label>Photo de profil :</label>
+                    <input type="file" name="image" id="image">
+                </div>
+
 
                 <div id="DivBas">
                     <?php if ($isMob) { ?>
