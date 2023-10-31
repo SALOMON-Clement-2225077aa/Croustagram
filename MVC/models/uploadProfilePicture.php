@@ -23,7 +23,9 @@ function upload_img() {
 
             // Source image
             $image_source = file_get_contents($_FILES['myfile']['tmp_name']);
-            $postFields = array('image' => base64_encode($image_source));
+            $squaredImage = cropToSquare($image_source, 100);
+            $base64ImageData = imageToBase64($squaredImage);
+            $postFields = array('image' => $base64ImageData);
 
             // Post image to Imgur via API
             $ch = curl_init();
@@ -35,7 +37,6 @@ function upload_img() {
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
             $response = curl_exec($ch);
-            curl_close($ch);
 
             // Extract the link from the response
             $responseArr = json_decode($response, true);
@@ -46,4 +47,42 @@ function upload_img() {
         }
     }
     return 'no_img';
+}
+
+
+function cropToSquare($imageData, $size) {
+    // Load the image from data
+    $sourceImage = imagecreatefromstring($imageData);
+
+    if ($sourceImage === false) {
+        die('Unable to create image from data');
+    }
+
+    // Get the dimensions of the image
+    $sourceWidth = imagesx($sourceImage);
+    $sourceHeight = imagesy($sourceImage);
+
+    // Calculate the crop dimensions
+    $cropSize = min($sourceWidth, $sourceHeight);
+    $cropX = intval(($sourceWidth - $cropSize) / 2);
+    $cropY = intval(($sourceHeight - $cropSize) / 2);
+
+    // Create a new square image
+    $squareImage = imagecreatetruecolor($size, $size);
+
+    // Copy the cropped portion to the square image
+    imagecopyresampled($squareImage, $sourceImage, 0, 0, $cropX, $cropY, $size, $size, $cropSize, $cropSize);
+
+    // Free up memory
+    imagedestroy($sourceImage);
+
+    // Return the square image
+    return $squareImage;
+}
+
+function imageToBase64($imageResource) {
+    ob_start();
+    imagejpeg($imageResource);
+    $imageData = ob_get_clean();
+    return base64_encode($imageData);
 }

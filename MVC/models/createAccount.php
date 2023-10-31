@@ -78,20 +78,8 @@
     }
 
 
-
     if(count($tabErreur) === 0)
     {
-
-        //Ici on mettra la vérification du username déjà pris ou non, puis on créera le compte dans la base de donnée
-
-        echo '<br><strong>Username : ' . $username . '</strong><br><strong>Password : ' . $password . '</strong>';
-        if(chop($name)==='') {
-            $name = $username;
-        }
-        echo '<br><strong>Name : ' . $name . '</strong>';
-
-
-        //Code d'insertion dans la BD
 
         //Encodage du mdp
         $password = password_hash($password, PASSWORD_DEFAULT);
