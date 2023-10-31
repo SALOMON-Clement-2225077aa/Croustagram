@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Affiche la page de visualisation d'un post précis sur pc
+ */
+
 require_once '../controllers/controllerPoste.php';
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerCommentaires.php';

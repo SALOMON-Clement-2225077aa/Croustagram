@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Affiche la page de visualisation du profil de quelqu'un sur pc
+ */
+
 require_once '../controllers/controllerCompte.php';
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/newProfilePicture.php';

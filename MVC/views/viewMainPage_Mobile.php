@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * Affiche la page d'accueil sur mobile où on peut visualiser les post et les trier avec la barre de recherche
+ */
+
+
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerPoste.php';
 
