@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Affiche la page de création de compte sur pc
+ */
+
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerCreateAccount.php';
 

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Affiche la page de visualisation du profil de quelqu'un sur mobile
+ */
+
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerCompte.php';
 require_once '../controllers/newProfilePicture.php';

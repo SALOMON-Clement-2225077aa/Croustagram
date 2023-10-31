@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Affiche la page de création de compte sur mobile
+ */
+
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerCreateAccount.php';
 

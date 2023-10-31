@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Affiche la page d'accueil sur pc où on peut visualiser les post et les trier avec la barre de recherche
+ */
+
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerPoste.php';
 

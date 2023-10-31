@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Affiche la page de visualisation de son propre profil sur mobile
+ */
+
+
 require_once '../controllers/controllerCompte.php';
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/newProfilePicture.php';
