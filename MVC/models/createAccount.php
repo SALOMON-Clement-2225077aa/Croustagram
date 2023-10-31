@@ -10,8 +10,8 @@
     $mail = htmlspecialchars($_POST['mail']);
     $passwordMatch = htmlspecialchars($_POST['passwordMatch']);
 
-    //$link = upload_image();
-    recup_img();
+    // Upload l'image sur imgur et stock le lien de l'image upload dans la variable
+    $link_img = upload_img();
 
     $tabErreur = array();
 
