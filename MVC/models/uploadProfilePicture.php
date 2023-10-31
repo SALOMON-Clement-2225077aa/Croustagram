@@ -1,5 +1,6 @@
 <?php
-
+// Upload l'image sur imgur et stock le lien de l'image upload dans la variable
+// Si erreur ou pas d'image renvoie 'no_img'
 function upload_img() {
 
     // Client ID of Imgur App
@@ -8,9 +9,7 @@ function upload_img() {
 
     // Validate form input fields
     if(empty($_FILES["myfile"]["name"])){
-        // Later
-        var_dump($_FILES["myfile"]["name"]);
-        die;
+        return 'no_img';
     }
 
     else {
@@ -46,5 +45,5 @@ function upload_img() {
             }
         }
     }
-    return null;
+    return 'no_img';
 }

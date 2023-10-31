@@ -11,6 +11,7 @@
     $passwordMatch = htmlspecialchars($_POST['passwordMatch']);
 
     // Upload l'image sur imgur et stock le lien de l'image upload dans la variable
+    // Si erreur ou pas d'image renvoie 'no_img'
     $link_img = upload_img();
 
     $tabErreur = array();
@@ -97,7 +98,7 @@
 
         $today = date('Y-m-d');
 
-        $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "no_img", "' . $today . '", "' . $today . '", 0)';
+        $query = 'INSERT INTO croustagrameur (id, pseudo, email, mdp, img, creation_compte, derniere_connexion, ptsCrous) VALUES ("' . $username . '", "' . $name . '", "' . $mail . '", "' . $password . '", "' . $link_img . '", "' . $today . '", "' . $today . '", 0)';
 
         if (!($dbResult = $connexion->exec($query))) {
             echo '<strong>Erreur dans requête</strong><br>';
