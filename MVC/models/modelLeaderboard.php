@@ -55,5 +55,6 @@ function getLeaderboardPosition($user){
             }
         }
     }
-    return null;
+    // Ca affichais ( 'e/27' ) au lieu de ( '27e/27e ) pour le dernier donc :
+    return getUserCount();
 }
