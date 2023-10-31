@@ -83,8 +83,11 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
 
 <body>
 <section style="z-index: 1000" id="leaderboard">
-    <h2>Classement :</h2>
+    <h2>Classement : </h2>
     <?php
+        if(isset($_SESSION['username'])) {
+            echo '<h2>Mon classement : ' . myPosition() . '</h2>';
+        }
         showLeaderboard();
     ?>
 </section>
