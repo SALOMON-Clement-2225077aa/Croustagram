@@ -1,6 +1,14 @@
 <?php
 require '../models/modelLeaderboard.php';
 
+
+/**
+ * @param $pseudo
+ * @param $ptsCrous
+ * @param $img
+ * @return void
+ * Fonction qui permet l'affichage d'un utilisateur dans le leaderboard
+ */
 function afficher_user($pseudo, $ptsCrous, $img) {?>
     <a href="../views/viewCompte.php?id=<?php echo $pseudo ?>" style="text-decoration: none; color: black">
         <div class="User">
@@ -21,6 +29,10 @@ function afficher_user($pseudo, $ptsCrous, $img) {?>
     <?php
 }
 
+/**
+ * @return void
+ * Fonction qui permet l'affichage du leaderboard contenant tous les utilisateurs affichés
+ */
 function showLeaderboard(){
 
     $data = getLeaderboardData();

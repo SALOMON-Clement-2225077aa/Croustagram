@@ -1,6 +1,14 @@
 <?php
 require_once 'controllerMenuCategorie.php';
 
+/**
+ * @param $erreurTab
+ * @param $def_username
+ * @param $def_mail
+ * @param $def_name
+ * @return void
+ * Fonction qui permet l'affichage du formulaire de la page de création de post
+ */
 function showCreatePostPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));

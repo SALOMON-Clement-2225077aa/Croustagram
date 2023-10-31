@@ -1,4 +1,14 @@
 <?php
+
+
+/**
+ * @param $erreurTab
+ * @param $def_username
+ * @param $def_mail
+ * @param $def_name
+ * @return void
+ * Fonction qui permet le formulaire de la page de création de compte
+ */
 function showAccountPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 session_start();

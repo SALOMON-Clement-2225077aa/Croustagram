@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @return void
+ * Fonction qui permet l'affichage du formulaire de changement de mot de passe
+ */
 function resetMdp() { ?>
     <div id="ContenuPage">
         <form id="FormMdpOublie" action="../models/changeMdp.php" method="post">

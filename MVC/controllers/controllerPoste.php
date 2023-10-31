@@ -4,6 +4,22 @@ require_once '../models/modelCompte.php';
 require_once 'controllerCategorie.php';
 require_once '../models/modelVote.php';
 
+/**
+ * @param $croustagrameurId
+ * @param $img
+ * @param $pseudo
+ * @param $titre
+ * @param $message
+ * @param $date
+ * @param $categorie1
+ * @param $categorie2
+ * @param $categorie3
+ * @param $ptsCrous
+ * @param $idPost
+ * @param $nb_comm
+ * @return void
+ * Fonction qui permet la structuration de l'affichage d'un post
+ */
 function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
     ?>
@@ -87,6 +103,11 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
     <?php
 }
 
+/**
+ * @param $id
+ * @return int|string
+ * Fonction qui permet l'affichage d'un post
+ */
 function showOnePost($id){
 
     $data = getOnePostData($id);
@@ -108,6 +129,12 @@ function showOnePost($id){
     else return 0;
 }
 
+/**
+ * @param $ordre
+ * @param $limit
+ * @return string
+ * Fonction qui permet l'affichage de tous les posts contenus dans la base de donnée
+ */
 function showAllPosts($ordre = 'id', $limit = 50){
     $posts = ' ';
     $data = getAllPostsId($ordre);

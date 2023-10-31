@@ -1,6 +1,16 @@
 <?php
+
+/**
+ * Ce controller permet l'appel des fonctions start_page et end_page pour la version mobile.
+ */
+
 require_once 'controllerMenuCategorie.php';
 
+/**
+ * @param $title
+ * @return void
+ * Cette fonction permet l'affichage du header de la page mobile, mais aussi de déterminer les fichiers css nécessaires en fonction de son argument $title.
+ */
 function start_page($title) :void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
@@ -86,6 +96,10 @@ function start_page($title) :void
     <?php
 }
 
+/**
+ * @return void
+ * Cette fonction affiche le footer de la page mobile
+ */
 function end_page(): void
 {
     ?>

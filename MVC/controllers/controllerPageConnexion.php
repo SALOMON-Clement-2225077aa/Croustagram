@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @param $tabErreurs
+ * @return void
+ * Fonction qui permet l'affichage du formulaire de connexion à son compte
+ */
 function connexion_page($tabErreurs = array())
 {
     if($tabErreurs === null) $tabErreurs = array();

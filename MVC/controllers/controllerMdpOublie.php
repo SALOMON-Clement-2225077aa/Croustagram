@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @return void
+ * Fonction qui permet l'affichage du formulaire de mot de passe oublié
+ */
 function mdpOublie() { ?>
     <div id="ContenuPage">
         <form id="FormMdpOublie" action="../controllers/sendMail.php" method="post">

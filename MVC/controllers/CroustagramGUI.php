@@ -2,6 +2,14 @@
     require_once 'controllerLeaderboard.php';
     require_once 'controllerPointsCrous.php';
     require_once 'controllerMenuCategorie.php';
+
+/**
+ * @param $titre
+ * @param $showCompteStats
+ * @param $showCreatePost
+ * @return void
+ * Fonction qui permet l'affichage du header, du leaderboard, des points crous de l'utilisateur (si il est connecté) et de la boîte dédiée à une potentielle publicité pour la version pc.
+ */
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
