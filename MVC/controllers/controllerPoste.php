@@ -117,7 +117,8 @@ function showAllPosts($ordre = 'id', $limit = 50){
     if ($isMob) {
         if (isset($_SESSION['username'])) { ?>
             <button id="BoutonCreerPost" onclick="window.location.href = '../views/viewCreerPost_Mobile.php'"></button>
-        <?php }
+        <?php
+        }
     }
     $cpt = 0;
     while($row = $data->fetch(PDO::FETCH_ASSOC)){

@@ -75,6 +75,7 @@
     border: solid;
     border-radius: 50%;
     position: fixed;
+    right: 30px;
 }
 
 .button-suppr {
