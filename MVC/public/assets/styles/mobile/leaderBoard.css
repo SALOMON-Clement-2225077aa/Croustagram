@@ -6,6 +6,9 @@ h1 {
     padding: 30px;
     margin-bottom: 0;
 }
+#position_Classement {
+    padding-top: 50px;
+}
 
 #BoutonHome {
     background-image: url("../../images/home.png");
