@@ -6,7 +6,6 @@
 
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerCompte.php';
-require_once '../controllers/newProfilePicture.php';
 
 $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 $id = $_GET['id'];
