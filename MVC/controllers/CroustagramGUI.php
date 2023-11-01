@@ -8,7 +8,9 @@
  * @param $showCompteStats
  * @param $showCreatePost
  * @return void
- * Fonction qui permet l'affichage du header, du leaderboard, des points crous de l'utilisateur (si il est connecté) et de la boîte dédiée à une potentielle publicité pour la version pc.
+ * Fonction qui génère la 'general user interface' pour PC :
+ * Elle permet donc l'affichage du header, du leaderboard, des points crous de l'utilisateur
+ * (si il est connecté) et de la boîte dédiée à une potentielle publicité.
  */
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {

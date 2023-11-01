@@ -4,6 +4,10 @@ require_once '../config/connectDatabase.php';
 // Connexion à la base de donnée
 $connexion = connexion();
 
+/**
+ * @param $accountName
+ * Renvoie tout posts de l'utilisateur en paramètre
+ */
 function getAllPostsOfUserData($accountName){
     global $connexion;
     // Lecture des posts de la BD (SELECT * FROM `croustapost`)
@@ -18,6 +22,10 @@ function getAllPostsOfUserData($accountName){
     return null;
 }
 
+/**
+ * @param $accountName
+ * Recupère les donnée du compte associé à l'utilisateur en paramètre
+ */
 function getAllCompteData($accountName){
     global $connexion;
     // Lecture des infos du compte de la BD
@@ -32,6 +40,10 @@ function getAllCompteData($accountName){
     return null;
 }
 
+/**
+ * @param $mail
+ * Recupère les donnée du compte associé au mail en paramètre
+ */
 function getCompteDataByMail($mail){
     global $connexion;
 

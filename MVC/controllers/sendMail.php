@@ -4,7 +4,10 @@
 
 require_once '../models/modelCompte.php';
 
-// SI VOUS VOULEZ METTRE LA BARRE DE NAVIGATION PAR DESSUS ENLEVEZ LE SESSION START !!!
+/**
+ * Fichier qui envoie par mail un lien de rénitialisation de mot de passe
+ * au destinataire donné par post
+ */
 session_start();
 $_SESSION['suid'] = session_id();
 

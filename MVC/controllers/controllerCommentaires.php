@@ -1,11 +1,17 @@
 <?php
 require_once '../models/modelCommentaires.php';
 require_once '../models/modelCompte.php';
-function showCommentaires($id){
-    $result = getAllCommentaires($id);
+
+/**
+ * @param $id_post
+ * @return string
+ * Fonction qui prend en paramètre l'id d'un post et le transforme
+ * en HTML grace à la fonction showOneCommentaire()
+ */
+function showCommentaires($id_post): string
+{
+    $result = getAllCommentaires($id_post);
     $commentaires = ' ';
-
-
 
     while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         $accountData = getAllCompteData($row['croustagrameur_id']);
@@ -19,7 +25,18 @@ function showCommentaires($id){
     return $commentaires;
 }
 
-function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $idPost){
+/**
+ * @param $texte
+ * @param $croustagrameur_id
+ * @param $pseudo
+ * @param $date
+ * @param $id
+ * @param $idPost
+ * @return void
+ * Fonction qui affichage un commentaire
+ */
+function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $idPost): void
+{
     ?>
     <br>
         <div class="commentaire" style="margin-bottom: 25px">
@@ -42,6 +59,10 @@ function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $id
 <?php
 }
 
+/**
+ * @return void
+ * Affiche une textarea et un bouton submit pour ajouter un commentaire
+ */
 function showinterfaceAjoutCommentaire(){
     ?>
     <form action="../controllers/addComment.php?id=<?php echo $_GET['id'] ?>" method="post">

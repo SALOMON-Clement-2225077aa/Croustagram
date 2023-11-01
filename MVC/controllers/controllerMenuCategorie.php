@@ -1,7 +1,10 @@
 <?php
 require_once '../config/connectDatabase.php';
 
-// Récupération des catégorie pour menu déroulant de selection
+/**
+ * @return void
+ * Récupération des catégorie pour le menu déroulant de selection
+ */
 function selectCategorie():void {
 
     // Connexion à la base de donnée

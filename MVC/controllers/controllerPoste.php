@@ -133,7 +133,7 @@ function showOnePost($id){
  * @param $ordre
  * @param $limit
  * @return string
- * Fonction qui permet l'affichage de tous les posts contenus dans la base de donnée
+ * Fonction qui permet l'affichage de tous les posts contenus dans la base de donnée (limité au 50 plus récents)
  */
 function showAllPosts($ordre = 'id', $limit = 50){
     $posts = ' ';
@@ -160,6 +160,11 @@ function showAllPosts($ordre = 'id', $limit = 50){
     return $posts;
 }
 
+/**
+ * @param $catFiltre
+ * @return void
+ * Fonction qui permet l'affichage des posts avec la catégorie en paramètre
+ */
 function afficherPostSelonCategorie($catFiltre) {
     // Connexion à la base de donnée
     $connexion = connexion();
@@ -186,6 +191,11 @@ function afficherPostSelonCategorie($catFiltre) {
     echo '</div>';
 }
 
+/**
+ * @param $text
+ * @return void
+ * Fonction qui affiche tout les posts contenant le mot/expression en paramètre
+ */
 function afficherPostSelonMot($text) {
 
     if (empty($text)){
@@ -220,6 +230,12 @@ function afficherPostSelonMot($text) {
     echo '</div>';
 }
 
+/**
+ * @param $nb
+ * @return void
+ * Fonction qui permet l'affichage de la phrase qui indique
+ * le nb de résultat de la recherche filtré
+ */
 function afficherNbResult($nb) {
 // Permet l'affichage du résultat de la requête
 

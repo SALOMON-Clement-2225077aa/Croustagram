@@ -3,6 +3,10 @@ require_once '../controllers/controllerPoste.php';
 require_once '../models/modelPoste.php';
 require_once '../models/modelCompte.php';
 
+/**
+ * @param $id
+ * Récupère le nb de commentaire du post en paramètre et le renvoie
+ */
 function getNbCommentaires($id){
 
     $data = getNbCommentaireData($id);
@@ -12,12 +16,18 @@ function getNbCommentaires($id){
     return $nb_comm;
 }
 
-function showPosts($id){
+/**
+ * @param $id_User
+ * @return string
+ * Récupère tout les posts de l'utilisateur en param et les renvoies
+ */
+function showPosts($id_User): string
+{
 
-    $data = getAllPostsOfUserData($id);
+    $data = getAllPostsOfUserData($id_User);
     $posts = ' ';
 
-    $accountData = getAllCompteData($id);
+    $accountData = getAllCompteData($id_User);
     $account = $accountData->fetch(PDO::FETCH_ASSOC);
     $accountName = $account['pseudo'];
     $accountImg = $account['img'];
@@ -33,8 +43,14 @@ function showPosts($id){
     return $posts;
 }
 
-function showCompte($id){
-    $result = getAllCompteData($id);
+/**
+ * @param $id_User
+ * @return void
+ * Affiche le profil de l'utilisateur en paramètre :
+ * (pseudo, id(pseudo unique), points, dernière connexion, date création compte)
+ */
+function showCompte($id_User){
+    $result = getAllCompteData($id_User);
     $data = $result->fetch(PDO::FETCH_ASSOC);
 
     if (!empty($data)){

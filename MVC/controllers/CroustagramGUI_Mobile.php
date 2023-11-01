@@ -9,7 +9,9 @@ require_once 'controllerMenuCategorie.php';
 /**
  * @param $title
  * @return void
- * Cette fonction permet l'affichage du header de la page mobile, mais aussi de déterminer les fichiers css nécessaires en fonction de son argument $title.
+ * Fonction qui génère la 'general user interface' pour Mobile :
+ * Elle permet donc l'affichage du header de la page mobile,
+ * mais aussi de déterminer les fichiers css nécessaires en fonction de son argument $title.
  */
 function start_page($title) :void
 {
