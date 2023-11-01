@@ -18,6 +18,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
     if($isMob){header("Location: ../views/viewMainPage_Mobile.php");}
     $titre = 'Croustagram - ' . $titre;
     session_start();
+    $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang='fr'>
