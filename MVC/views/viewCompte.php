@@ -6,7 +6,6 @@
 
 require_once '../controllers/controllerCompte.php';
 require_once '../controllers/CroustagramGUI.php';
-require_once '../controllers/newProfilePicture.php';
 
 $id = $_GET['id'];
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
