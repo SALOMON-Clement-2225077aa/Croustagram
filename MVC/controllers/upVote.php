@@ -2,7 +2,7 @@
 require_once '../models/modelVote.php';
 
 /**
- * Fichier qui upvote le post donné par get quand il est appelé,
+ * Fichier qui appelle la fonction upvote le post donné par get quand il est appelé,
  * Puis retourne sur la page qui l'a appelé avec le header.
  */
 session_start();

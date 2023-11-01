@@ -4,6 +4,9 @@ require_once '../config/connectDatabase.php';
 // Connexion à la base de donnée
 $connexion = connexion();
 
+/**
+ * Récupère l'id, les ptsCrous ,et l'img de tout les croustagrammeurs du site (avec requete sql)
+ */
 function getLeaderboardData(){
     global $connexion;
 
@@ -18,13 +21,22 @@ function getLeaderboardData(){
     return null;
 }
 
+/**
+ * utilise getUserCount() et getLeaderboardPosition() pour afficher le classement
+ * de l'utilisateur connecté sous la forme (Position'e'/totalUser)
+ */
 function myPosition() {
     $nbUser = getUserCount();
     $currentUserPos = getLeaderboardPosition($_SESSION['username']);
     return $currentUserPos . 'e/' . $nbUser;
 }
 
-function getUserCount() {
+/**
+ * @return int
+ * Récupère et renvoie le nombre d'utilisateur sur Croustagram
+ */
+function getUserCount(): int
+{
     global $connexion;
 
     // Requête
@@ -35,10 +47,16 @@ function getUserCount() {
         $count = $result->fetchColumn();
         return (int)$count;
     }
-    return null;
+    return 0;
 }
 
-function getLeaderboardPosition($user){
+/**
+ * @param $user
+ * @return int
+ * Récupère et renvoie la position dans le classement la personne connecté à la session actulle
+ */
+function getLeaderboardPosition($user): int
+{
     global $connexion;
 
     // Requête

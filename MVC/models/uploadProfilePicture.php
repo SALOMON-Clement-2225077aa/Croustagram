@@ -1,8 +1,12 @@
 <?php
-// Upload l'image sur imgur et stock le lien de l'image upload dans la variable
-// Si erreur ou pas d'image renvoie 'no_img'
-function upload_img() {
 
+/**
+ * @return string
+ * Upload l'image sur imgur et renvoie le lien de l'image upload
+ * Si aucune image n'est selectionné (ou en cas d'erreur) renvoie 'no_img'
+ */
+function upload_img(): string
+{
     // Client ID of Imgur App
     $IMGUR_CLIENT_ID = "23ad4ae172d4530";
     $client_secret = '098599a2cbc7c0c926d9d35a4a535deb19298bf4';
@@ -50,6 +54,10 @@ function upload_img() {
 }
 
 
+/**
+ * Prend en paramètre une image et la transforme en un carré
+ * de la taille voulue en paramètre (pour les photos de profil)
+ */
 function cropToSquare($imageData, $size) {
     // Load the image from data
     $sourceImage = imagecreatefromstring($imageData);
@@ -80,7 +88,13 @@ function cropToSquare($imageData, $size) {
     return $squareImage;
 }
 
-function imageToBase64($imageResource) {
+/**
+ * @param $imageResource
+ * @return string
+ * Convertit une image en format base64.
+ */
+function imageToBase64($imageResource): string
+{
     ob_start();
     imagejpeg($imageResource);
     $imageData = ob_get_clean();

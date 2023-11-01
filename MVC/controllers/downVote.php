@@ -2,7 +2,7 @@
 require_once '../models/modelVote.php';
 
 /**
- * Fichier qui downvote le post donné par get quand il est appelé,
+ * Fichier qui appelle la fonction downvote le post donné par get quand il est appelé,
  * Puis retourne sur la page qui l'a appelé avec le header.
  */
 session_start();
