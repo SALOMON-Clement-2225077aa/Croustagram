@@ -22,7 +22,7 @@ function upload_img(): string
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
         // Allow certain file formats
-        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'webp');
         if (in_array($fileType, $allowTypes)) {
 
             // Source image

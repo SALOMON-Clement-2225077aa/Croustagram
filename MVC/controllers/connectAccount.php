@@ -69,7 +69,7 @@
                 // Actualisation de la dernière connexion
                 $today = date('Y-m-d');
                 $connexion->exec('UPDATE croustagrameur SET derniere_connexion =  "' . $today . '" WHERE id=\'' . $username . '\'');
-                header('Location: ' . $_SESSION['currentUrl']);
+                header('Location: ../views/viewCompte.php?id=' . $_SESSION['username']);
                 die();
             }
         }

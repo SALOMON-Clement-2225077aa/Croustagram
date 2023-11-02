@@ -1,6 +1,4 @@
 <?php
-
-
 /**
  * @param $erreurTab
  * @param $def_username
