@@ -3,11 +3,11 @@ require '../models/modelLeaderboard.php';
 
 
 /**
- * @param $pseudo
- * @param $ptsCrous
- * @param $img
- * @return void
  * Fonction qui permet l'affichage d'un utilisateur dans le leaderboard
+ * @param $pseudo = le pseudo de l'user qu'on veut afficher dans le leaderboard
+ * @param $ptsCrous = son nombre de pts crous
+ * @param $img = sa photo de profil
+ * @return void
  */
 function afficher_user($pseudo, $ptsCrous, $img) {?>
     <a href="../views/viewCompte.php?id=<?php echo $pseudo ?>" style="text-decoration: none; color: black">
@@ -30,11 +30,12 @@ function afficher_user($pseudo, $ptsCrous, $img) {?>
 }
 
 /**
- * @return void
  * Fonction qui permet l'affichage du leaderboard contenant tous les utilisateurs affichés
+ * @return void
  */
 function showLeaderboard(){
 
+    // On récup les données du leaderboard,  on définit une limite
     $data = getLeaderboardData();
     $limite = 50;
     $cpt = 0;
@@ -48,5 +49,6 @@ function showLeaderboard(){
         }
     }
 
+    // On économise de la mémoire
     $data->closeCursor();
 }

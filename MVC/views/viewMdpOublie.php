@@ -8,8 +8,10 @@
 require '../controllers/controllerMdpOublie.php';
 require '../controllers/CroustagramGUI.php';
 
+// On affiche le GUI de croustagram
 Croustagram('Mot de passe oublié', false);
 
+// On affiche l'interface du mdp oublié
 mdpOublie();
 
 ?>

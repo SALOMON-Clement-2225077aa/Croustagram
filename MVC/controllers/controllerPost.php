@@ -6,20 +6,20 @@ require_once '../models/modelVote.php';
 require_once '../models/modelAdmin.php';
 
 /**
- * @param $croustagrameurId
- * @param $img
- * @param $pseudo
- * @param $titre
- * @param $message
- * @param $date
- * @param $categorie1
- * @param $categorie2
- * @param $categorie3
- * @param $ptsCrous
- * @param $idPost
- * @param $nb_comm
- * @return void
  * Fonction qui permet la structuration de l'affichage d'un post
+ * @param $croustagrameurId = l'id de l'auteur du poste
+ * @param $img = la pdp de l'auteur
+ * @param $pseudo = son peudo
+ * @param $titre =  le titre du post
+ * @param $message = le contenu du poste
+ * @param $date = la date de création du poste
+ * @param $categorie1 = la catégorie 1
+ * @param $categorie2 = la catégorie 2
+ * @param $categorie3 = la catégorie 3
+ * @param $ptsCrous = le nmbre de pts crous du post
+ * @param $idPost = l'id du post
+ * @param $nb_comm = le nombre de commentaires du poste
+ * @return void
  */
 function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $categorie1, $categorie2, $categorie3, $ptsCrous, $idPost, $nb_comm): void
 {
@@ -85,10 +85,10 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
                     <?php
                     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
                     if ($isMob) {
-                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPoste_Mobile.php?id=' . $idPost . '\'"></button>';
+                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPost_Mobile.php?id=' . $idPost . '\'"></button>';
                     }
                     else {
-                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPoste.php?id=' . $idPost . '\'"></button>';
+                        echo '<button class="CommentaireBouton" onclick="window.location.href =\'viewPost.php?id=' . $idPost . '\'"></button>';
                     }
                     ?>
                     <label> <?php echo $nb_comm; ?> </label>
@@ -105,13 +105,14 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
 }
 
 /**
- * @param $id
- * @return int|string
  * Fonction qui permet l'affichage d'un post
+ * @param $id = l'id du post
+ * @return int|string
  */
 function showOnePost($id){
 
-    $data = getOnePostData($id);
+   // On prend la data d'un post
+   $data = getOnePostData($id);
 
     $post = ' ';
 

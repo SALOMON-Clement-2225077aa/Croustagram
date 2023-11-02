@@ -4,7 +4,7 @@
  * Affiche la page de visualisation d'un post précis sur mobile
  */
 
-require_once '../controllers/controllerPoste.php';
+require_once '../controllers/controllerPost.php';
 require_once '../controllers/controllerCommentaires.php';
 require_once '../controllers/CroustagramGUI_Mobile.php';
 

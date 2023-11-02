@@ -5,8 +5,8 @@ require_once '../config/connectDatabase.php';
 $connexion = connexion();
 
 /**
- * @param $accountName
  * Renvoie un booleen (1 si le compte est admin, 0 sinon)
+ * @param $accountName = nom du compte
  */
 function isAdmin($accountName){
     global $connexion;

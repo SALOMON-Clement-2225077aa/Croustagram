@@ -1,11 +1,11 @@
 <?php
-require_once '../controllers/controllerPoste.php';
-require_once '../models/modelPoste.php';
+require_once '../controllers/controllerPost.php';
+require_once '../models/modelPost.php';
 require_once '../models/modelCompte.php';
 
 /**
- * @param $id
  * Récupère le nb de commentaire du post en paramètre et le renvoie
+ * @param $id = l'identifiant du compte
  */
 function getNbCommentaires($id){
 
@@ -17,9 +17,9 @@ function getNbCommentaires($id){
 }
 
 /**
- * @param $id_User
- * @return string
  * Récupère tout les posts de l'utilisateur en param et les renvoies
+ * @param $id_User = l'identifiant du compte
+ * @return string
  */
 function showPosts($id_User): string
 {
@@ -44,10 +44,10 @@ function showPosts($id_User): string
 }
 
 /**
- * @param $id_User
- * @return void
  * Affiche le profil de l'utilisateur en paramètre :
  * (pseudo, id(pseudo unique), points, dernière connexion, date création compte)
+ * @param $id_User = l'identifiant du compte qu'on voit
+ * @return void
  */
 function showCompte($id_User){
     $result = getAllCompteData($id_User);

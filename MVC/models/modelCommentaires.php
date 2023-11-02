@@ -5,8 +5,8 @@ require_once '../config/connectDatabase.php';
 $connexion = connexion();
 
 /**
- * @param $id_post
  * Récupère tout commentaire du post en paramètre (avec requete sql)
+ * @param $id_post = id du post
  */
 function getAllCommentaires($id_post){
     global $connexion;

@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @return void
  * Fonction qui permet l'affichage du formulaire de changement de mot de passe
+ * @return void
  */
 function resetMdp() { ?>
     <div id="ContenuPage">

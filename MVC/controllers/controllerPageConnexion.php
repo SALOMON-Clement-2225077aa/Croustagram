@@ -1,13 +1,15 @@
 <?php
 
 /**
- * @param $tabErreurs
+ * @param $tabErreurs = le tableau contenant les erreurs de la précédente tentative
  * @return void
  * Fonction qui permet l'affichage du formulaire de connexion à son compte
  */
 function connexion_page($tabErreurs = array())
 {
+    // On vérifie si il y a des erreurs
     if($tabErreurs === null) $tabErreurs = array();
+    // On vérifie si on ests ur mobile
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     ?>
     <body <?php if(in_array('bocchi', $tabErreurs)) echo'style="background-image: url(\'https://media.tenor.com/-FrcCsUig4sAAAAC/spin-bocchi.gif\')"'?>>
