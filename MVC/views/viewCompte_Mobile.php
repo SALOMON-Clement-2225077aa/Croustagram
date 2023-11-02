@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])) {
     <link rel="stylesheet" href="../../MVC/public/assets/styles/mobile/profil.css">
     @import "profil.css";
     <section id="contenuPage">
-        <article>
+        <article id="PostUser">
             <?php
                 showCompte($id);
 
