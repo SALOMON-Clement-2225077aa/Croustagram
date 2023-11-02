@@ -1,6 +1,7 @@
 <?php
 require_once '../models/modelCommentaires.php';
 require_once '../models/modelCompte.php';
+require_once '../models/modelAdmin.php';
 
 /**
  * @param $id_post
@@ -51,7 +52,7 @@ function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $id
             <label class="messageCommentaire"> <?php echo wordwrap($texte, 30, '<br>', true) ?> </label>
 
             <?php
-            if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameur_id){
+            if( isset($_SESSION['username']) and ($_SESSION['username'] === $croustagrameur_id or isAdmin($_SESSION['username']))) {
                 echo '<button onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '&commId=' . $id . '\' ">Supprimer le commentaire</button><br>';
             }
             ?>
