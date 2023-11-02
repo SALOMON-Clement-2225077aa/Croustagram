@@ -7,6 +7,7 @@ $connexion = connexion();
 session_start();
 
 if($_GET['commId'] != null){
+    // On vérifie que l'auteur du commentaire soit bien l'user connecté
     $verifData = $connexion->query('SELECT croustagrameur_id FROM croustacomm WHERE id=' . $_GET['commId']);
     while($verif = $verifData->fetch(PDO::FETCH_ASSOC)){
         if ($verif['croustagrameur_id'] === $_SESSION['username'] or isAdmin($_SESSION['username'])) {
@@ -17,6 +18,7 @@ if($_GET['commId'] != null){
     }
 }
 else {
+    // On vérifie que l'auteur du post soit bien l'user connecté
     $verifData = $connexion->query('SELECT croustagrameur_id FROM croustapost WHERE id=' . $_GET['postId']);
     while ($verif = $verifData->fetch(PDO::FETCH_ASSOC)){
         if ($verif['croustagrameur_id'] === $_SESSION['username'] or isAdmin($_SESSION['username'])) {
