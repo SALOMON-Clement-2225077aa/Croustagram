@@ -32,8 +32,8 @@ function myPosition() {
 }
 
 /**
- * @return int
  * Récupère et renvoie le nombre d'utilisateur sur Croustagram
+ * @return int
  */
 function getUserCount(): int
 {
@@ -51,9 +51,9 @@ function getUserCount(): int
 }
 
 /**
- * @param $user
- * @return int
  * Récupère et renvoie la position dans le classement la personne connecté à la session actulle
+ * @param $user = id de l'utilisateur
+ * @return int
  */
 function getLeaderboardPosition($user): int
 {

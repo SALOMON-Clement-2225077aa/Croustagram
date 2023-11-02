@@ -5,10 +5,10 @@ require_once '../config/connectDatabase.php';
 $connexion = connexion();
 
 /**
- * @param $post_ID
- * @return void
  * Augmente de 1 le score d'un post. Ajoute le vote dans la table vote.
  * Ou le supprime si le vote y été déjà (et donc enlèvre 1 point)
+ * @param $post_ID = id du post
+ * @return void
  */
 function upVote($post_ID) : void
 {
@@ -25,10 +25,10 @@ function upVote($post_ID) : void
 }
 
 /**
- * @param $post_ID
- * @return void
  * Diminue de 1 le score d'un post. Ajoute le vote dans la table vote.
  * Ou le supprime si le vote y été déjà (et donc ajoute 1 point)
+ * @param $post_ID = id du post
+ * @return void
  */
 function downVote($post_ID) : void
 {
@@ -45,10 +45,10 @@ function downVote($post_ID) : void
 }
 
 /**
- * @param $croustagrameur_id
- * @param $croustapost_id
- * @return void
  * Supprime le vote d'un utilisateur sur un post
+ * @param $croustagrameur_id = id du votant
+ * @param $croustapost_id = id du post
+ * @return void
  */
 function supprVote($croustagrameur_id, $croustapost_id) {
 
@@ -60,13 +60,13 @@ function supprVote($croustagrameur_id, $croustapost_id) {
 }
 
 /**
- * @param $post_ID
- * @param $plus
- * @param $moins
- * @return void
  * Permet d'augmenter ou diminuer le score d'un post
  * Je l'utilise quand par exemple j'enlève un UpVote :
  * Je supprime le vote de la table et je baisse le score du post de 1
+ * @param $post_ID = id du post
+ * @param $plus
+ * @param $moins
+ * @return void
  */
 function updateScorePost($post_ID, $plus, $moins) {
 
@@ -81,12 +81,12 @@ function updateScorePost($post_ID, $plus, $moins) {
 }
 
 /**
+ * Test si un utilisateur a déja intéragie avec un post
  * @param $croustagrameur_id
  * @param $croustapost_id
  * @param $up
  * @param $down
  * @return void
- * Test si un utilisateur a déja intéragie avec un post
  */
 function dejaVote($croustagrameur_id, $croustapost_id, $up, $down) {
 
@@ -101,11 +101,11 @@ function dejaVote($croustagrameur_id, $croustapost_id, $up, $down) {
 }
 
 /**
- * @param $post_ID
- * @return void
  * Quand le bouton upVote est pressé cette fonction est appelée.
  * Elle vérifie si il y a dejà un vote de l'utilisateur sur le post,
  * Si non l'ajoute, modifie le score... Gère l'upvote en général
+ * @param $post_ID
+ * @return void
  */
 function upVotePressed($post_ID) {
 

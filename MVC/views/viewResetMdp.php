@@ -12,6 +12,7 @@ require '../controllers/CroustagramGUI_Mobile.php';
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 
 session_start();
+// Si l'utilisateur n'est pas reconnu par le serveur, on lui fait une petite blague
 if (!isset($_GET['suid']) or !isset($_GET['accountId']) or ($_GET['suid'] !== $_SESSION['suid'])) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
 
 // On vérifie si on est sur mobile, on affiche la page mobile
@@ -22,6 +23,7 @@ if ($isMob) {
 }
 // Et si on est sur pc ça affiche la page pc
 else {
+    // On affiche le GUI de croustagram
     Croustagram('Mot de passe oublié', false);
     resetMdp();
 }

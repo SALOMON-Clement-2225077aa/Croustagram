@@ -5,8 +5,8 @@ require_once '../config/connectDatabase.php';
 $connexion = connexion();
 
 /**
- * @param $accountName
  * Renvoie tout posts de l'utilisateur en paramètre
+ * @param $accountName = nom du compte
  */
 function getAllPostsOfUserData($accountName){
     global $connexion;

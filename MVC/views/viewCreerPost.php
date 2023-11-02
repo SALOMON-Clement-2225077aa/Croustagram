@@ -7,6 +7,8 @@
 require_once '../controllers/CroustagramGUI.php';
 require_once '../controllers/controllerCreatePost.php';
 
+// On affiche l'interface de création des posts
 showCreatePostPage();
 
+// On affiche le GUI de croustagram
 Croustagram('Création d\'un Croustapost', false, false);

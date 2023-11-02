@@ -6,6 +6,14 @@ $today = date('Y-m-d');
 
 $connexion = connexion();
 
+/**
+ * Fonction qui ajt un commentaire dans la bdd
+ * @param $contenu = contenu du commentaire
+ * @param $auteur = auteur du commentaire
+ * @param $idPost = id du post commenté
+ * @return void
+ */
+
 function addComment($contenu, $auteur, $idPost){
     global $today, $connexion;
 
