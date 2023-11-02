@@ -6,6 +6,8 @@
 
 require_once '../controllers/controllerCompte.php';
 require_once '../controllers/CroustagramGUI.php';
+require_once '../models/modelAdmin.php';
+
 // On prends l'id du compte
 $id = $_GET['id'];
 // On vérifie si on est sur mobile
@@ -26,6 +28,12 @@ Croustagram('Croustagrammeur');
 
             // On affiche le compte
             showCompte($id);
+
+            if(isset($_SESSION['username'])) {
+                if($_SESSION['username'] === $id or isAdmin($_SESSION['username'])) {
+                    echo '<button id="boutonSupprCompte" onclick="window.location.href = ' . '\'../models/deleteCompte.php?userId=' . $id . '\'"> Supprimer le compte </button>';
+                }
+            }
 
             // On affiche les posts
             echo showPosts($id);

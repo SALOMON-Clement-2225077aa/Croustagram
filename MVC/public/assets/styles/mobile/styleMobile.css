@@ -271,3 +271,12 @@ footer {
     justify-content: space-around;
 }
 /* fin haut de page */
+
+#boutonSupprCompte {
+    margin-bottom: 15px;
+    padding: 5px;
+    background-color: red;
+    color:white;
+    font-size: 25px;
+    margin-left: 39%
+}

@@ -462,3 +462,10 @@ a{
 button{
     cursor: pointer;
 }
+
+#boutonSupprCompte {
+    margin-bottom: 15px;
+    padding: 5px;
+    background-color: red;
+    color:white;
+}
