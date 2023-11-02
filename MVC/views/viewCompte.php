@@ -12,24 +12,24 @@ $id = $_GET['id'];
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 if($isMob){
     header("Location: ../views/viewCompte_Mobile.php?id=$id");
-    die();
+    die;
 }
 // On affiche le GUI de croustagram
 Croustagram('Croustagrammeur');
 ?>
     <section id="posts">
         <article>
-<?php
+            <?php
 
-// On update la position de l'utilisateur
-$_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
+            // On update la position de l'utilisateur
+            $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
-// On affiche le compte
-showCompte($id);
+            // On affiche le compte
+            showCompte($id);
 
-// On affiche les posts
-echo showPosts($id);
-?>
-</article>
+            // On affiche les posts
+            echo showPosts($id);
+            ?>
+        </article>
     </section>
 </body>
