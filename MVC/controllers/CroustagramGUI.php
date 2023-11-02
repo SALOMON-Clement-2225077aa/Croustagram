@@ -73,7 +73,11 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
         {
             if($showCreatePost) {
                 echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer un croustapost </button>';
+                if (isAdmin($_SESSION['username'])) {
+                    echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer une catégorie </button>';
+                }
             }
+
             echo '<a style="color : black" href="../views/viewCompte.php?id=' . $_SESSION['username'] . '"><label style="cursor: pointer; top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label></a>';
             echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
         }
