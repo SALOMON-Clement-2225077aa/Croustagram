@@ -18,9 +18,10 @@ function showCommentaires($id_post): string
         $accountData = getAllCompteData($row['croustagrameur_id']);
         $account = $accountData->fetch(PDO::FETCH_ASSOC);
         $accountName = $account['pseudo'];
+        $img = $account['img'];
 
         $commentaires = $commentaires . '<section id="commentaire">';
-        $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $accountName, $row['date'], $row['id'], $row['croustapost_id']);
+        $commentaires . showOneCommentaire($row['texte'], $img, $row['croustagrameur_id'], $accountName, $row['date'], $row['id'], $row['croustapost_id']);
         $commentaires = $commentaires . '</section>';
     }
     return $commentaires;
@@ -36,14 +37,28 @@ function showCommentaires($id_post): string
  * @param $idPost = l'id du post
  * @return void
  */
-function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $idPost): void
+function showOneCommentaire($texte, $img, $croustagrameur_id, $pseudo, $date, $id, $idPost): void
 {
     ?>
     <br>
         <div class="commentaire" style="margin-bottom: 25px">
             <div class="hautCommentaireDiv">
                 <div class="postUserDiv">
-                    <img alt="Photo de profil" <?php echo 'onclick="window.location.href = \'viewCompte.php?id=' . $croustagrameur_id . '\';"' ?> src="../public/assets/images/profil.png" class="imgProfilCommentaire">
+                    <?php
+                    $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+                    if($isMob){
+                        $MobLink = '_Mobile';
+                    }
+                    else{
+                        $MobLink = '';
+                    }
+                    if($img == 'no_img') {
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte'. $MobLink .'.php?id=' . $croustagrameur_id . '\';" src="../public/assets/images/profil.png" class="imgProfilCommentaire" >';
+                    }
+                    else {
+                        echo '<img draggable="false" alt="Photo de profil" onclick="window.location.href = \'viewCompte'. $MobLink .'.php?id=' . $croustagrameur_id . '\';" src="'. $img .'" class="imgProfilCommentaire" >';
+                    }
+                    ?>
                     <label class="nomUserPost"> <?php echo $pseudo ?> </label>
                 </div>
                 <label> <?php echo $date ?> </label>
