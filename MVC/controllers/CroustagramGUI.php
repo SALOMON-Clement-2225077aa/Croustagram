@@ -2,6 +2,7 @@
     require_once 'controllerLeaderboard.php';
     require_once 'controllerPointsCrous.php';
     require_once 'controllerMenuCategorie.php';
+    require_once '../models/modelAdmin.php';
 
 /**
  * @param $titre
@@ -122,7 +123,16 @@ if($showCompteStats){
     </section>
 
     <section id="ad">
-        <h3>your ad here</h3>
+        <?php
+            if (isset($_SESSION['username'])) {
+                if (isAdmin($_SESSION['username'])) {
+                    echo '<h3>Compte Administrateur</h3>';
+                }
+            }
+            else {
+                echo '<h3>your ad here</h3>';
+            }
+        ?>
     </section>
 </div>
 <?php
