@@ -12,6 +12,7 @@
 function showAccountPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+if(!$isMob){session_start();}
 if(isset($_SESSION['createTabErreur'])) $erreurTab = $_SESSION['createTabErreur'];
 if(isset($_SESSION['createUsername'])) $def_username = $_SESSION['createUsername'];
 if(isset($_SESSION['createMail'])) $def_mail = $_SESSION['createMail'];
