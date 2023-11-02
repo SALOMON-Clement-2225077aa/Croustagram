@@ -5,25 +5,31 @@
     require_once '../models/modelAdmin.php';
 
 /**
- * @param $titre
- * @param $showCompteStats
- * @param $showCreatePost
- * @return void
  * Fonction qui génère la 'general user interface' pour PC :
  * Elle permet donc l'affichage du header, du leaderboard, des points crous de l'utilisateur
  * (si il est connecté) et de la boîte dédiée à une potentielle publicité.
+ * @param $titre = le titre de la page
+ * @param $showCompteStats = les stats de notre compte
+ * @param $showCreatePost = la création d'un post
+ * @return void
  */
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
+    // On vérifie qu'on soit pas sur tel
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     if($isMob){header("Location: ../views/viewMainPage_Mobile.php");}
+
+    // On met en place le titre de croustagram
     $titre = 'Croustagram - ' . $titre;
     session_start();
+
+    // On update notre position actuelle dans le site
     $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
+    <meta name="google-site-verification" content="_pnlU29nynGkGXBLZpOj2xSqbPqGWmXyJyXiCjy2-9s" />
     <meta charset="UTF-8">
     <meta name="titre" content="Page d'accueil">
     <link rel="icon" href="../public/assets/images/logo.png" />

@@ -1,16 +1,19 @@
 <?php
 /**
- * @param $erreurTab
- * @param $def_username
- * @param $def_mail
- * @param $def_name
- * @return void
  * Fonction qui permet le formulaire de la page de création de compte
+ * @param $erreurTab = le tableau des erreurs
+ * @param $def_username = l'username fourni précédemment
+ * @param $def_mail = le mail fournit précédemment
+ * @param $def_name = le pseudo fourni précédemment
+ * @return void
  */
 function showAccountPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
+    // On vérifie qu'on soit pas sur mobile
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 if(!$isMob){session_start();}
+
+// On vérifie que les données envoyées en cas d'erreur précédente dans la création du compte existe
 if(isset($_SESSION['createTabErreur'])) $erreurTab = $_SESSION['createTabErreur'];
 if(isset($_SESSION['createUsername'])) $def_username = $_SESSION['createUsername'];
 if(isset($_SESSION['createMail'])) $def_mail = $_SESSION['createMail'];

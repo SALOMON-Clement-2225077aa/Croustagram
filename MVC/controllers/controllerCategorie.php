@@ -2,12 +2,12 @@
 require_once '../config/connectDatabase.php';
 
 /**
- * @param $cat1
- * @param $cat2
- * @param $cat3
- * @return string
  * Fonction qui convertie les clés primaires (nombres) des catégories d'un post
  * Pour les transformer en string 'Catégorie : nom $cat1 ; nom $cat2 ; ...'
+ * @param $cat1 = la catégorie 1
+ * @param $cat2 = la catégorie 2
+ * @param $cat3 = catégorie 3
+ * @return string les différentres catégories
  */
 function convert_cat($cat1, $cat2, $cat3) : string
 {

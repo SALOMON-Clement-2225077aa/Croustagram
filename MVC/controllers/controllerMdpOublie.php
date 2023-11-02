@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @return void
  * Fonction qui permet l'affichage du formulaire de mot de passe oublié
+ * @return void
  */
 function mdpOublie() { ?>
     <div id="ContenuPage">

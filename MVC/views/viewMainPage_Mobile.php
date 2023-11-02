@@ -6,7 +6,7 @@
 
 
 require_once '../controllers/CroustagramGUI_Mobile.php';
-require_once '../controllers/controllerPoste.php';
+require_once '../controllers/controllerPost.php';
 
 start_page('Croustaccueil');
 

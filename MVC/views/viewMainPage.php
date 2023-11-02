@@ -5,7 +5,7 @@
  */
 
 require_once '../controllers/CroustagramGUI.php';
-require_once '../controllers/controllerPoste.php';
+require_once '../controllers/controllerPost.php';
 
 Croustagram('Croustaccueil');
 

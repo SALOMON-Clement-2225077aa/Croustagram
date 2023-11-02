@@ -4,10 +4,10 @@ require_once '../models/modelCompte.php';
 require_once '../models/modelAdmin.php';
 
 /**
- * @param $id_post
- * @return string
  * Fonction qui prend en paramètre l'id d'un post et le transforme
  * en HTML grace à la fonction showOneCommentaire()
+ * @param $id_post = l'id du post
+ * @return string
  */
 function showCommentaires($id_post): string
 {
@@ -19,22 +19,22 @@ function showCommentaires($id_post): string
         $account = $accountData->fetch(PDO::FETCH_ASSOC);
         $accountName = $account['pseudo'];
 
-        $commentaires . '<section id="commentaire">';
+        $commentaires = $commentaires . '<section id="commentaire">';
         $commentaires . showOneCommentaire($row['texte'], $row['croustagrameur_id'], $accountName, $row['date'], $row['id'], $row['croustapost_id']);
-        $commentaires . '</section>';
+        $commentaires = $commentaires . '</section>';
     }
     return $commentaires;
 }
 
 /**
- * @param $texte
- * @param $croustagrameur_id
- * @param $pseudo
- * @param $date
- * @param $id
- * @param $idPost
+ * Fonction qui affiche un commentaire
+ * @param $texte = le texte a afficher
+ * @param $croustagrameur_id = l'id de l'auteur
+ * @param $pseudo = le pseudo de l'auteur
+ * @param $date = la date du commentaire
+ * @param $id = l'id du commentaire
+ * @param $idPost = l'id du post
  * @return void
- * Fonction qui affichage un commentaire
  */
 function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $idPost): void
 {
@@ -61,8 +61,8 @@ function showOneCommentaire($texte, $croustagrameur_id, $pseudo, $date, $id, $id
 }
 
 /**
- * @return void
  * Affiche une textarea et un bouton submit pour ajouter un commentaire
+ * @return void
  */
 function showinterfaceAjoutCommentaire(){
     ?>

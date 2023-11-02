@@ -11,7 +11,7 @@ if($_GET['commId'] != null){
     while($verif = $verifData->fetch(PDO::FETCH_ASSOC)){
         if ($verif['croustagrameur_id'] === $_SESSION['username'] or isAdmin($_SESSION['username'])) {
             $connexion->exec('DELETE FROM croustacomm WHERE id=' . $_GET['commId']);
-            header("Location: ../views/viewPoste.php?id=" . $_GET['postId']);
+            header("Location: ../views/viewPost.php?id=" . $_GET['postId']);
             exit();
         }
     }
