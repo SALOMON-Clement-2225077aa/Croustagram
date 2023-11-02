@@ -1,8 +1,9 @@
 <?php
 require_once 'controllerCompte.php';
-require_once '../models/modelCompte.php';
 require_once 'controllerCategorie.php';
+require_once '../models/modelCompte.php';
 require_once '../models/modelVote.php';
+require_once '../models/modelAdmin.php';
 
 /**
  * @param $croustagrameurId
@@ -93,7 +94,7 @@ function showPost($croustagrameurId, $img ,$pseudo, $titre, $message, $date, $ca
                     <label> <?php echo $nb_comm; ?> </label>
                 </div>
                 <?php
-                if(isset($_SESSION['username']) and $_SESSION['username'] === $croustagrameurId){
+                if(isset($_SESSION['username']) and ($_SESSION['username'] === $croustagrameurId or isAdmin($_SESSION['username'])) ){
                     echo '<button class="button-suppr" onclick="window.location.href = ' . '\'../models/deleteCommsAndPosts.php?postId=' . $idPost . '\' ">Supprimer le poste</button>';
                 }
                 ?>
