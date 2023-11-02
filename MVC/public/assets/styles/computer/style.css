@@ -286,6 +286,14 @@ header {
     width: 100px;
     margin-right: 10px;
 }
+.imgSession{
+    border-radius: 10%;
+    width: 50px;
+    margin-right: 10px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
 
 #ContenuPage{
     width: 100%;

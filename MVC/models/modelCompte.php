@@ -41,6 +41,17 @@ function getAllCompteData($accountName){
 }
 
 /**
+ * @param $accountName
+ * @return string
+ * Renvoie le lien de la photo de profil du compte en paramètre
+ */
+function getImgCompte($accountName){
+    $CompteData = getAllCompteData($accountName);
+    $CompteData = $CompteData->fetch(PDO::FETCH_ASSOC);
+    return $CompteData['img'];
+}
+
+/**
  * @param $mail
  * Recupère les donnée du compte associé au mail en paramètre
  */
