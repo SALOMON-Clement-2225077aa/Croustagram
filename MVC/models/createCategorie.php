@@ -7,7 +7,8 @@ $label = htmlspecialchars($_POST['Label']);
 $description = htmlspecialchars($_POST['Description']);
 
 // Calcul de l'ID
-$id = 8;
+$id = getNbCategorie();
+var_dump($id);
 
 // Connexion à la BdD
 $connexion = connexion();
@@ -27,3 +28,20 @@ if (!($dbResult = $connexion->exec($query))) {
 
 header("Location: ../views/viewCreerCategorie.php");
 exit();
+
+
+/**
+ * Recupère et renvoie le nombre de catégories actuelles
+ * @return int nb de catégories
+ */
+function getNbCategorie(): int
+{
+    // Connexion à la BdD
+    $connexion = connexion();
+
+    // Requête
+    $requete = 'SELECT COUNT(DISTINCT id) FROM croustegorie';
+    $result = $connexion->query($requete);
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    return $row["COUNT(DISTINCT id)"];
+}
