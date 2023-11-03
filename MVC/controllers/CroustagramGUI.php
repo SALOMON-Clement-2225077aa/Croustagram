@@ -81,7 +81,7 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
             if($showCreatePost) {
                 echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer un croustapost </button>';
                 if (isAdmin($_SESSION['username'])) {
-                    echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer une catégorie </button>';
+                    echo '<button onclick="window.location.href = \'../views/viewCreerCategorie.php\';" id="créerPost"> Créer une croustégorie </button>';
                 }
             }
 
