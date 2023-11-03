@@ -29,6 +29,12 @@ if(isset($_SESSION['username'])) {
             <?php
                 showCompte($id);
 
+                if(isset($_SESSION['username'])) {
+                    if(isAdmin($_SESSION['username'])) {
+                        echo '<button id="boutonSupprCompte" onclick="window.location.href = ' . '\'../models/deleteCompte.php?userId=' . $id . '\'"> Supprimer le compte </button>';
+                    }
+                }
+
                 echo showPosts($id);
 
             ?>
