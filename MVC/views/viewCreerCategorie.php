@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Affiche la page de création de post sur pc
+ * Affiche la page de création de Catégorie sur pc
  */
 
 require_once '../controllers/CroustagramGUI.php';

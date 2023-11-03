@@ -2,11 +2,7 @@
 require_once 'controllerMenuCategorie.php';
 
 /**
- * Fonction qui permet l'affichage du formulaire de la page de création de post
- * @param $erreurTab
- * @param $def_username
- * @param $def_mail
- * @param $def_name
+ * Fonction qui permet l'affichage du formulaire de la page de création de catégorie
  * @return void
  */
 function showCreateCategorie(): void
@@ -32,8 +28,8 @@ function showCreateCategorie(): void
 
                 <form action="../models/createCategorie.php" method="post">
 
-                    <input type="text" name="titleContent" placeholder="Label de la croustégorie" required><br>
-                    <textarea name="postContent" placeholder="Description de la croustégorie" rows="6" cols="50" required></textarea><br><br>
+                    <input type="text" name="Label" placeholder="Label de la croustégorie" required><br>
+                    <textarea name="Description" placeholder="Description de la croustégorie" rows="6" cols="50" required></textarea><br><br>
 
                     <div id="DivBas">
                         <button id="FormBouton" type="submit" name="action">Créer !</button>
