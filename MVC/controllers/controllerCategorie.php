@@ -59,8 +59,13 @@ function convert_cat($cat1, $cat2, $cat3) : string
     return 'Catégories : ' . $result;
 }
 
-
-
+/**
+ * Fonction qui Affiche une ligne du menu de catégorie Admin
+ * pour supprimer des catégories
+ * @param $idCat = la catégorie 1
+ * @param $libelle = la catégorie 2
+ * @param $description = la catégorie 3
+ */
 function showOneCategorie($idCat,$libelle,$description) {
     echo '<div id="oneCategorie">';
         echo '<p id="ligneCat"> <b>Catégorie n°' . $idCat . ' : </b>'. $libelle . '<br>' . $description . '</p>';
@@ -68,6 +73,11 @@ function showOneCategorie($idCat,$libelle,$description) {
     echo '</div>';
 }
 
+/**
+ * Fonction qui Affiche une récupère les données sur les catégories
+ * et les donnes à showOneCategorie() pour afficher une par une les lignes
+ * du menu de catégorie Admin pour supprimer des catégories
+ */
 function showAdminCategorieMenu() {
 
     echo '<section id="adminCategorieMenu">';
@@ -81,5 +91,4 @@ function showAdminCategorieMenu() {
         }
 
     echo '</section>';
-
 }
