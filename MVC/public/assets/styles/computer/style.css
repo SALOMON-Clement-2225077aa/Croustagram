@@ -507,4 +507,8 @@ button{
 #ligneCat {
     margin: 5px;
 }
+#boutonSupprCategorie {
+    background-color: red;
+    color:white;
+}
 /* ^ Page Admin de création de catégories ^ */
