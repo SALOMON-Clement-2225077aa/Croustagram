@@ -11,12 +11,12 @@ session_start();
 
 if($_GET['categorieID'] != null){
     // On vérifie que l'auteur du compte soit bien un admin
-    if(isAdmin($_SESSION['username'])) {
+    if(isAdmin($_SESSION['username']) and  $_GET['categorieID'] != 0) {
         $req = 'DELETE FROM croustegorie WHERE id=' . $_GET['categorieID'];
         $connexion->exec($req);
     }
-    header("Location: ../views/viewCreerCategorie.php");
 }
+header("Location: ../views/viewCreerCategorie.php");
 
 // Bouton suppr catégorie :
 // onclick="window.location.href = ' . '\'../models/deleteCategorie.php?categorieID=' . $idCat . '\'">

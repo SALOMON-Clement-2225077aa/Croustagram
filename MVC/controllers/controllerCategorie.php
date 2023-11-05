@@ -68,8 +68,10 @@ function convert_cat($cat1, $cat2, $cat3) : string
  */
 function showOneCategorie($idCat,$libelle,$description) {
     echo '<div id="oneCategorie">';
-        echo '<p id="ligneCat"> <b>Catégorie n°' . $idCat . ' : </b>'. $libelle . '<br>' . $description . '</p>';
-        echo '<button id="boutonSupprCategorie" onclick="window.location.href = ' . '\'../models/deleteCategorie.php?categorieID=' . $idCat . '\'"> Supprimer <br> ' . $libelle . ' </button>';
+        echo '<p id="ligneCat"> <b>Catégorie n°' . $idCat . ' : '. $libelle . '</b><br>' . $description . '</p>';
+        if($idCat != 0) {
+            echo '<button id="boutonSupprCategorie" onclick="window.location.href = ' . '\'../models/deleteCategorie.php?categorieID=' . $idCat . '\'"> Supprimer <br> ' . $libelle . ' </button>';
+        }
     echo '</div>';
 }
 

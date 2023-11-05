@@ -485,7 +485,7 @@ button{
     border: solid 3px;
     border-radius: 25px;
     position: fixed;
-    left: 300px;
+    left: 400px;
     top: 30%;
 }
 
@@ -497,7 +497,7 @@ button{
 #adminCategorieMenu {
     background-color: aquamarine;
     position: fixed;
-    left: 800px;
+    left: 1000px;
     top: 15%;
     border-radius: 7px;
     border: 2px solid;
