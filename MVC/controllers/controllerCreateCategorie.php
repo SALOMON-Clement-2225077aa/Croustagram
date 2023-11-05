@@ -1,5 +1,6 @@
 <?php
 require_once 'controllerMenuCategorie.php';
+require_once '../controllers/controllerCategorie.php';
 
 /**
  * Fonction qui permet l'affichage du formulaire de la page de création de catégorie
@@ -23,7 +24,7 @@ function showCreateCategorie(): void
 
 <body>
 <div id="ContenuPage">
-    <div id="BoxMilieu">
+    <div id="CréerCat">
         <h1 id="FormTitre">Créer une Croustégorie</h1>
 
                 <form action="../models/createCategorie.php" method="post">
@@ -37,7 +38,11 @@ function showCreateCategorie(): void
 
             </form>
     </div>
+    <?php
+        showAdminCategorieMenu();
+    ?>
 </div>
+
 </body>
 <?php
 }

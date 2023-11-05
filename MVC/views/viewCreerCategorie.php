@@ -11,7 +11,8 @@ require_once '../models/modelAdmin.php';
 // Page réservé aux administrateurs donc redirection vers accueil
 // Si un User non-admin essaie de se connecter
 
-session_start();
+// On affiche le GUI de croustagram
+Croustagram('Création d\'une Croustégorie', false, false);
 
 if(isset($_SESSION['username'])){
 
@@ -19,9 +20,6 @@ if(isset($_SESSION['username'])){
 
         // On affiche l'interface de création des catégories
         showCreateCategorie();
-
-        // On affiche le GUI de croustagram
-        Croustagram('Création d\'une Croustégorie', false, false);
 
     }
     else {

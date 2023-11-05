@@ -477,3 +477,34 @@ button{
     background-color: red;
     color:white;
 }
+
+/* v Page Admin de création de catégories v */
+#CréerCat{
+    padding: 25px;
+    background-color: #d9d9d9;
+    border: solid 3px;
+    border-radius: 25px;
+    position: fixed;
+    left: 300px;
+    top: 30%;
+}
+
+#oneCategorie {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#adminCategorieMenu {
+    background-color: aquamarine;
+    position: fixed;
+    left: 800px;
+    top: 15%;
+    border-radius: 7px;
+    border: 2px solid;
+    padding: 10px;
+    text-align: left;
+}
+#ligneCat {
+    margin: 5px;
+}
+/* ^ Page Admin de création de catégories ^ */

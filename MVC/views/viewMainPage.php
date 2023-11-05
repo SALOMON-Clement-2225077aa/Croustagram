@@ -14,25 +14,25 @@ $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 
 // On affiche les posts
 echo '<section id="posts">';
-echo '<article id="post">';
+    echo '<article id="post">';
 
-// On tri en fonction du choix
-if(isset($_POST['categorie'])) {
-    afficherPostSelonCategorie($_POST['categorie']);
-}
-else if(isset($_POST['recherche'])) {
-    afficherPostSelonMot(htmlspecialchars($_POST['recherche']));
-}
-// On affiche une recherche (ou non)
-else {
-    if(isset($_POST['tri'])) {
-        echo showAllPosts($_POST['tri']);
-    }
-    else {
-        showAllPosts();
-    }
-}
-?>
-</article>
+        // On tri en fonction du choix
+        if(isset($_POST['categorie'])) {
+            afficherPostSelonCategorie($_POST['categorie']);
+        }
+        else if(isset($_POST['recherche'])) {
+            afficherPostSelonMot(htmlspecialchars($_POST['recherche']));
+        }
+        // On affiche une recherche (ou non)
+        else {
+            if(isset($_POST['tri'])) {
+                echo showAllPosts($_POST['tri']);
+            }
+            else {
+                showAllPosts();
+            }
+        }
+        ?>
+    </article>
 </section>
 </body>

@@ -138,7 +138,7 @@ if($showCompteStats){
     ?>
     </section>
 
-    <section id="ad">
+    <section c>
         <?php
             if (isset($_SESSION['username'])) {
                 if (isAdmin($_SESSION['username'])) {
