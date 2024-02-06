@@ -15,7 +15,7 @@ $today = date('Y-m-d');
 $connexion = connexion();
 $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, categorie1, categorie2, categorie3) VALUES ("' .  $_SESSION['username'] . '", "' . $titleContent . '", "'  . $postContent . '", "' . $today . '", "' . $numCat1 . '", "' . $numCat2 . '", "' . $numCat3 . '")';
 
-$url = "https://discord.com/api/webhooks/1204350532156919818/h7M17sqyxQPke9i6OOpaEnMkso9-HlGkw1-Z2JE8dZQOSGspoS_32b8m6jeV6rowHijK";
+$url = "https://discord.com/api/webhooks/1204357718526263337/fs8R7ifozIfFVgBSstIHPLxCqZ-_X5UQBGr7dU_XRgC2U5VxFVASXmJHoTjT9kzXSxDJ";
 
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
 $POST = [ 'username' => 'CroustaBot', 'content' =>  '||@everyone||' . "\r\n" . 'Il y a un nouveau post sur Croustagram !' . "\r\n" . '**Titre : **' . $titleContent . "\r\n" . 'https://thecroustagram.alwaysdata.net/MVC/views/viewCompte.php?id=' . $_SESSION['username']];
