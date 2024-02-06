@@ -31,7 +31,7 @@ if(!empty($row)){
     $lien = 'https://thecroustagram.alwaysdata.net/MVC/views/viewResetMdp.php?suid=' . $_SESSION['suid'] . '&accountId=' . $row['id'];
 
     // Le message final du mail
-    $message = nl2br('Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . "\r" . $lien );
+    $message = 'Voici le lien de rénitialisation du mot de passe, à ne surtout pas partager : ' . "\r\n \r\n" . $lien;
 
     // On envoi le mail
     mail($destinataire, $sujet, $message, $headers);
