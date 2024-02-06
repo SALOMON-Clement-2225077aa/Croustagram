@@ -18,7 +18,7 @@ $query = 'INSERT INTO croustapost (croustagrameur_id, titre, message, date, cate
 $url = "https://discord.com/api/webhooks/1204350532156919818/h7M17sqyxQPke9i6OOpaEnMkso9-HlGkw1-Z2JE8dZQOSGspoS_32b8m6jeV6rowHijK";
 
 $headers = [ 'Content-Type: application/json; charset=utf-8' ];
-$POST = [ 'username' => 'CroustaBot', 'content' => 'Il y a un nouveau post sur Croustagram !\rhttps://thecroustagram.alwaysdata.net/MVC/views/viewCompte.php?id=' . $_SESSION['username'] . '\rTitre : ' . $titleContent . '\n||@everyone||'];
+$POST = [ 'username' => 'CroustaBot', 'content' => 'Il y a un nouveau post sur Croustagram !\r\nhttps://thecroustagram.alwaysdata.net/MVC/views/viewCompte.php?id=' . $_SESSION['username'] . '\r\nTitre : ' . $titleContent . '\r\n||@everyone||'];
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
