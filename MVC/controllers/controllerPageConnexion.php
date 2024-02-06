@@ -1,7 +1,15 @@
 <?php
+
+/**
+ * @param $tabErreurs = le tableau contenant les erreurs de la précédente tentative
+ * @return void
+ * Fonction qui permet l'affichage du formulaire de connexion à son compte
+ */
 function connexion_page($tabErreurs = array())
 {
+    // On vérifie si il y a des erreurs
     if($tabErreurs === null) $tabErreurs = array();
+    // On vérifie si on ests ur mobile
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     ?>
     <body <?php if(in_array('bocchi', $tabErreurs)) echo'style="background-image: url(\'https://media.tenor.com/-FrcCsUig4sAAAAC/spin-bocchi.gif\')"'?>>
@@ -11,11 +19,11 @@ function connexion_page($tabErreurs = array())
             <form action="../controllers/connectAccount.php" method="post" id="FormConnect">
                 <div class="FormDiv">
                     <label>Identifiant :</label>
-                    <input type="text" name="username" required>
+                    <input type="text" name="username" required placeholder="Nom d'utilisateur">
                 </div>
                 <div class="FormDiv">
                     <label>Mot de passe :</label>
-                    <input type="password" name="password" required>
+                    <input type="password" name="password" required placeholder="Mot de passe">
                 </div>
                 <br>
                 <button id="FormBouton" type="submit">Se connecter</button>
@@ -28,8 +36,16 @@ function connexion_page($tabErreurs = array())
                 elseif (in_array('noMatchFoundMail', $tabErreurs))
                 { ?>
                     <label id="erreurLabel">Le couple adresse e-mail / mot de passe ne </br>correspond à aucun compte !</label>
-                <?php } ?>
+                <?php }
+                ?>
             </form>
+            <br>
+            <?php if ($isMob) { ?>
+                <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie_Mobile.php'">Mot de passe oublié</button>
+            <?php }
+            else { ?>
+                <button id="FormBouton" type="button" style="font-size: 20px; color: red" onclick="window.location.href='../views/viewMdpOublie.php'">Mot de passe oublié</button>
+            <?php } ?>
             <h1 id="PasDeCompte">Pas de compte ?</h1>
             <?php if ($isMob) { ?>
                 <button id="InscriptionBouton" onclick="window.location.href='../views/viewCreerCompte_Mobile.php'">S'inscrire</button>

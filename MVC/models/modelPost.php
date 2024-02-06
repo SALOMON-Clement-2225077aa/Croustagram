@@ -4,6 +4,10 @@ require_once '../config/connectDatabase.php';
 // Connexion à la base de donnée
 $connexion = connexion();
 
+/**
+ * Récupère toute les données d'un post (avec requete sql)
+ * @param $id = id du post
+ */
 function getOnePostData($id){
     global $connexion;
 
@@ -18,6 +22,10 @@ function getOnePostData($id){
 
 }
 
+/**
+ * Récupère toute le nb de commentaires d'un post (avec requete sql)
+ * @param $id = id du post
+ */
 function getNbCommentaireData($id){
     global $connexion;
 
@@ -31,6 +39,10 @@ function getNbCommentaireData($id){
     return null;
 }
 
+/**
+ * Récupère tout les id des posts (avec requete sql) triées selon le paramètre (de base par points)
+ * @param $ordre = l'ordre d'affichage des données
+ */
 function getAllPostsId($ordre = 'id'){
     global $connexion;
 

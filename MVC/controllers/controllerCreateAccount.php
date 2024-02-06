@@ -1,8 +1,19 @@
 <?php
+/**
+ * Fonction qui permet le formulaire de la page de création de compte
+ * @param $erreurTab = le tableau des erreurs
+ * @param $def_username = l'username fourni précédemment
+ * @param $def_mail = le mail fournit précédemment
+ * @param $def_name = le pseudo fourni précédemment
+ * @return void
+ */
 function showAccountPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
-    session_start();
+    // On vérifie qu'on soit pas sur mobile
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+if(!$isMob){session_start();}
+
+// On vérifie que les données envoyées en cas d'erreur précédente dans la création du compte existe
 if(isset($_SESSION['createTabErreur'])) $erreurTab = $_SESSION['createTabErreur'];
 if(isset($_SESSION['createUsername'])) $def_username = $_SESSION['createUsername'];
 if(isset($_SESSION['createMail'])) $def_mail = $_SESSION['createMail'];
@@ -25,7 +36,7 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
 <div id="ContenuPage">
     <div id="BoxMilieu">
         <h1 id="FormTitre">Prêt à vivre l'expérience Croustagram ?</h1>
-        <form action="../models/createAccount.php" method="post">
+        <form action="../models/createAccount.php" method="post" enctype="multipart/form-data">
                 <div class="FormDiv">
                     <label>E-Mail :</label>
                     <input placeholder="Adresse e-mail"  type='text' name='mail' required value=<?php echo '\'' . $def_mail . '\''; ?>>
@@ -89,14 +100,21 @@ if(isset($_SESSION['createName'])) $def_name = $_SESSION['createName'];
                 <div class="FormDiv">
                     <label>Nom d'affichage :</label><label style="color: red"> (optionnel)</label>
                     <input placeholder="Pseudo affiché" type='text' name='name' value=<?php echo '\'' . $def_name . '\''; ?>>
-
                 </div>
+
                 <?php
                 if (in_array("nameLong", $erreurTab))
                 {
                     echo '<label class="erreurLabel"><strong>Le pseudo choisi est trop long (25 caractères maximum) !</strong></label>';
                 }
                 ?>
+
+                <!-- Mettre une photo de profil -->
+                <div class="FormDiv">
+                    <label>Photo de profil :</label>
+                    <input type="file" name="myfile">
+                </div>
+
 
                 <div id="DivBas">
                     <?php if ($isMob) { ?>

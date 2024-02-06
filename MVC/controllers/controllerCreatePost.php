@@ -1,14 +1,23 @@
 <?php
 require_once 'controllerMenuCategorie.php';
 
+/**
+ * Fonction qui permet l'affichage du formulaire de la page de création de post
+ * @param $erreurTab
+ * @param $def_username
+ * @param $def_mail
+ * @param $def_name
+ * @return void
+ */
 function showCreatePostPage($erreurTab = array(), $def_username = NULL, $def_mail = NULL, $def_name = NULL): void
 {
 $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
 ?>
 
-<!DOCTYPE html>
-<html lang='fr'>
-<head>
+<?php if (!$isMob) { ?>
+    <!DOCTYPE html>
+    <html lang='fr'>
+    <head>
     <meta charset="UTF-8">
     <meta name="titre" content="Créer un post">
     <meta name="description" content="Page pour créer un post">
@@ -16,17 +25,16 @@ $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     <link rel="stylesheet" href="../public/assets/styles/computer/style.css">
     <title>Créer un Croustapost</title>
 </head>
+<?php } ?>
+
 
 <body>
 <div id="ContenuPage">
     <div id="BoxMilieu">
-        <h1 id="FormTitre">Exprimez vous !</h1>
-        <?php if ($isMob) { ?>
-        <form action="request.php" method="post">
-            <?php }
-            else { ?>
+        <h1 id="FormTitre">Exprimez-vous !</h1>
+
                 <form action="../models/createPost.php" method="post">
-            <?php } ?>
+
 
                     <input type="text" name="titleContent" placeholder="Titre du post" required><br>
                     <textarea name="postContent" placeholder="Contenu du post" rows="6" cols="50" required></textarea><br><br>

@@ -1,21 +1,65 @@
-body {
-    margin: 0px;
-    padding: 0px;
-    font-size: 40px;
-}
-
-/* CONTENU MILIEU */
 
 #contenuPage {
-    padding-top: 350px;
-    padding-bottom: 150px;
-    width: 100%;
-    height: 100%;
+    padding: 350px 2% 150px;
+}
+
+#contenuProfil {
+    margin-top: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgProfil {
+    border-radius: 50%;
+    width: 100px;
+}
+.imgProfilCompte{
+    border-radius: 10%;
+    width: 225px;
+    margin-left: 15px;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin-left: 15px;
+}
+h3 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin-left: 15px;
+}
+h5 {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin-left: 15px;
+}
+
+#affichePseudoLabel {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 80px;
+    margin-top: 50px;
 }
 
 #boutonDeconnexion {
-    font-size: 100px
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 50px;
+    margin-bottom: 50px;
+    margin-left: 30%;
+    background-color: #d9d9d9;
+    border: solid;
+    border-radius: 50px / 50px;
+    padding: 40px;
 }
+
+.button-suppr {
+    padding: 15px;
+    border-radius: 50px / 50px;
+    border: solid;
+    font-size: 30px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
 /*FIN CONTENU MILIEU */
 
 /* BAS DE PAGE */
@@ -63,5 +107,3 @@ footer {
     background-color: #d9d9d9;
     margin: 20px;
 }
-
-/* FIN DE BAS DE PAGE */

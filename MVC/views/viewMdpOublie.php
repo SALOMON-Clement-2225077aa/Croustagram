@@ -1,5 +1,20 @@
-<form action="../controllers/sendMail.php" method="post">
-    <label>Entrez ici votre adresse mail</label>
-    <input type="email" name="mail">
-    <button>Envoyer le mail de rénitialisation du mot de passe</button>
-</form>
+<?php
+
+/**
+ * Affiche la page de mot de passe oublié sur pc avec laquelle un email est envoyé à l'adresse email renseignée
+ */
+
+
+require '../controllers/controllerMdpOublie.php';
+require '../controllers/CroustagramGUI.php';
+
+// On affiche le GUI de croustagram
+Croustagram('Mot de passe oublié', false);
+
+// On affiche l'interface du mdp oublié
+mdpOublie();
+
+?>
+
+</body>
+

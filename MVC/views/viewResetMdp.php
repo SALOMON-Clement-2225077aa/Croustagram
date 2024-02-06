@@ -1,11 +1,29 @@
 <?php
-$accountName = $_GET['accountId'];
-$suid = $_GET['suid'];
-session_start();
-if ($suid !== $_SESSION['suid']) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
 
-echo '<form action="../controllers/resetMdp.php" method="post">
-<input name="mdp" type="password">
-<input name="verifMdp" type="password">
-<button type="submit" name="accountName" value="' . $accountName . '">Changer le mot de passe</button>
-</form>';
+/**
+ * Affiche la page de reset de mot de passe accessible depuis le mail recu suite à une demande de changement de mot de passe
+ */
+
+require '../controllers/controllerResetMdp.php';
+require '../controllers/CroustagramGUI.php';
+require '../controllers/CroustagramGUI_Mobile.php';
+
+// La variable qui reconnait si on est sur mobile ou non
+$isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
+
+session_start();
+// Si l'utilisateur n'est pas reconnu par le serveur, on lui fait une petite blague
+if (!isset($_GET['suid']) or !isset($_GET['accountId']) or ($_GET['suid'] !== $_SESSION['suid'])) header('Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley');
+
+// On vérifie si on est sur mobile, on affiche la page mobile
+if ($isMob) {
+    start_page('Mot de passe oublié');
+    resetMdp();
+    end_page();
+}
+// Et si on est sur pc ça affiche la page pc
+else {
+    // On affiche le GUI de croustagram
+    Croustagram('Mot de passe oublié', false);
+    resetMdp();
+}

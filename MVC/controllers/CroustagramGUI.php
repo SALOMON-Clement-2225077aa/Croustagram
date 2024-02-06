@@ -2,16 +2,35 @@
     require_once 'controllerLeaderboard.php';
     require_once 'controllerPointsCrous.php';
     require_once 'controllerMenuCategorie.php';
+    require_once '../models/modelAdmin.php';
+    require_once '../models/modelCompte.php';
+
+/**
+ * Fonction qui génère la 'general user interface' pour PC :
+ * Elle permet donc l'affichage du header, du leaderboard, des points crous de l'utilisateur
+ * (si il est connecté) et de la boîte dédiée à une potentielle publicité.
+ * @param $titre = le titre de la page
+ * @param $showCompteStats = les stats de notre compte
+ * @param $showCreatePost = la création d'un post
+ * @return void
+ */
 function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): void
 {
+    // On vérifie qu'on soit pas sur tel
     $isMob = is_numeric(strpos(strtolower($_SERVER["HTTP_USER_AGENT"]), "mobile"));
     if($isMob){header("Location: ../views/viewMainPage_Mobile.php");}
+
+    // On met en place le titre de croustagram
     $titre = 'Croustagram - ' . $titre;
     session_start();
+
+    // On update notre position actuelle dans le site
+    $_SESSION['currentUrl'] = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
+    <meta name="google-site-verification" content="_pnlU29nynGkGXBLZpOj2xSqbPqGWmXyJyXiCjy2-9s" />
     <meta charset="UTF-8">
     <meta name="titre" content="Page d'accueil">
     <link rel="icon" href="../public/assets/images/logo.png" />
@@ -34,14 +53,21 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
         <div id="DivBarreRecherche">
             <form method="post" >
                 <button id="Recherche" type="submit"></button>
-                <input id="BarreRecherche" type="text" name="recherche">
+                <?php
+                if(isset($_POST['recherche'])) {
+                    echo '<input id="BarreRecherche" type="text" name="recherche" value="' .$_POST['recherche'] . '">';
+                }
+                else{
+                    echo '<input id="BarreRecherche" type="text" name="recherche">';
+                }
+                ?>
                 <button id="EffacerRecherche" type="reset" onclick="window.location.href = '../views/viewMainPage.php';"></button>
                 <button id="TrierRecherche" name="tri" onclick="window.location.href = '../views/viewMainPage.php'"></button>
             </form>
             <!-- filtre par catégorie : -->
             <form action="../views/viewMainPage.php" method="post">
-                <select id="FiltrerRecherche" hidden="until-found" name='categorie' onchange="this.form.submit()" >
-                    <option value="">-- Filtrer la catégorie --</option>
+                <select id="FiltrerRecherche" name='categorie' onchange="this.form.submit()">
+                    <option value=""> </option>
                     <option value="0">Aucune</option>
                     <?php selectCategorie(); ?>
                 </select>
@@ -54,9 +80,18 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
         {
             if($showCreatePost) {
                 echo '<button onclick="window.location.href = \'../views/viewCreerPost.php\';" id="créerPost"> Créer un croustapost </button>';
+                if (isAdmin($_SESSION['username'])) {
+                    echo '<button onclick="window.location.href = \'../views/viewCreerCategorie.php\';" id="créerPost">Gérer les croustégories</button>';
+                }
             }
-            echo '<a style="color : black" href="../views/viewCompte.php?id=' . $_SESSION['username'] . '"><label style="cursor: pointer; top: 20px; right: 20px; position: fixed">Connecté en tant que : ' . $_SESSION['username'] . '</label></a>';
-            echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 10px; top: 50px; position: fixed"> Se déconnecter </button>';
+
+            // Affiche l'utilisateur connecté (phot, pseudo, bouton déconnexion)
+            echo '<button onclick="window.location.href = \'../controllers/logout.php\';" style="right: 100px; top: 50px; position: fixed"> Se déconnecter </button>';
+            echo '<a style="color : black" href="../views/viewCompte.php?id=' . $_SESSION['username'] . '">';
+                echo '<label style="cursor: pointer; top: 20px; right: 100px; position: fixed">' . $_SESSION['username'] . '</label>';
+                echo '<img draggable="false" alt="Photo de profil" src=' . getImgCompte($_SESSION['username']) . ' class="imgSession">';
+            echo '</a>';
+
         }
         else
         {
@@ -68,8 +103,11 @@ function Croustagram($titre, $showCompteStats = true, $showCreatePost = true): v
 
 <body>
 <section style="z-index: 1000" id="leaderboard">
-    <h2>Leaderboard :</h2>
+    <h2>Classement : </h2>
     <?php
+        if(isset($_SESSION['username'])) {
+            echo '<h2>Mon classement : ' . myPosition() . '</h2>';
+        }
         showLeaderboard();
     ?>
 </section>
@@ -101,7 +139,16 @@ if($showCompteStats){
     </section>
 
     <section id="ad">
-        <h3>your ad here</h3>
+        <?php
+            if (isset($_SESSION['username'])) {
+                if (isAdmin($_SESSION['username'])) {
+                    echo '<h3>Compte Administrateur</h3>';
+                }
+            }
+            else {
+                echo '<h3>your ad here</h3>';
+            }
+        ?>
     </section>
 </div>
 <?php

@@ -38,5 +38,5 @@ if (!($dbResult = $connexion->exec($query))) {
     exit();
 }
 
-header("Location: " . $_SESSION['currentUrl']);
+header("Location: ../views/viewMainPage.php");
 exit();

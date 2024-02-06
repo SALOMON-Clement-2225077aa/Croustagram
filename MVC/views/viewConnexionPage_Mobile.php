@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Affiche la page de connexion à son profil sur mobile
+ */
+
 require_once '../controllers/CroustagramGUI_Mobile.php';
 require_once '../controllers/controllerPageConnexion.php';
 require_once '../controllers/controllerPageConnexion.php';

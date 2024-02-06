@@ -1,3 +1,4 @@
+
 #ContenuPage {
     position: fixed;
     top: 18%;
@@ -8,70 +9,46 @@
     height: 75%;
 }
 
-#BoxMilieu {
-    padding: 50px;
-    position: fixed;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: solid;
-    border-radius: 100px;
-}
-
-#FormConnect {
+#FormMdpOublie {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 40px;
-}
-
-.FormDiv {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border: none;
-    margin: 10px;
-}
-
-input {
-    height: 51.2px;
-    width: 400px;
+    background-color: #d9d9d9;
     border: solid;
-    font-size: 35px;
+    border-radius: 10px;
 }
 
-#FormBouton {
+#mdpOublieEmailLabel {
+    font-size: 50px;
     margin: 50px;
-    border-radius: 50px / 50px;
+}
+
+#mdpOublieInput {
+    font-size: 50px;
+    width: 90%;
+}
+
+#mdpOublieSendBouton {
+    font-size: 30px;
+    margin: 50px;
+    width: 50%;
     border: solid;
-    height: 100px;
-    width: 300px;
-    font-size: 30px;
+    border-radius: 30px;
 }
 
-#erreurLabel {
-    font-size: 30px;
-    color: red;
-    text-align: center;
-    width: 500px;
-    padding: 0px;
-    margin: 0px;
+
+.resetLabel {
+    font-size: 50px;
+    margin: 50px;
 }
 
-#PasDeCompte {
-    font-size: 40px;
+.resetInput {
+    font-size: 50px;
+    width: 90%;
 }
 
-#InscriptionBouton {
-    margin-bottom: 30px;
-    border-radius: 50px / 50px;
-    border: solid;
-    height: 80px;
-    width: 200px;
-    font-size: 30px;
-}
+
+/* FOOTER DE LA PAGE */
 
 footer {
     margin-top: 20px;

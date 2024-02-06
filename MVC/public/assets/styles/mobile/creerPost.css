@@ -1,77 +1,81 @@
-#ContenuPage {
-    position: fixed;
-    top: 18%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 75%;
-}
-
-#BoxMilieu {
-    padding: 50px;
-    position: fixed;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: solid;
-    border-radius: 100px;
-}
-
-#FormConnect {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body {
+    margin: 0px;
+    padding: 0px;
     font-size: 40px;
 }
 
-.FormDiv {
-    width: 100%;
+#ContenuPage {
+    padding-top: 15%;
+    padding-bottom: 150px;
+}
+
+#BoxMilieu{
+    padding: 25px;
+    margin: 0 25px 25px;
+    background-color: #d9d9d9;
+    border: solid 3px;
+    border-radius: 25px;
     display: flex;
-    justify-content: space-between;
-    border: none;
-    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+#BoxMilieu button{
+    border-radius: 50px;
+    border: solid;
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+}
+
+#FormConnect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#FormTitre {
+    font-size: 60px;
 }
 
 input {
-    height: 51.2px;
-    width: 400px;
-    border: solid;
-    font-size: 35px;
-}
-
-#FormBouton {
-    margin: 50px;
-    border-radius: 50px / 50px;
-    border: solid;
-    height: 100px;
-    width: 300px;
-    font-size: 30px;
-}
-
-#erreurLabel {
-    font-size: 30px;
-    color: red;
-    text-align: center;
-    width: 500px;
-    padding: 0px;
-    margin: 0px;
-}
-
-#PasDeCompte {
     font-size: 40px;
+    width: 80%;
+    border: solid;
+    padding: 10px;
 }
 
-#InscriptionBouton {
-    margin-bottom: 30px;
-    border-radius: 50px / 50px;
+textarea{
+    margin-top: 10px;
+    font-size: 40px;
+    width: 80%;
     border: solid;
-    height: 80px;
-    width: 200px;
-    font-size: 30px;
+    padding: 10px;
 }
+
+p {
+    font-size: 50px;
+}
+
+select {
+    font-size: 40px ;
+    border: solid;
+    padding: 10px;
+    width: 200px;
+}
+
+
+.FormDiv label{
+    font-size: 50px;
+}
+.FormDiv{
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FOOTER */
 
 footer {
     margin-top: 20px;
@@ -85,7 +89,7 @@ footer {
 }
 
 #BoutonHome {
-    background-image: url("../../images/home.png");
+    background-image: url("../../images/home_red.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;
@@ -94,6 +98,7 @@ footer {
     background-color: #d9d9d9;
     margin: 20px;
 }
+
 #BoutonLeaderboard {
     background-image: url("../../images/leaderboard.png");
     background-size: 100%;
@@ -104,8 +109,9 @@ footer {
     background-color: #d9d9d9;
     margin: 20px;
 }
+
 #BoutonProfil {
-    background-image: url("../../images/profil_red.png");
+    background-image: url("../../images/profil.png");
     background-size: 100%;
     background-position: center;
     height: 102.4px;

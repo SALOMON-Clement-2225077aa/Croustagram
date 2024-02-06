@@ -279,6 +279,20 @@ header {
 .imgProfil{
     border-radius: 50%;
     width: 50px;
+    margin-right: 10px;
+}
+.imgProfilCompte{
+    border-radius: 10%;
+    width: 100px;
+    margin-right: 10px;
+}
+.imgSession{
+    border-radius: 10%;
+    width: 50px;
+    margin-right: 10px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
 }
 
 #ContenuPage{
@@ -356,6 +370,43 @@ button {
     align-items: center;
 }
 
+#FormMdpOublie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d9d9d9;
+    border: solid;
+    border-radius: 10px;
+}
+
+#mdpOublieEmailLabel {
+    font-size: 30px;
+    margin: 20px;
+}
+
+#mdpOublieInput {
+    font-size: 20px;
+    width: 90%;
+}
+
+.resetLabel {
+    font-size: 30px;
+    margin: 20px;
+}
+
+.resetInput {
+    font-size: 20px;
+    width: 90%;
+}
+
+#mdpOublieSendBouton {
+    font-size: 20px;
+    margin: 20px;
+    width: 50%;
+    border: solid;
+    border-radius: 30px;
+}
+
 .FormDiv label{
     font-size: 25px;
 }
@@ -395,9 +446,9 @@ button {
     width: 200px;
     height: 50px;
     border-radius: 7px;
-    border: 2px solid;
-    background: #F79F14;
-    font-size: 15px;
+    border: 3px solid;
+    background: #efefef;
+    font-size: 16px;
 }
 
 #FormBouton{
@@ -419,3 +470,45 @@ a{
 button{
     cursor: pointer;
 }
+
+#boutonSupprCompte {
+    margin-bottom: 15px;
+    padding: 5px;
+    background-color: red;
+    color:white;
+}
+
+/* v Page Admin de création de catégories v */
+#CréerCat{
+    padding: 25px;
+    background-color: #d9d9d9;
+    border: solid 3px;
+    border-radius: 25px;
+    position: fixed;
+    left: 400px;
+    top: 30%;
+}
+
+#oneCategorie {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+#adminCategorieMenu {
+    background-color: aquamarine;
+    position: fixed;
+    left: 1000px;
+    top: 15%;
+    border-radius: 7px;
+    border: 2px solid;
+    padding: 10px;
+    text-align: left;
+}
+#ligneCat {
+    margin: 5px;
+}
+#boutonSupprCategorie {
+    background-color: red;
+    color:white;
+}
+/* ^ Page Admin de création de catégories ^ */
