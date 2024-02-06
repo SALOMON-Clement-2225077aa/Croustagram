@@ -104,6 +104,22 @@
             echo '<strong>Requête : ' . $query . '</strong><br>';
             exit();
         }
+
+        $url = "https://discord.com/api/webhooks/1204350532156919818/h7M17sqyxQPke9i6OOpaEnMkso9-HlGkw1-Z2JE8dZQOSGspoS_32b8m6jeV6rowHijK";
+
+        $headers = [ 'Content-Type: application/json; charset=utf-8' ];
+        $POST = [ 'username' => 'CroustaBot', 'content' =>  '||@everyone||' . "\r\n" . 'Bienvenue à ' . $name . ' sur Croustagram !' . "\r\n" . 'https://thecroustagram.alwaysdata.net/MVC/views/viewCompte.php?id=' . $username];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($POST));
+        $response = curl_exec($ch);
+        error_log($response);
+
         // On enleve les valeurs de la session pour en ajouter des nouvelles
         session_unset();
         $_SESSION['username'] = $username;
